@@ -1,0 +1,164 @@
+section#sec-parity
+    title Parity
+
+    introduction
+        p.
+            These are notes for Céline Maistret's course MA842 at BU Spring 2019.
+
+        p.
+            The course webpage is #[url(href="https://sites.google.com/view/cmaistret/teaching#h.p_BYGoPzU848FJ")/].
+        p.
+            Course overview:
+        p
+            | Main references:
+            ol
+                li Vlad
+                li Silverman
+                li Milne
+
+
+
+    subsection#subsec-mordell-weil
+        title Mordell-Weil
+        aside: p Lecture 4 5/2/2018
+
+        remark
+            p
+                | A homomorphism #[m \phi \colon \absgal{K} \to G] for a finite group #[m G] is continuous if it comes from a finite Galois extension, i.e.
+                me \exists F/K \text{ finite Galois },\,\tilde \phi \colon \Gal{F}{K} \to G
+                | s.t. #[m \phi] is  the composition #[m \absgal{K} \to  \Gal FK \xrightarrow{\tilde \phi} G]. So #[m \phi(g) ] only cares about what #[m g] does to #[m F].
+
+        proposition
+            statement: p
+                | Let #[m E/K] be an elliptic curve
+                me y^2 = (x-\alpha)(x-\beta)(x-\gamma)
+                | for #[m P \in E(K)] have #[m \frac 12 P \in E(\overline K)] s.t. #[m \frac 12 P \oplus \frac 12 P = P].
+                ol
+                    li
+                        | #[m K(\frac 12 P) /K] is a Galois extension and #[m \Gal{K(\frac 12 P)}{K} = C_2 \times C_2] from Lemma 1.
+                        // TODO
+                    li
+                        me \phi_P \colon \absgal{K} \to E(K)[2]
+                        me g \mapsto Q^\sigma - Q  = g(\frac 12 P) - \frac 12 P
+                        | is well defined and has kernel #[m \Gal{K}{K(\frac 12 P)}].
+                    li
+                        me \phi \colon E(K) / 2E(K) \to \Hom_{cts}(\absgal{K}, E(K)[2])
+                        me P \mapsto \phi_P
+                        | is well defined and injective.
+                        | Now #[m \phi_P] is continuous by #[m 2.] and  so
+                        me \phi_{P\oplus Q} (g) = g(\frac 12 (P\oplus Q)) - (\frac 12 P\oplus \frac 12 Q)
+                        me = g(\frac 12 P) \oplus g(\frac 12Q) - \frac 12 P \ominus \frac 12 Q
+                        me = \phi_P(g) \oplus \phi_Q(g)
+                        | a homomorphism.
+                        me \phi_{2Q}(g) = g(\frac 12 2 Q)) - \frac12 2(Q) = g(Q) - Q = 0
+                        | for all #[m g\in \absgal K] if #[m Q \in E(K)] so  this is well defined.
+                        | For injectivity:
+                        me \phi_P(g) = 0 \implies g(\frac 12 P) = \frac 12 P \forall g \in \absgal K
+                        me \implies \frac 12 P \in E(K) \implies P \in 2 E(K)
+                        | which gives injectivity.
+                    li
+                        me \eta \colon \Hom_{cts}(\absgal K , E(K) [2] ) \to K^\times/{K^\times}^2 \times K^\times/{K^\times}^2 \times K^\times/{K^\times}^2
+                        me \psi \mapsto\psi_\alpha ,\psi_\beta, \psi_\gamma
+                        me \psi(g )\in \{0, (\alpha,0)\} \subseteq E(K) \iff g \in \Gal{\overline K }{K(\sqrt {\psi_\alpha})}
+                        | then #[m \eta] is an injective homomorphism.
+                        | It is an isomorphism to the subgroup of triples #[m a,b,c] s.t. #[m abc \in {K^\times}^2].
+                        | Proof:
+                        me \Hom_{cts}(\absgal K, C_2) \simeq K^\times/{K^\times}^2
+                        | with #[m \psi] s.t. #[m \ker \psi = \Gal{\overline K}{ K\sqrt d}  \leftrightarrow d].
+                        | It is an isomorphism:
+                        me \ker \psi_i = \Gal{\overline K}{ K(\sqrt {d_i})},\,i =1,2
+                        me \ker \psi_1 \psi_2 = \Gal{\overline K}{ K(\sqrt {d_1d_2})}
+                        | Now apply this to #[m E(K) \lb 2\rb = C_2 \times C_2] to get an isomorphism to #[m K^\times / {K^\times}^2 \times K^\times / {K^\times}^2 ].
+                        | Record this third homomorphism to get #[m \eta].
+                    li
+                        | If #[m P = (x_0, y_0) \in E(K)] then
+                        me \eta(\phi_P)   = (x_0 - \alpha, x_0 - \beta, x_0 -\gamma)
+                        | .
+                        | Proof sketch:
+                        | If
+                        me E\colon y^2 = x^3 + Ax^2 + Bx
+                        | then for #[m Q = (x_0, y_0) \in E(K)].
+                        me 2Q = \left(\left( \frac {x_0 - B}{2y_0}\right)^2 , \ldots\right)
+                        | Hence if #[m 2Q = P  = (x_1, y_1)] then  #[m \sqrt{x_1} \in K(\frac 12 P)].
+                        | So if
+                        me E \colon y^2 = (x-\alpha)(x-\beta)(x-\gamma)
+                        | then
+                        me P = (x_2, y_2)
+                        | then
+                        me \sqrt{x_2 - \alpha} , \sqrt{x_2 - \beta} , \sqrt{x_2 - \gamma} \in K(\frac  12 P)
+                        me K(\sqrt{x_2 - \alpha}) , K(\sqrt{x_2 - \beta}) , K(\sqrt{x_2 - \gamma}) \subseteq K(\frac  12 P)
+                        me \implies K(\frac 12 P)  = K(\sqrt{x_2 - \alpha},\sqrt{x_2 - \beta} , \sqrt{x_2 - \gamma})
+
+        example
+            statement: p
+                | Let
+                me E \colon y^2 = x(x-1)(x+1)
+                | for #[m P \in E(\QQ), \QQ(\frac 12 P ) / \QQ] can only ramify at 2.
+                me \QQ(\frac 12 P ) \subseteq \QQ(i, \sqrt2)
+                me P = (x_0, y_0) \mapsto x_0, x_0 - 1, x_0 + 1 \in \QQ^\times/ {\QQ^\times}^2
+                | is a  homomorphism so #[m x_0 , x_0  -1 , x_0 + 1 ] are #[m \pm 1, \pm 2] up to square.
+
+
+                table
+                    caption Images
+                    tabular(top="major",left="major",right="major",bottom="major")
+                        | #[col(right="minor")/] #[col(right="minor")/] #[col(right="minor")/] #[col/]
+                        row(bottom="minor") #[cell: m x_0] #[cell: m x_0 - 1] #[cell: m x_0 + 1] #[cell rat?]
+                        row #[cell 1] #[cell 1] #[cell 1] #[cell 1) rat]
+                        row #[cell 1] #[cell -1] #[cell -1] #[cell 2) non-rat]
+                        row #[cell 1] #[cell 2] #[cell 2] #[cell 1) rat]
+                        row #[cell 1] #[cell -2] #[cell -2] #[cell 2) non-rat]
+                        row #[cell -1] #[cell 1] #[cell -1] #[cell 2) non-rat]
+                        row #[cell -1] #[cell -1] #[cell 1] #[cell 1) rat]
+                        row #[cell -1] #[cell 2] #[cell -1] #[cell 2) non-rat]
+                        row #[cell -1] #[cell -2] #[cell 2] #[cell 1) rat]
+                        row #[cell 2] #[cell 1] #[cell 2] #[cell 3) non-rat]
+                        row #[cell 2] #[cell -1] #[cell -2] #[cell 2) non-rat]
+                        row #[cell 2] #[cell 2] #[cell 1] #[cell 4) rat]
+                        row #[cell 2] #[cell -2] #[cell -1] #[cell 2) non-rat]
+                        row #[cell -2] #[cell 1] #[cell -2] #[cell rat]
+                        row #[cell -2] #[cell -1] #[cell 2] #[cell rat]
+                        row #[cell -2] #[cell 2] #[cell -1] #[cell rat]
+                        row #[cell -2] #[cell -2] #[cell 1] #[cell rat]
+                | 1) The 2-torsion points #[m P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)] give us some rows.
+                | 2) As we have #[m x_0 \gt -1] we get #[m x_0 + 1 \gt 0] so #[m x_0(x_0 - 1) \gt 0] for the product to be a square (and hence #[m \gt 0]).
+                | 3) #[m x_0 = 2A^2], #[m x_0-1 = B^2], #[m x_0 + 1 = 2C^2] with #[m A,B,C \in \QQ \smallsetminus \{ 0\}].
+                | Let #[m A = m/n] so #[m 2m^2/ n^2 - 1 = B^2]
+                me 2m^2 - n^2 = (Bn)^2
+                |and
+                me 2m^2+ n^2 = 2(Cn)^2
+                | if #[m m \equiv 0(2) \implies -1 = \square \pmod 8] a contradiction.
+                me m \equiv 1 \pmod2 \implies m^2 \equiv1 \pmod 8
+                |.
+                | So #[m 2 - n^2 = \square \pmod 8 \implies n^2 \equiv1 \pmod 8]
+                me 2 + n^2 = 2\square \pmod 8 \implies n^2 \equiv 0 \pmod 8
+                me |E(\QQ) / 2 E(\QQ)| = 4
+                me | E(\QQ)[2]| = 4 \implies \rk = 0
+                me E(\QQ) \cong  E(\QQ) [2 ]
+                | .
+                | 4) Use the group structure!
+
+        theorem
+            title Complete 2-decent
+            statement: p
+                | Let #[m K] be a field of characteristic 0 and
+                me E \colon y^2 = (x-\alpha)(x-\beta)(x-\gamma),\,\alpha,\beta,\gamma \text{ distinct}
+                |. The map
+                me P \mapsto (x_0 - \alpha, x_0 - \beta, x_0 - \gamma)
+                | replacing #[m x_0 -\alpha] with  #[m (x_0 - \beta) (x_0 - \gamma)] if 0.
+                me E(K) / 2E(K) \to (K^\times/ {K^\times}^2) ^3
+                | Triples #[m (a,b,c)] that lie in the image satisfy #[m abc \in {K^\times}^2].
+                | A triple #[m a,b,c] with #[m abc \in {K^\times}^2] lies in the image iff
+                | it is in the image of #[m E(K)\lb 2\rb] or
+                me cz_3^2 - \alpha + \gamma = az_1^2
+                me cz_3^2 - \beta + \gamma = bz_1^2
+                | is soluble with #[m z_i \in K^\times].
+                | In which case
+                me P = (az_1^2 + \alpha, \sqrt{abc}, z_1z_2z_3) \mapsto (a,b,c)
+                | iii) If #[m K] is a number field and #[m (a,b,c)] is in the image then
+                me K(\sqrt{a}, \sqrt{b}, \sqrt{c}) / K
+                | only ramifies at primes dividing #[m 2(\alpha - \beta)(\alpha - \gamma)(\beta - \gamma)].
+        exercise
+            statement: p
+                me E \colon y^2 = x(x-5)(x+5)
+                | .

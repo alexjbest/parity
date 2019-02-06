@@ -1,0 +1,35 @@
+doctype xml
+
+mathbook
+
+    docinfo
+        latex-preamble
+            package xypic
+            package newpxtext
+            package newpxmath
+            package cancel
+
+
+        include ./macros.pug
+
+        feedback: url https://github.com/alexjbest/parity/issues
+
+        initialism PAR
+
+        analytics: google: tracking UA-48250536-1
+
+        rename(element="inlineexercise" lang="en-US") Exercise
+
+        //latex-image-preamble \usepackage{tikz}
+
+    article#parity
+        title Parity
+        subtitle MA842 at BU Spring 2019
+
+        frontmatter
+            titlepage
+                author: personname Céline Maistret
+
+                date: today/
+
+        include ./parity.pug
