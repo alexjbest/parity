@@ -90,13 +90,14 @@ section#sec-parity
                         me \implies K(\frac 12 P)  = K(\sqrt{x_2 - \alpha},\sqrt{x_2 - \beta} , \sqrt{x_2 - \gamma})
 
         example
-            statement: p
-                | Let
-                me E \colon y^2 = x(x-1)(x+1)
-                | for #[m P \in E(\QQ), \QQ(\frac 12 P ) / \QQ] can only ramify at 2.
-                me \QQ(\frac 12 P ) \subseteq \QQ(i, \sqrt2)
-                me P = (x_0, y_0) \mapsto x_0, x_0 - 1, x_0 + 1 \in \QQ^\times/ {\QQ^\times}^2
-                | is a  homomorphism so #[m x_0 , x_0  -1 , x_0 + 1 ] are #[m \pm 1, \pm 2] up to square.
+            statement
+                p
+                    | Let
+                    me E \colon y^2 = x(x-1)(x+1)
+                    | for #[m P \in E(\QQ), \QQ(\frac 12 P ) / \QQ] can only ramify at 2.
+                    me \QQ(\frac 12 P ) \subseteq \QQ(i, \sqrt2)
+                    me P = (x_0, y_0) \mapsto x_0, x_0 - 1, x_0 + 1 \in \QQ^\times/ {\QQ^\times}^2
+                    | is a  homomorphism so #[m x_0 , x_0  -1 , x_0 + 1 ] are #[m \pm 1, \pm 2] up to square.
 
 
                 table
@@ -120,23 +121,24 @@ section#sec-parity
                         row #[cell -2] #[cell -1] #[cell 2] #[cell rat]
                         row #[cell -2] #[cell 2] #[cell -1] #[cell rat]
                         row #[cell -2] #[cell -2] #[cell 1] #[cell rat]
-                | 1) The 2-torsion points #[m P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)] give us some rows.
-                | 2) As we have #[m x_0 \gt -1] we get #[m x_0 + 1 \gt 0] so #[m x_0(x_0 - 1) \gt 0] for the product to be a square (and hence #[m \gt 0]).
-                | 3) #[m x_0 = 2A^2], #[m x_0-1 = B^2], #[m x_0 + 1 = 2C^2] with #[m A,B,C \in \QQ \smallsetminus \{ 0\}].
-                | Let #[m A = m/n] so #[m 2m^2/ n^2 - 1 = B^2]
-                me 2m^2 - n^2 = (Bn)^2
-                |and
-                me 2m^2+ n^2 = 2(Cn)^2
-                | if #[m m \equiv 0(2) \implies -1 = \square \pmod 8] a contradiction.
-                me m \equiv 1 \pmod2 \implies m^2 \equiv1 \pmod 8
-                |.
-                | So #[m 2 - n^2 = \square \pmod 8 \implies n^2 \equiv1 \pmod 8]
-                me 2 + n^2 = 2\square \pmod 8 \implies n^2 \equiv 0 \pmod 8
-                me |E(\QQ) / 2 E(\QQ)| = 4
-                me | E(\QQ)[2]| = 4 \implies \rk = 0
-                me E(\QQ) \cong  E(\QQ) [2 ]
-                | .
-                | 4) Use the group structure!
+                p
+                    | 1) The 2-torsion points #[m P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)] give us some rows.
+                    | 2) As we have #[m x_0 \gt -1] we get #[m x_0 + 1 \gt 0] so #[m x_0(x_0 - 1) \gt 0] for the product to be a square (and hence #[m \gt 0]).
+                    | 3) #[m x_0 = 2A^2], #[m x_0-1 = B^2], #[m x_0 + 1 = 2C^2] with #[m A,B,C \in \QQ \smallsetminus \{ 0\}].
+                    | Let #[m A = m/n] so #[m 2m^2/ n^2 - 1 = B^2]
+                    me 2m^2 - n^2 = (Bn)^2
+                    |and
+                    me 2m^2+ n^2 = 2(Cn)^2
+                    | if #[m m \equiv 0(2) \implies -1 = \square \pmod 8] a contradiction.
+                    me m \equiv 1 \pmod2 \implies m^2 \equiv1 \pmod 8
+                    |.
+                    | So #[m 2 - n^2 = \square \pmod 8 \implies n^2 \equiv1 \pmod 8]
+                    me 2 + n^2 = 2\square \pmod 8 \implies n^2 \equiv 0 \pmod 8
+                    me |E(\QQ) / 2 E(\QQ)| = 4
+                    me | E(\QQ)[2]| = 4 \implies \rk = 0
+                    me E(\QQ) \cong  E(\QQ) [2 ]
+                    | .
+                    | 4) Use the group structure!
 
         theorem
             title Complete 2-decent
@@ -162,3 +164,169 @@ section#sec-parity
             statement: p
                 me E \colon y^2 = x(x-5)(x+5)
                 | .
+
+        aside: p Lecture 5 7/2/2018
+
+        p
+            | Recall:
+            me \phi \colon E(K)/2E(K) \to \Hom_{cts}(G_K, E(K) [2])
+            me P \mapsto \phi_P
+            | where #[m \phi_P \colon \sigma \mapsto Q^\sigma - Q] where #[m Q = 2P].
+            | Which is well-defined and injective.
+        p
+            | Elements of
+            me \Hom_{cts}(G_K, E[2]) \leftrightarrow a,b,c \in (K^\times / {K^\times}^2) \text{ s.t. } abc \in {K^\times}^2
+            me (x_0,y_0) \mapsto (x_0 - \alpha, x_0 - \beta, x_0  -\gamma)
+            | .
+        lemma
+            statement: p
+                | Let #[m n \ge 1]
+                ol
+                    li
+                        me \psi \colon E(K)/ nE(K) \to \{ K \subseteq F \subseteq \overline K\}
+                        me P\mapsto K(\frac 1n P, E[n])
+
+                        | is well defined.
+                    li
+                        | #[m K(\frac 1n P, E\lb n \rb ) / K] only ramifies at #[m \ideal p | n \Delta_E].
+                    li
+                        me \Gal{K(\frac 1n P, E [n] )}{K} \le \ZZ/n \times \ZZ/n
+                    li
+                        | There are only finitely many fields satisfying 2. and 3. so #[m \image \psi] is finite.
+
+        p
+            | To do descent, need more than #[m \psi] (i.e. injection).
+
+        definition
+            statement: p
+                | Let #[m G] be a group and  #[m M] a #[m G]-module then let
+                me H^0(G, M) = M^G = \{m \in M : gm = m \forall g\in G\}
+                me H^1(G, M) = \{\text{skew homs } G \to M\}/\{\text{skew homs } G \to M \text{ of the form }g\mapsto g(t) - t,\, t\in M\}
+                | .
+
+        remark
+            p
+                | If #[m G] acts trivially on #[m M] then
+                me H^0(G, M) = M
+                me H^1(G, M) = \Hom(G,M)
+                | .
+            p
+                | When #[m G] is profinite then we want that the skew homomorphisms factor through finite Galois  groups.
+                | We will prove that
+                me E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])
+                | .
+
+        theorem
+            statement: p
+                | If
+                me 0 \to A \to B \to C \to 0
+                | is an exact sequence of #[m G]-modules then
+                me 0 \to H^0(G,A)\to H^0(G,B)\to H^0(G,C)\to H^1(G,A)\to H^1(G,B)\to H^1(G,C)
+                | .
+
+        lemma
+            statement: p
+                ol
+                    li
+                        | #[m \psi] is finite-to-one (gives Mordell-Weil)
+                    li
+                        | Let
+                        me \phi_P \colon G_K \to E[n]
+                        me \phi_P (gh) = \phi_P(g) + g \phi_P(h)
+                        | is a skew (or crossed) homomorphism.
+                        | If #[m (\frac 1n P ) '] is another choice of #[m \frac 1n P] and #[m \phi_P'] is the corresponding skew homomorphism, then
+                        me \phi_P - \phi_P '
+                        | is of the form
+                        me g\mapsto T \ominus gT
+                        | where #[m T \in  E\lb n\rb].
+                    li
+                        | #[m \phi_P] factors through
+                        me \Gal{K(\frac 1n P, E\lb n \rb)}{K}
+                        |.
+                    li
+                        me \phi\colon E(K) / nE(K) \to Z/B
+                        me P \mapsto \phi_P
+                        | is an injective homomorphism.
+                        | Where
+                        me Z = \{\text{skew homs } G_K \to E[n]\}
+                        me B = \{\text{skew homs } G_K \to E[n] \text{ of the form }g\mapsto T\ominus gT,\,T\in E\lb n\rb\}
+                        |.
+        proof
+            p
+                ol
+                    li
+                        | There are finitely many skew homomorphisms
+                        me \Gal{K(\frac 1nP, E[n])}{K} \to E[n]
+                        | and by 4.
+                        me P \mapsto \{\phi_P, K(\frac 1n P, E\lb n \rb)\}
+                        | is injective.
+                        | So #[m \psi\colon P\mapsto K(\frac 1n P, E\lb n \rb)] is finite to one by 3.
+                    li
+                        me \phi_P(gh) = \frac 1n P \ominus gh \frac 1n P
+                        me = \left((\frac 1n P) \ominus g(\frac 1n P)\right) \oplus \left( g(\frac 1n P) \ominus g(h(\frac 1n P))\right)
+                        me = \phi_P \oplus g(\phi_P(h))
+                        | .
+                        | Remark: If #[m E\lb n \rb \subseteq E(K)] then #[m \phi_P] is a homomorphism.
+                        | Recall for #[m n=2]
+                        me \phi_P(gh) = \frac 12 P \ominus gh(\frac 12 P)
+                        me  = \frac12 P \ominus h(\frac 12P) \oplus h(\frac 12 P) \ominus g(h( \frac 12 P))
+                        me = \phi_P(h) \oplus \phi_P(g)
+                        | since #[m 2h(\frac 12 P) = h(P)= P].
+                        | Consider now
+                        me \frac 1n P = \frac 1n P'  \oplus T
+                        | for some #[m T\in E\lb n \rb]
+                        me (\phi_P \ominus \phi_{P}')(g) = \phi_P(g)  - \phi_{P}'(g) =  \frac 1n P \ominus g(\frac 1n P) - [(\frac 1n P ) \oplus T \ominus g(\frac 1n P) \oplus gT]
+                        me =T \ominus gT
+                        | .
+
+        p
+            | Take #[m G= G_K], #[m B = E(\overline K), A= E[n], C = E(\overline K)] to get
+            me 0 \to E[n] \to E(\overline K) \xrightarrow{\cdot n} E(\overline K) \to 0
+            | which gives the long exact sequence
+            me 0 \to E(K)[n] \to E(K) \xrightarrow{\cdot n} E(K) \xrightarrow{\delta} H^1(G_K, E[n]) \to H^1(G_K, E(\overline K)) \to
+            me \implies E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])
+            | .
+        p
+            | Problem:
+            me H^1(G_K, E[n])
+            | is infinite.
+            | What subgroup of
+            me H^1(G_K, E[n])
+            | do we land in?
+
+
+        p
+            | Notation:
+            | When #[m v] is a place of #[m K] we have #[m G_{K_v} \subseteq G_K], for any module #[m M] have #[m M^{G_K} \le M^{G_{K_v}}] and
+            me \Res \colon H^1(G_K, E[n]) \to H^1 (G_{K_v} , E[n])
+            | .
+        p
+            | We have from the theorem
+            me.
+                \xymatrix{
+                0 \ar[r] &amp; E(K)/ nE(K) \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K)) \ar[d]^{\Res}\ar[r]&amp;\\
+                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v H^1(G_{K_v}, E(\overline K)) \ar[r]&amp;
+                }
+            | we want to understand #[m \image \delta] i.e. the subgroup
+            me \ker \{ H^1(G_K, E[n]) \to H^1 (G_K, E(\overline K))\}
+            | this is as hard as finding #[m E(K)], here is why:
+        claim
+            statement: p
+                me H^1(G_K, E(\overline K))
+                | corresponding to principal homogeneous spaces for #[m E] (genus 1 curves whose jacobian is #[m E])
+        p
+            | Finding
+            me \ker \{ H^1(G_K, E[n]) \to H^1 (G_K, E(\overline K))\}
+            | is equivalent to finding which PHS coming from #[m H^1] have a rational point.
+            | ??? Hensels lemma
+
+        p
+            | Let #[m C] be a curve
+            me \operatorname{Isom}(C) \leftrightarrow C(\overline K) \times \Aut(c)
+            me \tau_p \circ \alpha \leftrightarrow (P,\sigma)
+            me \operatorname{Twist}(E/K) \leftrightarrow H^1(G_K, \operatorname{Isom}(C))
+            me C\simeq_{\overline K} E
+            me PHS \leftrightarrow H^1(G_K, E(\overline K))
+            | #[m C] is a PHS for #[m E] iff #[m E] is the jacobian of #[m C].
+
+
