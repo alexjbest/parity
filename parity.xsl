@@ -13,7 +13,6 @@
 <xsl:include href="filter.xsl"/>
 
 <xsl:output method="html" />
-<xsl:param name="html.css.colorfile" select="'mathbook-4.css'"/>
 <xsl:param name="html.css.extra" select="'https://alexjbest.github.io/css/pretext.css'"/>
 
 <xsl:param name="html.knowl.example" select="'no'" />
