@@ -1,5 +1,5 @@
-section#sec-parity
-    title Parity
+section#sec-parity-mw
+    title Mordell-Weil groups
 
     introduction
         p.
@@ -117,10 +117,10 @@ section#sec-parity
                         row #[cell 2] #[cell -1] #[cell -2] #[cell 2) non-rat]
                         row #[cell 2] #[cell 2] #[cell 1] #[cell 4) rat]
                         row #[cell 2] #[cell -2] #[cell -1] #[cell 2) non-rat]
-                        row #[cell -2] #[cell 1] #[cell -2] #[cell rat]
-                        row #[cell -2] #[cell -1] #[cell 2] #[cell rat]
-                        row #[cell -2] #[cell 2] #[cell -1] #[cell rat]
-                        row #[cell -2] #[cell -2] #[cell 1] #[cell rat]
+                        row #[cell -2] #[cell 1] #[cell -2] #[cell ?]
+                        row #[cell -2] #[cell -1] #[cell 2] #[cell ?]
+                        row #[cell -2] #[cell 2] #[cell -1] #[cell ?]
+                        row #[cell -2] #[cell -2] #[cell 1] #[cell ?]
                 p
                     | 1) The 2-torsion points #[m P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)] give us some rows.
                     | 2) As we have #[m x_0 \gt -1] we get #[m x_0 + 1 \gt 0] so #[m x_0(x_0 - 1) \gt 0] for the product to be a square (and hence #[m \gt 0]).
@@ -306,8 +306,8 @@ section#sec-parity
             | We have from the theorem
             me.
                 \xymatrix{
-                0 \ar[r] &amp; E(K)/ nE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K)) \ar[d]^{\Res}\ar[r]&amp;0\\
-                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v H^1(G_{K_v}, E(\overline K)) \ar[r]&amp;0
+                0 \ar[r] &amp; E(K)/ nE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K))[m] \ar[d]^{\Res}\ar[r]&amp;0\\
+                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v H^1(G_{K_v}, E(\overline K))[m] \ar[r]&amp;0
                 }
             | we want to understand #[m \image \delta] i.e. the subgroup
             me \ker \{ H^1(G_K, E[n]) \to H^1 (G_K, E(\overline K))\}
@@ -335,8 +335,8 @@ section#sec-parity
         p
             me.
                 \xymatrix{
-                0 \ar[r] &amp; E(K)/ nE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K)) \ar[d]^{\Res}\ar[r]&amp;0\\
-                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v H^1(G_{K_v}, E(\overline K)) \ar[r]&amp;0
+                0 \ar[r] &amp; E(K)/ nE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K))[m] \ar[d]^{\Res}\ar[r]&amp;0\\
+                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v H^1(G_{K_v}, E(\overline K))[m] \ar[r]&amp;0
                 }
         definition#def-twist-curve
             title Twists of curves
@@ -533,3 +533,150 @@ section#sec-parity
                 C \ar[r]^\mu &amp; E \ar[d]_P \\
                 C' \ar[r]^{\mu^\alpha} &amp; E'
                 }
+
+        aside: p Lecture 7 21/2/2018
+
+        example
+            statement: p
+                | #[m E/K] and #[m K (\sqrt d)/K] a quadratic extension.
+                | Let #[m T \in E(K)] be a non-trivial point of order 2.
+                | Then #[m \xi\colon G_K \to E]
+                me.
+                    \sigma \mapsto
+                    \begin{cases}
+                    0 \amp\text{ if } (\sqrt d)^\sigma = \sqrt d,\\
+                    T \amp\text{ if } (\sqrt d)^\sigma = -\sqrt d.
+                    \end{cases}
+                |.
+                | We construct the PHS corresponding to #[m \{\xi \} \in H^1(G_K, E(\overline K))].
+                | Since #[m T \in E(K)] can choose a Weierstraß equation for #[m E/K]
+                me E\colon y^2 = x^3 + ax^2 + bx \text{ with } T = (0,0)
+                | then the translation by #[m T] map is given by
+                me \tau_T(P) = (x,y) + (0,0) = \left(\frac bx, -\frac{by}{x^2}\right)
+                | for
+                me P = (x,y)
+                | .
+                | Thus if #[m \sigma \in G_K] is non-trivial, #[m \sigma] acts on #[m \overline K(E)_\xi], which is isomorphic to #[m \overline K(E)] but #[m \absgal K] action is twisted by #[m \xi], i.e. #[m x^\id \mapsto (x^\id)^\sigma].
+                me (\sqrt d )^\sigma = -\sqrt d
+                me x^\sigma = \frac bx ,\, y^\sigma = -\frac{by}{x^2}
+                | need to find the subfield of  #[m K(\sqrt d)(x,y)_\xi] fixed by #[m \sigma].
+                | Note:
+                me \frac{\sqrt d x}{y},\,\sqrt d \left(x  -\frac bx\right)
+                | are invariant, take
+                me z = \frac{\sqrt d x }{y},\,w = \sqrt d\left( x - \frac bx\right)\left(\frac xy\right)^2
+                | and find relations between #[m z] and #[m w] to get
+                me C \colon dw^2 = d^2 - 2a dz^2 + (a^2 - 4b) z^4
+                | .
+                | Claim: #[m C/K] is the PHS of #[m E/K] corresponding to #[m \left\{\xi\right\}].
+                | There is a natural map
+                me \phi \colon E \to C
+                me (x,y) \mapsto (z,w)
+                me (x,y) \mapsto \left( \frac{ \sqrt d y}{x^2 + ax + b}, \frac{\sqrt d (x^2 - b)}{x^2 + ax + b}\right)
+                | so that
+                me \phi (0,0) = (0,-\sqrt d)
+                me \phi (0) = (0,\sqrt d)
+                ul
+                    li
+                        | Prove that #[m \phi ] is an isomorphism so #[m C] is a twist.
+                    li
+                        | #[m C] is the PHS corresponding to #[m \{\xi\}].
+                        | Take #[m p \in C ] and compute
+                        me \sigma\mapsto p^\sigma - p = \phi\inv(p^\sigma) - \phi\inv (p)
+                        | for example let #[m p = (0,\sqrt d) \in C], if #[m \sigma = \id] then #[m p^\sigma - p = 0 - 0 = 0].
+                        | If #[m \sigma = -\id] then #[m p^\sigma - p = T - 0 = T].
+
+
+        p
+            | Back to Selmer, we want to have the image of our weak Mordell-Weil land in something finite.
+            me.
+                \xymatrix{
+                0 \ar[r] &amp; E(K)/ mE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[m]) \ar[d]^{\Res} \ar[r] &amp; WC(E/K)[m] \ar[d]^{\Res}\ar[r]&amp;0 \\
+                0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v WC (E/ K_v)[m]               \ar[r]&amp;0
+                }
+
+        definition#def-m-selmer
+            title #[m m]-Selmer groups
+            statement: p
+                | The #[m m]-Selmer group of #[m E/K] is the subgroup of
+                me H^1(G_K, E[m])
+                | defined by
+                me \Sel^m(E/K) = \ker \left\{H^1(G_K, E[m]) \to \prod_v WC(E/K_v) \right\}
+                | .
+
+        definition#def-sha
+            title The Shafarevich-Tate group
+            statement: p
+                | The #[term Shafarevich-Tate] group of #[m E/K] is the subgroup of
+                me WC(E/K)
+                | defined by
+                me \Sha(E/K) = \ker\left\{WC(E/K) \to\prod_v WC(E/K_v)\right\}
+                | .
+
+        theorem
+            statement: p
+                | There is an exact sequence
+                ol
+                    li
+                        me 0 \to E(K)/mE(K) \to \Sel^m(E/K)  \to \Sha(E/K)[m] \to 0
+                    li
+                        | #[m \Sel^m(E/K)] is finite.
+
+    subsection#subsec-p-inf-selmer
+        title #[m p^\infty]-Selmer and the structure of #[m \Sha]
+
+        p
+            | #[m H^1(G_K, E(\overline K))] is torsion for general galois cohomological reasons.
+            | So
+            me \Sha (E/K) \subseteq H^1(G_K, E(\overline K))
+            | is torsion.
+        p
+            | So we may write
+            me \Sha(E/K) = \bigoplus_p \Sha_{p^\infty}(E/K)
+            | where for each prime #[m p]
+            me \Sha_{p^\infty} (E/K)
+            | denotes the #[m p]-primary part of #[m \Sha(E/K)].
+            | (i.e. the subgroup of elements whose order is a power of #[m p].)
+            | By descent
+            me \Sha (E/K) [ m] \text{ is finite for all } m \ge 1
+            | .
+        p
+            | So
+            me \Sha_{p^\infty} (E/K) \cong (\QQ_p/\ZZ_p)^{\delta_p} \oplus T_p,\, \delta_p \in \ZZ_{\ge 0}
+            | where #[m T_p] is a finite abelian #[m p]-group.
+            me T_p \cong \ZZ/p^{s_1} \ZZ \oplus \cdots \oplus \ZZ/p^{s_l} \ZZ,\,s_i\in \ZZ_{\ge 0}
+            | .
+            | The group
+            me \bigoplus_p (\QQ_p/\ZZ_p)^{\delta_p}\subseteq \Sha (E/K)
+            | is called the infinitely divisible subgroup of #[m \Sha] denoted #[m \Sha_{div}].
+        p
+            | The conjecture that #[m \Sha] is finite implies #[m \delta_p = 0] for all #[m p].
+            | And #[m T_p \ne 0 ] for only finitely many #[m p].
+        p
+            | There is a pairing called the Cassels-Tate pairing
+            me \Sha(E/K) \times \Sha(E/K) \to \QQ/\ZZ
+            | which is bilinear and alternating, and the kernel on either side is the infinitely divisible group.
+            | If #[m \Sha(E/K)] is finite then the pairing is non-degenerate and hence
+            me |\Sha(E/K)| = \square    \in \ZZ
+            | .
+
+        definition#def-p-inf-selmer
+            title #[m p^\infty]-Selmer group
+            statement: p
+                | Consider #[m \Sel_{p^n}(E/K)] and take the direct limit
+                me \varinjlim_n \Sel_{p^n}(E/K)
+                | to define the #[m p^\infty]-Selmer group.
+
+        p
+            | One shows that
+            me X_p(E/K) = \Hom_{\ZZ_p} (\varinjlim_n \Sel_{p^n}(E/K), \QQ_p/\ZZ_p)
+            | called the Pontyragin dual of the #[m p^\infty] Selmer group is a finitely generated #[m \ZZ_p]-module.
+            | The associated #[m \QQ_p]-vector space, denoted #[m \mathcal X_p(E/K) =X_p(E/K) \otimes_{\ZZ_p} \QQ_p] has dimension #[m \rk_p].
+
+        definition#def-p-inf
+            statement: p
+                | #[m \rk_p] is called the #[m p^\infty]-Selmer rank of #[m E/K] and satisfies
+                me \rk_p = \rk(E/K) + \delta_p
+                | .
+        p
+            | So if #[m \Sha] is finite then #[m \delta_p =0] for all #[m p].
+            | Use BSD to compute parity of #[m \rk_p].
