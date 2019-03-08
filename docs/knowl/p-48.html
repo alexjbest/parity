@@ -12,12 +12,61 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The collection of equivalence classes of PHS for \(E/K\) is called the Weil-Châtelet group, denoted</p>
+<ol class="decimal">
+<li>There are finitely many skew homomorphisms<div class="displaymath">
+\begin{equation*}
+\Gal{K(\frac 1nP, E[n])}{K} \to E[n]
+\end{equation*}
+</div>and by 4.<div class="displaymath">
+\begin{equation*}
+P \mapsto \{\phi_P, K(\frac 1n P, E\lb n \rb)\}
+\end{equation*}
+</div>is injective. So \(\psi\colon P\mapsto K(\frac 1n P, E\lb n \rb)\) is finite to one by 3.</li>
+<li>
 <div class="displaymath">
 \begin{equation*}
-WC(E/K)\text{.}
+\phi_P(gh) = \frac 1n P \ominus gh \frac 1n P
 \end{equation*}
 </div>
+<div class="displaymath">
+\begin{equation*}
+= \left((\frac 1n P) \ominus g(\frac 1n P)\right) \oplus \left( g(\frac 1n P) \ominus g(h(\frac 1n P))\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \phi_P \oplus g(\phi_P(h))\text{.}
+\end{equation*}
+</div>Remark: If \(E\lb n \rb \subseteq E(K)\) then \(\phi_P\) is a homomorphism. Recall for \(n=2\)<div class="displaymath">
+\begin{equation*}
+\phi_P(gh) = \frac 12 P \ominus gh(\frac 12 P)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \frac12 P \ominus h(\frac 12P) \oplus h(\frac 12 P) \ominus g(h( \frac 12 P))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \phi_P(h) \oplus \phi_P(g)
+\end{equation*}
+</div>since \(2h(\frac 12 P) = h(P)= P\text{.}\) Consider now<div class="displaymath">
+\begin{equation*}
+\frac 1n P = \frac 1n P'  \oplus T
+\end{equation*}
+</div>for some \(T\in E\lb n \rb\)<div class="displaymath">
+\begin{equation*}
+(\phi_P \ominus \phi_{P}')(g) = \phi_P(g)  - \phi_{P}'(g) =  \frac 1n P \ominus g(\frac 1n P) - [(\frac 1n P ) \oplus T \ominus g(\frac 1n P) \oplus gT]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=T \ominus gT\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="sec-parity-mw.html#p-48">in-context</a></span>
 </body>
 </html>

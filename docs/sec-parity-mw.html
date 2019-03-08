@@ -42,7 +42,7 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -55,6 +55,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
+var js_version = 0.11;
 </script>
 </head>
 <body class="mathbook-article has-toc has-sidebar-left">
@@ -271,7 +272,6 @@ var login_required = false;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="frontmatter-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="parity.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="frontmatter-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="parity.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
@@ -281,10 +281,7 @@ var login_required = false;
 <nav id="toc"><ul>
 <li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
 <li class="link active">
-<a href="sec-parity-mw.html" data-scroll="sec-parity-mw"><span class="codenumber">1</span> <span class="title">Mordell-Weil groups</span></a><ul>
-<li><a href="sec-parity-mw.html#subsec-mordell-weil" data-scroll="subsec-mordell-weil">Mordell-Weil</a></li>
-<li><a href="sec-parity-mw.html#subsec-p-inf-selmer" data-scroll="subsec-p-inf-selmer">\(p^\infty\)-Selmer and the structure of \(\Sha\)</a></li>
-</ul>
+<a href="sec-parity-mw.html" data-scroll="sec-parity-mw"><span class="codenumber">1</span> <span class="title">Mordell-Weil groups</span></a><ul><li><a href="sec-parity-mw.html#subsec-ec-ranks" data-scroll="subsec-ec-ranks">Elliptic curves and their ranks</a></li></ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/parity/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
@@ -293,26 +290,254 @@ var login_required = false;
 </h2>
 <a href="sec-parity-mw.html" class="permalink">¶</a><section class="introduction" id="introduction-1"><p id="p-1">These are notes for Céline Maistret's course MA842 at BU Spring 2019.</p>
 <p id="p-2">The course webpage is <a class="external" href="https://sites.google.com/view/cmaistret/teaching#h.p_BYGoPzU848FJ" target="_blank"><code class="code-inline tex2jax_ignore">https://sites.google.com/view/cmaistret/teaching#h.p_BYGoPzU848FJ</code></a>.</p>
-<p id="p-3">Course overview:</p>
-<p id="p-4">Main references that we will be following:</p>
+<aside class="aside-like" id="aside-1"><p id="p-3">Lecture 1 22/1/2018</p></aside><p id="p-4">Outline</p>
 <ol class="decimal">
-<li id="li-1">Vladimir Dokchitser - Notes?</li>
-<li id="li-2">Silverman - Arithmetic of Elliptic Curves</li>
-<li id="li-3">Milne - Abelian Varieties?</li>
-</ol></section><section class="subsection" id="subsec-mordell-weil"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.1</span> <span class="title">Mordell-Weil</span>
+<li id="li-1">
+<p id="p-5">Elliptic curves and their ranks</p>
+<ol class="lower-alpha">
+<li id="li-2">
+<p id="p-6">Background</p>
+<ol class="lower-roman">
+<li id="li-3">Mordell Weil theorem (state and prove) (ANT and cohomological proof)</li>
+<li id="li-4">Non-effectivity</li>
+<li id="li-5">Computing the rank (descent)</li>
+</ol>
+</li>
+<li id="li-6">
+<p id="p-7">The Birch and Swinnerton-Dyer conjecture</p>
+<ol class="lower-roman">
+<li id="li-7">Heuristic via counting points omn the reduced curve</li>
+<li id="li-8">\(L\)-functions</li>
+<li id="li-9">BSD-1</li>
+<li id="li-10">Local arithmetic invariants and BSD-2</li>
+</ol>
+</li>
+<li id="li-11">
+<p id="p-8">Parity of ranks</p>
+<ol class="lower-roman">
+<li id="li-12">Isogeny invariants of BSD 2</li>
+<li id="li-13">Galois representations and local root numbers</li>
+<li id="li-14">The parity conjecture</li>
+</ol>
+</li>
+</ol>
+</li>
+<li id="li-15">
+<p id="p-9">Abelian surfaces</p>
+<ol class="lower-alpha">
+<li id="li-16">Background on genus 2 curves and their Jacobians</li>
+<li id="li-17">BSD in this case</li>
+<li id="li-18">Computability of local arithmetic invariants</li>
+<li id="li-19">Parity conjecture</li>
+</ol>
+</li>
+</ol>
+<p id="p-10">Evaluation, none, when not around will give exercise/project, if you come regularly and do a computation you pass.</p>
+<p id="p-11">Main references that we will be following:</p>
+<ol class="decimal">
+<li id="li-20">Vladimir Dokchitser - Lecture course</li>
+<li id="li-21">Silverman - Arithmetic of Elliptic Curves</li>
+<li id="li-22">Milne - Abelian Varieties?</li>
+</ol></section><section class="subsection" id="subsec-ec-ranks"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1</span> <span class="title">Elliptic curves and their ranks</span>
 </h3>
-<a href="sec-parity-mw.html#subsec-mordell-weil" class="permalink">¶</a><aside class="aside-like" id="aside-1"><p id="p-5">Lecture 4 5/2/2018</p></aside><article class="remark-like" id="remark-1"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">1.1</span>.</h6>
-<p id="p-6">A homomorphism \(\phi \colon \absgal{K} \to G\) for a finite group \(G\) is continuous if it comes from a finite Galois extension, i.e.</p>
+<a href="sec-parity-mw.html#subsec-ec-ranks" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-12">Sources: Silverman I, V. Dokchitser's lectures.</p></section><section class="subsubsection" id="subsubsec-mordell-weil"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.1.1</span> <span class="title">Mordell-Weil</span>
+</h4>
+<a href="sec-parity-mw.html#subsubsec-mordell-weil" class="permalink">¶</a><p id="p-13">Let \(K\) be a number field and let \(E/K\) be an elliptic curve. The group \(E(K)\) is finitely generated.</p>
+<div class="displaymath">
+\begin{equation*}
+E(K) \simeq E(K)_{\text{tors}} \oplus \ZZ^r\text{.}
+\end{equation*}
+</div>
+<p>Where \(E(K)_{\text{tors}}\) is a finite subgroup and \(r\) is the rank, a non-negative integer.</p>
+<p id="p-14">Assuming that we can compute the torsion subgroup, computing the rank would completely determine \(E(K)\) and hence solve the associated diophantine problem.</p>
+<p id="p-15">Plan</p>
+<ol class="decimal">
+<li id="li-23">Understand the proof of Mordell-Weil</li>
+<li id="li-24">See where it is non-effective.</li>
+<li id="li-25">From the proof, extract a strategy to sometimes compute the rank (define Selmer groups, Shafarevich-Tate group).</li>
+</ol>
+<article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="title">Outline proof of Mordell-Weil.</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-16">Part 1: Prove that</p>
+<div class="displaymath">
+\begin{equation*}
+E(K)/mE(K)
+\end{equation*}
+</div>
+<p>is finite for some \(m \ge 2\text{.}\)</p>
+<p id="p-17">Part 2: use a descent argument with heights of points.</p></article></div>
+<p id="p-18">Of these two parts of the proof, part 1 is the challenging/interesting one.</p>
+<p id="p-19">For part 2: Assuming that</p>
+<div class="displaymath">
+\begin{equation*}
+E(K)/mE(K)
+\end{equation*}
+</div>
+<p>is finite and that \(E\) has a “height function” then \(E(K)\) is finitely generated.</p>
+<article class="theorem-like" id="thm-parity-descent-gp"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.1</span>. <span class="title">Descent theorem (see Thm. VIII 3.1).</span>
+</h6>
+<p id="p-20">Let \(A\) be an abelian group, suppose that there exists a function</p>
+<div class="displaymath">
+\begin{equation*}
+h \colon A \to \RR
+\end{equation*}
+</div>
+<p>with the following properties:</p>
+<ol class="decimal">
+<li id="li-26">Let \(Q \in A\) then there is a constant  \(c_1\) depending on \(Q\) and \(A\) such that<div class="displaymath">
+\begin{equation*}
+h(P+Q) = 2h(P) + c_1,\,\forall P \in A\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-27">There is an integer \(m \ge 2\) and a constant \(c_2\) depending on \(A\) s.t.<div class="displaymath">
+\begin{equation*}
+h(mP) \ge m^2 h(P) - c_2,\,\forall P\in A\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-28">For every constant \(c_3\text{,}\) the set<div class="displaymath">
+\begin{equation*}
+\{P\in A : h(P) \le c_3\}
+\end{equation*}
+</div>is finite.</li>
+</ol>
+<p>suppose further that for the \(m\) in \(2.\) we have \(A/mA\) is finite. Then \(A\) is finitely generated.</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-21">Choose elements \(Q_1, \ldots, Q_r\in A\) to represent the finitely many cosets in \(A/mA\text{.}\) Let \(P\) be a point in \(A\text{.}\) We show that \(P\) can be generated by \(Q_1, \ldots, Q_r\) plus a set of finitely many points of bounded height.</p>
+<p id="p-22">First write</p>
+<div class="displaymath">
+\begin{equation*}
+P = mP_1 + Q_{i_1}
+\end{equation*}
+</div>
+<p>for some \(1 \le i \le r\text{.}\) Repeat this for</p>
+<div class="displaymath">
+\begin{equation*}
+P_1 = m P_2 + Q_{i_2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P_2 = m P_3 + Q_{i_3}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\vdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P_{n-1} = m P_n + Q_{i_n}
+\end{equation*}
+</div>
+<p>by property 2. of \(h\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+h(P_j) \le \frac{1}{m^2} (h(m P_j) + c_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{m^2} (h(P_{j-1}) - Q_{i_j}) + c_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\le \frac{1}{m^2}(2 h(P_{j-1}) + c'_1 + c_2)
+\end{equation*}
+</div>
+<p>by 1. Where \(c'_1\) is the maximum of the constants from \(i\) for \(Q\) in \(\{-Q_1, \ldots, -Q_r\}\text{.}\) Note that \(c_1'\) and \(c_2\) do not depend on \(P\) and that \(h(P) \ge0\text{.}\) We repeat this inequality starting from \(P_n\) and working back to \(P\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+h(P_n) \le \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right))(c_1' + c_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=          \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right))(c_1' + c_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\lt        \left( \frac 2{m^2} \right)^n h(P) + \frac{c_1' + c_2}{m^2 - 2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\le        \frac 1{2^n} h(P) + \frac{c_1' + c_2}{2}\text{,}
+\end{equation*}
+</div>
+<p>since \(m \ge 2\text{.}\) Hence for \(n\)  sufficiently large (to make \(\frac 1{2^n} h(P) \le 1\)) we have</p>
+<div class="displaymath">
+\begin{equation*}
+h(P_n) \le 1 + \frac 12 (c_1' + c_2)\text{.}
+\end{equation*}
+</div>
+<p>Since \(P\) is a linear combination of \(P_n\) and \(Q_i\)</p>
+<div class="displaymath">
+\begin{equation*}
+P =  m^n  P_ n  + \sum_{j=1}^n m^{j-1} Q_{i_j}\text{,}
+\end{equation*}
+</div>
+<p>it follows that every \(P \in A\) is a linear combination of points in</p>
+<div class="displaymath">
+\begin{equation*}
+\{Q_1, \ldots, Q_r\}\cup \{Q \in A : h(Q) \le 1 + \frac 12 (c_1' + c_2) \}\text{.}
+\end{equation*}
+</div></article></div>
+<article class="remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.2</span>.</h6>
+<p id="p-23">On \(E/\QQ\) the height function</p>
+<div class="displaymath">
+\begin{equation*}
+h \colon E(\QQ) \to \QQ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto \begin{cases}
+\log(\max\{|p|,|q|\}),\,x(P) = \frac pq, \amp P\ne 0,\\
+0, \amp P= 0.
+\end{cases}
+\end{equation*}
+</div>
+<p>satisfies the conditions of <a data-knowl="./knowl/thm-parity-descent-gp.html" title="Theorem 1.1: Descent theorem (see Thm. VIII 3.1)">Theorem 1.1</a>.</p></article><article class="remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.3</span>.</h6>
+<p id="p-24">The above proof is effective. To find generators of \(E(\QQ)\) first compute \(c_1 = c_1(Q_i)\) for each \(i\text{,}\) then compute \(c_2\text{.}\) Find points of bounded height. Note that we need \(Q_1,\ldots ,Q_r\) to start with.</p></article><p id="p-25">It remains to show part 1:</p>
+<article class="theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.4</span>. <span class="title">Weak Mordell-Weil.</span>
+</h6>
+<p id="p-26">Let \(K\) be  a number field \(E/K\) an elliptic curve, \(m \ge 2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\#E(K)/mE(K) \lt \infty\text{.}
+\end{equation*}
+</div></article><p id="p-27">We will prove this under the assumption that \(E\lb m \rb \subseteq E(K)\text{.}\) This is WLOG since:</p>
+<article class="theorem-like" id="lemma-1"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.5</span>.</h6>
+<p id="p-28">Let \(L/K\) be a finite Galois extension, if</p>
+<div class="displaymath">
+\begin{equation*}
+E(L)/mE(L)
+\end{equation*}
+</div>
+<p>is finite then so is</p>
+<div class="displaymath">
+\begin{equation*}
+E(K)/mE(K)\text{.}
+\end{equation*}
+</div></article><aside class="aside-like" id="aside-2"><p id="p-29">Lecture 2 29/1/2018</p></aside><aside class="aside-like" id="aside-3"><p id="p-30">Lecture 3 31/1/2018</p></aside><aside class="aside-like" id="aside-4"><p id="p-31">Lecture 4 5/2/2018</p></aside><article class="remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.6</span>.</h6>
+<p id="p-32">A homomorphism \(\phi \colon \absgal{K} \to G\) for a finite group \(G\) is continuous if it comes from a finite Galois extension, i.e.</p>
 <div class="displaymath">
 \begin{equation*}
 \exists F/K \text{ finite Galois },\,\tilde \phi \colon \Gal{F}{K} \to G
 \end{equation*}
 </div>
 <p>s.t. \(\phi\) is  the composition \(\absgal{K} \to  \Gal FK \xrightarrow{\tilde \phi} G\text{.}\) So \(\phi(g) \) only cares about what \(g\) does to \(F\text{.}\)</p></article><article class="theorem-like" id="proposition-1"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.2</span>.</h6>
-<p id="p-7">Let \(E/K\) be an elliptic curve</p>
+<span class="type">Proposition</span> <span class="codenumber">1.7</span>.</h6>
+<p id="p-33">Let \(E/K\) be an elliptic curve</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = (x-\alpha)(x-\beta)(x-\gamma)
@@ -320,8 +545,8 @@ y^2 = (x-\alpha)(x-\beta)(x-\gamma)
 </div>
 <p>for \(P \in E(K)\) have \(\frac 12 P \in E(\overline K)\) s.t. \(\frac 12 P \oplus \frac 12 P = P\text{.}\)</p>
 <ol class="decimal">
-<li id="li-4">\(K(\frac 12 P) /K\) is a Galois extension and \(\Gal{K(\frac 12 P)}{K} = C_2 \times C_2\) from Lemma 1.</li>
-<li id="li-5">
+<li id="li-29">\(K(\frac 12 P) /K\) is a Galois extension and \(\Gal{K(\frac 12 P)}{K} = C_2 \times C_2\) from Lemma 1.</li>
+<li id="li-30">
 <div class="displaymath">
 \begin{equation*}
 \phi_P \colon \absgal{K} \to E(K)[2]
@@ -332,7 +557,7 @@ y^2 = (x-\alpha)(x-\beta)(x-\gamma)
 g \mapsto Q^\sigma - Q  = g(\frac 12 P) - \frac 12 P
 \end{equation*}
 </div>is well defined and has kernel \(\Gal{K}{K(\frac 12 P)}\text{.}\)</li>
-<li id="li-6">
+<li id="li-31">
 <div class="displaymath">
 \begin{equation*}
 \phi \colon E(K) / 2E(K) \to \Hom_{cts}(\absgal{K}, E(K)[2])
@@ -370,7 +595,7 @@ P \mapsto \phi_P
 \implies \frac 12 P \in E(K) \implies P \in 2 E(K)
 \end{equation*}
 </div>which gives injectivity.</li>
-<li id="li-7">
+<li id="li-32">
 <div class="displaymath">
 \begin{equation*}
 \eta \colon \Hom_{cts}(\absgal K , E(K) [2] ) \to K^\times/{K^\times}^2 \times K^\times/{K^\times}^2 \times K^\times/{K^\times}^2
@@ -399,7 +624,7 @@ P \mapsto \phi_P
 \ker \psi_1 \psi_2 = \Gal{\overline K}{ K(\sqrt {d_1d_2})}
 \end{equation*}
 </div>Now apply this to \(E(K) \lb 2\rb = C_2 \times C_2\) to get an isomorphism to \(K^\times / {K^\times}^2 \times K^\times / {K^\times}^2 \text{.}\) Record this third homomorphism to get \(\eta\text{.}\)</li>
-<li id="li-8">If \(P = (x_0, y_0) \in E(K)\) then<div class="displaymath">
+<li id="li-33">If \(P = (x_0, y_0) \in E(K)\) then<div class="displaymath">
 \begin{equation*}
 \eta(\phi_P)   = (x_0 - \alpha, x_0 - \beta, x_0 -\gamma)\text{.}
 \end{equation*}
@@ -436,8 +661,8 @@ K(\sqrt{x_2 - \alpha}) , K(\sqrt{x_2 - \beta}) , K(\sqrt{x_2 - \gamma}) \subsete
 </div>
 </li>
 </ol></article><article class="example-like" id="example-1"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.3</span>.</h6>
-<p id="p-8">Let</p>
+<span class="type">Example</span> <span class="codenumber">1.8</span>.</h6>
+<p id="p-34">Let</p>
 <div class="displaymath">
 \begin{equation*}
 E \colon y^2 = x(x-1)(x+1)
@@ -559,7 +784,7 @@ P = (x_0, y_0) \mapsto x_0, x_0 - 1, x_0 + 1 \in \QQ^\times/ {\QQ^\times}^2
 <td class="l m b3 r3 l0 t0 lines">?</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span> <span class="codenumber">1.4.</span> Images</figcaption></figure><p id="p-9">1) The 2-torsion points \(P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)\) give us some rows. 2) As we have \(x_0 \gt -1\) we get \(x_0 + 1 \gt 0\) so \(x_0(x_0 - 1) \gt 0\) for the product to be a square (and hence \(\gt 0\)). 3) \(x_0 = 2A^2\text{,}\) \(x_0-1 = B^2\text{,}\) \(x_0 + 1 = 2C^2\) with \(A,B,C \in \QQ \smallsetminus \{ 0\}\text{.}\) Let \(A = m/n\) so \(2m^2/ n^2 - 1 = B^2\)</p>
+<figcaption><span class="type">Table</span> <span class="codenumber">1.9.</span> Images</figcaption></figure><p id="p-35">1) The 2-torsion points \(P = 0 ,(0,0), (1,0), (-1,0) \in E(\QQ)\) give us some rows. 2) As we have \(x_0 \gt -1\) we get \(x_0 + 1 \gt 0\) so \(x_0(x_0 - 1) \gt 0\) for the product to be a square (and hence \(\gt 0\)). 3) \(x_0 = 2A^2\text{,}\) \(x_0-1 = B^2\text{,}\) \(x_0 + 1 = 2C^2\) with \(A,B,C \in \QQ \smallsetminus \{ 0\}\text{.}\) Let \(A = m/n\) so \(2m^2/ n^2 - 1 = B^2\)</p>
 <div class="displaymath">
 \begin{equation*}
 2m^2 - n^2 = (Bn)^2
@@ -598,10 +823,10 @@ m \equiv 1 \pmod2 \implies m^2 \equiv1 \pmod 8\text{.}
 E(\QQ) \cong  E(\QQ) [2 ]\text{.}
 \end{equation*}
 </div>
-<p>4) Use the group structure!</p></article><article class="theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.5</span>. <span class="title">Complete 2-decent.</span>
+<p>4) Use the group structure!</p></article><article class="theorem-like" id="theorem-3"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.10</span>. <span class="title">Complete 2-decent.</span>
 </h6>
-<p id="p-10">Let \(K\) be a field of characteristic 0 and</p>
+<p id="p-36">Let \(K\) be a field of characteristic 0 and</p>
 <div class="displaymath">
 \begin{equation*}
 E \colon y^2 = (x-\alpha)(x-\beta)(x-\gamma),\,\alpha,\beta,\gamma \text{ distinct}\text{.}
@@ -643,12 +868,12 @@ K(\sqrt{a}, \sqrt{b}, \sqrt{c}) / K
 \end{equation*}
 </div>
 <p>only ramifies at primes dividing \(2(\alpha - \beta)(\alpha - \gamma)(\beta - \gamma)\text{.}\)</p></article><article class="exercise-like" id="exercise-1"><a data-knowl="" class="id-ref" data-refid="hk-exercise-1"><h6 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">1.6</span>.</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-11">
+<span class="type">Exercise</span> <span class="codenumber">1.11</span>.</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><div class="displaymath" id="p-37">
 \begin{equation*}
 E \colon y^2 = x(x-5)(x+5)\text{.}
 \end{equation*}
 </div></article></div>
-<aside class="aside-like" id="aside-2"><p id="p-12">Lecture 5 7/2/2018</p></aside><p id="p-13">Recall:</p>
+<aside class="aside-like" id="aside-5"><p id="p-38">Lecture 5 7/2/2018</p></aside><p id="p-39">Recall:</p>
 <div class="displaymath">
 \begin{equation*}
 \phi \colon E(K)/2E(K) \to \Hom_{cts}(G_K, E(K) [2])
@@ -660,7 +885,7 @@ P \mapsto \phi_P
 \end{equation*}
 </div>
 <p>where \(\phi_P \colon \sigma \mapsto Q^\sigma - Q\) where \(Q = 2P\text{.}\) Which is well-defined and injective.</p>
-<p id="p-14">Elements of</p>
+<p id="p-40">Elements of</p>
 <div class="displaymath">
 \begin{equation*}
 \Hom_{cts}(G_K, E[2]) \leftrightarrow a,b,c \in (K^\times / {K^\times}^2) \text{ s.t. } abc \in {K^\times}^2
@@ -671,11 +896,11 @@ P \mapsto \phi_P
 (x_0,y_0) \mapsto (x_0 - \alpha, x_0 - \beta, x_0  -\gamma)\text{.}
 \end{equation*}
 </div>
-<article class="theorem-like" id="lemma-1"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.7</span>.</h6>
-<p id="p-15">Let \(n \ge 1\)</p>
+<article class="theorem-like" id="lemma-2"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.12</span>.</h6>
+<p id="p-41">Let \(n \ge 1\)</p>
 <ol class="decimal">
-<li id="li-9">
+<li id="li-34">
 <div class="displaymath">
 \begin{equation*}
 \psi \colon E(K)/ nE(K) \to \{ K \subseteq F \subseteq \overline K\}
@@ -686,17 +911,17 @@ P \mapsto \phi_P
 P\mapsto K(\frac 1n P, E[n])
 \end{equation*}
 </div>is well defined.</li>
-<li id="li-10">\(K(\frac 1n P, E\lb n \rb ) / K\) only ramifies at \(\ideal p | n \Delta_E\text{.}\)</li>
-<li id="li-11"><div class="displaymath">
+<li id="li-35">\(K(\frac 1n P, E\lb n \rb ) / K\) only ramifies at \(\ideal p | n \Delta_E\text{.}\)</li>
+<li id="li-36"><div class="displaymath">
 \begin{equation*}
 \Gal{K(\frac 1n P, E [n] )}{K} \le \ZZ/n \times \ZZ/n
 \end{equation*}
 </div></li>
-<li id="li-12">There are only finitely many fields satisfying 2. and 3. so \(\image \psi\) is finite.</li>
-</ol></article><p id="p-16">To do descent, need more than \(\psi\) (i.e. injection).</p>
+<li id="li-37">There are only finitely many fields satisfying 2. and 3. so \(\image \psi\) is finite.</li>
+</ol></article><p id="p-42">To do descent, need more than \(\psi\) (i.e. injection).</p>
 <article class="definition-like" id="definition-1"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.8</span>.</h6>
-<p id="p-17">Let \(G\) be a group and  \(M\) a \(G\)-module then let</p>
+<span class="type">Definition</span> <span class="codenumber">1.13</span>.</h6>
+<p id="p-43">Let \(G\) be a group and  \(M\) a \(G\)-module then let</p>
 <div class="displaymath">
 \begin{equation*}
 H^0(G, M) = M^G = \{m \in M : gm = m \forall g\in G\}
@@ -706,9 +931,9 @@ H^0(G, M) = M^G = \{m \in M : gm = m \forall g\in G\}
 \begin{equation*}
 H^1(G, M) = \{\text{skew homs } G \to M\}/\{\text{skew homs } G \to M \text{ of the form }g\mapsto g(t) - t,\, t\in M\}\text{.}
 \end{equation*}
-</div></article><article class="remark-like" id="remark-2"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">1.9</span>.</h6>
-<p id="p-18">If \(G\) acts trivially on \(M\) then</p>
+</div></article><article class="remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.14</span>.</h6>
+<p id="p-44">If \(G\) acts trivially on \(M\) then</p>
 <div class="displaymath">
 \begin{equation*}
 H^0(G, M) = M
@@ -719,14 +944,14 @@ H^0(G, M) = M
 H^1(G, M) = \Hom(G,M)\text{.}
 \end{equation*}
 </div>
-<p id="p-19">When \(G\) is profinite then we want that the skew homomorphisms factor through finite Galois  groups. We will prove that</p>
+<p id="p-45">When \(G\) is profinite then we want that the skew homomorphisms factor through finite Galois  groups. We will prove that</p>
 <div class="displaymath">
 \begin{equation*}
 E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])\text{.}
 \end{equation*}
-</div></article><article class="theorem-like" id="theorem-2"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.10</span>.</h6>
-<p id="p-20">If</p>
+</div></article><article class="theorem-like" id="theorem-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.15</span>.</h6>
+<p id="p-46">If</p>
 <div class="displaymath">
 \begin{equation*}
 0 \to A \to B \to C \to 0
@@ -737,11 +962,11 @@ E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])\text{.}
 \begin{equation*}
 0 \to H^0(G,A)\to H^0(G,B)\to H^0(G,C)\to H^1(G,A)\to H^1(G,B)\to H^1(G,C)\text{.}
 \end{equation*}
-</div></article><article class="theorem-like" id="lemma-2"><h6 class="heading">
-<span class="type">Lemma</span> <span class="codenumber">1.11</span>.</h6>
-<ol id="p-21" class="decimal">
-<li id="li-13">\(\psi\) is finite-to-one (gives Mordell-Weil)</li>
-<li id="li-14">Let<div class="displaymath">
+</div></article><article class="theorem-like" id="lemma-3"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">1.16</span>.</h6>
+<ol id="p-47" class="decimal">
+<li id="li-38">\(\psi\) is finite-to-one (gives Mordell-Weil)</li>
+<li id="li-39">Let<div class="displaymath">
 \begin{equation*}
 \phi_P \colon G_K \to E[n]
 \end{equation*}
@@ -759,13 +984,13 @@ E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])\text{.}
 g\mapsto T \ominus gT
 \end{equation*}
 </div>where \(T \in  E\lb n\rb\text{.}\)</li>
-<li id="li-15">\(\phi_P\) factors through<div class="displaymath">
+<li id="li-40">\(\phi_P\) factors through<div class="displaymath">
 \begin{equation*}
 \Gal{K(\frac 1n P, E\lb n \rb)}{K}\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-16">
+<li id="li-41">
 <div class="displaymath">
 \begin{equation*}
 \phi\colon E(K) / nE(K) \to Z/B
@@ -786,8 +1011,8 @@ B = \{\text{skew homs } G_K \to E[n] \text{ of the form }g\mapsto T\ominus gT,\,
 \end{equation*}
 </div>
 </li>
-</ol></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><ol id="p-22" class="decimal">
-<li id="li-17">There are finitely many skew homomorphisms<div class="displaymath">
+</ol></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-3" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><ol id="p-48" class="decimal">
+<li id="li-42">There are finitely many skew homomorphisms<div class="displaymath">
 \begin{equation*}
 \Gal{K(\frac 1nP, E[n])}{K} \to E[n]
 \end{equation*}
@@ -796,7 +1021,7 @@ B = \{\text{skew homs } G_K \to E[n] \text{ of the form }g\mapsto T\ominus gT,\,
 P \mapsto \{\phi_P, K(\frac 1n P, E\lb n \rb)\}
 \end{equation*}
 </div>is injective. So \(\psi\colon P\mapsto K(\frac 1n P, E\lb n \rb)\) is finite to one by 3.</li>
-<li id="li-18">
+<li id="li-43">
 <div class="displaymath">
 \begin{equation*}
 \phi_P(gh) = \frac 1n P \ominus gh \frac 1n P
@@ -841,7 +1066,7 @@ P \mapsto \{\phi_P, K(\frac 1n P, E\lb n \rb)\}
 </div>
 </li>
 </ol></article></div>
-<p id="p-23">Take \(G= G_K\)</p>
+<p id="p-49">Take \(G= G_K\)</p>
 <div class="displaymath">
 \begin{equation*}
 B = E(\overline K), A= E[n], C = E(\overline K)
@@ -864,7 +1089,7 @@ B = E(\overline K), A= E[n], C = E(\overline K)
 \implies E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])\text{.}
 \end{equation*}
 </div>
-<p id="p-24">Problem:</p>
+<p id="p-50">Problem:</p>
 <div class="displaymath">
 \begin{equation*}
 H^1(G_K, E[n])
@@ -877,13 +1102,13 @@ H^1(G_K, E[n])
 \end{equation*}
 </div>
 <p>do we land in?</p>
-<p id="p-25">Notation: When \(v\) is a place of \(K\) we have \(G_{K_v} \subseteq G_K\text{,}\) for any module \(M\) have \(M^{G_K} \le M^{G_{K_v}}\) and</p>
+<p id="p-51">Notation: When \(v\) is a place of \(K\) we have \(G_{K_v} \subseteq G_K\text{,}\) for any module \(M\) have \(M^{G_K} \le M^{G_{K_v}}\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \Res \colon H^1(G_K, E[n]) \to H^1 (G_{K_v} , E[n])\text{.}
 \end{equation*}
 </div>
-<p id="p-26">We have from the theorem</p>
+<p id="p-52">We have from the theorem</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -900,20 +1125,20 @@ H^1(G_K, E[n])
 </div>
 <p>this is as hard as finding \(E(K)\text{,}\) here is why:</p>
 <article class="theorem-like" id="claim-1"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">1.12</span>.</h6>
-<div class="displaymath" id="p-27">
+<span class="type">Claim</span> <span class="codenumber">1.17</span>.</h6>
+<div class="displaymath" id="p-53">
 \begin{equation*}
 H^1(G_K, E(\overline K))
 \end{equation*}
 </div>
-<p>corresponding to principal homogeneous spaces for \(E\) (genus 1 curves whose jacobian is \(E\))</p></article><p id="p-28">Finding</p>
+<p>corresponding to principal homogeneous spaces for \(E\) (genus 1 curves whose jacobian is \(E\))</p></article><p id="p-54">Finding</p>
 <div class="displaymath">
 \begin{equation*}
 \ker \{ H^1(G_K, E[n]) \to H^1 (G_K, E(\overline K))\}
 \end{equation*}
 </div>
 <p>is equivalent to finding which PHS coming from \(H^1\) have a rational point. ??? Hensel's lemma.</p>
-<p id="p-29">Let \(C\) be a curve</p>
+<p id="p-55">Let \(C\) be a curve</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Isom}(C) \leftrightarrow C(\overline K) \times \Aut(C)
@@ -940,7 +1165,7 @@ PHS \leftrightarrow H^1(G_K, E(\overline K))
 \end{equation*}
 </div>
 <p>\(C\) is a PHS for \(E\) iff \(E\) is the jacobian of \(C\text{.}\)</p>
-<aside class="aside-like" id="aside-3"><p id="p-30">Lecture 6 14/2/2018</p></aside><div class="displaymath" id="p-31">
+<aside class="aside-like" id="aside-6"><p id="p-56">Lecture 6 14/2/2018</p></aside><div class="displaymath" id="p-57">
 \begin{equation*}
 \xymatrix{
 0 \ar[r] &amp; E(K)/ nE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[n]) \ar[d]^{\Res} \ar[r] &amp; H^1(G_K, E(\overline K))[n] \ar[d]^{\Res}\ar[r]&amp;0\\
@@ -949,13 +1174,13 @@ PHS \leftrightarrow H^1(G_K, E(\overline K))
 \end{equation*}
 </div>
 <article class="definition-like" id="def-twist-curve"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.13</span>. <span class="title">Twists of curves.</span>
+<span class="type">Definition</span> <span class="codenumber">1.18</span>. <span class="title">Twists of curves.</span>
 </h6>
-<p id="p-32">A <dfn class="terminology">twist</dfn> of \(C/K\) is a smooth curve \(C'/K\) that is isomorphic to \(C\) over \(\overline K\text{.}\)</p></article><p id="p-33">If \(C_1, C_2\) are twists of \(C/K\) and \(C_1\simeq_K C_2\) then we say that \(C_1\) and \(C_2\) are equivalent modulo \(K\)-isomorphism.</p>
-<p id="p-34">We denote \(\operatorname{Twist}(C/K)\) - the set of twists of \(C/K\) modulo \(K\)-isomorphism.</p>
-<article class="theorem-like" id="theorem-3"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.14</span>.</h6>
-<p id="p-35">The twists of \(C/K\) up to \(K\)-isomorphism are in 1-1 correspondence with elements of</p>
+<p id="p-58">A <dfn class="terminology">twist</dfn> of \(C/K\) is a smooth curve \(C'/K\) that is isomorphic to \(C\) over \(\overline K\text{.}\)</p></article><p id="p-59">If \(C_1, C_2\) are twists of \(C/K\) and \(C_1\simeq_K C_2\) then we say that \(C_1\) and \(C_2\) are equivalent modulo \(K\)-isomorphism.</p>
+<p id="p-60">We denote \(\operatorname{Twist}(C/K)\) - the set of twists of \(C/K\) modulo \(K\)-isomorphism.</p>
+<article class="theorem-like" id="theorem-5"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.19</span>.</h6>
+<p id="p-61">The twists of \(C/K\) up to \(K\)-isomorphism are in 1-1 correspondence with elements of</p>
 <div class="displaymath">
 \begin{equation*}
 H^1(G_K, \operatorname{Isom}(C))
@@ -966,7 +1191,7 @@ H^1(G_K, \operatorname{Isom}(C))
 \begin{equation*}
 \operatorname{Isom}(C) = \{\overline K\text{-isomorphisms } C\to C\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-36">Let \(C'/K\) be a twist of \(C/K\) then there exists an isomorphism \(/\overline K\)</p>
+</div></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-4" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-62">Let \(C'/K\) be a twist of \(C/K\) then there exists an isomorphism \(/\overline K\)</p>
 <div class="displaymath">
 \begin{equation*}
 \phi\colon C' \to C
@@ -983,14 +1208,14 @@ H^1(G_K, \operatorname{Isom}(C))
 \sigma\mapsto \phi^\sigma \phi\inv\text{.}
 \end{equation*}
 </div>
-<p id="p-37">Check that \(\xi\) is a cocycle</p>
+<p id="p-63">Check that \(\xi\) is a cocycle</p>
 <div class="displaymath">
 \begin{equation*}
 \xi_{\sigma\tau } = (\xi_{\sigma})^\tau \xi_\tau
 \end{equation*}
 </div>
 <p>for all \(\sigma,\tau\in G_K\text{.}\) Denote \(\{\xi\}\) the associated class in \(H^1\text{.}\) \(\{\xi\}\) is determined by the \(K\)-isomorphism class of \(C'\) independent of the choice \(\phi\text{.}\)</p>
-<p id="p-38">The map</p>
+<p id="p-64">The map</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Twist}(C/K) \leftrightarrow H^1(G_K, \operatorname{Isom}(C))
@@ -1002,11 +1227,11 @@ C' \mapsto \{\xi\}
 \end{equation*}
 </div>
 <p>is a bijection.</p>
-<p id="p-39">Injective, trace through.</p>
-<p id="p-40">Surjectivity, define the function field using the curve.</p></article></div>
-<article class="remark-like" id="remark-3"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">1.15</span>.</h6>
-<p id="p-41">If \(C\) is an elliptic curve then \(\operatorname{Isom}(C)\) is generated by</p>
+<p id="p-65">Injective, trace through.</p>
+<p id="p-66">Surjectivity, define the function field using the curve.</p></article></div>
+<article class="remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.20</span>.</h6>
+<p id="p-67">If \(C\) is an elliptic curve then \(\operatorname{Isom}(C)\) is generated by</p>
 <div class="displaymath">
 \begin{equation*}
 \Aut(C) (\text{fixing }0)
@@ -1023,8 +1248,8 @@ C' \mapsto \{\xi\}
 Q\mapsto Q+P\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-2"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.16</span>.</h6>
-<p id="p-42">\(E/K\) elliptic, consider</p>
+<span class="type">Example</span> <span class="codenumber">1.21</span>.</h6>
+<p id="p-68">\(E/K\) elliptic, consider</p>
 <div class="displaymath">
 \begin{equation*}
 K(\sqrt d)
@@ -1092,11 +1317,11 @@ d{y'}^2  =f(x')/K
 (x,y) \mapsto (x', y' \sqrt{d})
 \end{equation*}
 </div>
-<p>is an isomorphism over \(K(\sqrt d)\text{.}\)</p></article><p id="p-43">Note \(C/K\) is not a principal homogeneous space for \(E/K\text{.}\)</p>
+<p>is an isomorphism over \(K(\sqrt d)\text{.}\)</p></article><p id="p-69">Note \(C/K\) is not a principal homogeneous space for \(E/K\text{.}\)</p>
 <article class="definition-like" id="def-homog-space"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.17</span>. <span class="title">Homogenous spaces.</span>
+<span class="type">Definition</span> <span class="codenumber">1.22</span>. <span class="title">Homogenous spaces.</span>
 </h6>
-<p id="p-44">Let \(E/K\) be an elliptic curve, a principal homogeneous space for \(E/K\) is a smooth curve \(C/K\) together with a simply transitive algebraic group action of \(E\) on \(C\) defined over \(K\text{.}\)</p>
+<p id="p-70">Let \(E/K\) be an elliptic curve, a principal homogeneous space for \(E/K\) is a smooth curve \(C/K\) together with a simply transitive algebraic group action of \(E\) on \(C\) defined over \(K\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \mu \colon C\times E \to C
@@ -1104,17 +1329,17 @@ d{y'}^2  =f(x')/K
 </div>
 <p>morphism defined over \(K\) satisfying</p>
 <ol class="decimal">
-<li id="li-19"><div class="displaymath">
+<li id="li-44"><div class="displaymath">
 \begin{equation*}
 \mu(P, 0) = P \,\forall P \in C
 \end{equation*}
 </div></li>
-<li id="li-20"><div class="displaymath">
+<li id="li-45"><div class="displaymath">
 \begin{equation*}
 \mu(\mu(p,P), Q) = \mu(p,P+Q) \,\forall P \in C
 \end{equation*}
 </div></li>
-<li id="li-21">
+<li id="li-46">
 <div class="displaymath">
 \begin{equation*}
 \forall p,q \in C,\,\exists ! P\in E \text{ s.t. }
@@ -1135,8 +1360,8 @@ p,q \mapsto P
 \end{equation*}
 </div>as above.</li>
 </ol></article><article class="theorem-like" id="proposition-2"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.18</span>.</h6>
-<p id="p-45">Let \(E/K\) and \(C/K\) be a principal homogeneous space for \(E/K\text{.}\) Fix a point \(p_0 \in C\) and define a map</p>
+<span class="type">Proposition</span> <span class="codenumber">1.23</span>.</h6>
+<p id="p-71">Let \(E/K\) and \(C/K\) be a principal homogeneous space for \(E/K\text{.}\) Fix a point \(p_0 \in C\) and define a map</p>
 <div class="displaymath">
 \begin{equation*}
 \theta \colon E \to C
@@ -1148,17 +1373,17 @@ P \mapsto \underbrace{p_0 + P}_{\mu(p_0, P)}\text{.}
 \end{equation*}
 </div>
 <ol class="decimal">
-<li id="li-22">\(\theta\) is an isomorphism over \(K(p_0)\text{.}\) In particular  \(C/K\) is a twist of \(E/K\text{.}\)</li>
-<li id="li-23">\(\forall p,q \in C\)<div class="displaymath">
+<li id="li-47">\(\theta\) is an isomorphism over \(K(p_0)\text{.}\) In particular  \(C/K\) is a twist of \(E/K\text{.}\)</li>
+<li id="li-48">\(\forall p,q \in C\)<div class="displaymath">
 \begin{equation*}
 q- p = \theta\inv(q) - \theta \inv (p)\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-24">\(\theta\) is a morphism over \(K\text{.}\)</li>
+<li id="li-49">\(\theta\) is a morphism over \(K\text{.}\)</li>
 </ol></article><article class="definition-like" id="definition-4"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.19</span>.</h6>
-<p id="p-46">Two homogeneous space \(C/K\) and \(C'/K\) for \(E/K\) are equivalent if there is an isomorphism</p>
+<span class="type">Definition</span> <span class="codenumber">1.24</span>.</h6>
+<p id="p-72">Two homogeneous space \(C/K\) and \(C'/K\) for \(E/K\) are equivalent if there is an isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 \phi \colon C \to C'
@@ -1172,18 +1397,18 @@ C \ar[r]^\theta \ar[d]_\phi &amp; E \ar[d] \\
 C' \ar[r] &amp; E'
 }
 \end{equation*}
-</div></article><p id="p-47">The equivalence class of PHS for \(E/K\) containing \(E/K\) acting on itself via translation is called the trivial class.</p>
-<p id="p-48">The collection of equivalence classes of PHS for \(E/K\) is called the Weil-Châtelet group, denoted</p>
+</div></article><p id="p-73">The equivalence class of PHS for \(E/K\) containing \(E/K\) acting on itself via translation is called the trivial class.</p>
+<p id="p-74">The collection of equivalence classes of PHS for \(E/K\) is called the Weil-Châtelet group, denoted</p>
 <div class="displaymath">
 \begin{equation*}
 WC(E/K)\text{.}
 \end{equation*}
 </div>
 <article class="theorem-like" id="proposition-3"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.20</span>.</h6>
-<p id="p-49">Let \(C/K\) be a PHS for \(E/K\) then \(C/K\) is in the trivial class \(\iff  C(K) \ne \emptyset\text{.}\)</p></article><article class="theorem-like" id="theorem-4"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.21</span>.</h6>
-<p id="p-50">Let \(E/K\) then there is a natural bijection after fixing \(p_0 \in C\)</p>
+<span class="type">Proposition</span> <span class="codenumber">1.25</span>.</h6>
+<p id="p-75">Let \(C/K\) be a PHS for \(E/K\) then \(C/K\) is in the trivial class \(\iff  C(K) \ne \emptyset\text{.}\)</p></article><article class="theorem-like" id="theorem-6"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.26</span>.</h6>
+<p id="p-76">Let \(E/K\) then there is a natural bijection after fixing \(p_0 \in C\)</p>
 <div class="displaymath">
 \begin{equation*}
 WC(E/K) \to H^1 ( G_K, \underbrace{E(\overline K)}_{\subseteq \operatorname{Isom}(E)})
@@ -1193,7 +1418,7 @@ WC(E/K) \to H^1 ( G_K, \underbrace{E(\overline K)}_{\subseteq \operatorname{Isom
 \begin{equation*}
 \{C/K\} \mapsto \{ \sigma \mapsto p_0^\sigma -  p_0\}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-3" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-51">Well-definedness:</p>
+</div></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-77">Well-definedness:</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma \mapsto p_0^\sigma - p_0
@@ -1212,8 +1437,8 @@ p_0^\sigma - p_0
 \end{equation*}
 </div>
 <p>are cohomologous.</p>
-<p id="p-52">Injective, suppose that \(p_0^\sigma - p_0\) and \({p_0'} ^\sigma - p_0'\) corresponding to \(C/K\) and \(C'/K\) that are cohomologous and prove that \(C\simeq_K C'\text{.}\)</p>
-<p id="p-53">Surjective: let \(\xi \colon G_K \to E(\overline K)\) be a cocycle representing an element in \(H^1(G_K, E)\text{.}\) Embed</p>
+<p id="p-78">Injective, suppose that \(p_0^\sigma - p_0\) and \({p_0'} ^\sigma - p_0'\) corresponding to \(C/K\) and \(C'/K\) that are cohomologous and prove that \(C\simeq_K C'\text{.}\)</p>
+<p id="p-79">Surjective: let \(\xi \colon G_K \to E(\overline K)\) be a cocycle representing an element in \(H^1(G_K, E)\text{.}\) Embed</p>
 <div class="displaymath">
 \begin{equation*}
 E(\overline K) \hookrightarrow \operatorname{Isom}(E)
@@ -1230,7 +1455,7 @@ P \mapsto \tau_P
 \xi \in H^1(G_K, \operatorname{Isom} E)\text{.}
 \end{equation*}
 </div>
-<p id="p-54">From the theorem on</p>
+<p id="p-80">From the theorem on</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{Twist}(E/K) \leftrightarrow H^1(G_K, \operatorname{Isom}(E))
@@ -1254,11 +1479,11 @@ P \mapsto \tau_P
 (p,Q) \mapsto \phi\inv (\phi(p) + Q)\text{.}
 \end{equation*}
 </div>
-<p id="p-55">Show that \(\mu\) is simply transitive.</p>
-<p id="p-56">Show \(\mu\) defined over \(K\text{.}\) Compute the cohomology class associated to \(C/K\) and show it is \(\xi\text{.}\)</p></article></div>
-<article class="remark-like" id="remark-4"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">1.22</span>.</h6>
-<p id="p-57">For a given \(C/K\) of genus 1 one can define several structures of PHS.</p>
+<p id="p-81">Show that \(\mu\) is simply transitive.</p>
+<p id="p-82">Show \(\mu\) defined over \(K\text{.}\) Compute the cohomology class associated to \(C/K\) and show it is \(\xi\text{.}\)</p></article></div>
+<article class="remark-like" id="remark-6"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.27</span>.</h6>
+<p id="p-83">For a given \(C/K\) of genus 1 one can define several structures of PHS.</p>
 <div class="displaymath">
 \begin{equation*}
 \{C/K,\mu\}^\alpha = \{ C/K , \mu\circ(1\times \alpha)\}
@@ -1277,9 +1502,9 @@ C \ar[r]^\mu &amp; E \ar[d]_P \\
 C' \ar[r]^{\mu^\alpha} &amp; E'
 }
 \end{equation*}
-</div></article><aside class="aside-like" id="aside-4"><p id="p-58">Lecture 7 21/2/2018</p></aside><article class="example-like" id="example-3"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.23</span>.</h6>
-<p id="p-59">\(E/K\) and \(K (\sqrt d)/K\) a quadratic extension. Let \(T \in E(K)\) be a non-trivial point of order 2. Then \(\xi\colon G_K \to E\)</p>
+</div></article><aside class="aside-like" id="aside-7"><p id="p-84">Lecture 7 21/2/2018</p></aside><article class="example-like" id="example-3"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.28</span>.</h6>
+<p id="p-85">\(E/K\) and \(K (\sqrt d)/K\) a quadratic extension. Let \(T \in E(K)\) be a non-trivial point of order 2. Then \(\xi\colon G_K \to E\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma \mapsto
@@ -1364,13 +1589,13 @@ C \colon dw^2 = d^2 - 2a dz^2 + (a^2 - 4b) z^4\text{.}
 \end{equation*}
 </div>
 <ul class="disc">
-<li id="li-25">Prove that \(\phi \) is an isomorphism so \(C\) is a twist.</li>
-<li id="li-26">\(C\) is the PHS corresponding to \(\{\xi\}\text{.}\) Take \(p \in C \) and compute<div class="displaymath">
+<li id="li-50">Prove that \(\phi \) is an isomorphism so \(C\) is a twist.</li>
+<li id="li-51">\(C\) is the PHS corresponding to \(\{\xi\}\text{.}\) Take \(p \in C \) and compute<div class="displaymath">
 \begin{equation*}
 \sigma\mapsto p^\sigma - p = \phi\inv(p^\sigma) - \phi\inv (p)
 \end{equation*}
 </div>for example let \(p = (0,\sqrt d) \in C\text{,}\) if \(\sigma = \id\) then \(p^\sigma - p = 0 - 0 = 0\text{.}\) If \(\sigma = -\id\) then \(p^\sigma - p = T - 0 = T\text{.}\)</li>
-</ul></article><p id="p-60">Back to Selmer, we want to have the image of our weak Mordell-Weil land in something finite.</p>
+</ul></article><p id="p-86">Back to Selmer, we want to have the image of our weak Mordell-Weil land in something finite.</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -1380,9 +1605,9 @@ C \colon dw^2 = d^2 - 2a dz^2 + (a^2 - 4b) z^4\text{.}
 \end{equation*}
 </div>
 <article class="definition-like" id="def-m-selmer"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.24</span>. <span class="title">\(m\)-Selmer groups.</span>
+<span class="type">Definition</span> <span class="codenumber">1.29</span>. <span class="title">\(m\)-Selmer groups.</span>
 </h6>
-<p id="p-61">The \(m\)-Selmer group of \(E/K\) is the subgroup of</p>
+<p id="p-87">The \(m\)-Selmer group of \(E/K\) is the subgroup of</p>
 <div class="displaymath">
 \begin{equation*}
 H^1(G_K, E[m])
@@ -1394,9 +1619,9 @@ H^1(G_K, E[m])
 \Sel^m(E/K) = \ker \left\{H^1(G_K, E[m]) \to \prod_v WC(E/K_v) \right\}\text{.}
 \end{equation*}
 </div></article><article class="definition-like" id="def-sha"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.25</span>. <span class="title">The Shafarevich-Tate group.</span>
+<span class="type">Definition</span> <span class="codenumber">1.30</span>. <span class="title">The Shafarevich-Tate group.</span>
 </h6>
-<p id="p-62">The <dfn class="terminology">Shafarevich-Tate</dfn> group of \(E/K\) is the subgroup of</p>
+<p id="p-88">The <dfn class="terminology">Shafarevich-Tate</dfn> group of \(E/K\) is the subgroup of</p>
 <div class="displaymath">
 \begin{equation*}
 WC(E/K)
@@ -1407,27 +1632,27 @@ WC(E/K)
 \begin{equation*}
 \Sha(E/K) = \ker\left\{WC(E/K) \to\prod_v WC(E/K_v)\right\}\text{.}
 \end{equation*}
-</div></article><article class="theorem-like" id="theorem-5"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.26</span>.</h6>
-<p id="p-63">There is an exact sequence</p>
+</div></article><article class="theorem-like" id="theorem-7"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.31</span>.</h6>
+<p id="p-89">There is an exact sequence</p>
 <ol class="decimal">
-<li id="li-27"><div class="displaymath">
+<li id="li-52"><div class="displaymath">
 \begin{equation*}
 0 \to E(K)/mE(K) \to \Sel^m(E/K)  \to \Sha(E/K)[m] \to 0
 \end{equation*}
 </div></li>
-<li id="li-28">\(\Sel^m(E/K)\) is finite.</li>
-</ol></article></section><section class="subsection" id="subsec-p-inf-selmer"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2</span> <span class="title">\(p^\infty\)-Selmer and the structure of \(\Sha\)</span>
-</h3>
-<a href="sec-parity-mw.html#subsec-p-inf-selmer" class="permalink">¶</a><p id="p-64">\(H^1(G_K, E(\overline K))\) is torsion for general galois cohomological reasons. So</p>
+<li id="li-53">\(\Sel^m(E/K)\) is finite.</li>
+</ol></article></section><section class="subsection" id="subsec-p-inf-selmer"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">\(p^\infty\)-Selmer and the structure of \(\Sha\)</span>
+</h4>
+<a href="sec-parity-mw.html#subsec-p-inf-selmer" class="permalink">¶</a><p id="p-90">\(H^1(G_K, E(\overline K))\) is torsion for general galois cohomological reasons. So</p>
 <div class="displaymath">
 \begin{equation*}
 \Sha (E/K) \subseteq H^1(G_K, E(\overline K))
 \end{equation*}
 </div>
 <p>is torsion.</p>
-<p id="p-65">So we may write</p>
+<p id="p-91">So we may write</p>
 <div class="displaymath">
 \begin{equation*}
 \Sha(E/K) = \bigoplus_p \Sha_{p^\infty}(E/K)
@@ -1445,7 +1670,7 @@ WC(E/K)
 \Sha (E/K) [ m] \text{ is finite for all } m \ge 1\text{.}
 \end{equation*}
 </div>
-<p id="p-66">So</p>
+<p id="p-92">So</p>
 <div class="displaymath">
 \begin{equation*}
 \Sha_{p^\infty} (E/K) \cong (\QQ_p/\ZZ_p)^{\delta_p} \oplus T_p,\, \delta_p \in \ZZ_{\ge 0}
@@ -1464,8 +1689,8 @@ T_p \cong \ZZ/p^{s_1} \ZZ \oplus \cdots \oplus \ZZ/p^{s_l} \ZZ,\,s_i\in \ZZ_{\ge
 \end{equation*}
 </div>
 <p>is called the infinitely divisible subgroup of \(\Sha\) denoted \(\Sha_{div}\text{.}\)</p>
-<p id="p-67">The conjecture that \(\Sha\) is finite implies \(\delta_p = 0\) for all \(p\text{.}\) And \(T_p \ne 0 \) for only finitely many \(p\text{.}\)</p>
-<p id="p-68">There is a pairing called the Cassels-Tate pairing</p>
+<p id="p-93">The conjecture that \(\Sha\) is finite implies \(\delta_p = 0\) for all \(p\text{.}\) And \(T_p \ne 0 \) for only finitely many \(p\text{.}\)</p>
+<p id="p-94">There is a pairing called the Cassels-Tate pairing</p>
 <div class="displaymath">
 \begin{equation*}
 \Sha(E/K) \times \Sha(E/K) \to \QQ/\ZZ
@@ -1478,15 +1703,15 @@ T_p \cong \ZZ/p^{s_1} \ZZ \oplus \cdots \oplus \ZZ/p^{s_l} \ZZ,\,s_i\in \ZZ_{\ge
 \end{equation*}
 </div>
 <article class="definition-like" id="def-p-inf-selmer"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.27</span>. <span class="title">\(p^\infty\)-Selmer group.</span>
+<span class="type">Definition</span> <span class="codenumber">1.32</span>. <span class="title">\(p^\infty\)-Selmer group.</span>
 </h6>
-<p id="p-69">Consider \(\Sel_{p^n}(E/K)\) and take the direct limit</p>
+<p id="p-95">Consider \(\Sel_{p^n}(E/K)\) and take the direct limit</p>
 <div class="displaymath">
 \begin{equation*}
 \varinjlim_n \Sel_{p^n}(E/K)
 \end{equation*}
 </div>
-<p>to define the \(p^\infty\)-Selmer group.</p></article><p id="p-70">One shows that</p>
+<p>to define the \(p^\infty\)-Selmer group.</p></article><p id="p-96">One shows that</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(E/K) = \Hom_{\ZZ_p} (\varinjlim_n \Sel_{p^n}(E/K), \QQ_p/\ZZ_p)
@@ -1494,13 +1719,13 @@ X_p(E/K) = \Hom_{\ZZ_p} (\varinjlim_n \Sel_{p^n}(E/K), \QQ_p/\ZZ_p)
 </div>
 <p>called the Pontyragin dual of the \(p^\infty\) Selmer group is a finitely generated \(\ZZ_p\)-module. The associated \(\QQ_p\)-vector space, denoted \(\mathcal X_p(E/K) =X_p(E/K) \otimes_{\ZZ_p} \QQ_p\) has dimension \(\rk_p\text{.}\)</p>
 <article class="definition-like" id="def-p-inf"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.28</span>.</h6>
-<p id="p-71">\(\rk_p\) is called the \(p^\infty\)-Selmer rank of \(E/K\) and satisfies</p>
+<span class="type">Definition</span> <span class="codenumber">1.33</span>.</h6>
+<p id="p-97">\(\rk_p\) is called the \(p^\infty\)-Selmer rank of \(E/K\) and satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \rk_p = \rk(E/K) + \delta_p\text{.}
 \end{equation*}
-</div></article><p id="p-72">So if \(\Sha\) is finite then \(\delta_p =0\) for all \(p\text{.}\) Use BSD to compute parity of \(\rk_p\text{.}\)</p></section></section></div></main>
+</div></article><p id="p-98">So if \(\Sha\) is finite then \(\delta_p =0\) for all \(p\text{.}\) Use BSD to compute parity of \(\rk_p\text{.}\)</p></section></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];
@@ -1513,6 +1738,6 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www'
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.1/login.js"></script>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
 </body>
 </html>

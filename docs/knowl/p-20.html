@@ -12,18 +12,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If</p>
+<p>Let \(A\) be an abelian group, suppose that there exists a function</p>
 <div class="displaymath">
 \begin{equation*}
-0 \to A \to B \to C \to 0
+h \colon A \to \RR
 \end{equation*}
 </div>
-<p>is an exact sequence of \(G\)-modules then</p>
-<div class="displaymath">
+<p>with the following properties:</p>
+<ol class="decimal">
+<li>Let \(Q \in A\) then there is a constant  \(c_1\) depending on \(Q\) and \(A\) such that<div class="displaymath">
 \begin{equation*}
-0 \to H^0(G,A)\to H^0(G,B)\to H^0(G,C)\to H^1(G,A)\to H^1(G,B)\to H^1(G,C)\text{.}
+h(P+Q) = 2h(P) + c_1,\,\forall P \in A\text{.}
 \end{equation*}
 </div>
+</li>
+<li>There is an integer \(m \ge 2\) and a constant \(c_2\) depending on \(A\) s.t.<div class="displaymath">
+\begin{equation*}
+h(mP) \ge m^2 h(P) - c_2,\,\forall P\in A\text{.}
+\end{equation*}
+</div>
+</li>
+<li>For every constant \(c_3\text{,}\) the set<div class="displaymath">
+\begin{equation*}
+\{P\in A : h(P) \le c_3\}
+\end{equation*}
+</div>is finite.</li>
+</ol>
+<p>suppose further that for the \(m\) in \(2.\) we have \(A/mA\) is finite. Then \(A\) is finitely generated.</p>
 <span class="incontext"><a href="sec-parity-mw.html#p-20">in-context</a></span>
 </body>
 </html>
