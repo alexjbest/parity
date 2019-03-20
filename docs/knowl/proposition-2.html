@@ -12,27 +12,130 @@
 </head>
 <body>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">1.23</span>.</h6>
-<p>Let \(E/K\) and \(C/K\) be a principal homogeneous space for \(E/K\text{.}\) Fix a point \(p_0 \in C\) and define a map</p>
+<span class="type">Proposition</span> <span class="codenumber">1.9</span>.</h6>
+<p>Let \(E/K\) be an elliptic curve</p>
 <div class="displaymath">
 \begin{equation*}
-\theta \colon E \to C
+y^2 = (x-\alpha)(x-\beta)(x-\gamma)
 \end{equation*}
 </div>
-<div class="displaymath">
-\begin{equation*}
-P \mapsto \underbrace{p_0 + P}_{\mu(p_0, P)}\text{.}
-\end{equation*}
-</div>
+<p>for \(P \in E(K)\) have \(\frac 12 P \in E(\overline K)\) s.t. \(\frac 12 P \oplus \frac 12 P = P\text{.}\)</p>
 <ol class="decimal">
-<li>\(\theta\) is an isomorphism over \(K(p_0)\text{.}\) In particular  \(C/K\) is a twist of \(E/K\text{.}\)</li>
-<li>\(\forall p,q \in C\)<div class="displaymath">
+<li>\(K(\frac 12 P) /K\) is a Galois extension and \(\Gal{K(\frac 12 P)}{K} = C_2 \times C_2\) from Lemma 1.</li>
+<li>
+<div class="displaymath">
 \begin{equation*}
-q- p = \theta\inv(q) - \theta \inv (p)\text{.}
+\phi_P \colon \absgal{K} \to E(K)[2]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+g \mapsto Q^\sigma - Q  = g(\frac 12 P) - \frac 12 P
+\end{equation*}
+</div>is well defined and has kernel \(\Gal{K}{K(\frac 12 P)}\text{.}\)</li>
+<li>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon E(K) / 2E(K) \to \Hom_{cts}(\absgal{K}, E(K)[2])
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto \phi_P
+\end{equation*}
+</div>is well defined and injective. Now \(\phi_P\) is continuous by \(2.\) and  so<div class="displaymath">
+\begin{equation*}
+\phi_{P\oplus Q} (g) = g(\frac 12 (P\oplus Q)) - (\frac 12 P\oplus \frac 12 Q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= g(\frac 12 P) \oplus g(\frac 12Q) - \frac 12 P \ominus \frac 12 Q
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \phi_P(g) \oplus \phi_Q(g)
+\end{equation*}
+</div>a homomorphism.<div class="displaymath">
+\begin{equation*}
+\phi_{2Q}(g) = g(\frac 12 2 Q)) - \frac12 2(Q) = g(Q) - Q = 0
+\end{equation*}
+</div>for all \(g\in \absgal K\) if \(Q \in E(K)\) so  this is well defined. For injectivity:<div class="displaymath">
+\begin{equation*}
+\phi_P(g) = 0 \implies g(\frac 12 P) = \frac 12 P \forall g \in \absgal K
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \frac 12 P \in E(K) \implies P \in 2 E(K)
+\end{equation*}
+</div>which gives injectivity.</li>
+<li>
+<div class="displaymath">
+\begin{equation*}
+\eta \colon \Hom_{cts}(\absgal K , E(K) [2] ) \to K^\times/{K^\times}^2 \times K^\times/{K^\times}^2 \times K^\times/{K^\times}^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\psi \mapsto\psi_\alpha ,\psi_\beta, \psi_\gamma
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\psi(g )\in \{0, (\alpha,0)\} \subseteq E(K) \iff g \in \Gal{\overline K }{K(\sqrt {\psi_\alpha})}
+\end{equation*}
+</div>then \(\eta\) is an injective homomorphism. It is an isomorphism to the subgroup of triples \(a,b,c\) s.t. \(abc \in {K^\times}^2\text{.}\) Proof:<div class="displaymath">
+\begin{equation*}
+\Hom_{cts}(\absgal K, C_2) \simeq K^\times/{K^\times}^2
+\end{equation*}
+</div>with \(\psi\) s.t. \(\ker \psi = \Gal{\overline K}{ K\sqrt d}  \leftrightarrow d\text{.}\) It is an isomorphism:<div class="displaymath">
+\begin{equation*}
+\ker \psi_i = \Gal{\overline K}{ K(\sqrt {d_i})},\,i =1,2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ker \psi_1 \psi_2 = \Gal{\overline K}{ K(\sqrt {d_1d_2})}
+\end{equation*}
+</div>Now apply this to \(E(K) \lb 2\rb = C_2 \times C_2\) to get an isomorphism to \(K^\times / {K^\times}^2 \times K^\times / {K^\times}^2 \text{.}\) Record this third homomorphism to get \(\eta\text{.}\)</li>
+<li>If \(P = (x_0, y_0) \in E(K)\) then<div class="displaymath">
+\begin{equation*}
+\eta(\phi_P)   = (x_0 - \alpha, x_0 - \beta, x_0 -\gamma)\text{.}
+\end{equation*}
+</div>Proof sketch: If<div class="displaymath">
+\begin{equation*}
+E\colon y^2 = x^3 + Ax^2 + Bx
+\end{equation*}
+</div>then for \(Q = (x_0, y_0) \in E(K)\text{.}\)<div class="displaymath">
+\begin{equation*}
+2Q = \left(\left( \frac {x_0 - B}{2y_0}\right)^2 , \ldots\right)
+\end{equation*}
+</div>Hence if \(2Q = P  = (x_1, y_1)\) then  \(\sqrt{x_1} \in K(\frac 12 P)\text{.}\) So if<div class="displaymath">
+\begin{equation*}
+E \colon y^2 = (x-\alpha)(x-\beta)(x-\gamma)
+\end{equation*}
+</div>then<div class="displaymath">
+\begin{equation*}
+P = (x_2, y_2)
+\end{equation*}
+</div>then<div class="displaymath">
+\begin{equation*}
+\sqrt{x_2 - \alpha} , \sqrt{x_2 - \beta} , \sqrt{x_2 - \gamma} \in K(\frac  12 P)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+K(\sqrt{x_2 - \alpha}) , K(\sqrt{x_2 - \beta}) , K(\sqrt{x_2 - \gamma}) \subseteq K(\frac  12 P)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies K(\frac 12 P)  = K(\sqrt{x_2 - \alpha},\sqrt{x_2 - \beta} , \sqrt{x_2 - \gamma})
 \end{equation*}
 </div>
 </li>
-<li>\(\theta\) is a morphism over \(K\text{.}\)</li>
 </ol></article><span class="incontext"><a href="sec-parity-mw.html#proposition-2">in-context</a></span>
 </body>
 </html>

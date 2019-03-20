@@ -12,16 +12,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The \(m\)-Selmer group of \(E/K\) is the subgroup of</p>
+<p>From the theorem on</p>
 <div class="displaymath">
 \begin{equation*}
-H^1(G_K, E[m])
+\operatorname{Twist}(E/K) \leftrightarrow H^1(G_K, \operatorname{Isom}(E))
 \end{equation*}
 </div>
-<p>defined by</p>
+<p>there exists a curve \(C/K\) and a \(\overline K\)-isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
-\Sel^m(E/K) = \ker \left\{H^1(G_K, E[m]) \to \prod_v WC(E/K_v) \right\}\text{.}
+\phi\colon C \to E
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\forall \sigma \in G_K : \phi^\sigma \phi\inv = \text{translation by } -\xi_\sigma\text{.}
+\end{equation*}
+</div>
+<p>Define a map \(\mu \colon C\times E \to C\)</p>
+<div class="displaymath">
+\begin{equation*}
+(p,Q) \mapsto \phi\inv (\phi(p) + Q)\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="sec-parity-mw.html#p-87">in-context</a></span>

@@ -12,60 +12,70 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<ol class="decimal">
-<li>There are finitely many skew homomorphisms<div class="displaymath">
-\begin{equation*}
-\Gal{K(\frac 1nP, E[n])}{K} \to E[n]
-\end{equation*}
-</div>and by 4.<div class="displaymath">
-\begin{equation*}
-P \mapsto \{\phi_P, K(\frac 1n P, E\lb n \rb)\}
-\end{equation*}
-</div>is injective. So \(\psi\colon P\mapsto K(\frac 1n P, E\lb n \rb)\) is finite to one by 3.</li>
-<li>
 <div class="displaymath">
 \begin{equation*}
-\phi_P(gh) = \frac 1n P \ominus gh \frac 1n P
+0 \to \phi  \to E(K)/ m E(K) \xrightarrow{\varphi} E(L)/mE(L) \to 0
+\end{equation*}
+</div>
+<p>induced by</p>
+<div class="displaymath">
+\begin{equation*}
+E(K) \subseteq E(L)\text{,}
+\end{equation*}
+</div>
+<p>and prove that \(\phi\) is finite. Kernel \(\phi\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{E(K) \cap mE(L)}{mE(K)}\text{,}
+\end{equation*}
+</div>
+<p>take \(P \in \phi\text{.}\) We can choose \(Q_P \in E(L)\) such that \(Q_P = P\text{.}\) Define a map of sets</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_P \colon G_{L/K} \to E\lb m \rb
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-= \left((\frac 1n P) \ominus g(\frac 1n P)\right) \oplus \left( g(\frac 1n P) \ominus g(h(\frac 1n P))\right)
+\sigma \mapsto Q_P^\sigma - Q_P\text{.}
+\end{equation*}
+</div>
+<p>Note that</p>
+<div class="displaymath">
+\begin{equation*}
+\lb m \rb (Q_P^\sigma - Q_P) = (\lb m \rb Q_P)^\sigma - \lb m \rb Q_P = 0\text{.}
+\end{equation*}
+</div>
+<p>Now we show that the association</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \to \operatorname{Map}(G_{L/K}, E\lb m \rb)
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-= \phi_P \oplus g(\phi_P(h))\text{.}
-\end{equation*}
-</div>Remark: If \(E\lb n \rb \subseteq E(K)\) then \(\phi_P\) is a homomorphism. Recall for \(n=2\)<div class="displaymath">
-\begin{equation*}
-\phi_P(gh) = \frac 12 P \ominus gh(\frac 12 P)
+P \mapsto \lambda_P
 \end{equation*}
 </div>
+<p>is 1 to 1.</p>
+<p>Suppose that \(P,P' \in E(K) \cap m E(L)\) satisfying \(\lambda_P = \lambda_{P'}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-= \frac12 P \ominus h(\frac 12P) \oplus h(\frac 12 P) \ominus g(h( \frac 12 P))
+(Q_P - Q_{P'})^\sigma = Q_P -  Q_{P'}
 \end{equation*}
 </div>
+<p>for all \(\sigma \in G_{L/K}\) so \(Q_P - Q_{P'} \in E(K)\) and hence</p>
 <div class="displaymath">
 \begin{equation*}
-= \phi_P(h) \oplus \phi_P(g)
-\end{equation*}
-</div>since \(2h(\frac 12 P) = h(P)= P\text{.}\) Consider now<div class="displaymath">
-\begin{equation*}
-\frac 1n P = \frac 1n P'  \oplus T
-\end{equation*}
-</div>for some \(T\in E\lb n \rb\)<div class="displaymath">
-\begin{equation*}
-(\phi_P \ominus \phi_{P}')(g) = \phi_P(g)  - \phi_{P}'(g) =  \frac 1n P \ominus g(\frac 1n P) - [(\frac 1n P ) \oplus T \ominus g(\frac 1n P) \oplus gT]
+P - P' = \lb m \rb   Q_P - \lb m \rb Q_{P'} \in m E(K)
 \end{equation*}
 </div>
+<p>hence</p>
 <div class="displaymath">
 \begin{equation*}
-=T \ominus gT\text{.}
+P = P' \pmod {m E(K)}\text{.}
 \end{equation*}
 </div>
-</li>
-</ol></article><span class="incontext"><a href="sec-parity-mw.html#proof-3">in-context</a></span>
+<p>\(G_{L/K}\) and  \(E\lb m \rb\) are both finite, hence so is \(\phi\text{.}\)</p></article><span class="incontext"><a href="sec-parity-mw.html#proof-3">in-context</a></span>
 </body>
 </html>

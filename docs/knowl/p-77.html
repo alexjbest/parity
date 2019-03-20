@@ -12,25 +12,45 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Well-definedness:</p>
+<p>Let \(E/K\) be an elliptic curve, a principal homogeneous space for \(E/K\) is a smooth curve \(C/K\) together with a simply transitive algebraic group action of \(E\) on \(C\) defined over \(K\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\sigma \mapsto p_0^\sigma - p_0
+\mu \colon C\times E \to C
 \end{equation*}
 </div>
-<p>is a cocycle. Suppose that \(C'/K\) and \(C/K\) are two equivalent PHS then</p>
+<p>morphism defined over \(K\) satisfying</p>
+<ol class="decimal">
+<li><div class="displaymath">
+\begin{equation*}
+\mu(P, 0) = P \,\forall P \in C
+\end{equation*}
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+\mu(\mu(p,P), Q) = \mu(p,P+Q) \,\forall P \in C
+\end{equation*}
+</div></li>
+<li>
 <div class="displaymath">
 \begin{equation*}
-p_0^\sigma - p_0
+\forall p,q \in C,\,\exists ! P\in E \text{ s.t. }
 \end{equation*}
 </div>
-<p>and</p>
 <div class="displaymath">
 \begin{equation*}
-{p_0'}^\sigma - p_0'
+\mu(p,P) = q
+\end{equation*}
+</div>so we may define a subtraction map<div class="displaymath">
+\begin{equation*}
+\nu \colon C\times C \to E
 \end{equation*}
 </div>
-<p>are cohomologous.</p>
+<div class="displaymath">
+\begin{equation*}
+p,q \mapsto P
+\end{equation*}
+</div>as above.</li>
+</ol>
 <span class="incontext"><a href="sec-parity-mw.html#p-77">in-context</a></span>
 </body>
 </html>

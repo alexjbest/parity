@@ -137,8 +137,8 @@ section#sec-parity-mw
                         | Where #[m c'_1] is the maximum of the constants from #[m i] for #[m Q] in #[m \{-Q_1, \ldots, -Q_r\}].
                         | Note that #[m c_1'] and #[m c_2] do not depend on #[m P] and that #[m h(P) \ge0].
                         | We repeat this inequality starting from #[m P_n] and working back to #[m P].
-                        me h(P_n) \le \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right))(c_1' + c_2)
-                        me =          \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right))(c_1' + c_2)
+                        me h(P_n) \le \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right)(c_1' + c_2)
+                        me =          \left( \frac 2{m^2} \right)^n h(P) + \frac 1{m^2} \left(1+ \frac 2{m^2} + \left(\frac 2{m^2}\right)^2 + \cdots+ \left(\frac 2{m^2}\right)^{n-1}\right)(c_1' + c_2)
                         me \lt        \left( \frac 2{m^2} \right)^n h(P) + \frac{c_1' + c_2}{m^2 - 2}
                         me \le        \frac 1{2^n} h(P) + \frac{c_1' + c_2}{2}
                         | , since #[m m \ge 2].
@@ -188,11 +188,66 @@ section#sec-parity-mw
                     | is finite then so is
                     me E(K)/mE(K)
                     | .
+                proof
+                    p
+                        me 0 \to \phi  \to E(K)/ m E(K) \xrightarrow{\varphi} E(L)/mE(L) \to 0
+                        | induced by
+                        me E(K) \subseteq E(L)
+                        | , and prove that #[m \phi] is finite.
+                        | Kernel #[m \phi] is given by
+                        me \frac{E(K) \cap mE(L)}{mE(K)}
+                        | , take #[m P \in \phi]. We can choose #[m Q_P \in E(L)] such that #[m Q_P = P].
+                        | Define a map of sets
+                        me \lambda_P \colon G_{L/K} \to E\lb m \rb
+                        me \sigma \mapsto Q_P^\sigma - Q_P
+                        | . Note that
+                        me \lb m \rb (Q_P^\sigma - Q_P) = (\lb m \rb Q_P)^\sigma - \lb m \rb Q_P = 0
+                        | .
+                    p
+                        | Now we show that the association
+                        me \phi \to \operatorname{Map}(G_{L/K}, E\lb m \rb)
+                        me P \mapsto \lambda_P
+                        | is 1 to 1.
+
+                    p
+                        | Suppose that #[m P,P' \in E(K) \cap m E(L)] satisfying #[m \lambda_P = \lambda_{P'}] then
+                        me (Q_P - Q_{P'})^\sigma = Q_P -  Q_{P'}
+                        | for all #[m \sigma \in G_{L/K}] so #[m Q_P - Q_{P'} \in E(K)] and hence
+                        me P - P' = \lb m \rb   Q_P - \lb m \rb Q_{P'} \in m E(K)
+                        | hence
+                        me P = P' \pmod {m E(K)}
+                        | .
+                        | #[m G_{L/K}] and  #[m E\lb m \rb] are both finite, hence so is #[m \phi].
 
 
 
 
             aside: p Lecture 2 29/1/2018
+
+            p
+                | Now we will prove the weak Mordell-Weil theorem.
+                | Using the above lemma we can reduce to the case where #[m E\lb m \rb \subseteq E(K)], so we assume this going forwards.
+
+            definition#def-kummer-pair
+                title The Kummer pairing
+                statement: p
+                    | The #[term Kummer pairing] is
+                    me \kappa \colon E(K) \times G_{\overline K/K} \to E\lb m \rb
+                    me P,\sigma \mapsto Q^\sigma - Q
+                    | where #[m Q] is a choice of point in #[m E(\overline K)] such that #[m mQ = P].
+
+            proposition
+                statement
+                    p
+                        | #[m \kappa] is well defined, bilinear, the kernel in the first argument is #[m m E(K)] and in the second argument is #[m G_{\overline K/L}] where #[m L = K(\lb m \rb \inv E(K))] is the compositum of all fields #[m \kappa(x(Q), y(Q))] as #[m Q] ranges over all the points of #[m E(\overline K)] s.t. #[m m Q \in E(K)].
+
+                    p
+                        | Hence the Kummer pairing induces a perfect bilinear pairing
+                        me E(K)/ m E(K) \times G_{L/K} \to E\lb m \rb
+                        | i.e. the map
+                        me E(K) / m E(K) \to \Hom_{K}( G_{L/K} , E \lb m \rb )
+                        me P \mapsto (\sigma \mapsto Q^{\sigma} - Q)
+                        | is an isomorphism.
 
             aside: p Lecture 3 31/1/2018
 
@@ -797,7 +852,7 @@ section#sec-parity-mw
                         li
                             | #[m \Sel^m(E/K)] is finite.
 
-        subsection#subsec-p-inf-selmer
+        subsubsection#subsec-p-inf-selmer
             title #[m p^\infty]-Selmer and the structure of #[m \Sha]
 
             p
@@ -856,3 +911,170 @@ section#sec-parity-mw
             p
                 | So if #[m \Sha] is finite then #[m \delta_p =0] for all #[m p].
                 | Use BSD to compute parity of #[m \rk_p].
+
+            aside: p Lecture ? 19/3/2018
+
+        subsubsection
+            title Consequences of BSD
+            p
+                | Consider #[m E/\QQ]:
+                | Mordell-Weil implies that
+                me E(\QQ) \simeq \ZZ^{\rk} \oplus \text{torsion}
+                | then BSD 1 says that
+                me \underbrace{\ord_{s=1} L(E,s)}_{\rk_\an} = \rk
+                | , functional equation for #[m L(E,s)].
+
+            p
+                me L^*(E,s) =  w L^*(E, 2-s)
+                | with #[m w\in \{\pm 1\}] the sign of the functional equation.
+                | If #[m w = 1] then #[m L(E,s)] is (essentially) symmetric at #[m s=1].
+                | So #[m \ord_{s=1} L(E,s)] is even.
+                | If #[m w = -1] then #[m \ord_{s=1} L(E,s)] is odd.
+            p
+                | We get BSD mod 2:
+                me (-1)^{\rk} = w(\text{sign of f.e.})
+                | a conjecture based on conjecture is bad so we go one step further.
+            theorem
+                statement
+                    p
+                        | The sign in the functional equation of #[m L(E,s)] is equal to the global root number of #[m E].
+                    p
+                        | This is defined by
+                        me w_\infty \prod_p w_p
+                        | , the local root numbers defined in terms of the local galois representations.
+                        | Non-trivial to understand, but manageable.
+
+            conjecture
+                title Parity conjecture
+                statement: p
+                    me (-1)^{\rk} = \prod_v w_v = w
+                    | .
+
+            example
+                statement: p
+                    me E/\QQ \colon y^2 + y =     x^3 + x^2 - 7x + 5
+                    me \Delta_E = -7 \cdot 13
+                    | #[m w_v = 1] if #[m v\nmid \infty 7 \cdot 13]
+                    me w_\infty = -1
+                    | (in general #[m -1^{g}] where #[m g] is dimension of the abelian variety).
+                    me w_7 = -1
+                    me w_{13} = -1
+                    | so #[m w= -1] and the rank is odd, hence there is a point of infinite order on this curve.
+
+            paragraphs
+                title Problem
+
+                p
+                    | On the one hand #[m \prod_v w_v] is computable.
+                    | On the other hand #[m (-1)^{\rk}] is precisely unknown.
+                    me (-1)^{\rk} = \prod _v w_v
+                    |.
+
+            theorem
+                statement: p
+                    | Assume #[m \Sha] is finite, let #[m \phi \colon E \to E'] be an isogeny whose degree is   not divisible by #[m \characteristic(K)], then
+                    me \frac{| \Sha_E| \Reg_E \prod_p c_p \Omega_E}{|E_{\tors}|^2} = \frac{| \Sha_{E'}| \Reg_{E'} \prod_p c'_p \Omega_{E'}}{|E'_{\tors}|^2}
+                    | .
+            remark
+                p
+                    | In fact this is true for all abelian varieties over #[m K].
+
+            example
+                statement
+                    p
+                        | Let
+                        me E/\QQ \colon y^1 + xy = x^3 - x
+                        | #[m \Delta_E =  5\cdot 13], it has a 2-isogenous curve #[m E'].
+                        | #[url(href="http://www.lmfdb.org/EllipticCurve/Q/65/a/1")/].
+                    p
+                        | Compute
+                        me c_5 = c_{13} = 1
+                        me c'_5 = c'_{13} = 2
+                        me \Omega_{E}  = 2\Omega_{E'}
+                        | then
+                        me \frac{\Reg_{E'}}{\Reg_E} = \frac{|Sha_E| |E'_\tors|^2 \prod_p c_p \Omega_E}{|Sha_{E'}| |E_\tors|^2 \prod_p c'_p \Omega_{E'}} \equiv \square \frac 24 \not \equiv 1 \square
+                        | .
+
+                    p
+                        | So #[m \Reg_E \ne 1], #[m \Reg_{E'} \ne 1] so #[m E] has at least one rational point of infinite order, so #[m \rk \ge 1].
+            lemma
+                statement
+                    p
+                        | Assume #[m \Sha] is finite, let
+                        me \phi\colon E/K \to E'/K
+                        | be a #[m K]-rational isogeny of degree #[m d].
+                        | Then
+                        me d^n \Reg_E = \det(\pair{dP_i}{P_j}_E )_{i,j}
+                        |.
+                    p
+                        | Write #[m n =  \rk_E = \rk_{E'}].
+                        | Pick a basis #[m \Lambda =  \langle P_1, \ldots, P_n\rangle] for
+                        me E(K) / \tors
+                        | write #[m \Lambda'] for a basis of #[m E'(K)/\tors].
+                        | Write #[m \phi^\vee  \colon E' \to E] for the dual isogeny s.t. #[m  \phi\phi^\vee = \rb d\rb].
+                    p
+                        | using the following fact
+                        me \pair{\phi(P)}{Q}_{E'} =  \pair{P}{ \phi^\vee(Q)}_E
+                        me = \det(\pair{\phi^\vee\phi P_i}{P_j}_E) = \det(\pair{\phi P_i}{\phi P_j}_{E'})
+                        me  = \Reg_{E'} \lb \Lambda' : \phi(\Lambda)\rb^2
+                        | .
+
+            p
+                | Back to the example
+                me \frac{\Reg_E}{\Reg_{E'}} \equiv  \frac 12 \square
+                | so by the lemma #[m \rk] is odd.
+                | Here we assumed that #[m \Sha] is finite for elliptic curves, one can drop the assumption of finiteness of #[m \Sha] to get unconditional results on the parity of #[m \rk_p] for all #[m p].
+
+            conjecture
+                title #[m p]-parity
+                statement: p
+                    me (-1)^{\rk_p} = w
+                    | .
+
+            p
+                | This is known over #[m \QQ] and totally real fields.
+
+
+            p
+                | How to compute the parity of #[m \rk_p(E/K)]?
+                | Need BSD-invariance for Selmer groups.
+                | (Details T. and V. Dokchitser #[q On the BSD quotients modulo squares],
+                | and  Milne #[q Arithmetic duality theorems])
+
+            definition
+                statement: p
+                    | For an isogeny
+                    me \Psi\colon A \to B
+                    | of abelian varieties over #[m K].
+                    | Let
+                    me Q(\Psi) = | \coker(\Psi \colon A(K)/ A(K)_{\tors} \to B(K)/B(K)_{\tors})| \cdot | \ker(\psi \colon \Sha(A)_\divisible \to \Sha(B)_\divisible)|
+                    | .
+
+            p
+                | Recall #[m \rk_p = \rk + \delta_p] where
+                me \Sha = \bigoplus \Sha_{p^\infty}
+                | and
+                me  \Sha_{p^\infty} \simeq (\QQ_p/ \ZZ_p)^\delta_p \oplus T_p
+                me \Sha_{\divisible} = \bigoplus (\QQ_p / \ZZ_p)^{\delta_p}
+                | .
+
+            p
+
+                | Strategy, we show that for #[m \Psi] an isogeny s.t. #[m \Psi \Psi^\vee = \lb p \rb].
+                | Then
+                me o^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
+                | .
+
+
+            remark
+                p
+                    | Let #[m A^\vee] be the dual of #[m A]. #[m A^\vee = \Pic^0(A)].
+
+            p
+                | So
+                me (-1)^{\rk_p(E/K)} =  (-1)^{\ord_p \left(\frac{\prod_v c_v \Omega_E}{\prod_v c'_v \Omega_{E'}}\right)}
+                | the parity of #[m \rk_p(E/K)] is computable from local invariants of #[m E] and #[m E'].
+            p
+                |To prove the #[m p]-parity conjecture it remains to prove
+                me (-1)^{\ord_p \left(\frac{\prod_v c_v \Omega_E}{\prod_v c'_v \Omega_{E'}}\right)} = \prod_v w_v
+                | .
