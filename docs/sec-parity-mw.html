@@ -1922,10 +1922,10 @@ w_{13} = -1
 <p id="p-117">Let</p>
 <div class="displaymath">
 \begin{equation*}
-E/\QQ \colon y^1 + xy = x^3 - x
+E/\QQ \colon y^2 + xy = x^3 - x
 \end{equation*}
 </div>
-<p>\(\Delta_E =  5\cdot 13\text{,}\) it has a 2-isogenous curve \(E'\text{.}\) <a class="external" href="http://www.lmfdb.org/EllipticCurve/Q/65/a/1" target="_blank"><code class="code-inline tex2jax_ignore">http://www.lmfdb.org/EllipticCurve/Q/65/a/1</code></a>.</p>
+<p><a class="external" href="http://www.lmfdb.org/EllipticCurve/Q/65/a/1" target="_blank"><code class="code-inline tex2jax_ignore">http://www.lmfdb.org/EllipticCurve/Q/65/a/1</code></a>. \(\Delta_E =  5\cdot 13\text{,}\) it has a 2-isogenous curve \(E'\text{.}\)</p>
 <p id="p-118">Compute</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1945,7 +1945,7 @@ c'_5 = c'_{13} = 2
 <p>then</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{\Reg_{E'}}{\Reg_E} = \frac{|Sha_E| |E'_\tors|^2 \prod_p c_p \Omega_E}{|Sha_{E'}| |E_\tors|^2 \prod_p c'_p \Omega_{E'}} \equiv \square \frac 24 \not \equiv 1 \square\text{.}
+\frac{\Reg_{E'}}{\Reg_E} = \frac{|\Sha_E| |E'_\tors|^2 \prod_p c_p \Omega_E}{|\Sha_{E'}| |E_\tors|^2 \prod_p c'_p \Omega_{E'}} \equiv \square \frac 24 \not \equiv 1 \square\text{.}
 \end{equation*}
 </div>
 <p id="p-119">So \(\Reg_E \ne 1\text{,}\) \(\Reg_{E'} \ne 1\) so \(E\) has at least one rational point of infinite order, so \(\rk \ge 1\text{.}\)</p></article><article class="theorem-like" id="lemma-4"><h6 class="heading">
@@ -1956,23 +1956,24 @@ c'_5 = c'_{13} = 2
 \phi\colon E/K \to E'/K
 \end{equation*}
 </div>
-<p>be a \(K\)-rational isogeny of degree \(d\text{.}\) Then</p>
-<div class="displaymath">
-\begin{equation*}
-d^n \Reg_E = \det(\pair{dP_i}{P_j}_E )_{i,j}\text{.}
-\end{equation*}
-</div>
+<p>be a \(K\)-rational isogeny of degree \(d\text{.}\)</p>
 <p id="p-121">Write \(n =  \rk_E = \rk_{E'}\text{.}\) Pick a basis \(\Lambda =  \langle P_1, \ldots, P_n\rangle\) for</p>
 <div class="displaymath">
 \begin{equation*}
 E(K) / \tors
 \end{equation*}
 </div>
-<p>write \(\Lambda'\) for a basis of \(E'(K)/\tors\text{.}\) Write \(\phi^\vee  \colon E' \to E\) for the dual isogeny s.t. \(\phi\phi^\vee = \rb d\rb\text{.}\)</p>
+<p>write \(\Lambda'\) for a basis of \(E'(K)/\tors\text{.}\) Write \(\phi^\vee  \colon E' \to E\) for the dual isogeny s.t. \(\phi\phi^\vee = \lb d\rb\text{.}\)</p>
 <p id="p-122">using the following fact</p>
 <div class="displaymath">
 \begin{equation*}
 \pair{\phi(P)}{Q}_{E'} =  \pair{P}{ \phi^\vee(Q)}_E
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+d^n \Reg_E = \det(\pair{dP_i}{P_j}_E )_{i,j}
 \end{equation*}
 </div>
 <div class="displaymath">
