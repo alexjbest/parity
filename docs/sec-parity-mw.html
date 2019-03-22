@@ -2034,7 +2034,7 @@ Q(\Psi) = | \coker(\Psi \colon A(K)/ A(K)_{\tors} \to B(K)/B(K)_{\tors})| \cdot 
 <p id="p-129">Strategy, we show that for \(\Psi\) an isogeny s.t. \(\Psi \Psi^\vee = \lb p \rb\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-o^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}\text{.}
+p^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}\text{.}
 \end{equation*}
 </div>
 <article class="remark-like" id="remark-8"><h6 class="heading">
@@ -2051,7 +2051,268 @@ o^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\pr
 \begin{equation*}
 (-1)^{\ord_p \left(\frac{\prod_v c_v \Omega_E}{\prod_v c'_v \Omega_{E'}}\right)} = \prod_v w_v\text{.}
 \end{equation*}
-</div></section></section></section></div></main>
+</div>
+<aside class="aside-like" id="aside-9"><p id="p-133">Lecture ? 21/3/2018</p></aside><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Aside: Generalisation of the definition of \(\Sel^n(E/\QQ)\).</span></h5>
+<p id="p-134">Consider</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon A \to B
+\end{equation*}
+</div>
+<p>an isogeny of abelian varieties. We have</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to A(K)[\Psi] \to A(K) \xrightarrow \Psi B(K) \xrightarrow \delta H^1(G_K, A[\Psi]) \to H^1(G_K, A) \xrightarrow \Psi H^1(G_K, B)
+\end{equation*}
+</div>
+<p>from which we extract</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to B(K)/ \Psi(A(K)) \xrightarrow \delta H^1(G_K, A[\Psi]) \to H^1(G_K, A)[\Psi] \to 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 \to \prod_v B(K_v)/ \Psi(A(K_v)) \xrightarrow \delta H^1(G_{K_v}, A[\Psi]) \to \prod_v H^1(G_K, A)[\Psi] \to 0
+\end{equation*}
+</div>
+<p>we then define</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel^{(\Psi)} (A/K) = \ker \left\{ H^1(G_K, A[\Psi] \to \prod_v H^1(G_{K_v}, A) \right\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Sha(A/K)= \ker\left\{ H^1(G_K, A) \to \prod_v H^1(G_{K_v}, A)\right\}
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \underbrace{B(K)/ \Psi(A(K))}_{\coker(\Psi \colon A(K) \xrightarrow \Psi B(K))} \to  \Sel^{(\Psi)} (A/K) \to \Sha(A/K) \to 0\text{.}
+\end{equation*}
+</div></article><p id="p-135">We want to show:</p>
+<article class="theorem-like" id="theorem-10"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.46</span>.</h6>
+<p id="p-136">Let \(E/K\) be an elliptic curve, \(K\) a  number field, if \(\Psi \) is s.t. \(\Psi \Psi^\vee = \lb p \rb\)  then</p>
+<div class="displaymath">
+\begin{equation*}
+p^{\rk_p(E/K)} \equiv \frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
+\end{equation*}
+</div></article><p id="p-137">We will show this in 3 parts, first the left, then the right, then the equality with the global root number.</p>
+<article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Step 1.</span></h5>
+<article class="theorem-like" id="proposition-5"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">1.47</span>.</h6>
+<div class="displaymath" id="p-138">
+\begin{equation*}
+p^{\rk_p(E/K)} \equiv \frac{Q(\Psi)}{Q(\Psi^\vee)} \pmod {{K^\times}^2}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-7" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-139">Note that</p>
+<div class="displaymath">
+\begin{equation*}
+Q(\Psi \circ \Psi^\vee) = Q(\Psi) Q(\Psi^\vee)
+\end{equation*}
+</div>
+<p>hence</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \underbrace{Q(\Psi) Q(\Psi^\vee)}_{=Q([p])} \pmod{{K^\times}^2}
+\end{equation*}
+</div>
+<p>now</p>
+<div class="displaymath">
+\begin{equation*}
+| \coker( [p] \colon E(K)/ E(K)_\tors \to E'(K) / E'(K)_\tors ) | = p^{\rk(E/K)}
+\end{equation*}
+</div>
+<p id="p-140">Proof of this: For each generator \(R\) of \(E(K)/E(K)_\tors\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac1p R, \frac 2p R , \ldots, \frac{p-1}{p} R, R
+\end{equation*}
+</div>
+<p>are not in the image of \(\lb p\rb\) which implies  the size is \(p^{\rk(E/K)}\text{.}\) Also</p>
+<div class="displaymath">
+\begin{equation*}
+| \ker([p] \colon \Sha(E/K)_\divisible \to \Sha(E'/K)_\divisible)| = p^{\delta_p}
+\end{equation*}
+</div>
+<p>since</p>
+<div class="displaymath">
+\begin{equation*}
+\Sha(E/K)_\divisible = \bigoplus_p (\QQ_p/\ZZ_p)^{\delta_p}
+\end{equation*}
+</div>
+<p>and since \(\lb p \rb\) is trivial on all</p>
+<div class="displaymath">
+\begin{equation*}
+(\QQ_l/\QQ_l)^{\delta_l},\, l\ne p
+\end{equation*}
+</div>
+<p>then look at \(\lb p \rb \colon (\QQ_p/\ZZ_p)^{\delta_p} \to (\QQ_p/\ZZ_p)^{\delta_p}\) if \(x\in \QQ_p/\ZZ_p\) and \(\ker \lb p \rb\) then \(p x\in \ZZ_p \implies  x = a/p\) for \(a\in \FF_p\text{.}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+p^{\delta_p}\text{.}
+\end{equation*}
+</div></article></div></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Step 2.</span></h5>
+<p id="p-141">We show that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-11"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.48</span>.</h6>
+<p id="p-142">Let \(A,B / K \) be abelian varieties given with a non-zero global exterior form \(\omega_A, \omega_B\text{.}\) Suppose</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon A \to B
+\end{equation*}
+</div>
+<p>is an isogeny and</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi^\vee \colon B^\vee \to A^\vee
+\end{equation*}
+</div>
+<p>its dual.</p>
+<p id="p-143">Let  \(\Sha_0(A/K)\) denote \(\Sha(A/K)\) mod its divisible part. And</p>
+<div class="displaymath">
+\begin{equation*}
+\Omega_A = \prod_{v | \infty,\text{ real}} \int_{A(K_v)} |\omega_A| \prod_{v|\infty,\text{ complex}} 2^{\dim A} \int_{A(K_v)} \omega_A \wedge \overline{\omega_A}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac{|B(K)_\tors||B^\vee(K)_\tors|}{|A(K)_\tors||A^\vee(K)_\tors|} \frac{\prod_v c_p(A/K)}{\prod_v c_v(B/K)} \frac{\Omega_A}{\Omega_{B}} \prod_{p|\deg \Psi} \frac{| \Sha_0(A) [p^\infty]|}{| \Sha_0(B) [p^\infty]|}\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-9"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.49</span>.</h6>
+<p id="p-144">If \(A  = E\text{,}\) \(B =E'\) with \(\Psi\) s.t. \(\Psi \Psi^\vee = \lb p \rb \) then</p>
+<div class="displaymath">
+\begin{equation*}
+E\simeq E^\vee,\, E'\simeq {E'}^\vee
+\end{equation*}
+</div>
+<p>and \(|\Sha_0| = \square\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}}\pmod {{K^\times}^2}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref" data-refid="hk-proof-8"><h6 class="heading"><span class="title">Sketch proof of theorem.</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-145">We show how to obtain the quotient of Tamagawa numbers, for a sufficiently large set of places \(S\) of \(K\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} \frac{| \Sha [\Psi^\vee]|}{| \Sha [\Psi]|} = \prod_{v\in S} \frac{|\ker \Psi_v|}{|\ker \Psi^\vee_v|}
+\end{equation*}
+</div>
+<p>where  \(\Psi_v\) is the induced map on \(E(K_v) \to E' (K_v)\text{.}\) If \(v\nmid \infty\) and \(v\in S\) what is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{|\ker \Psi_v|}{|\coker \Psi_v|}?
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+&amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+&amp;  0\ar[d]  &amp;   \ker \Psi_v  \ar[d] &amp; H_1\ar[d]  &amp;   \\
+0 \ar[r] &amp; E_1(K_v) \ar[r]\ar[d]  &amp;E(K_V) \ar[r]\ar[d]  &amp;E(K_v)/E_1(K_v) \ar[r]\ar[d] &amp; 0 \\
+0 \ar[r] &amp; E'_1(K_v) \ar[r]\ar[d] &amp; E'(K_V)\ar[d] \ar[r]&amp; E'(K_v)/E'_1(K_v) \ar[r]\ar[d] &amp;  0\\
+&amp;  0  &amp;   \coker \Psi_v  &amp; H_2  &amp;
+}
+\end{equation*}
+</div>
+<p id="p-146">Snake lemma gives</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \ker \Psi_v \to H_1 \to 0 \to \coker \Psi_v \to H_2 \to 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies |\ker \Psi_v  | = |H_1|
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+|\coker \Psi_v| = |H_2|\text{.}
+\end{equation*}
+</div>
+<p>Also</p>
+<div class="displaymath">
+\begin{equation*}
+\left | \frac{E(K_v)/E_1(K_v)}{H_1}\right| =  \left | \frac{E'(K_v)/E'_1(K_v)}{H_2}\right|\text{.}
+\end{equation*}
+</div>
+<p id="p-147">Moreover since \(E, E'\) are isogenous we have</p>
+<div class="displaymath">
+\begin{equation*}
+| \widetilde E_\ns (\overline k) |=| \widetilde E'_\ns (\overline k) |
+\end{equation*}
+</div>
+<p>hence since</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to E_1(K_v) \to E_0 (K_v) \to  \widetilde E_\ns (\overline k) \to 0
+\end{equation*}
+</div>
+<p>similarly for \(E'\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+| E_0(K_v) / E_1(K_v) |  = | E'_0(K_v) / E'_1(K_v) |
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \left | \frac{E'(K_v) / E_1'(K_v)}{E(K_v) / E_1(K_v)} \right| = \left | \frac{E'(K_v) / E_0'(K_v)}{E(K_v) / E_0(K_v)} \right| = \frac{c_v}{c'_v}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-148">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_p(E/K)} = (-1)^{\ord_p\left( \prod_v \left| \frac{\coker \Psi_v}{\ker \Psi_v}\right|\right)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= (-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v} \underbrace{\prod_{v|\infty} \left| \frac{\coker \Psi_v}{\ker \Psi_v}\right|}_{\Omega_E/\Omega_{E'}} \right) }\text{.}
+\end{equation*}
+</div></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Step 3.</span></h5>
+<p id="p-149">We need to show that</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_p(E/K)}=  w_E \text{ (p-parity)}
+\end{equation*}
+</div>
+<p>i.e. we need to show that</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v}\frac{\Omega_E}{\Omega_{E'}} \right)} = w_E
+\end{equation*}
+</div>
+<p id="p-150">Strategy:</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v}\frac{\Omega_E}{\Omega_{E'}} \right)} = \prod_{v \nmid \infty} (-1)^{\ord_p \frac{c'_v}{c_v}} \prod_{v |\infty} (-1)^{\ord_p \left | \frac {\ker \Psi_v}{\coker \Psi_v} \right | }
+\end{equation*}
+</div>
+<p>and relate</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \frac{c'_v}{c_v}}
+\end{equation*}
+</div>
+<p>to \(w_v\) for \(v\nmid \infty\) and</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \left | \frac {\ker \Psi_v}{\coker \Psi_v} \right |}
+\end{equation*}
+</div>
+<p>to \(w_v\) for \(v\mid \infty\text{.}\)</p>
+<p id="p-151">Then take product over all places.</p></article></section></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

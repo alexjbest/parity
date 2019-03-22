@@ -1063,7 +1063,7 @@ section#sec-parity-mw
 
                 | Strategy, we show that for #[m \Psi] an isogeny s.t. #[m \Psi \Psi^\vee = \lb p \rb].
                 | Then
-                me o^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
+                me p^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
                 | .
 
 
@@ -1079,3 +1079,166 @@ section#sec-parity-mw
                 |To prove the #[m p]-parity conjecture it remains to prove
                 me (-1)^{\ord_p \left(\frac{\prod_v c_v \Omega_E}{\prod_v c'_v \Omega_{E'}}\right)} = \prod_v w_v
                 | .
+
+            aside: p Lecture ? 21/3/2018
+
+            paragraphs
+                title Aside: Generalisation of the definition of #[m \Sel^n(E/\QQ)]
+
+                p
+                    | Consider
+                    me \Psi \colon A \to B
+                    | an isogeny of abelian varieties.
+                    | We have
+                    me  0 \to A(K)[\Psi] \to A(K) \xrightarrow \Psi B(K) \xrightarrow \delta H^1(G_K, A[\Psi]) \to H^1(G_K, A) \xrightarrow \Psi H^1(G_K, B)
+                    | from which we extract
+                    me 0 \to B(K)/ \Psi(A(K)) \xrightarrow \delta H^1(G_K, A[\Psi]) \to H^1(G_K, A)[\Psi] \to 0
+                    me 0 \to \prod_v B(K_v)/ \Psi(A(K_v)) \xrightarrow \delta H^1(G_{K_v}, A[\Psi]) \to \prod_v H^1(G_K, A)[\Psi] \to 0
+                    | we then define
+                    me \Sel^{(\Psi)} (A/K) = \ker \left\{ H^1(G_K, A[\Psi] \to \prod_v H^1(G_{K_v}, A) \right\}
+                    me \Sha(A/K)= \ker\left\{ H^1(G_K, A) \to \prod_v H^1(G_{K_v}, A)\right\}
+                    | so
+                    me 0 \to \underbrace{B(K)/ \Psi(A(K))}_{\coker(\Psi \colon A(K) \xrightarrow \Psi B(K))} \to  \Sel^{(\Psi)} (A/K) \to \Sha(A/K) \to 0
+                    |.
+
+            p
+                | We want to show:
+            theorem
+                statement: p
+                    | Let #[m E/K] be an elliptic curve, #[m K] a  number field, if #[m \Psi ] is s.t. #[m \Psi \Psi^\vee = \lb p \rb]  then
+                    me p^{\rk_p(E/K)} \equiv \frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
+
+            p
+                | We will show this in 3 parts, first the left, then the right, then the equality with the global root number.
+
+            paragraphs
+                title Step 1
+
+                proposition
+                    statement: p
+                        me p^{\rk_p(E/K)} \equiv \frac{Q(\Psi)}{Q(\Psi^\vee)} \pmod {{K^\times}^2}
+                    proof
+                        p
+                            | Note that
+                            me Q(\Psi \circ \Psi^\vee) = Q(\Psi) Q(\Psi^\vee)
+                            | hence
+                            me \frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \underbrace{Q(\Psi) Q(\Psi^\vee)}_{=Q([p])} \pmod{{K^\times}^2}
+                            | now
+                            me | \coker( [p] \colon E(K)/ E(K)_\tors \to E'(K) / E'(K)_\tors ) | = p^{\rk(E/K)}
+                        p
+                            | Proof of this:
+                            | For each generator #[m R] of #[m E(K)/E(K)_\tors] then
+                            me \frac1p R, \frac 2p R , \ldots, \frac{p-1}{p} R, R
+                            | are not in the image of #[m \lb p\rb] which implies  the size is #[m p^{\rk(E/K)}].
+                            | Also
+                            me | \ker([p] \colon \Sha(E/K)_\divisible \to \Sha(E'/K)_\divisible)| = p^{\delta_p}
+                            | since
+                            me \Sha(E/K)_\divisible = \bigoplus_p (\QQ_p/\ZZ_p)^{\delta_p}
+                            | and since #[m \lb p \rb] is trivial on all
+                            me (\QQ_l/\QQ_l)^{\delta_l},\, l\ne p
+                            | then look at #[m \lb p \rb \colon (\QQ_p/\ZZ_p)^{\delta_p} \to (\QQ_p/\ZZ_p)^{\delta_p}]
+                            | if #[m x\in \QQ_p/\ZZ_p] and #[m \ker \lb p \rb] then #[m p x\in \ZZ_p \implies  x = a/p] for #[m a\in \FF_p].
+
+                            | so
+                            me p^{\delta_p}
+                            | .
+
+            paragraphs
+                title Step 2
+
+                p
+                    | We show that
+                    me \frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
+                    |.
+
+                theorem
+                    statement
+                        p
+                            | Let #[m A,B / K ] be abelian varieties given with a non-zero global exterior form #[m \omega_A, \omega_B].
+                            | Suppose
+                            me \Psi \colon A \to B
+                            | is an isogeny and
+                            me \Psi^\vee \colon B^\vee \to A^\vee
+                            | its dual.
+                        p
+                            | Let  #[m \Sha_0(A/K)] denote #[m \Sha(A/K)] mod its divisible part.
+                            | And
+                            me \Omega_A = \prod_{v | \infty,\text{ real}} \int_{A(K_v)} |\omega_A| \prod_{v|\infty,\text{ complex}} 2^{\dim A} \int_{A(K_v)} \omega_A \wedge \overline{\omega_A}
+                            | .
+                            | Then
+                            me \frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac{|B(K)_\tors||B^\vee(K)_\tors|}{|A(K)_\tors||A^\vee(K)_\tors|} \frac{\prod_v c_p(A/K)}{\prod_v c_v(B/K)} \frac{\Omega_A}{\Omega_{B}} \prod_{p|\deg \Psi} \frac{| \Sha_0(A) [p^\infty]|}{| \Sha_0(B) [p^\infty]|}
+                            |.
+
+
+                remark
+                    p
+                        | If #[m A  = E], #[m B =E'] with #[m \Psi] s.t. #[m \Psi \Psi^\vee = \lb p \rb ] then
+                        me E\simeq E^\vee,\, E'\simeq {E'}^\vee
+                        | and #[m |\Sha_0| = \square].
+                        me \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}}\pmod {{K^\times}^2}
+                        | .
+
+                proof
+                    title Sketch proof of theorem
+                    p
+                        | We show how to obtain the quotient of Tamagawa numbers, for a sufficiently large set of places #[m S] of #[m K]
+                        me \frac{Q(\Psi^\vee)}{Q(\Psi)} \frac{| \Sha [\Psi^\vee]|}{| \Sha [\Psi]|} = \prod_{v\in S} \frac{|\ker \Psi_v|}{|\ker \Psi^\vee_v|}
+                        | where  #[m \Psi_v] is the induced map on #[m E(K_v) \to E' (K_v)].
+                        | If #[m v\nmid \infty] and #[m v\in S] what is
+                        me \frac{|\ker \Psi_v|}{|\coker \Psi_v|}?
+                        me.
+                            \xymatrix{
+                                     &amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+                                     &amp;  0\ar[d]  &amp;   \ker \Psi_v  \ar[d] &amp; H_1\ar[d]  &amp;   \\
+
+                            0 \ar[r] &amp; E_1(K_v) \ar[r]\ar[d]  &amp;E(K_V) \ar[r]\ar[d]  &amp;E(K_v)/E_1(K_v) \ar[r]\ar[d] &amp; 0 \\
+                            0 \ar[r] &amp; E'_1(K_v) \ar[r]\ar[d] &amp; E'(K_V)\ar[d] \ar[r]&amp; E'(K_v)/E'_1(K_v) \ar[r]\ar[d] &amp;  0\\
+                                  &amp;  0  &amp;   \coker \Psi_v  &amp; H_2  &amp;
+                            }
+                    p
+                        | Snake lemma gives
+                        me 0 \to \ker \Psi_v \to H_1 \to 0 \to \coker \Psi_v \to H_2 \to 0
+                        me \implies |\ker \Psi_v  | = |H_1|
+                        | and
+                        me |\coker \Psi_v| = |H_2|
+                        | .
+                        | Also
+                        me \left | \frac{E(K_v)/E_1(K_v)}{H_1}\right| =  \left | \frac{E'(K_v)/E'_1(K_v)}{H_2}\right|
+                        |.
+                    p
+                        | Moreover since #[m E, E'] are isogenous we have
+                        me | \widetilde E_\ns (\overline k) |=| \widetilde E'_\ns (\overline k) |
+                        | hence since
+                        me 0 \to E_1(K_v) \to E_0 (K_v) \to  \widetilde E_\ns (\overline k) \to 0
+                        | similarly for #[m E'].
+                        | We have
+                        me | E_0(K_v) / E_1(K_v) |  = | E'_0(K_v) / E'_1(K_v) |
+                        me \implies \left | \frac{E'(K_v) / E_1'(K_v)}{E(K_v) / E_1(K_v)} \right| = \left | \frac{E'(K_v) / E_0'(K_v)}{E(K_v) / E_0(K_v)} \right| = \frac{c_v}{c'_v}
+                        | .
+
+
+                p
+                    | Hence
+                    me (-1)^{\rk_p(E/K)} = (-1)^{\ord_p\left( \prod_v \left| \frac{\coker \Psi_v}{\ker \Psi_v}\right|\right)}
+                    me                   = (-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v} \underbrace{\prod_{v|\infty} \left| \frac{\coker \Psi_v}{\ker \Psi_v}\right|}_{\Omega_E/\Omega_{E'}} \right) }
+                    |.
+
+            paragraphs
+                title Step 3
+
+                p
+                    | We need to show that
+                    me (-1)^{\rk_p(E/K)}=  w_E \text{ (p-parity)}
+                    | i.e. we need to show that
+                    me (-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v}\frac{\Omega_E}{\Omega_{E'}} \right)} = w_E
+                p
+                    | Strategy:
+                    me (-1)^{\ord_p\left( \frac{\prod_v c'_v}{\prod_v c_v}\frac{\Omega_E}{\Omega_{E'}} \right)} = \prod_{v \nmid \infty} (-1)^{\ord_p \frac{c'_v}{c_v}} \prod_{v |\infty} (-1)^{\ord_p \left | \frac {\ker \Psi_v}{\coker \Psi_v} \right | }
+                    | and relate
+                    me (-1)^{\ord_p \frac{c'_v}{c_v}}
+                    | to #[m w_v] for #[m v\nmid \infty] and
+                    me (-1)^{\ord_p \left | \frac {\ker \Psi_v}{\coker \Psi_v} \right |}
+                    | to #[m w_v] for #[m v\mid \infty].
+                p
+                    | Then take product over all places.
+
