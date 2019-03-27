@@ -2312,7 +2312,212 @@ E\simeq E^\vee,\, E'\simeq {E'}^\vee
 \end{equation*}
 </div>
 <p>to \(w_v\) for \(v\mid \infty\text{.}\)</p>
-<p id="p-151">Then take product over all places.</p></article></section></section></section></div></main>
+<p id="p-151">Then take product over all places.</p></article><aside class="aside-like" id="aside-10"><p id="p-152">Lecture ? 26/3/2018</p></aside><p id="p-153">Let \(E/ K \) be an elliptic curve admitting an isogeny \(\Psi\) of degree \(p\) (defined over \(K\)). Recall that we proved</p>
+<div class="displaymath">
+\begin{equation*}
+p^{\rk_p(E/K)} =  \prod_v \frac{c_v}{c_v'} \frac{\Omega_E}{\Omega_{E'}}
+\end{equation*}
+</div>
+<p>\(v\) missing \(p\text{.}\) More precisely</p>
+<div class="displaymath">
+\begin{equation*}
+p^{\rk_p(E/K)} \equiv \prod_{v|p\infty} \frac{c_v}{c'_{v}} \prod_{v|\infty} \left| \frac{\ker \psi_v}{\coker \psi_v}\right|
+\end{equation*}
+</div>
+<p>where \(\psi_v\) is the map induced by \(\psi\) on \(E(K_v)\text{.}\)</p>
+<p id="p-154">What about \(v | p\) to extract</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{c_v}{c'_v}
+\end{equation*}
+</div>
+<p>from</p>
+<div class="displaymath">
+\begin{equation*}
+\left| \frac{\ker \psi_v}{\coker \psi_v}\right|
+\end{equation*}
+</div>
+<p>at finite places we can use a diagram involving</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to E_1(K_v) \to E'_1(K_v) \to \coker \to 0\text{.}
+\end{equation*}
+</div>
+<p id="p-155">If \(v\nmid p \) then \(| \coker | = 1\) since then on the level of the formal group \(\psi\) induces a map</p>
+<div class="displaymath">
+\begin{equation*}
+\hat \psi \colon \hat E(\ideal m_K) \to \hat E'(\ideal m_K)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+T \mapsto aT + \cdots
+\end{equation*}
+</div>
+<p>power series rep of \(\psi\) \(\psi(x,y) = (x', y')\) silverman IV cor 4.3/ \(\omega' \circ \psi = \psi' \circ \omega\text{.}\) with leading \(a = \psi^* \omega'/ \omega \times \) unit \(\in \ints_K\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\implies aa'  = p \in \ints_K^\times  \implies \hat \psi\text{ isom}\text{.}
+\end{equation*}
+</div>
+<p id="p-156">If \(v | p\) then \(\coker\) contributes to the snake lemma and at that place</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{c_v}{c'_v} \left| \frac{\psi^* \omega'}{\omega}\right|_v = \frac{c_E}{c_E'} \left| \frac{\omega}{\omega_v^0} \right|_v
+\end{equation*}
+</div>
+<p>for a particular choice of \(\omega\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Proving \(p\)-parity.</span></h5>
+<p id="p-157">To prove the \(p\)-parity conjecture</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_p(E/K)} = w_E\text{.}
+\end{equation*}
+</div>
+<p id="p-158">We will show that</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \prod_v \frac{c_v}{c'_v} \frac{\Omega}{\Omega_{E'}}} = w_E
+\end{equation*}
+</div>
+<p>by relating</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \frac{c_v}{c'_v}}
+\end{equation*}
+</div>
+<p>and \(w_v\) at some place \(v\nmid p\infty\)</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \frac{\Omega_E}{\Omega_{E'} }}= (-1)^{\ord_p \left| \frac {\ker \psi_v}{\coker \psi_v}\right| }
+\end{equation*}
+</div>
+<p>and \(w_v\) at \(v | \infty\text{.}\)</p>
+<p id="p-159">We only sketch these steps for \(v\nmid p\) and \(E \) is semistable at \(v\text{.}\)</p>
+<p id="p-160">The proofs of \(p\)-parity for \(p\) odd and \(p= 2\) are different.</p></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">\(p\) odd.</span></h5>
+<p id="p-161">The \(p\)-parity conjecture is proven for principally polarized abelian varieties with  a \(p\)-cyclic isogeny with \(p \ge 2g +2 \) or \(p \ge 2\) and semistable reduction and some local constraints at \(v|p\text{.}\) see Root numbers selmer groups and non-commutative Iwasawa theory, Coates Fukaya, Kato, Sujatha</p>
+<p id="p-162">Sketch, for an elliptic curve with a \(p\)isogeny \(\psi\) we look at \(v|\infty\) where \(w_v = -1\text{.}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |}
+\end{equation*}
+</div>
+<p>if \(v\) is complex \(|\ker \psi_v| = p\) \(|\coker \psi_v | = 1\text{.}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = -1 = w_v\text{.}
+\end{equation*}
+</div>
+<p id="p-163">If \(v|\infty\) is real what does \(E(\RR)\) look like? Either there is a real period and so two real components, and all real \(p\)-torsion (if any) is on the identity component. Or there is no real period and only 1 real component that contains all real \(p\)-tors if any.</p>
+<ol class="decimal">
+<li id="li-54">\(|\ker \psi_v | = p\) (the \(p\)-tors in \(\ker \psi\) are real)</li>
+<li id="li-55">\(|\ker \psi_v | = 1\) (the \(p\)-tors in \(\ker \psi\) are not real)</li>
+</ol>
+<p id="p-164">Moreover \(|\coker \psi | = 1\) always, \(\sgn(\Delta_E) = \sgn(\Delta_{E'})\)</p>
+<p id="p-165">More generally if \(\deg \Psi\) is odd then</p>
+<div class="displaymath">
+\begin{equation*}
+E'(\RR)/ \psi(E(\RR)) \hookrightarrow H^1(\Gal{\CC}{\RR}, E[\psi]) = 0
+\end{equation*}
+</div>
+<p>since \(\lb \CC:\RR\rb = 2 \) is coprime to \(E\lb \psi\rb\) (see Atiyah's book).</p>
+<p id="p-166">In the first case</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = -1 = w_v
+\end{equation*}
+</div>
+<p>In the second case</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = 1 \ne w_v
+\end{equation*}
+</div>
+<p id="p-167">For \(K\) a local field let \(F = K(\ker \psi_v)\) noting that</p>
+<div class="displaymath">
+\begin{equation*}
+\Gal{F}K \hookrightarrow (\ZZ/p\ZZ)^\times from its action on points in  is cyclic.
+\end{equation*}
+</div>
+<p id="p-168">Consider the composition</p>
+<div class="displaymath">
+\begin{equation*}
+F^\times \xrightarrow{\text{local rec.}} \Gal F K \hookrightarrow(\ZZ/p)^\times\text{.}
+\end{equation*}
+</div>
+<p>and denote</p>
+<div class="displaymath">
+\begin{equation*}
+(-1, F/K)
+\end{equation*}
+</div>
+<p>the image of \(-1\) under the above map.</p>
+<div class="displaymath">
+\begin{equation*}
+(-1, F/K) = \begin{cases} 1 \amp \text{ if } -1 \text{ is a norm from }F\text{ to }K,\\ - 1\amp\text{otw}\end{cases}
+\end{equation*}
+</div>
+<p>this is the Artin symbol.</p>
+<p id="p-169">This is perfect as they cancel out globally.</p>
+<p id="p-170">If \(v\) is complex then \(F = \CC\text{,}\) \(K = \CC\) and \((-1, F/K) = 1\)</p>
+<p id="p-171">If \(v\) is real and \(|\ker \psi_v| = p\) then \(F = \RR\text{,}\) \(K = \RR\) and \((-1, F/K) = 1\)</p>
+<p id="p-172">If \(v\) is real and \(|\ker \psi_v| = 1\) then \(F = \RR\text{,}\) \(K = \RR\) and \((-1, F/K) = -1\)</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">\(p =2\).</span></h5>
+<p id="p-173">Note that \((-1, F/K) =  1\) for all places of \(K\) since if \(E\) admits a 2-isogeny \(\psi/K\) then is admits a 2-torsion point over \(K\text{.}\)</p>
+<p id="p-174">Hence \(F = K(\ker \psi_v) = K\)</p>
+<p id="p-175">set -up</p>
+<div class="displaymath">
+\begin{equation*}
+E/K
+\end{equation*}
+</div>
+<p>with a 2-isogeny \(\psi/K\)</p>
+<div class="displaymath">
+\begin{equation*}
+E \colon y^2 = x(x+ax+ b)
+\end{equation*}
+</div>
+<p>by translating 2-torsion to (0,0)</p>
+<div class="displaymath">
+\begin{equation*}
+\psi\colon E \to E':y^2= x(x^2 - 2ax + \delta)
+\end{equation*}
+</div>
+<p>where \(\delta = a^2 - 4b =  \disc(x^2 + ax + b)\) if \(\delta \gt 0 \) then \(E(\RR) \) has two connected components. \(\delta \lt 0\) only 1. Have \(16b  = \disc(x^2 - 2ax +\delta)\) likewise for \(E'\)</p>
+<div class="displaymath" id="p-176">
+\begin{equation*}
+\xymatrix{
+&amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+&amp; \ker \psi_v^0  0\ar[d]  &amp;   \ker \psi_v  \ar[d] &amp; \ker \psi_/\ar[d]  &amp;   \\
+0 \ar[r] &amp; E^0(\RR) \ar[r]\ar[d]  &amp;E(\RR) \ar[r]\ar[d]  &amp;E(\RR)/E^0(\RR) \ar[r]\ar[d] &amp; 0 \\
+0 \ar[r] &amp; E'^0(\RR) \ar[r]\ar[d] &amp; E'(\RR)\ar[d] \ar[r]&amp; E'(\RR)/E'^0(\RR) \ar[r]\ar[d] &amp;  0\\
+&amp;  \coker \psi_v^0  &amp;   \coker \Psi_v  &amp; \coker \psi_/  &amp;
+}
+\end{equation*}
+</div>
+<p id="p-177">by snakey</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{ | \ker \psi_v^0 || \ker \psi_/ || \ker \psi|}{|\ker \psi_v || \coker \psi_v^0|| \coker \psi_/| } = 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \left| \frac{\coker \psi_v}{\ker \psi_v}\right| = \frac{| \coker \psi^)_v|| \coker \psi_/|}{|\ker \psi_v^0|| \ker\psi_/|}
+\end{equation*}
+</div>
+<p>let \(n(E), n(E')\) be the number of real connected components \(n = E(\RR) / E^0(\RR)\)</p>
+<p id="p-178">By the third column</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{n(E')}{n(E)} \frac{|\ker \psi_/|}{\coker \psi_/|}  =1
+\end{equation*}
+</div>
+<p>now \(| coker \psi_v^0| = 1\) as the map on identity component is surjective. hence</p>
+<div class="displaymath">
+\begin{equation*}
+\left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
+\end{equation*}
+</div></article></section></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

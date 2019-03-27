@@ -1242,3 +1242,157 @@ section#sec-parity-mw
                 p
                     | Then take product over all places.
 
+            aside: p Lecture ? 26/3/2018
+
+            p
+                | Let #[m E/ K ] be an elliptic curve admitting an isogeny #[m \Psi] of degree #[m p] (defined over #[m K]).
+                | Recall that we proved
+                me  p^{\rk_p(E/K)} =  \prod_v \frac{c_v}{c_v'} \frac{\Omega_E}{\Omega_{E'}}
+                | #[m v] missing #[m p]. More precisely
+                me p^{\rk_p(E/K)} \equiv \prod_{v|p\infty} \frac{c_v}{c'_{v}} \prod_{v|\infty} \left| \frac{\ker \psi_v}{\coker \psi_v}\right|
+                | where #[m \psi_v] is the map induced by #[m \psi] on #[m E(K_v)].
+            p
+                | What about #[m v | p] to extract
+                me \frac{c_v}{c'_v}
+                | from
+                me \left| \frac{\ker \psi_v}{\coker \psi_v}\right|
+                | at finite places we can use a diagram involving
+                me 0 \to E_1(K_v) \to E'_1(K_v) \to \coker \to 0
+                | .
+
+            p
+                | If #[m v\nmid p ] then #[m | \coker | = 1] since then on the level of the formal group #[m \psi] induces a map
+                me \hat \psi \colon \hat E(\ideal m_K) \to \hat E'(\ideal m_K)
+                me T \mapsto aT + \cdots
+
+                | power series rep of #[m \psi] #[m \psi(x,y) = (x', y')] silverman IV cor 4.3/
+                | #[m \omega' \circ \psi = \psi' \circ \omega].
+                | with leading #[m a = \psi^* \omega'/ \omega \times ] unit #[m \in \ints_K].
+                me \implies aa'  = p \in \ints_K^\times  \implies \hat \psi\text{ isom}
+                |.
+            p
+                | If #[m v | p] then #[m \coker] contributes to the snake lemma and at that place
+                me \frac{c_v}{c'_v} \left| \frac{\psi^* \omega'}{\omega}\right|_v = \frac{c_E}{c_E'} \left| \frac{\omega}{\omega_v^0} \right|_v
+                | for a particular choice of #[m \omega].
+
+            paragraphs
+                title Proving #[m p]-parity
+                p
+                    | To prove the #[m p]-parity conjecture
+                    me (-1)^{\rk_p(E/K)} = w_E
+                    | .
+                p
+                    | We will show that
+                    me (-1)^{\ord_p \prod_v \frac{c_v}{c'_v} \frac{\Omega}{\Omega_{E'}}} = w_E
+                    | by relating
+                    me (-1)^{\ord_p \frac{c_v}{c'_v}}
+                    | and #[m w_v] at some place #[m v\nmid p\infty]
+                    me (-1)^{\ord_p \frac{\Omega_E}{\Omega_{E'} }}= (-1)^{\ord_p \left| \frac {\ker \psi_v}{\coker \psi_v}\right| }
+                    | and #[m w_v] at #[m v | \infty].
+                p
+                    | We only sketch these steps for #[m v\nmid p] and #[m E ] is semistable at #[m v].
+                p
+                    | The proofs of #[m p]-parity for #[m p] odd and #[m p= 2] are different.
+            paragraphs
+                title #[m p] odd
+                p
+                    | The #[m p]-parity conjecture is proven for principally polarized abelian varieties with  a #[m  p]-cyclic isogeny with #[m p \ge 2g +2 ] or #[m p \ge 2] and semistable reduction and some local constraints at #[m v|p].
+                    | see Root numbers selmer groups and non-commutative Iwasawa theory, Coates Fukaya, Kato, Sujatha
+                p
+                    | Sketch, for an elliptic curve with a #[m p]isogeny #[m \psi]
+                    | we look at #[m v|\infty] where #[m w_v = -1].
+                    | and
+                    me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |}
+                    | if #[m v] is complex #[m |\ker \psi_v| = p] #[m |\coker \psi_v | = 1].
+                    | so
+                    me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = -1 = w_v
+                    |.
+                p
+                    | If #[m v|\infty] is real what does #[m E(\RR)] look like?
+                    | Either there is a real period and so two real components, and all real #[m p]-torsion (if any) is on the identity component.
+                    | Or there is no real period and only 1 real component that contains all real #[m p]-tors if any.
+                    ol
+                        li
+                            | #[m |\ker \psi_v | = p] (the #[m p]-tors in #[m \ker \psi] are real)
+                        li
+                            | #[m |\ker \psi_v | = 1] (the #[m p]-tors in #[m \ker \psi] are not real)
+                p
+                    | Moreover #[m |\coker \psi | = 1] always, 
+                    | #[m \sgn(\Delta_E) = \sgn(\Delta_{E'})]
+
+                p
+                    | More generally if #[m \deg \Psi] is odd then
+                    me E'(\RR)/ \psi(E(\RR)) \hookrightarrow H^1(\Gal{\CC}{\RR}, E[\psi]) = 0
+                    | since #[m \lb \CC:\RR\rb = 2 ] is coprime to #[m E\lb \psi\rb] (see Atiyah's book).
+
+                p
+                    | In the first case 
+                    me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = -1 = w_v
+                    | In the second case 
+                    me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = 1 \ne w_v
+
+                p
+                    | For #[m K] a local field let #[m F = K(\ker \psi_v)] noting that
+                    me \Gal{F}K \hookrightarrow (\ZZ/p\ZZ)^\times from its action on points in #[m \ker \psi = F/K] is cyclic.
+                p
+                    | Consider the composition
+                    me F^\times \xrightarrow{\text{local rec.}} \Gal F K \hookrightarrow(\ZZ/p)^\times
+                    |.
+                    | and denote
+                    me (-1, F/K)
+                    | the image of #[m -1] under the above map.
+                    me (-1, F/K) = \begin{cases} 1 \amp \text{ if } -1 \text{ is a norm from }F\text{ to }K,\\ - 1\amp\text{otw}\end{cases}
+                    | this is the Artin symbol.
+
+                p
+                    | This is perfect as they cancel out globally.
+                p
+                    | If #[m v] is complex then #[m F = \CC], #[m K = \CC] and #[m (-1, F/K) = 1]
+                p
+                    | If #[m v] is real and #[m |\ker \psi_v| = p] then #[m F = \RR], #[m K = \RR] and #[m (-1, F/K) = 1]
+                p
+                    | If #[m v] is real and #[m |\ker \psi_v| = 1] then #[m F = \RR], #[m K = \RR] and #[m (-1, F/K) = -1]
+
+            paragraphs
+                title #[m p =2]
+
+                p
+                    |  Note that #[m (-1, F/K) =  1] for all places of #[m K] since if #[m E] admits a 2-isogeny #[m \psi/K] then is admits a 2-torsion point over #[m K].
+                p
+                    | Hence #[m F = K(\ker \psi_v) = K]
+
+                p
+                    | set -up
+                    me E/K
+                    | with a 2-isogeny #[m \psi/K]
+                    me E \colon y^2 = x(x+ax+ b)
+                    | by translating 2-torsion to (0,0)
+                    me \psi\colon E \to E':y^2= x(x^2 - 2ax + \delta)
+                    | where #[m \delta = a^2 - 4b =  \disc(x^2 + ax + b)]
+                    | if #[m \delta \gt 0 ] then #[m E(\RR) ] has two connected components.
+                    | #[m \delta \lt 0] only 1.
+
+                    | Have #[m 16b  = \disc(x^2 - 2ax +\delta)] likewise for #[m E']
+                p
+                    me.
+                            \xymatrix{
+                                     &amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+                                    &amp; \ker \psi_v^0  0\ar[d]  &amp;   \ker \psi_v  \ar[d] &amp; \ker \psi_/\ar[d]  &amp;   \\
+
+                                0 \ar[r] &amp; E^0(\RR) \ar[r]\ar[d]  &amp;E(\RR) \ar[r]\ar[d]  &amp;E(\RR)/E^0(\RR) \ar[r]\ar[d] &amp; 0 \\
+                                0 \ar[r] &amp; E'^0(\RR) \ar[r]\ar[d] &amp; E'(\RR)\ar[d] \ar[r]&amp; E'(\RR)/E'^0(\RR) \ar[r]\ar[d] &amp;  0\\
+                                      &amp;  \coker \psi_v^0  &amp;   \coker \Psi_v  &amp; \coker \psi_/  &amp;
+                                }
+
+                p
+                    | by snakey
+                    me \frac{ | \ker \psi_v^0 || \ker \psi_/ || \ker \psi|}{|\ker \psi_v || \coker \psi_v^0|| \coker \psi_/| } = 1
+                    me \implies \left| \frac{\coker \psi_v}{\ker \psi_v}\right| = \frac{| \coker \psi^)_v|| \coker \psi_/|}{|\ker \psi_v^0|| \ker\psi_/|}
+                    | let #[m n(E), n(E')] be the number of real connected components #[m n = E(\RR) / E^0(\RR)]
+                p
+                    | By the third column
+                    me \frac{n(E')}{n(E)} \frac{|\ker \psi_/|}{\coker \psi_/|}  =1
+
+                    | now #[m | coker \psi_v^0| = 1] as the map on identity component is surjective.
+                    | hence
+                    me \left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
