@@ -1317,7 +1317,7 @@ section#sec-parity-mw
                         li
                             | #[m |\ker \psi_v | = 1] (the #[m p]-tors in #[m \ker \psi] are not real)
                 p
-                    | Moreover #[m |\coker \psi | = 1] always, 
+                    | Moreover #[m |\coker \psi | = 1] always,
                     | #[m \sgn(\Delta_E) = \sgn(\Delta_{E'})]
 
                 p
@@ -1326,14 +1326,15 @@ section#sec-parity-mw
                     | since #[m \lb \CC:\RR\rb = 2 ] is coprime to #[m E\lb \psi\rb] (see Atiyah's book).
 
                 p
-                    | In the first case 
+                    | In the first case
                     me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = -1 = w_v
-                    | In the second case 
+                    | In the second case
                     me (-1)^{\ord_p \left | \frac{\ker \psi_v}{\coker \psi_v}\right |} = 1 \ne w_v
 
                 p
                     | For #[m K] a local field let #[m F = K(\ker \psi_v)] noting that
-                    me \Gal{F}K \hookrightarrow (\ZZ/p\ZZ)^\times from its action on points in #[m \ker \psi = F/K] is cyclic.
+                    me \Gal{F}K \hookrightarrow (\ZZ/p\ZZ)^\times
+                    | from its action on points in #[m \ker \psi = F/K] is cyclic.
                 p
                     | Consider the composition
                     me F^\times \xrightarrow{\text{local rec.}} \Gal F K \hookrightarrow(\ZZ/p)^\times
@@ -1396,3 +1397,193 @@ section#sec-parity-mw
                     | now #[m | coker \psi_v^0| = 1] as the map on identity component is surjective.
                     | hence
                     me \left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
+
+                aside: p Lecture ? 28/3/2018
+
+                p
+                    | Recall: to prove the #[m 2]-parity conjecture dfor #[m E/K]
+                    me (-1)^{\rk_2(E)} = w
+
+
+                    |???????????????????? missed
+
+
+                p
+                    | Notation
+                    me E \colon y^2 = x(x^2+  ax+ b) = xq_1(x)
+                    me E' \colon y^2 = x(x^2-2 ax+ \delta) = xq_2(x),\,\delta = a^2 - 4b
+                    | #[m \disc(q_1(x)) = \delta]
+                    | #[m \disc(q_2(x)) = 16b]
+
+                p
+                    | a) If #[m \delta \gt 0], #[m b \gt 0] then
+                    | #[m E,E'] both have two real components, #[m n(E) = n(E') =2].
+                    me.
+                        | \ker \psi_v^0| =
+                        \begin{cases}
+                        1 \amp \text{ if } (0,0)\text{ is not on } E^0(\RR)\\
+                        2 \amp \text{ if } (0,0)\text{ is on } E^0(\RR)\\
+                        \end{cases}=
+                        \begin{cases}
+                        1 \amp \text{ if } a \lt 0\\
+                        2 \amp \text{ if } a \gt 0\\
+                        \end{cases}
+
+                    | write #[m q_1(x) = x^2 + ax + b = (x-\alpha)(x-\beta)]
+                    | then  if #[m (0,0) \in E^0(\RR)], #[m \alpha,\beta\lt 0]
+                    | but #[m a = -\alpha -\beta] hence in this case #[m a \gt 0].
+                    me.
+                        (-1)^{\ord_2 \left| \frac{\ker \psi_v}{\coker \psi_v } \right|}
+                        =
+                        \begin{cases}
+                        1 \amp \text{ if } a \lt 0\\
+                        -1 \amp \text{ if } a \gt 0\\
+                        \end{cases}
+                    | so we need some correction if #[m  \delta \gt 0, b \gt 0, a \lt 0].
+
+                p
+                    | b) If #[m \delta \gt 0, b \lt 0]
+                    | #[m E] has two real components and #[m E'] only 1 #[m n(E) = 2,n(E') = 1].
+                    me |\ker \psi_v^0 | = 1
+                    | since #[m b \lt 0] and #[m b = \alpha\beta].
+                    me (-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|} = -1
+                    | so no correction if #[m \delta \gt 0, b \lt 0].
+                p
+                    | c) If #[m \delta \lt 0,b \gt 0], #[m n(E) = 1], #[m n(E') =2].
+                    me |\ker \psi_v^0| = 2
+                    | and
+                    me (-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|} = 1
+                    | need correction if #[m \delta \lt 0 , b \gt 0].
+                p
+                    | d) #[m b \lt 0, \delta \lt 0] contradiction, #[m \delta = a^2 - 4b].
+
+                p
+                    | So in summary if #[m \delta \gt 0, b \gt 0, a \lt 0] or  #[m \delta \lt 0, b \gt 0] need a correction,
+                    | if #[m \delta \gt 0, b \gt 0, a \gt 0] or  #[m \delta \gt 0, b \lt 0] no correction.
+                    me (-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|}   =   ? w_v
+                    | First guess
+                    me (a, -b)(-a, \delta)
+                p
+                    | Recall: let #[m K] be a local field
+                    me K^\times \times K^\times \to \{ \pm 1\}
+                    me.
+                        (a,b) \mapsto
+                        \begin{cases}
+                        1\amp\text{ if } a \text{ is a norm from } K(\sqrt b ) \to K,\\
+                        -1\amp\text{ otw}
+                        \end{cases}
+                p
+                    | If #[m K] is archimidean #[m (a,b) = -1 \iff a \lt 0,b \lt 0].
+                    | If #[m K] is non-archimidean with odd residue characteristic then
+                    me (\text{unit},\text{unit}) = 1
+                    me (\text{unit},\pi^n) =  -1
+                    | if #[m n] odd and unit is not a square.
+                    me (a,bc) = (a,b)(a,c)
+                    |.
+
+                p
+                    | So guess
+                    me (a, -b)(-a, \delta)
+                    | works over #[m \RR].
+
+                p
+                    | #[m v\nmid 2 \infty] need to show that
+                    me (-1)^{\ord_2 \frac{c_v}{c'_v}} = (a,-b)(-a, \delta) w_v
+                    | if #[m E] has good reduction at #[m v].
+                    me c_v = c'_v = 1
+                    | .
+                p
+                    | Need to show that
+                    me (a, -b)(-a,\delta) = 1
+                    | .
+                p
+                    | Since #[m E,E'] have good reduction at #[m v].
+                    | then #[m b,\delta] are units in #[m K].
+                    | If #[m a \in \ints_K^\times] then #[m (a,-b) (-a,b)  = 1]
+                    | if #[m a \equiv  0 \pmod {\pi_K}] then since #[m a^2 -  4b = \delta] then #[m \delta \equiv -4b \pmod{\pi_K}].
+                p
+                    | If #[m E] has split multiplicative reduction
+                    | , multiplicative reduction is when #[m y^2 = f(x)] and #[m f(x)] has a double root mod #[m \pi_K], any two distinct tangents at the node, both defined over #[m k] (fixed by frob).
+                    | so #[m E'] also has split multiplicative reduction as #[m \psi] commutes with frobenius.
+
+                p
+                    | Need to compute
+                    me \frac{c_v}{c'_v}
+                    | by Tates algorithm
+                    me c_E = v(\Delta_E) = n
+                    | we show that
+                    me.
+                        c_{E'} = v(\Delta_{E'}) =
+                        \begin{cases}
+                        2n,\\
+                        \frac12n
+                        \end{cases}
+
+                p
+                    | Recall
+                    me E\colon y^2 = \overbrace{x(x^2 + ax + b)}^{f_E(x)} = x(x-\alpha)(x-\beta) = xq_1(x)
+                    me \Delta_{f_E} = \alpha^2 \beta^2 ( \alpha- \beta)^2 = b^2 (\alpha - \beta)^2 =  b^2 \delta
+                    me {E'}\colon y^2 = \overbrace{x(x^2 -2ax + \delta)}^{f_{E'}(x)} = x(x-A)(x-B) = xq_2(x)
+                    me \Delta_{f_{E'}} = A^2 B^2 ( A- B)^2 = \delta^2 (A - A)^2 =  \delta^2 16b
+                p
+                    | if #[m v(\delta) = n] then #[m v(\Delta_{f_{E}}) = n] so #[m c_E = -n]
+                    | and #[m v(\Delta_{f_{E'}}) = 2n] so #[m c_{E'} = 2n]
+                    | in general if #[m E] admits a #[m p]-isogeny and #[m E] has split multiplicative reduction then
+                    me \frac{c_E}{c_{E'}} = p^{\pm 1}
+                    |.
+
+                p
+                    | here #[m w_v = -1] and
+                    me (-1)^{\ord_2 \frac{c_E}{c_{E'}}} = -1
+                    | need to show that
+                    me (a,-b) (-a, \delta) = 1
+                    | if #[m E] has a double root at #[m (0,0)] wlog #[m \alpha  \equiv 0 \pmod \pi_K]
+                    | then #[m v(\delta) = 0], #[m v(b) \gt 0 ] and both slopes of tangent at #[m (0,0)] are defined over #[m k].
+                p
+                    | Taylor expansion at #[m (0,0)]
+                    me f(x,y) = y^2 - x^3 - ax^2 - bx
+                    me = (y - s_1x)(y- s_2x) + h.o.t.
+                    me = y^2 - xy(s_1 + s_2) + s_1s_2 x^2 + h.o.t.
+
+                    | so #[m s_1 = -s_2] and #[m s_1 s_2 = -a] implies #[m s_1^2 = a].
+                p
+                    | so #[m s_1 \in k^\times] then #[m a\in {k^{\times}}^2]
+                    me (a,-b) = 1\implies (-a,\delta) =1
+                    | as both are units.
+
+                p
+                    | Now #[m b = \alpha\beta  \equiv 0 \pmod {\pi_K}]
+                    |so
+                    me x^2 - 2ax  + \delta \equiv (a-A)^2 \pmod {\pi_K}
+                    | same Taylor expansion gives
+                    me f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
+                    me = f(x,y) - f(A,0) = (y - s_3(x-A))(y - s_4(x-A)) + h.o.t.
+                    | so #[m s_3 = -s_4 ] and #[m s_3 s_4 = 2a], #[m s_3 ^2 = -2a]
+                    | hence
+                    me (a, -b)(-2a,\delta)
+                    | split multiplicative
+                    me -2a \in {K^\times}^2
+                    | ,
+                p
+                    | So we should use this hilbert symbol instead, it doesnt change the real case.
+                p
+                    | If  #[m E] has non-split multiplicative reduction
+                    me.
+                        \frac{c_E}{c_{E'}} = 
+                        \begin{cases}
+                        1,\amp\text{ if } v(\Delta_E),v(\Delta_{E'}) \text{ even}\\
+                        2,\amp\text{ if } v(\Delta_{E'}) \text{ odd}\\
+                        \frac12\amp\text{ if } v(\Delta_E) \text{ odd}
+                        \end{cases}
+
+                    me.
+                        \implies (-1)^{\ord_2 \frac{c_E}{c_{E'}}}
+                        \begin{cases}
+                        1
+                        -1
+                        -1
+                        \end{cases}
+                    | done since #[m a,-2a] precisely not squares.
+                p
+                    | What are these invariants purely in theory?
+

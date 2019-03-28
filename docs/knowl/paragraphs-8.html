@@ -67,6 +67,288 @@ E \colon y^2 = x(x+ax+ b)
 \begin{equation*}
 \left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
 \end{equation*}
-</div></article><span class="incontext"><a href="sec-parity-mw.html#paragraphs-8">in-context</a></span>
+</div>
+<aside class="aside-like"><p>Lecture ? 28/3/2018</p></aside><p>Recall: to prove the \(2\)-parity conjecture dfor \(E/K\)</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_2(E)} = w\text{????????????????????}
+\end{equation*}
+</div>
+<p>missed</p>
+<p>Notation</p>
+<div class="displaymath">
+\begin{equation*}
+E \colon y^2 = x(x^2+  ax+ b) = xq_1(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+E' \colon y^2 = x(x^2-2 ax+ \delta) = xq_2(x),\,\delta = a^2 - 4b
+\end{equation*}
+</div>
+<p>\(\disc(q_1(x)) = \delta\) \(\disc(q_2(x)) = 16b\)</p>
+<p>a) If \(\delta \gt 0\text{,}\) \(b \gt 0\) then \(E,E'\) both have two real components, \(n(E) = n(E') =2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+| \ker \psi_v^0| =
+\begin{cases}
+1 \amp \text{ if } (0,0)\text{ is not on } E^0(\RR)\\
+2 \amp \text{ if } (0,0)\text{ is on } E^0(\RR)\\
+\end{cases}=
+\begin{cases}
+1 \amp \text{ if } a \lt 0\\
+2 \amp \text{ if } a \gt 0\\
+\end{cases}
+\end{equation*}
+</div>
+<p>write \(q_1(x) = x^2 + ax + b = (x-\alpha)(x-\beta)\) then  if \((0,0) \in E^0(\RR)\text{,}\) \(\alpha,\beta\lt 0\) but \(a = -\alpha -\beta\) hence in this case \(a \gt 0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac{\ker \psi_v}{\coker \psi_v } \right|}
+=
+\begin{cases}
+1 \amp \text{ if } a \lt 0\\
+-1 \amp \text{ if } a \gt 0\\
+\end{cases}
+\end{equation*}
+</div>
+<p>so we need some correction if \(\delta \gt 0, b \gt 0, a \lt 0\text{.}\)</p>
+<p>b) If \(\delta \gt 0, b \lt 0\) \(E\) has two real components and \(E'\) only 1 \(n(E) = 2,n(E') = 1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+|\ker \psi_v^0 | = 1
+\end{equation*}
+</div>
+<p>since \(b \lt 0\) and \(b = \alpha\beta\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|} = -1
+\end{equation*}
+</div>
+<p>so no correction if \(\delta \gt 0, b \lt 0\text{.}\)</p>
+<p>c) If \(\delta \lt 0,b \gt 0\text{,}\) \(n(E) = 1\text{,}\) \(n(E') =2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+|\ker \psi_v^0| = 2
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|} = 1
+\end{equation*}
+</div>
+<p>need correction if \(\delta \lt 0 , b \gt 0\text{.}\)</p>
+<p>d) \(b \lt 0, \delta \lt 0\) contradiction, \(\delta = a^2 - 4b\text{.}\)</p>
+<p>So in summary if \(\delta \gt 0, b \gt 0, a \lt 0\) or  \(\delta \lt 0, b \gt 0\) need a correction, if \(\delta \gt 0, b \gt 0, a \gt 0\) or  \(\delta \gt 0, b \lt 0\) no correction.</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac {\ker \psi_v}{\coker \psi_v}\right|}   =   ? w_v
+\end{equation*}
+</div>
+<p>First guess</p>
+<div class="displaymath">
+\begin{equation*}
+(a, -b)(-a, \delta)
+\end{equation*}
+</div>
+<p>Recall: let \(K\) be a local field</p>
+<div class="displaymath">
+\begin{equation*}
+K^\times \times K^\times \to \{ \pm 1\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(a,b) \mapsto
+\begin{cases}
+1\amp\text{ if } a \text{ is a norm from } K(\sqrt b ) \to K,\\
+-1\amp\text{ otw}
+\end{cases}
+\end{equation*}
+</div>
+<p>If \(K\) is archimidean \((a,b) = -1 \iff a \lt 0,b \lt 0\text{.}\) If \(K\) is non-archimidean with odd residue characteristic then</p>
+<div class="displaymath">
+\begin{equation*}
+(\text{unit},\text{unit}) = 1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(\text{unit},\pi^n) =  -1
+\end{equation*}
+</div>
+<p>if \(n\) odd and unit is not a square.</p>
+<div class="displaymath">
+\begin{equation*}
+(a,bc) = (a,b)(a,c)\text{.}
+\end{equation*}
+</div>
+<p>So guess</p>
+<div class="displaymath">
+\begin{equation*}
+(a, -b)(-a, \delta)
+\end{equation*}
+</div>
+<p>works over \(\RR\text{.}\)</p>
+<p>\(v\nmid 2 \infty\) need to show that</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \frac{c_v}{c'_v}} = (a,-b)(-a, \delta) w_v
+\end{equation*}
+</div>
+<p>if \(E\) has good reduction at \(v\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+c_v = c'_v = 1\text{.}
+\end{equation*}
+</div>
+<p>Need to show that</p>
+<div class="displaymath">
+\begin{equation*}
+(a, -b)(-a,\delta) = 1\text{.}
+\end{equation*}
+</div>
+<p>Since \(E,E'\) have good reduction at \(v\text{.}\) then \(b,\delta\) are units in \(K\text{.}\) If \(a \in \ints_K^\times\) then \((a,-b) (-a,b)  = 1\) if \(a \equiv  0 \pmod {\pi_K}\) then since \(a^2 -  4b = \delta\) then \(\delta \equiv -4b \pmod{\pi_K}\text{.}\)</p>
+<p>If \(E\) has split multiplicative reduction , multiplicative reduction is when \(y^2 = f(x)\) and \(f(x)\) has a double root mod \(\pi_K\text{,}\) any two distinct tangents at the node, both defined over \(k\) (fixed by frob). so \(E'\) also has split multiplicative reduction as \(\psi\) commutes with frobenius.</p>
+<p>Need to compute</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{c_v}{c'_v}
+\end{equation*}
+</div>
+<p>by Tates algorithm</p>
+<div class="displaymath">
+\begin{equation*}
+c_E = v(\Delta_E) = n
+\end{equation*}
+</div>
+<p>we show that</p>
+<div class="displaymath">
+\begin{equation*}
+c_{E'} = v(\Delta_{E'}) =
+\begin{cases}
+2n,\\
+\frac12n
+\end{cases}
+\end{equation*}
+</div>
+<p>Recall</p>
+<div class="displaymath">
+\begin{equation*}
+E\colon y^2 = \overbrace{x(x^2 + ax + b)}^{f_E(x)} = x(x-\alpha)(x-\beta) = xq_1(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Delta_{f_E} = \alpha^2 \beta^2 ( \alpha- \beta)^2 = b^2 (\alpha - \beta)^2 =  b^2 \delta
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+{E'}\colon y^2 = \overbrace{x(x^2 -2ax + \delta)}^{f_{E'}(x)} = x(x-A)(x-B) = xq_2(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Delta_{f_{E'}} = A^2 B^2 ( A- B)^2 = \delta^2 (A - A)^2 =  \delta^2 16b
+\end{equation*}
+</div>
+<p>if \(v(\delta) = n\) then \(v(\Delta_{f_{E}}) = n\) so \(c_E = -n\) and \(v(\Delta_{f_{E'}}) = 2n\) so \(c_{E'} = 2n\) in general if \(E\) admits a \(p\)-isogeny and \(E\) has split multiplicative reduction then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{c_E}{c_{E'}} = p^{\pm 1}\text{.}
+\end{equation*}
+</div>
+<p>here \(w_v = -1\) and</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \frac{c_E}{c_{E'}}} = -1
+\end{equation*}
+</div>
+<p>need to show that</p>
+<div class="displaymath">
+\begin{equation*}
+(a,-b) (-a, \delta) = 1
+\end{equation*}
+</div>
+<p>if \(E\) has a double root at \((0,0)\) wlog \(\alpha  \equiv 0 \pmod \pi_K\) then \(v(\delta) = 0\text{,}\) \(v(b) \gt 0 \) and both slopes of tangent at \((0,0)\) are defined over \(k\text{.}\)</p>
+<p>Taylor expansion at \((0,0)\)</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) = y^2 - x^3 - ax^2 - bx
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= (y - s_1x)(y- s_2x) + h.o.t.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= y^2 - xy(s_1 + s_2) + s_1s_2 x^2 + h.o.t.
+\end{equation*}
+</div>
+<p>so \(s_1 = -s_2\) and \(s_1 s_2 = -a\) implies \(s_1^2 = a\text{.}\)</p>
+<p>so \(s_1 \in k^\times\) then \(a\in {k^{\times}}^2\)</p>
+<div class="displaymath">
+\begin{equation*}
+(a,-b) = 1\implies (-a,\delta) =1
+\end{equation*}
+</div>
+<p>as both are units.</p>
+<p>Now \(b = \alpha\beta  \equiv 0 \pmod {\pi_K}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+x^2 - 2ax  + \delta \equiv (a-A)^2 \pmod {\pi_K}
+\end{equation*}
+</div>
+<p>same Taylor expansion gives</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= f(x,y) - f(A,0) = (y - s_3(x-A))(y - s_4(x-A)) + h.o.t.
+\end{equation*}
+</div>
+<p>so \(s_3 = -s_4 \) and \(s_3 s_4 = 2a\text{,}\) \(s_3 ^2 = -2a\) hence</p>
+<div class="displaymath">
+\begin{equation*}
+(a, -b)(-2a,\delta)
+\end{equation*}
+</div>
+<p>split multiplicative</p>
+<div class="displaymath">
+\begin{equation*}
+-2a \in {K^\times}^2\text{,}
+\end{equation*}
+</div>
+<p>So we should use this hilbert symbol instead, it doesnt change the real case.</p>
+<p>If  \(E\) has non-split multiplicative reduction</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{c_E}{c_{E'}} = 
+\begin{cases}
+1,\amp\text{ if } v(\Delta_E),v(\Delta_{E'}) \text{ even}\\
+2,\amp\text{ if } v(\Delta_{E'}) \text{ odd}\\
+\frac12\amp\text{ if } v(\Delta_E) \text{ odd}
+\end{cases}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies (-1)^{\ord_2 \frac{c_E}{c_{E'}}}
+\begin{cases}
+1
+-1
+-1
+\end{cases}
+\end{equation*}
+</div>
+<p>done since \(a,-2a\) precisely not squares.</p>
+<p>What are these invariants purely in theory?</p></article><span class="incontext"><a href="sec-parity-mw.html#paragraphs-8">in-context</a></span>
 </body>
 </html>
