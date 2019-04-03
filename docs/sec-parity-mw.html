@@ -283,7 +283,10 @@ var js_version = 0.11;
 <nav id="toc"><ul>
 <li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
 <li class="link active">
-<a href="sec-parity-mw.html" data-scroll="sec-parity-mw"><span class="codenumber">1</span> <span class="title">Mordell-Weil groups</span></a><ul><li><a href="sec-parity-mw.html#subsec-ec-ranks" data-scroll="subsec-ec-ranks">Elliptic curves and their ranks</a></li></ul>
+<a href="sec-parity-mw.html" data-scroll="sec-parity-mw"><span class="codenumber">1</span> <span class="title">Mordell-Weil groups</span></a><ul>
+<li><a href="sec-parity-mw.html#subsec-ec-ranks" data-scroll="subsec-ec-ranks">Elliptic curves and their ranks</a></li>
+<li><a href="sec-parity-mw.html#subsection-2" data-scroll="subsection-2">Abelian varieties</a></li>
+</ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/parity/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
@@ -2800,9 +2803,9 @@ f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
 \end{equation*}
 </div>
 <p>done since \(a,-2a\) precisely not squares.</p>
-<p id="p-203">What are these invariants purely in theory?</p></article><section class="subsection" id="subsection-2"><h5 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Abelian varieties</span>
-</h5>
+<p id="p-203">What are these invariants purely in theory?</p></article></section></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2</span> <span class="title">Abelian varieties</span>
+</h3>
 <section class="introduction" id="introduction-3"><aside class="aside-like" id="aside-12"><p id="p-204">Lecture ? 2/4/2018</p></aside><p id="p-205">What about generalising this method to abelian varieties?</p>
 <p id="p-206">For \(p\) odd Coates et. al. (ppav with \(p\)-cyclic isogenoies and local constraints)</p>
 <p id="p-207">For \(p = 2\text{.}\)</p>
@@ -2826,11 +2829,11 @@ f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
 \prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}\text{.}
 \end{equation*}
 </div>
-<p id="p-211">First consider a ppab \(X/K\) s.t.</p>
+<p id="p-211">First consider a ppav \(X/K\) s.t.</p>
 <div class="displaymath">
-\begin{equation}
-\equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}\tag{1.2}
-\end{equation}
+\begin{gather}
+\knowl{./knowl/eqn-parity-dagger.html}{\text{(1.1)}} \equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}\tag{1.2}
+\end{gather}
 </div>
 <ol class="decimal">
 <li id="li-56">
@@ -2863,7 +2866,7 @@ f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
 </ol>
 <p id="p-216">To satisfy 1., 2. and 3. we take \(g = 2\) because of the following:</p>
 <article class="theorem-like" id="theorem-12"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.50</span>. <span class="title">González, Josep, Jordi Guardia, and Victor Rotger. . arXiv preprint math/0409352 (2004)..</span>
+<span class="type">Theorem</span> <span class="codenumber">1.50</span>. <span class="title">González, Josep, Jordi Guardia, and Victor Rotger.Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004)..</span>
 </h6>
 <p id="p-217">Let \(A/K\) be a principally polarized abelian surface defined over a number field. Then \(A\) is one of the following types</p>
 <ul class="disc">
@@ -2903,9 +2906,9 @@ C\colon y^2 = f(x)
 <li id="li-65">Compute Tamagawa numbers/local root numbers</li>
 <li id="li-66">Compute \(|\Sha_0(J) \lb 2^\infty \rb|\) up to squares</li>
 <li id="li-67">Find and prove the right error term</li>
-</ol></section><section class="subsubsection" id="subsubsection-4"><h6 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Review of hyperelliptic curves and Jacobians</span>
-</h6>
+</ol></section><section class="subsubsection" id="subsubsection-4"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">1.2.1</span> <span class="title">Review of hyperelliptic curves and Jacobians</span>
+</h4>
 <p id="p-222">See Stoll's notes.</p>
 <p id="p-223">By a hyperelliptic curve \(C\) over a number field \(K\) given my</p>
 <div class="displaymath">
@@ -3052,7 +3055,7 @@ J(L) =  \Pic_C^0(L)
 N = 4^g  - 1
 \end{equation*}
 </div>
-<p>always works for hyperelliptic curves.</p></article><p id="p-237">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article></section></section></section></section></section></div></main>
+<p>always works for hyperelliptic curves.</p></article><p id="p-237">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article></section></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

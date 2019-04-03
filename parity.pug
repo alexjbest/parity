@@ -1646,197 +1646,198 @@ section#sec-parity-mw
 
 
 
-            subsection
-                title Abelian varieties
-                introduction
-                    aside: p Lecture ? 2/4/2018
-                    p
-                        | What about generalising this method to abelian varieties?
-                    p
-                        | For #[m p] odd Coates et. al. (ppav with #[m p]-cyclic isogenoies and local constraints)
+    subsection
+        title Abelian varieties
+        introduction
+            aside: p Lecture ? 2/4/2018
+            p
+                | What about generalising this method to abelian varieties?
+            p
+                | For #[m p] odd Coates et. al. (ppav with #[m p]-cyclic isogenoies and local constraints)
 
-                    p
-                        | For #[m p = 2].
+            p
+                | For #[m p = 2].
 
-                    p
-                        | Recall let #[m X,Y/K] be abelian varieties over a number field ans suppose that #[m \Psi\colon X\to Y] is an isogeny, then #[m \Psi^\vee \colon Y^\vee \to X^\vee] its dual.
-                        | Then
-                        men#eqn-parity-dagger \frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac {|Y(K)_\tors|}{|X(K)_\tors|}\frac {|Y^\vee(K)_\tors|}{|X^\vee(K)_\tors|} \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \prod_{p| \deg \Psi} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}
-                        | on the other hand we showed that if #[m \Psi \Psi^\vee = \lb p \rb] then
-                        me \frac{Q(\Psi^\vee)}{Q(\Psi)}\equiv p^{\rk_p(X/K)} \pmod {{K^\times}^2}
-                        | note that in this case #[m \deg \psi =  p^{\dim (X)}].
-                    p
-                        | To be able to use the same method we need to compute the RHS of #[xref(ref="eqn-parity-dagger")/].
-                    p
-                        | For #[m E] since #[m E\simeq E^\vee] and #[m |\Sha_0(E)| = \square ], this only meant computing
-                        me \prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}
-                        | .
-                    p
-                        | First consider a ppab #[m X/K] s.t.
-                        men #[xref(ref="eqn-parity-dagger")/] \equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}
-                    ol
-                        li
-                            p
-                                | Can we compute
-                                men \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y}
-                                |?
-                            p
-                                |   Leads us to Jacobians of hyperelliptic curves of genus #[m g]
-                        li
-                            p
-                                | Can we compute
-                                men \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}
-                                |?
-                                |   Leads us to Jacobians of hyperelliptic curves of genus #[m g]
-                        li
-                            p
-                                | Need an isogeny #[m \Psi] of degree #[m 2^g] s.t.
-                                me \Psi \colon J  \to J'
-                                | i.e. the codomain must be a Jacobian of a hyperelliptic curve otherwise we cannot compute 1. or 2.
-
-                    p
-                        | To satisfy 1., 2. and 3. we take #[m g = 2] because of the following:
-                    theorem
-                        title González, Josep, Jordi Guardia, and Victor Rotger. #[title Abelian surfaces of GL2-type as Jacobians of curves]. arXiv preprint math/0409352 (2004).
-                        // #[xref(ref="bib-gonzales-guardia-rotger")/]
-                        statement: p
-                            | Let #[m A/K] be a principally polarized abelian surface defined over a number field. Then #[m A] is one of the following types
-                            ul
-                                li
-                                    me A/K \simeq_K J(C)
-                                    | where #[m C/K] is a smooth genus 2 curve.
-                                li
-                                    me A/K \simeq_K C_1 \times C_2
-                                    | where #[m C_1,C_2/K] are elliptic curves defined over #[m K].
-
-                                li
-                                    me A/K \simeq_K \Res_{F/K} C
-                                    | where #[m \Res_{F/K} C] is the Weil restriction of an elliptic curve defined over  a quadratic extension #[m F/K].
-
-                    remark
+            p
+                | Recall let #[m X,Y/K] be abelian varieties over a number field ans suppose that #[m \Psi\colon X\to Y] is an isogeny, then #[m \Psi^\vee \colon Y^\vee \to X^\vee] its dual.
+                | Then
+                men#eqn-parity-dagger \frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac {|Y(K)_\tors|}{|X(K)_\tors|}\frac {|Y^\vee(K)_\tors|}{|X^\vee(K)_\tors|} \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \prod_{p| \deg \Psi} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}
+                | on the other hand we showed that if #[m \Psi \Psi^\vee = \lb p \rb] then
+                me \frac{Q(\Psi^\vee)}{Q(\Psi)}\equiv p^{\rk_p(X/K)} \pmod {{K^\times}^2}
+                | note that in this case #[m \deg \psi =  p^{\dim (X)}].
+            p
+                | To be able to use the same method we need to compute the RHS of #[xref(ref="eqn-parity-dagger")/].
+            p
+                | For #[m E] since #[m E\simeq E^\vee] and #[m |\Sha_0(E)| = \square ], this only meant computing
+                me \prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}
+                | .
+            p
+                | First consider a ppav #[m X/K] s.t.
+                mdn
+                    mrow #[xref(ref="eqn-parity-dagger")/] \equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}
+                ol
+                    li
                         p
-                            | The parity of the rank of #[m A/K] in the last two cases can be computed from that of the underlying elliptic curves.
-
-                    p
-                        | We will concentrate on #[m A\simeq_K J(C)],
-                        me C\colon y^2 = f(x)
-                        | for #[m \deg (f ) = 6].
-
-                    p
-                        | The generalisation of a 2-isogeny is called a Richelot isogeny.
-
-                    p
-                        | Plan:
-                        ol
-                            li Review of hyperelliptic curves and their Jacobians.
-                            li Richelot isogeny
-                            li Compute contribution of the real places
-                            li Compute Tamagawa numbers/local root numbers
-                            li Compute #[m |\Sha_0(J) \lb 2^\infty \rb|] up to squares
-                            li Find and prove the right error term
-
-                subsubsection
-                    title Review of hyperelliptic curves and Jacobians
-
-                    p
-                        | See Stoll's notes.
-
-                    p
-                        | By a hyperelliptic curve #[m C] over a number field #[m K] given my
-                        me C/K \colon y^2 = f(x)
-                        | of genus #[m g] where #[m f(x) \in K\lb x\rb] of degree #[m 2g+1] or #[m 2g+2] with no multiple roots, we mean the pair of affine patches
-                        me U_x \colon y^2 = f(x)
-                        me U_t \colon v^2 = t^{2g+2} f\left(\frac 1t\right)
-
-                        | glued together along the maps
-                        me x = \frac 1t,\, y=  \frac{v}{t^{g+1}}
-                        | .
-                        | We refer to as the points  at #[m \infty] (i.e. #[m C \smallsetminus U_x]) the points with #[m t  = 0] on #[m U_t].
-                    p
-                        | Explicitly denote by #[m c] the leading term of #[m f(x)].
-
-                    p
-                        | If #[m f(x)] is of degree #[m 2g+1] then
-                        me U_x \colon y^2= c\prod_{i=1}^{2g+1} (x- r_i)
-                        me U_t \colon v^2= tc\prod_{i=1}^{2g+1} (tr_i- 1)
-                        | we denote #[m P_\infty = (0,1)] the only point at infinity with #[m t=0].
-                    p
-                        | Otherwise if #[m f(x)] is of degree #[m 2g+2] then
-                        me U_x \colon y^2= c\prod_{i=1}^{2g+2} (x- r_i)
-                        me U_t \colon v^2= c\prod_{i=1}^{2g+2} (tr_i- 1)
-                        | we denote #[m P_\infty^\pm = (0,\pm \sqrt{c})] the two points on #[m U_t] with #[m t  = 0].
-
-                    paragraphs
-                        title Divisors and the picard group
+                            | Can we compute
+                            men \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y}
+                            |?
                         p
-                            | Let #[m G_K] be the absolute galois group of #[m K], recall that #[m G_K] acts on
-                            me C(K^\sep)
-                            | via its action on coordinates.
-
-                        definition
-                            statement
-                                p
-                                    | A divisor #[m D] on #[m C] is a formal sum
-                                    me \sum_{P\in C(K^\sep)} n_P P
-                                    | where #[m n_P \in \ZZ] and #[m n_P  = 0] for all but finitely many #[m P \in C(K^\sep)].
-                                    | The integer #[m n_P] is called the multiplicity of #[m P] in #[m D] and #[m \deg(D) = \sum_{P} n_P] is the degree of #[m D].
-                                p
-                                    | Divisors on #[m C] are elements of the free abelian group on the set of points #[m P\in C(K^\sep)].
-                                    | Denote by #[m \Div(C)] the group of divisors on #[m C].
-
-                        definition
-                            statement
-                                p
-                                    | A divisor
-                                    me D = \sum_{P\in C(F)} n_P P
-                                    | for some Galois extension #[m F|K].
-                                    | Is #[m K]-rational or defined over #[m K] if
-                                    me D^\sigma = D \,\forall \sigma \in \Gal F K
-                                    | .
-
-                        example
-                            statement: p
-                                me C \colon y^2 = f(x)
-                                me \alpha \in K
-                                me P = (\alpha, \sqrt {f(\alpha)})
-                                me \bar P = (\alpha, -\sqrt {f(\alpha)})
-                                | then
-                                me D = P + \bar P
-                                | is a #[m K]-rational divisor.
-
-                        definition
-                            statement: p
-                                | Let #[m f] be a non-zero rational function on #[m C].
-                                | Define
-                                me \lb f \rb =  \sum_{P \in C} \ord_P (f) P
-                                |where the multiplicity of #[m P ] in #[m \lb f\rb] is given by the order of vanishing of #[m f ] at #[m P].
-                                | These divisors are called principal divisors, the group of such is denote #[m \Princ(P)].
-                                | Note that these are all of degree 0.
-
-                        definition
-                            statement: p
-                                | The picard group of #[m C] is defined to be
-                                me \Pic(C) = \Div(C)/ \Princ(P)
-                                | Note that this inherits a notion of degree from #[m \Div(C)].
-
-                        theorem
-                            statement: p
-                                | Let #[m C] be a smooth, projective, absolutely irreducible curve of genus #[m g] over some field #[m K].
-                                | Then there exists an abelian variety #[m J] of dimension #[m g] over #[m K] s.t. for each field
-                                me K \subseteq L \subseteq K^\sep
-                                me J(L) =  \Pic_C^0(L)
-
-                        definition
-                            statement: p
-                                | #[m J] is called the Jacobian variety of #[m C].
-
-                        remark: p
-                            | #[m J] is a projective variety (abelian), thus it can be embedded in some projective space #[m \PP^N] over #[m K].
-                            | One can show that
-                            me N = 4^g  - 1
-                            | always works for hyperelliptic curves.
-
+                            |   Leads us to Jacobians of hyperelliptic curves of genus #[m g]
+                    li
                         p
+                            | Can we compute
+                            men \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}
+                            |?
+                            |   Leads us to Jacobians of hyperelliptic curves of genus #[m g]
+                    li
+                        p
+                            | Need an isogeny #[m \Psi] of degree #[m 2^g] s.t.
+                            me \Psi \colon J  \to J'
+                            | i.e. the codomain must be a Jacobian of a hyperelliptic curve otherwise we cannot compute 1. or 2.
 
-                            | This is too large to work with an explicit model for #[m J] instead we will work with the curve #[m C].
+            p
+                | To satisfy 1., 2. and 3. we take #[m g = 2] because of the following:
+            theorem
+                title González, Josep, Jordi Guardia, and Victor Rotger.Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004).
+                // #[xref(ref="bib-gonzales-guardia-rotger")/]
+                statement: p
+                    | Let #[m A/K] be a principally polarized abelian surface defined over a number field. Then #[m A] is one of the following types
+                    ul
+                        li
+                            me A/K \simeq_K J(C)
+                            | where #[m C/K] is a smooth genus 2 curve.
+                        li
+                            me A/K \simeq_K C_1 \times C_2
+                            | where #[m C_1,C_2/K] are elliptic curves defined over #[m K].
+
+                        li
+                            me A/K \simeq_K \Res_{F/K} C
+                            | where #[m \Res_{F/K} C] is the Weil restriction of an elliptic curve defined over  a quadratic extension #[m F/K].
+
+            remark
+                p
+                    | The parity of the rank of #[m A/K] in the last two cases can be computed from that of the underlying elliptic curves.
+
+            p
+                | We will concentrate on #[m A\simeq_K J(C)],
+                me C\colon y^2 = f(x)
+                | for #[m \deg (f ) = 6].
+
+            p
+                | The generalisation of a 2-isogeny is called a Richelot isogeny.
+
+            p
+                | Plan:
+                ol
+                    li Review of hyperelliptic curves and their Jacobians.
+                    li Richelot isogeny
+                    li Compute contribution of the real places
+                    li Compute Tamagawa numbers/local root numbers
+                    li Compute #[m |\Sha_0(J) \lb 2^\infty \rb|] up to squares
+                    li Find and prove the right error term
+
+        subsubsection
+            title Review of hyperelliptic curves and Jacobians
+
+            p
+                | See Stoll's notes.
+
+            p
+                | By a hyperelliptic curve #[m C] over a number field #[m K] given my
+                me C/K \colon y^2 = f(x)
+                | of genus #[m g] where #[m f(x) \in K\lb x\rb] of degree #[m 2g+1] or #[m 2g+2] with no multiple roots, we mean the pair of affine patches
+                me U_x \colon y^2 = f(x)
+                me U_t \colon v^2 = t^{2g+2} f\left(\frac 1t\right)
+
+                | glued together along the maps
+                me x = \frac 1t,\, y=  \frac{v}{t^{g+1}}
+                | .
+                | We refer to as the points  at #[m \infty] (i.e. #[m C \smallsetminus U_x]) the points with #[m t  = 0] on #[m U_t].
+            p
+                | Explicitly denote by #[m c] the leading term of #[m f(x)].
+
+            p
+                | If #[m f(x)] is of degree #[m 2g+1] then
+                me U_x \colon y^2= c\prod_{i=1}^{2g+1} (x- r_i)
+                me U_t \colon v^2= tc\prod_{i=1}^{2g+1} (tr_i- 1)
+                | we denote #[m P_\infty = (0,1)] the only point at infinity with #[m t=0].
+            p
+                | Otherwise if #[m f(x)] is of degree #[m 2g+2] then
+                me U_x \colon y^2= c\prod_{i=1}^{2g+2} (x- r_i)
+                me U_t \colon v^2= c\prod_{i=1}^{2g+2} (tr_i- 1)
+                | we denote #[m P_\infty^\pm = (0,\pm \sqrt{c})] the two points on #[m U_t] with #[m t  = 0].
+
+            paragraphs
+                title Divisors and the picard group
+                p
+                    | Let #[m G_K] be the absolute galois group of #[m K], recall that #[m G_K] acts on
+                    me C(K^\sep)
+                    | via its action on coordinates.
+
+                definition
+                    statement
+                        p
+                            | A divisor #[m D] on #[m C] is a formal sum
+                            me \sum_{P\in C(K^\sep)} n_P P
+                            | where #[m n_P \in \ZZ] and #[m n_P  = 0] for all but finitely many #[m P \in C(K^\sep)].
+                            | The integer #[m n_P] is called the multiplicity of #[m P] in #[m D] and #[m \deg(D) = \sum_{P} n_P] is the degree of #[m D].
+                        p
+                            | Divisors on #[m C] are elements of the free abelian group on the set of points #[m P\in C(K^\sep)].
+                            | Denote by #[m \Div(C)] the group of divisors on #[m C].
+
+                definition
+                    statement
+                        p
+                            | A divisor
+                            me D = \sum_{P\in C(F)} n_P P
+                            | for some Galois extension #[m F|K].
+                            | Is #[m K]-rational or defined over #[m K] if
+                            me D^\sigma = D \,\forall \sigma \in \Gal F K
+                            | .
+
+                example
+                    statement: p
+                        me C \colon y^2 = f(x)
+                        me \alpha \in K
+                        me P = (\alpha, \sqrt {f(\alpha)})
+                        me \bar P = (\alpha, -\sqrt {f(\alpha)})
+                        | then
+                        me D = P + \bar P
+                        | is a #[m K]-rational divisor.
+
+                definition
+                    statement: p
+                        | Let #[m f] be a non-zero rational function on #[m C].
+                        | Define
+                        me \lb f \rb =  \sum_{P \in C} \ord_P (f) P
+                        |where the multiplicity of #[m P ] in #[m \lb f\rb] is given by the order of vanishing of #[m f ] at #[m P].
+                        | These divisors are called principal divisors, the group of such is denote #[m \Princ(P)].
+                        | Note that these are all of degree 0.
+
+                definition
+                    statement: p
+                        | The picard group of #[m C] is defined to be
+                        me \Pic(C) = \Div(C)/ \Princ(P)
+                        | Note that this inherits a notion of degree from #[m \Div(C)].
+
+                theorem
+                    statement: p
+                        | Let #[m C] be a smooth, projective, absolutely irreducible curve of genus #[m g] over some field #[m K].
+                        | Then there exists an abelian variety #[m J] of dimension #[m g] over #[m K] s.t. for each field
+                        me K \subseteq L \subseteq K^\sep
+                        me J(L) =  \Pic_C^0(L)
+
+                definition
+                    statement: p
+                        | #[m J] is called the Jacobian variety of #[m C].
+
+                remark: p
+                    | #[m J] is a projective variety (abelian), thus it can be embedded in some projective space #[m \PP^N] over #[m K].
+                    | One can show that
+                    me N = 4^g  - 1
+                    | always works for hyperelliptic curves.
+
+                p
+
+                    | This is too large to work with an explicit model for #[m J] instead we will work with the curve #[m C].
 
