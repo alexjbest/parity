@@ -59,7 +59,7 @@ var js_version = 0.11;
 </script>
 </head>
 <body class="mathbook-article has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{pgfplots}
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
@@ -167,8 +167,8 @@ var js_version = 0.11;
 
 \DeclareMathOperator{\divisor}{div}
 \DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
 \DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\Princ}{Princ}
@@ -2519,7 +2519,7 @@ E \colon y^2 = x(x+ax+ b)
 \left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
 \end{equation*}
 </div>
-<aside class="aside-like" id="aside-11"><p id="p-179">Lecture ? 28/3/2018</p></aside><p id="p-180">Recall: to prove the \(2\)-parity conjecture dfor \(E/K\)</p>
+<aside class="aside-like" id="aside-11"><p id="p-179">Lecture ? 28/3/2018</p></aside><p id="p-180">Recall: to prove the \(2\)-parity conjecture for \(E/K\)</p>
 <div class="displaymath">
 \begin{equation*}
 (-1)^{\rk_2(E)} = w\text{????????????????????}
@@ -2661,7 +2661,7 @@ c_v = c'_v = 1\text{.}
 \end{equation*}
 </div>
 <p id="p-192">Since \(E,E'\) have good reduction at \(v\text{.}\) then \(b,\delta\) are units in \(K\text{.}\) If \(a \in \ints_K^\times\) then \((a,-b) (-a,b)  = 1\) if \(a \equiv  0 \pmod {\pi_K}\) then since \(a^2 -  4b = \delta\) then \(\delta \equiv -4b \pmod{\pi_K}\text{.}\)</p>
-<p id="p-193">If \(E\) has split multiplicative reduction , multiplicative reduction is when \(y^2 = f(x)\) and \(f(x)\) has a double root mod \(\pi_K\text{,}\) any two distinct tangents at the node, both defined over \(k\) (fixed by frob). so \(E'\) also has split multiplicative reduction as \(\psi\) commutes with frobenius.</p>
+<p id="p-193">If \(E\) has split multiplicative reduction, (multiplicative reduction is when \(y^2 = f(x)\) and \(f(x)\) has a double root mod \(\pi_K\text{,}\) any two distinct tangents at the node, both defined over \(k\) (fixed by frob)). so \(E'\) also has split multiplicative reduction as \(\psi\) commutes with frobenius.</p>
 <p id="p-194">Need to compute</p>
 <div class="displaymath">
 \begin{equation*}
@@ -2800,7 +2800,259 @@ f(x,y) = y^2 - x^3 + 2ax^2 - \delta x
 \end{equation*}
 </div>
 <p>done since \(a,-2a\) precisely not squares.</p>
-<p id="p-203">What are these invariants purely in theory?</p></article></section></section></section></div></main>
+<p id="p-203">What are these invariants purely in theory?</p></article><section class="subsection" id="subsection-2"><h5 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Abelian varieties</span>
+</h5>
+<section class="introduction" id="introduction-3"><aside class="aside-like" id="aside-12"><p id="p-204">Lecture ? 2/4/2018</p></aside><p id="p-205">What about generalising this method to abelian varieties?</p>
+<p id="p-206">For \(p\) odd Coates et. al. (ppav with \(p\)-cyclic isogenoies and local constraints)</p>
+<p id="p-207">For \(p = 2\text{.}\)</p>
+<p id="p-208">Recall let \(X,Y/K\) be abelian varieties over a number field ans suppose that \(\Psi\colon X\to Y\) is an isogeny, then \(\Psi^\vee \colon Y^\vee \to X^\vee\) its dual. Then</p>
+<div class="displaymath">
+\begin{equation}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac {|Y(K)_\tors|}{|X(K)_\tors|}\frac {|Y^\vee(K)_\tors|}{|X^\vee(K)_\tors|} \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \prod_{p| \deg \Psi} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\label{eqn-parity-dagger}\tag{1.1}
+\end{equation}
+</div>
+<p>on the other hand we showed that if \(\Psi \Psi^\vee = \lb p \rb\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi^\vee)}{Q(\Psi)}\equiv p^{\rk_p(X/K)} \pmod {{K^\times}^2}
+\end{equation*}
+</div>
+<p>note that in this case \(\deg \psi =  p^{\dim (X)}\text{.}\)</p>
+<p id="p-209">To be able to use the same method we need to compute the RHS of <a data-knowl="./knowl/eqn-parity-dagger.html" title="Equation 1.1">(1.1)</a>.</p>
+<p id="p-210">For \(E\) since \(E\simeq E^\vee\) and \(|\Sha_0(E)| = \square \text{,}\) this only meant computing</p>
+<div class="displaymath">
+\begin{equation*}
+\prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}\text{.}
+\end{equation*}
+</div>
+<p id="p-211">First consider a ppab \(X/K\) s.t.</p>
+<div class="displaymath">
+\begin{equation}
+\equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}\tag{1.2}
+\end{equation}
+</div>
+<ol class="decimal">
+<li id="li-56">
+<p id="p-212">Can we compute</p>
+<div class="displaymath">
+\begin{equation}
+\frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y}\text{?}\tag{1.3}
+\end{equation}
+</div>
+<p id="p-213">Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
+</li>
+<li id="li-57">
+<p id="p-214">Can we compute</p>
+<div class="displaymath">
+\begin{equation}
+\frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\text{?}\tag{1.4}
+\end{equation}
+</div>
+<p>Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
+</li>
+<li id="li-58">
+<p id="p-215">Need an isogeny \(\Psi\) of degree \(2^g\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon J  \to J'
+\end{equation*}
+</div>
+<p>i.e. the codomain must be a Jacobian of a hyperelliptic curve otherwise we cannot compute 1. or 2.</p>
+</li>
+</ol>
+<p id="p-216">To satisfy 1., 2. and 3. we take \(g = 2\) because of the following:</p>
+<article class="theorem-like" id="theorem-12"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.50</span>. <span class="title">González, Josep, Jordi Guardia, and Victor Rotger. . arXiv preprint math/0409352 (2004)..</span>
+</h6>
+<p id="p-217">Let \(A/K\) be a principally polarized abelian surface defined over a number field. Then \(A\) is one of the following types</p>
+<ul class="disc">
+<li id="li-59">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K J(C)
+\end{equation*}
+</div>where \(C/K\) is a smooth genus 2 curve.</li>
+<li id="li-60">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K C_1 \times C_2
+\end{equation*}
+</div>where \(C_1,C_2/K\) are elliptic curves defined over \(K\text{.}\)</li>
+<li id="li-61">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K \Res_{F/K} C
+\end{equation*}
+</div>where \(\Res_{F/K} C\) is the Weil restriction of an elliptic curve defined over  a quadratic extension \(F/K\text{.}\)</li>
+</ul></article><article class="remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.51</span>.</h6>
+<p id="p-218">The parity of the rank of \(A/K\) in the last two cases can be computed from that of the underlying elliptic curves.</p></article><p id="p-219">We will concentrate on \(A\simeq_K J(C)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2 = f(x)
+\end{equation*}
+</div>
+<p>for \(\deg (f ) = 6\text{.}\)</p>
+<p id="p-220">The generalisation of a 2-isogeny is called a Richelot isogeny.</p>
+<p id="p-221">Plan:</p>
+<ol class="decimal">
+<li id="li-62">Review of hyperelliptic curves and their Jacobians.</li>
+<li id="li-63">Richelot isogeny</li>
+<li id="li-64">Compute contribution of the real places</li>
+<li id="li-65">Compute Tamagawa numbers/local root numbers</li>
+<li id="li-66">Compute \(|\Sha_0(J) \lb 2^\infty \rb|\) up to squares</li>
+<li id="li-67">Find and prove the right error term</li>
+</ol></section><section class="subsubsection" id="subsubsection-4"><h6 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber"></span> <span class="title">Review of hyperelliptic curves and Jacobians</span>
+</h6>
+<p id="p-222">See Stoll's notes.</p>
+<p id="p-223">By a hyperelliptic curve \(C\) over a number field \(K\) given my</p>
+<div class="displaymath">
+\begin{equation*}
+C/K \colon y^2 = f(x)
+\end{equation*}
+</div>
+<p>of genus \(g\) where \(f(x) \in K\lb x\rb\) of degree \(2g+1\) or \(2g+2\) with no multiple roots, we mean the pair of affine patches</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2 = f(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2 = t^{2g+2} f\left(\frac 1t\right)
+\end{equation*}
+</div>
+<p>glued together along the maps</p>
+<div class="displaymath">
+\begin{equation*}
+x = \frac 1t,\, y=  \frac{v}{t^{g+1}}\text{.}
+\end{equation*}
+</div>
+<p>We refer to as the points  at \(\infty\) (i.e. \(C \smallsetminus U_x\)) the points with \(t  = 0\) on \(U_t\text{.}\)</p>
+<p id="p-224">Explicitly denote by \(c\) the leading term of \(f(x)\text{.}\)</p>
+<p id="p-225">If \(f(x)\) is of degree \(2g+1\) then</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2= c\prod_{i=1}^{2g+1} (x- r_i)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2= tc\prod_{i=1}^{2g+1} (tr_i- 1)
+\end{equation*}
+</div>
+<p>we denote \(P_\infty = (0,1)\) the only point at infinity with \(t=0\text{.}\)</p>
+<p id="p-226">Otherwise if \(f(x)\) is of degree \(2g+2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2= c\prod_{i=1}^{2g+2} (x- r_i)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2= c\prod_{i=1}^{2g+2} (tr_i- 1)
+\end{equation*}
+</div>
+<p>we denote \(P_\infty^\pm = (0,\pm \sqrt{c})\) the two points on \(U_t\) with \(t  = 0\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Divisors and the picard group.</span></h5>
+<p id="p-227">Let \(G_K\) be the absolute galois group of \(K\text{,}\) recall that \(G_K\) acts on</p>
+<div class="displaymath">
+\begin{equation*}
+C(K^\sep)
+\end{equation*}
+</div>
+<p>via its action on coordinates.</p>
+<article class="definition-like" id="definition-11"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.52</span>.</h6>
+<p id="p-228">A divisor \(D\) on \(C\) is a formal sum</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{P\in C(K^\sep)} n_P P
+\end{equation*}
+</div>
+<p>where \(n_P \in \ZZ\) and \(n_P  = 0\) for all but finitely many \(P \in C(K^\sep)\text{.}\) The integer \(n_P\) is called the multiplicity of \(P\) in \(D\) and \(\deg(D) = \sum_{P} n_P\) is the degree of \(D\text{.}\)</p>
+<p id="p-229">Divisors on \(C\) are elements of the free abelian group on the set of points \(P\in C(K^\sep)\text{.}\) Denote by \(\Div(C)\) the group of divisors on \(C\text{.}\)</p></article><article class="definition-like" id="definition-12"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.53</span>.</h6>
+<p id="p-230">A divisor</p>
+<div class="displaymath">
+\begin{equation*}
+D = \sum_{P\in C(F)} n_P P
+\end{equation*}
+</div>
+<p>for some Galois extension \(F|K\text{.}\) Is \(K\)-rational or defined over \(K\) if</p>
+<div class="displaymath">
+\begin{equation*}
+D^\sigma = D \,\forall \sigma \in \Gal F K\text{.}
+\end{equation*}
+</div></article><article class="example-like" id="example-6"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.54</span>.</h6>
+<div class="displaymath" id="p-231">
+\begin{equation*}
+C \colon y^2 = f(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\alpha \in K
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P = (\alpha, \sqrt {f(\alpha)})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bar P = (\alpha, -\sqrt {f(\alpha)})
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+D = P + \bar P
+\end{equation*}
+</div>
+<p>is a \(K\)-rational divisor.</p></article><article class="definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.55</span>.</h6>
+<p id="p-232">Let \(f\) be a non-zero rational function on \(C\text{.}\) Define</p>
+<div class="displaymath">
+\begin{equation*}
+\lb f \rb =  \sum_{P \in C} \ord_P (f) P
+\end{equation*}
+</div>
+<p>where the multiplicity of \(P \) in \(\lb f\rb\) is given by the order of vanishing of \(f \) at \(P\text{.}\) These divisors are called principal divisors, the group of such is denote \(\Princ(P)\text{.}\) Note that these are all of degree 0.</p></article><article class="definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.56</span>.</h6>
+<p id="p-233">The picard group of \(C\) is defined to be</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic(C) = \Div(C)/ \Princ(P)
+\end{equation*}
+</div>
+<p>Note that this inherits a notion of degree from \(\Div(C)\text{.}\)</p></article><article class="theorem-like" id="theorem-13"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">1.57</span>.</h6>
+<p id="p-234">Let \(C\) be a smooth, projective, absolutely irreducible curve of genus \(g\) over some field \(K\text{.}\) Then there exists an abelian variety \(J\) of dimension \(g\) over \(K\) s.t. for each field</p>
+<div class="displaymath">
+\begin{equation*}
+K \subseteq L \subseteq K^\sep
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+J(L) =  \Pic_C^0(L)
+\end{equation*}
+</div></article><article class="definition-like" id="definition-15"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">1.58</span>.</h6>
+<p id="p-235">\(J\) is called the Jacobian variety of \(C\text{.}\)</p></article><article class="remark-like" id="remark-11"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">1.59</span>.</h6>
+<p id="p-236">\(J\) is a projective variety (abelian), thus it can be embedded in some projective space \(\PP^N\) over \(K\text{.}\) One can show that</p>
+<div class="displaymath">
+\begin{equation*}
+N = 4^g  - 1
+\end{equation*}
+</div>
+<p>always works for hyperelliptic curves.</p></article><p id="p-237">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article></section></section></section></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];
