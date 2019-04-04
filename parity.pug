@@ -1316,6 +1316,25 @@ section#sec-parity-mw
                             | #[m |\ker \psi_v | = p] (the #[m p]-tors in #[m \ker \psi] are real)
                         li
                             | #[m |\ker \psi_v | = 1] (the #[m p]-tors in #[m \ker \psi] are not real)
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                          \begin{axis}
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.003;
+                              unset surface;
+                              set view map;
+                              set isosamples 500;
+                              splot y^2 - x^3 + x;
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
                 p
                     | Moreover #[m |\coker \psi | = 1] always,
                     | #[m \sgn(\Delta_E) = \sgn(\Delta_{E'})]
@@ -1394,7 +1413,7 @@ section#sec-parity-mw
                     | By the third column
                     me \frac{n(E')}{n(E)} \frac{|\ker \psi_/|}{\coker \psi_/|}  =1
 
-                    | now #[m | coker \psi_v^0| = 1] as the map on identity component is surjective.
+                    | now #[m | \coker \psi_v^0| = 1] as the map on identity component is surjective.
                     | hence
                     me \left | \frac {\coker \psi_v}{\ker \psi_v}\right|= \frac{n(E')}{n(E) | \ker \psi_v^0|}
 
@@ -1414,64 +1433,25 @@ section#sec-parity-mw
                     me E' \colon y^2 = x(x^2-2 ax+ \delta) = xq_2(x),\,\delta = a^2 - 4b
                     | #[m \disc(q_1(x)) = \delta]
                     | #[m \disc(q_2(x)) = 16b]
-                //
-                    figure
-                        caption/
-                        image: latex-image.
-                            \begin{tikzpicture}
-                              \begin{axis}
-                                \addplot +[no markers,
-                                  raw gnuplot,
-                                  thick,
-                                  empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
-                                  ] gnuplot {
-                                  set contour base;
-                                  set cntrparam levels discrete 0.003;
-                                  unset surface;
-                                  set view map;
-                                  set isosamples 500;
-                                  splot y^2 - x^3 + 1;
-                                };
-                              \end{axis}
-                            \end{tikzpicture}
-                    figure
-                        caption/
-                        image: latex-image.
-                            \begin{tikzpicture}
-                              \begin{axis}
-                                \addplot +[no markers,
-                                  raw gnuplot,
-                                  thick,
-                                  empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
-                                  ] gnuplot {
-                                  set contour base;
-                                  set cntrparam levels discrete 0.003;
-                                  unset surface;
-                                  set view map;
-                                  set isosamples 500;
-                                  splot y^2 - x^3 + x;
-                                };
-                              \end{axis}
-                            \end{tikzpicture}
-                    figure
-                        caption/
-                        image: latex-image.
-                            \begin{tikzpicture}
-                              \begin{axis}
-                                \addplot +[no markers,
-                                  raw gnuplot,
-                                  thick,
-                                  empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
-                                  ] gnuplot {
-                                  set contour base;
-                                  set cntrparam levels discrete 0.003;
-                                  unset surface;
-                                  set view map;
-                                  set isosamples 500;
-                                  splot y^2 + y - x^3 + x^2;
-                                };
-                              \end{axis}
-                            \end{tikzpicture}
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                          \begin{axis}
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.003;
+                              unset surface;
+                              set view map;
+                              set isosamples 500;
+                              splot y^2 + y - x^3 + x^2;
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
 
                 p
                     | a) If #[m \delta \gt 0], #[m b \gt 0] then
@@ -1634,7 +1614,7 @@ section#sec-parity-mw
                         \end{cases}
 
                     me.
-                        \implies (-1)^{\ord_2 \frac{c_E}{c_{E'}}}
+                        \implies (-1)^{\ord_2 \frac{c_E}{c_{E'}}} =
                         \begin{cases}
                         1,\\
                         -1,\\
@@ -1653,7 +1633,7 @@ section#sec-parity-mw
             p
                 | What about generalising this method to abelian varieties?
             p
-                | For #[m p] odd Coates et. al. (ppav with #[m p]-cyclic isogenoies and local constraints)
+                | For #[m p] odd Coates et. al. (ppav with #[m p]-cyclic isogenies and local constraints)
 
             p
                 | For #[m p = 2].
@@ -1841,3 +1821,166 @@ section#sec-parity-mw
 
                     | This is too large to work with an explicit model for #[m J] instead we will work with the curve #[m C].
 
+            aside: p Lecture ? 4/4/2018
+
+            paragraphs
+                title Jacobians of genus 2 curves
+
+                p
+
+                    | Let #[m C] be a hyperelliptic curve of genus 2 defined over #[m K].
+
+                    me C\colon y^2 = f(x)
+                    | with #[m f(x) \in K\lb x \rb] of degree 6.
+
+                p
+                    | Points on #[m C(\overline K)] and #[m J(\overline K)]:
+                p
+                    | A point #[m D] on #[m J(\overline K)] is given by  a divisor on #[m C] of the form
+                    me D = P + Q - P_{\infty}^+ - P_\infty^{-}
+                    | for some #[m P,Q \in C(\overline K)].
+                    | For #[m D] to be defined over #[m K] either #[m P,Q \in C(K)] or #[m P = Q^\sigma] for #[m \sigma \in \Gal F K] where #[m \lb F : K \rb = 2].
+
+                remark: p
+                    | If #[m P = (x,y)] and #[m P' = (x,-y)]  then
+                    me D  = P + Q - P_\infty^+ - P_\infty^-
+                    | is zero in #[m J(\overline K)].
+
+
+                p
+                    | Addition:
+                p
+                    | Choose 4 points #[m P,P',Q,Q'\in C(\overline K)] (in general position to make it easier).
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                          \begin{axis}
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.003;
+                              unset surface;
+                              set view map;
+                              set isosamples 500;
+                              splot y^2 - (x-1)*(x-2)*(x-3)*(x+1)*(x+2)*(x+3);
+                              splot y - (x^3  - 3*x + 7)/5;
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+
+
+                p
+                    | We can find  a cubic polynomial #[m y = p(x)] through the four points.
+                    | It also intersects at two additional points #[m S,S'] so that
+                    me [y - p(x)]  = P + P' + Q + Q' + S + S' - 3P_\infty^+ - 3P_\infty^-
+                    me (P + P'  - P_\infty^+ - P_\infty^-)+( Q + Q'  - P_\infty^+ - P_\infty^-) =-( S + S' - P_\infty^+ - P_\infty^-)
+                    | hence
+                    me \underbrace{\lb P , P'\rb}_{=P + P' - P_\infty^+ - P_\infty^-}  + \lb Q , Q' \rb = \lb R, R'\rb
+                    | where #[m \lb R , R'\rb = -\lb S, S'\rb].
+                    | Where negation is taking negative of all #[m y]-coordinates.
+
+                p
+                    | So what is 2-torsion?
+                lemma
+                    statement: p
+                        | Each non-zero element of #[m J(\overline K) \lb 2 \rb] may be uniquely represented by the following pairs of points on #[m C(\overline K)],
+                        | let #[m x_1, \ldots, x_6] be the roots of #[m f(x)] then
+                        me J(\overline 2 ) \lb  2 \rb  = \{ [T_i, T_k], i \ne k\},\,T_i = (x_i,0) \in C(\overline K)
+                        | .
+
+                remark
+                    p
+                        | For the Richelot isogeny #[m \phi]:
+                        me.
+                            \xymatrix{
+                            J \ar[r]^\phi &amp; J' \ar[r]{\phi^\vee} &amp;  J\\
+                            C \ar@{^{(}->}[u] \ar[r]_{\Gamma} &amp; C' \ar@{^{(}->}[u] &amp;
+                            }
+                        | where #[m \phi^\vee \circ \phi = \lb 2 \rb] and #[m \Gamma] is a correspondence.
+
+        subsubsection
+            title Richelot isogenies and the Richelot construction
+
+            p
+                | Richelot isogenies are defined for Jacobians of genus 2 curves, they split multiplication by 2.
+                | Their codomain is the Jacobian of a curve, a model of which is explicitly given by the Richelot construction.
+
+            definition
+                statement
+                    p
+                        | Given two polynomials #[m P(x), Q(x)\in K\lb x\rb] of degree at most 2 we define the Richelot operator #[m \lb -, - \rb] by
+                        me \lb P(x),Q(x) \rb =  P'(x) Q(x) - Q'(x) P(x)
+                        | .
+                    p
+                        | We say that a polynomial #[m G(x) \in K \lb x \rb] of degree 5 or 6 is a Richelot polynomial over #[m K] if we can fix a factorisation
+                        me G(x) = G_0(x) G_1(X) G_2(x)
+                        | where each #[m G_i] is of degree at  most 2, defined over #[m \overline K] and defined over #[m K] as a set.
+                    p
+                        | Write
+                        me G_i(x) = g_{i2} x^2+ g_{i1} x +g_{i0}  = g_i(x-\alpha_i)(x-\beta_i)
+                        | for its factorisation over #[m \overline K] ad define
+                        me \Delta_G = \det((g_{ij})_{0\le i, j \le2})
+                        | .
+
+            definition
+                statement: p
+                    | To a Richelot polynomial #[m G(x)] with a fixed factorisation
+                    me G(x) =G_0(x) G_1(x) G_2(x)
+                    | such that #[m \Delta_G \ne 0].
+                    | We associate its Richelot dual polynomial #[m F(x)] given by
+                    me F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}(x)\rb
+                    | where we take indices mod 3.
+
+                    | Write #[m F_i(x) = f_i(x-A_i)(x-B_i)]
+
+            p
+                | #[m \Delta_G] may not be defined over #[m K] but #[m \Delta_G^2] is.
+
+            p
+                | Richelot and Richelot dual curves.
+            definition
+                statement
+                    p
+                        | We say that a hyperelliptic curve #[m C/K] of genus 2 is a Richelot curve over #[m K] if it is given by #[m y^2  = G(x)] together with the factorisation
+                        me G(x) =G_0(x) G_1(x) G_2(x)
+                        | as a Richelot polynomial over #[m K] such that #[m \Delta_G \ne 0].
+                    p
+                        | To a Richelot curve #[m C/K] we associate its Richelot dual curve #[m \widehat C] given by
+                        me \widehat C \colon y^2    =F(x)
+                        | where #[m F(x)] is the Richelot dual polynomial of #[m G(x)] with respect to the given factorisation.
+
+
+            remark
+                p
+                    | Let #[m G(x) \in K \lb x \rb] be a polynomial of degree 5 or 6.
+                    | Denote by #[m K_G] its splitting field.
+                    | Then  the conditions for #[m G(x) ] to be a Richelot polynomial can be rephrased as
+                    me \Gal{K_G}{K} \subseteq C_2^3 \rtimes S_3 \subseteq S_6
+                    me G(x) =G_0(x) G_1(x) G_2(x)
+
+            paragraphs
+                title Richelot isogenies
+
+                definition
+                    statement: p
+                        | Let #[m C/ K] be  a Richelot curve with fixed factorisation
+                        me G(x) =G_0(x) G_1(x) G_2(x)
+                        | .
+                        | Let #[m J] be its Jacobian, consider the 2-torsion points of #[m J(\overline K)] defined by the quadratic factorisation of #[m G(x)].
+                        me D_i = \lb P_i, Q_i\rb
+                        | where #[m P_i = (\alpha_i, 0)], #[m Q_i = (\beta_i, 0)].
+                        | Then the isogeny over #[m K] for #[m J] whose kernel is #[m \{0, D_1, D_2, D_3\}] is called a Richelot isogeny.
+
+                p
+                    | We say that a Jacobian admits a Richelot isogeny over #[m K] if its underlying curve is a Richelot curve #[m /K].
+
+                theorem
+                    statement: p
+                        | Let #[m C/K] be a Richelot curve with fixed factorisation
+                        me G(x) =G_0(x) G_1(x) G_2(x)
+                        | . Let #[m \widehat C /K] be its Richelot dual curve and let #[m \phi] denote the associated Richelot isogeny on #[m J].
+                        | Then #[m \phi\colon J \to \widehat J] where #[m \widehat J] is the Jacobian of #[m \widehat C] and moreover #[m \hat \phi \phi = \lb 2\rb].

@@ -14,7 +14,11 @@ parity.md:	parity-pretty.xml filter.xsl
 	$(XSLTPROC) ../mathbook/xsl/mathbook-markdown-common.xsl parity-wrapper.xml > parity.md
 
 docs/parity.pdf:	parity.tex
-	latexmk -pdf -output-directory=docs -shell-escape -pdflatex="pdflatex -shell-escape -interaction=nonstopmode"  parity.tex
+	cd docs && latexmk -pdf -shell-escape -pdflatex="pdflatex -shell-escape -interaction=nonstopmode"  ../parity.tex
+
+docs/images:	docs parity-wrapper.xml
+	mkdir -p docs/images
+	../mathbook/script/mbx -vv -c latex-image -f svg -d ~/parity/docs/images ~/parity/parity-wrapper.xml
 
 parity-wrapper.xml:	*.pug pug-plugin.json
 	pug -O pug-plugin.json --extension xml parity-wrapper.pug
