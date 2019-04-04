@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PAR Abelian varieties</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://alexjbest.github.io/css/pretext.css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{pgfplots}
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\newcommand{\Lie}{\operatorname{Lie}}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\red}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="parity.html"><span class="title">Ranks and Parity of Ranks of Curves and Abelian Surfaces:</span> <span class="subtitle">MA842 at BU Spring 2019</span></a></h1>
+<p class="byline">Céline Maistret</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="subsec-ec-ranks.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="parity.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="subsec-ec-ranks.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="parity.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="subsec-ec-ranks.html" data-scroll="subsec-ec-ranks"><span class="codenumber">1</span> <span class="title">Elliptic curves and their ranks</span></a><ul>
+<li><a href="subsec-ec-ranks.html#subsubsec-mordell-weil" data-scroll="subsubsec-mordell-weil">Mordell-Weil</a></li>
+<li><a href="subsec-ec-ranks.html#subsec-p-inf-selmer" data-scroll="subsec-p-inf-selmer">\(p^\infty\)-Selmer and the structure of \(\Sha\)</a></li>
+<li><a href="subsec-ec-ranks.html#subsection-3" data-scroll="subsection-3">Consequences of BSD</a></li>
+</ul>
+</li>
+<li class="link active">
+<a href="section-2.html" data-scroll="section-2"><span class="codenumber">2</span> <span class="title">Abelian varieties</span></a><ul>
+<li><a href="section-2.html#subsection-4" data-scroll="subsection-4">Review of hyperelliptic curves and Jacobians</a></li>
+<li><a href="section-2.html#subsection-5" data-scroll="subsection-5">Richelot isogenies and the Richelot construction</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/parity/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2</span> <span class="title">Abelian varieties</span>
+</h2>
+<section class="introduction" id="introduction-3"><aside class="aside-like" id="aside-12"><p id="p-204">Lecture ? 2/4/2018</p></aside><p id="p-205">What about generalising this method to abelian varieties?</p>
+<p id="p-206">For \(p\) odd Coates et. al. (ppav with \(p\)-cyclic isogenies and local constraints)</p>
+<p id="p-207">For \(p = 2\text{.}\)</p>
+<p id="p-208">Recall let \(X,Y/K\) be abelian varieties over a number field and suppose that \(\Psi\colon X\to Y\) is an isogeny, then \(\Psi^\vee \colon Y^\vee \to X^\vee\) its dual. Then</p>
+<div class="displaymath">
+\begin{equation}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac {|Y(K)_\tors|}{|X(K)_\tors|}\frac {|Y^\vee(K)_\tors|}{|X^\vee(K)_\tors|} \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \prod_{p| \deg \Psi} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\label{eqn-parity-dagger}\tag{2.1}
+\end{equation}
+</div>
+<p>on the other hand we showed that if \(\Psi \Psi^\vee = \lb p \rb\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Q(\Psi^\vee)}{Q(\Psi)}\equiv p^{\rk_p(X/K)} \pmod {{K^\times}^2}
+\end{equation*}
+</div>
+<p>note that in this case \(\deg \psi =  p^{\dim (X)}\text{.}\)</p>
+<p id="p-209">To be able to use the same method we need to compute the RHS of <a data-knowl="./knowl/eqn-parity-dagger.html" title="Equation 2.1">(2.1)</a>.</p>
+<p id="p-210">For \(E\) since \(E\simeq E^\vee\) and \(|\Sha_0(E)| = \square \text{,}\) this only meant computing</p>
+<div class="displaymath">
+\begin{equation*}
+\prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}\text{.}
+\end{equation*}
+</div>
+<p id="p-211">First consider a ppav \(X/K\) s.t.</p>
+<div class="displaymath">
+\begin{gather}
+\knowl{./knowl/eqn-parity-dagger.html}{\text{(2.1)}} \equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}\tag{2.2}
+\end{gather}
+</div>
+<ol class="decimal">
+<li id="li-56">
+<p id="p-212">Can we compute</p>
+<div class="displaymath">
+\begin{equation}
+\frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y}\text{?}\tag{2.3}
+\end{equation}
+</div>
+<p id="p-213">Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
+</li>
+<li id="li-57">
+<p id="p-214">Can we compute</p>
+<div class="displaymath">
+\begin{equation}
+\frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\text{?}\tag{2.4}
+\end{equation}
+</div>
+<p>Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
+</li>
+<li id="li-58">
+<p id="p-215">Need an isogeny \(\Psi\) of degree \(2^g\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon J  \to J'
+\end{equation*}
+</div>
+<p>i.e. the codomain must be a Jacobian of a hyperelliptic curve otherwise we cannot compute 1. or 2.</p>
+</li>
+</ol>
+<p id="p-216">To satisfy 1., 2. and 3. we take \(g = 2\) because of the following:</p>
+<article class="theorem-like" id="theorem-12"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1</span>. <span class="title">González, Josep, Jordi Guardia, and Victor Rotger.Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004)..</span>
+</h6>
+<p id="p-217">Let \(A/K\) be a principally polarized abelian surface defined over a number field. Then \(A\) is one of the following types</p>
+<ul class="disc">
+<li id="li-59">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K J(C)
+\end{equation*}
+</div>where \(C/K\) is a smooth genus 2 curve.</li>
+<li id="li-60">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K C_1 \times C_2
+\end{equation*}
+</div>where \(C_1,C_2/K\) are elliptic curves defined over \(K\text{.}\)</li>
+<li id="li-61">
+<div class="displaymath">
+\begin{equation*}
+A/K \simeq_K \Res_{F/K} C
+\end{equation*}
+</div>where \(\Res_{F/K} C\) is the Weil restriction of an elliptic curve defined over  a quadratic extension \(F/K\text{.}\)</li>
+</ul></article><article class="remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.2</span>.</h6>
+<p id="p-218">The parity of the rank of \(A/K\) in the last two cases can be computed from that of the underlying elliptic curves.</p></article><p id="p-219">We will concentrate on \(A\simeq_K J(C)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2 = f(x)
+\end{equation*}
+</div>
+<p>for \(\deg (f ) = 6\text{.}\)</p>
+<p id="p-220">The generalisation of a 2-isogeny is called a Richelot isogeny.</p>
+<p id="p-221">Plan:</p>
+<ol class="decimal">
+<li id="li-62">Review of hyperelliptic curves and their Jacobians.</li>
+<li id="li-63">Richelot isogeny</li>
+<li id="li-64">Compute contribution of the real places</li>
+<li id="li-65">Compute Tamagawa numbers/local root numbers</li>
+<li id="li-66">Compute \(|\Sha_0(J) \lb 2^\infty \rb|\) up to squares</li>
+<li id="li-67">Find and prove the right error term</li>
+</ol></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1</span> <span class="title">Review of hyperelliptic curves and Jacobians</span>
+</h3>
+<p id="p-222">See Stoll's notes.</p>
+<p id="p-223">By a hyperelliptic curve \(C\) over a number field \(K\) given my</p>
+<div class="displaymath">
+\begin{equation*}
+C/K \colon y^2 = f(x)
+\end{equation*}
+</div>
+<p>of genus \(g\) where \(f(x) \in K\lb x\rb\) of degree \(2g+1\) or \(2g+2\) with no multiple roots, we mean the pair of affine patches</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2 = f(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2 = t^{2g+2} f\left(\frac 1t\right)
+\end{equation*}
+</div>
+<p>glued together along the maps</p>
+<div class="displaymath">
+\begin{equation*}
+x = \frac 1t,\, y=  \frac{v}{t^{g+1}}\text{.}
+\end{equation*}
+</div>
+<p>We refer to as the points  at \(\infty\) (i.e. \(C \smallsetminus U_x\)) the points with \(t  = 0\) on \(U_t\text{.}\)</p>
+<p id="p-224">Explicitly denote by \(c\) the leading term of \(f(x)\text{.}\)</p>
+<p id="p-225">If \(f(x)\) is of degree \(2g+1\) then</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2= c\prod_{i=1}^{2g+1} (x- r_i)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2= tc\prod_{i=1}^{2g+1} (tr_i- 1)
+\end{equation*}
+</div>
+<p>we denote \(P_\infty = (0,1)\) the only point at infinity with \(t=0\text{.}\)</p>
+<p id="p-226">Otherwise if \(f(x)\) is of degree \(2g+2\) then</p>
+<div class="displaymath">
+\begin{equation*}
+U_x \colon y^2= c\prod_{i=1}^{2g+2} (x- r_i)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+U_t \colon v^2= c\prod_{i=1}^{2g+2} (tr_i- 1)
+\end{equation*}
+</div>
+<p>we denote \(P_\infty^\pm = (0,\pm \sqrt{c})\) the two points on \(U_t\) with \(t  = 0\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Divisors and the picard group.</span></h5>
+<p id="p-227">Let \(G_K\) be the absolute galois group of \(K\text{,}\) recall that \(G_K\) acts on</p>
+<div class="displaymath">
+\begin{equation*}
+C(K^\sep)
+\end{equation*}
+</div>
+<p>via its action on coordinates.</p>
+<article class="definition-like" id="definition-11"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.3</span>.</h6>
+<p id="p-228">A divisor \(D\) on \(C\) is a formal sum</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{P\in C(K^\sep)} n_P P
+\end{equation*}
+</div>
+<p>where \(n_P \in \ZZ\) and \(n_P  = 0\) for all but finitely many \(P \in C(K^\sep)\text{.}\) The integer \(n_P\) is called the multiplicity of \(P\) in \(D\) and \(\deg(D) = \sum_{P} n_P\) is the degree of \(D\text{.}\)</p>
+<p id="p-229">Divisors on \(C\) are elements of the free abelian group on the set of points \(P\in C(K^\sep)\text{.}\) Denote by \(\Div(C)\) the group of divisors on \(C\text{.}\)</p></article><article class="definition-like" id="definition-12"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.4</span>.</h6>
+<p id="p-230">A divisor</p>
+<div class="displaymath">
+\begin{equation*}
+D = \sum_{P\in C(F)} n_P P
+\end{equation*}
+</div>
+<p>for some Galois extension \(F|K\text{.}\) Is \(K\)-rational or defined over \(K\) if</p>
+<div class="displaymath">
+\begin{equation*}
+D^\sigma = D \,\forall \sigma \in \Gal F K\text{.}
+\end{equation*}
+</div></article><article class="example-like" id="example-6"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.5</span>.</h6>
+<div class="displaymath" id="p-231">
+\begin{equation*}
+C \colon y^2 = f(x)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\alpha \in K
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P = (\alpha, \sqrt {f(\alpha)})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bar P = (\alpha, -\sqrt {f(\alpha)})
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+D = P + \bar P
+\end{equation*}
+</div>
+<p>is a \(K\)-rational divisor.</p></article><article class="definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.6</span>.</h6>
+<p id="p-232">Let \(f\) be a non-zero rational function on \(C\text{.}\) Define</p>
+<div class="displaymath">
+\begin{equation*}
+\lb f \rb =  \sum_{P \in C} \ord_P (f) P
+\end{equation*}
+</div>
+<p>where the multiplicity of \(P \) in \(\lb f\rb\) is given by the order of vanishing of \(f \) at \(P\text{.}\) These divisors are called principal divisors, the group of such is denote \(\Princ(P)\text{.}\) Note that these are all of degree 0.</p></article><article class="definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.7</span>.</h6>
+<p id="p-233">The picard group of \(C\) is defined to be</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic(C) = \Div(C)/ \Princ(P)
+\end{equation*}
+</div>
+<p>Note that this inherits a notion of degree from \(\Div(C)\text{.}\)</p></article><article class="theorem-like" id="theorem-13"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.8</span>.</h6>
+<p id="p-234">Let \(C\) be a smooth, projective, absolutely irreducible curve of genus \(g\) over some field \(K\text{.}\) Then there exists an abelian variety \(J\) of dimension \(g\) over \(K\) s.t. for each field</p>
+<div class="displaymath">
+\begin{equation*}
+K \subseteq L \subseteq K^\sep
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+J(L) =  \Pic_C^0(L)
+\end{equation*}
+</div></article><article class="definition-like" id="definition-15"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.9</span>.</h6>
+<p id="p-235">\(J\) is called the Jacobian variety of \(C\text{.}\)</p></article><article class="remark-like" id="remark-11"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.10</span>.</h6>
+<p id="p-236">\(J\) is a projective variety (abelian), thus it can be embedded in some projective space \(\PP^N\) over \(K\text{.}\) One can show that</p>
+<div class="displaymath">
+\begin{equation*}
+N = 4^g  - 1
+\end{equation*}
+</div>
+<p>always works for hyperelliptic curves.</p></article><p id="p-237">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article><aside class="aside-like" id="aside-13"><p id="p-238">Lecture ? 4/4/2018</p></aside><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Jacobians of genus 2 curves.</span></h5>
+<p id="p-239">Let \(C\) be a hyperelliptic curve of genus 2 defined over \(K\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2 = f(x)
+\end{equation*}
+</div>
+<p>with \(f(x) \in K\lb x \rb\) of degree 6.</p>
+<p id="p-240">Points on \(C(\overline K)\) and \(J(\overline K)\text{:}\)</p>
+<p id="p-241">A point \(D\) on \(J(\overline K)\) is given by  a divisor on \(C\) of the form</p>
+<div class="displaymath">
+\begin{equation*}
+D = P + Q - P_{\infty}^+ - P_\infty^{-}
+\end{equation*}
+</div>
+<p>for some \(P,Q \in C(\overline K)\text{.}\) For \(D\) to be defined over \(K\) either \(P,Q \in C(K)\) or \(P = Q^\sigma\) for \(\sigma \in \Gal F K\) where \(\lb F : K \rb = 2\text{.}\)</p>
+<article class="remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.11</span>.</h6>
+<p id="p-242">If \(P = (x,y)\) and \(P' = (x,-y)\)  then</p>
+<div class="displaymath">
+\begin{equation*}
+D  = P + Q - P_\infty^+ - P_\infty^-
+\end{equation*}
+</div>
+<p>is zero in \(J(\overline K)\text{.}\)</p></article><p id="p-243">Addition:</p>
+<p id="p-244">Choose 4 points \(P,P',Q,Q'\in C(\overline K)\) (in general position to make it easier).</p>
+<figure class="figure-like" id="figure-3"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.12.</span> </figcaption></figure><p id="p-245">We can find  a cubic polynomial \(y = p(x)\) through the four points. It also intersects at two additional points \(S,S'\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+[y - p(x)]  = P + P' + Q + Q' + S + S' - 3P_\infty^+ - 3P_\infty^-
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(P + P'  - P_\infty^+ - P_\infty^-)+( Q + Q'  - P_\infty^+ - P_\infty^-) =-( S + S' - P_\infty^+ - P_\infty^-)
+\end{equation*}
+</div>
+<p>hence</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{\lb P , P'\rb}_{=P + P' - P_\infty^+ - P_\infty^-}  + \lb Q , Q' \rb = \lb R, R'\rb
+\end{equation*}
+</div>
+<p>where \(\lb R , R'\rb = -\lb S, S'\rb\text{.}\) Where negation is taking negative of all \(y\)-coordinates.</p>
+<p id="p-246">So what is 2-torsion?</p>
+<article class="theorem-like" id="lemma-5"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.13</span>.</h6>
+<p id="p-247">Each non-zero element of \(J(\overline K) \lb 2 \rb\) may be uniquely represented by the following pairs of points on \(C(\overline K)\text{,}\) let \(x_1, \ldots, x_6\) be the roots of \(f(x)\) then</p>
+<div class="displaymath">
+\begin{equation*}
+J(\overline 2 ) \lb  2 \rb  = \{ [T_i, T_k], i \ne k\},\,T_i = (x_i,0) \in C(\overline K)\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-13"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.14</span>.</h6>
+<p id="p-248">For the Richelot isogeny \(\phi\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+J \ar[r]^\phi &amp; J' \ar[r]^{\phi^\vee} &amp;  J\\
+C \ar@{^{(}-&gt;}[u] \ar[r]_{\Gamma} &amp; C' \ar@{^{(}-&gt;}[u] &amp;
+}
+\end{equation*}
+</div>
+<p>where \(\phi^\vee \circ \phi = \lb 2 \rb\) and \(\Gamma\) is a correspondence.</p></article></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2</span> <span class="title">Richelot isogenies and the Richelot construction</span>
+</h3>
+<p id="p-249">Richelot isogenies are defined for Jacobians of genus 2 curves, they split multiplication by 2. Their codomain is the Jacobian of a curve, a model of which is explicitly given by the Richelot construction.</p>
+<article class="definition-like" id="definition-16"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.15</span>.</h6>
+<p id="p-250">Given two polynomials \(P(x), Q(x)\in K\lb x\rb\) of degree at most 2 we define the Richelot operator \(\lb -, - \rb\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\lb P(x),Q(x) \rb =  P'(x) Q(x) - Q'(x) P(x)\text{.}
+\end{equation*}
+</div>
+<p id="p-251">We say that a polynomial \(G(x) \in K \lb x \rb\) of degree 5 or 6 is a Richelot polynomial over \(K\) if we can fix a factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+G(x) = G_0(x) G_1(x) G_2(x)
+\end{equation*}
+</div>
+<p>where each \(G_i\) is of degree at  most 2, defined over \(\overline K\) and defined over \(K\) as a set.</p>
+<p id="p-252">Write</p>
+<div class="displaymath">
+\begin{equation*}
+G_i(x) = g_{i2} x^2+ g_{i1} x +g_{i0}  = g_i(x-\alpha_i)(x-\beta_i)
+\end{equation*}
+</div>
+<p>for its factorisation over \(\overline K\) and define</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta_G = \det((g_{ij})_{0\le i, j \le2})\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="definition-17"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.16</span>.</h6>
+<p id="p-253">To a Richelot polynomial \(G(x)\) with a fixed factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+G(x) =G_0(x) G_1(x) G_2(x)
+\end{equation*}
+</div>
+<p>such that \(\Delta_G \ne 0\text{.}\) We associate its Richelot dual polynomial \(F(x)\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}(x)\rb
+\end{equation*}
+</div>
+<p>where we take indices mod 3. Write \(F_i(x) = f_i(x-A_i)(x-B_i)\)</p></article><p id="p-254">\(\Delta_G\) may not be defined over \(K\) but \(\Delta_G^2\) is.</p>
+<p id="p-255">Richelot and Richelot dual curves.</p>
+<article class="definition-like" id="definition-18"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.17</span>.</h6>
+<p id="p-256">We say that a hyperelliptic curve \(C/K\) of genus 2 is a Richelot curve over \(K\) if it is given by \(y^2  = G(x)\) together with the factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+G(x) =G_0(x) G_1(x) G_2(x)
+\end{equation*}
+</div>
+<p>as a Richelot polynomial over \(K\) such that \(\Delta_G \ne 0\text{.}\)</p>
+<p id="p-257">To a Richelot curve \(C/K\) we associate its Richelot dual curve \(\widehat C\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat C \colon y^2    =F(x)
+\end{equation*}
+</div>
+<p>where \(F(x)\) is the Richelot dual polynomial of \(G(x)\) with respect to the given factorisation.</p></article><article class="remark-like" id="remark-14"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.18</span>.</h6>
+<p id="p-258">Let \(G(x) \in K \lb x \rb\) be a polynomial of degree 5 or 6. Denote by \(K_G\) its splitting field. Then  the conditions for \(G(x) \) to be a Richelot polynomial can be rephrased as</p>
+<div class="displaymath">
+\begin{equation*}
+\Gal{K_G}{K} \subseteq C_2^3 \rtimes S_3 \subseteq S_6
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G(x) =G_0(x) G_1(x) G_2(x)
+\end{equation*}
+</div></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Richelot isogenies.</span></h5>
+<article class="definition-like" id="definition-19"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.19</span>.</h6>
+<p id="p-259">Let \(C/ K\) be  a Richelot curve with fixed factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+G(x) =G_0(x) G_1(x) G_2(x)\text{.}
+\end{equation*}
+</div>
+<p>Let \(J\) be its Jacobian, consider the 2-torsion points of \(J(\overline K)\) defined by the quadratic factorisation of \(G(x)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+D_i = \lb P_i, Q_i\rb
+\end{equation*}
+</div>
+<p>where \(P_i = (\alpha_i, 0)\text{,}\) \(Q_i = (\beta_i, 0)\text{.}\) Then the isogeny over \(K\) for \(J\) whose kernel is \(\{0, D_1, D_2, D_3\}\) is called a Richelot isogeny.</p></article><p id="p-260">We say that a Jacobian admits a Richelot isogeny over \(K\) if its underlying curve is a Richelot curve \(/K\text{.}\)</p>
+<article class="theorem-like" id="theorem-14"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.20</span>.</h6>
+<p id="p-261">Let \(C/K\) be a Richelot curve with fixed factorisation</p>
+<div class="displaymath">
+\begin{equation*}
+G(x) =G_0(x) G_1(x) G_2(x)\text{.}
+\end{equation*}
+</div>
+<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article></section></section></div></main>
+</div>
+<!--Start: Google code--><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>
