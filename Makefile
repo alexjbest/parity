@@ -14,6 +14,7 @@ parity.md:	parity-pretty.xml filter.xsl
 	$(XSLTPROC) ../mathbook/xsl/mathbook-markdown-common.xsl parity-wrapper.xml > parity.md
 
 docs/parity.pdf:	parity.tex
+	mkdir -p docs
 	cd docs && latexmk -pdf -shell-escape -pdflatex="pdflatex -shell-escape -interaction=nonstopmode"  ../parity.tex
 
 docs/images:	docs parity-wrapper.xml

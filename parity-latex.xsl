@@ -10,6 +10,10 @@
 <!-- Place ups-writers-html.xsl file into  mathbook/user -->
 <xsl:import href="../mathbook/xsl/mathbook-latex.xsl" />
 
+<xsl:param name="latex.preamble.late">
+    <xsl:text>\pgfplotsset{compat=newest}&#xa;</xsl:text>
+</xsl:param>
+
 <xsl:output method="text" />
 
 </xsl:stylesheet>
