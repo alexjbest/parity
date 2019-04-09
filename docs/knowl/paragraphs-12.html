@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
+<p>Reference Milne's CFT.</p>
+<p>Central simple algebras:</p>
+<p>We will consider finite dimensional \(k\)-algebra for \(k\) a field.</p>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.21</span>.</h6>
+<p>A \(k\)-algebra \(A\) is central if the center \(Z(A) = k\text{.}\) A \(k\)-algebra is simple if the only two sided ideals are \(A\) and \((0)\text{.}\)</p></article><article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.22</span>.</h6>
+<p>The matrix algebra \(M_n(k)\) is central simple for \(k\text{.}\)</p></article><article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.23</span>.</h6>
+<p>A quaternion algebra like \(\HH = \RR \{i,j,k\}\) is central simple for \(k\text{.}\)</p></article><article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.24</span>.</h6>
+<p>A division algebra is simple.</p></article><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.25</span>.</h6>
+<p>Two central simple \(k\)-algebras \(A,B\) are similar, if there exists \(m,n \in \ZZ_{\gt 0}\) s.t. \(A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)\text{.}\) Denote this by \(A\sim B\text{.}\)</p></article><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.26</span>.</h6>
+<p>The Brauer group of a field \(k\) denoted \(\Br(k)\) is the set of similarity classes of central simple algebras \(\lb A \rb\) with operation</p>
+<div class="displaymath">
+\begin{equation*}
+\lb A \rb \lb B \rb = \lb A \otimes B \rb\text{.}
+\end{equation*}
+</div></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.27</span>.</h6>
+<ol class="decimal">
+<li>The class \(\lb M_n(k)\rb\) is the identity for all \(n\text{.}\)</li>
+<li>The operation is well defined.</li>
+<li>Given \(A\) let \(A^\op\) be the algebra with order of multiplication reversed. Then<div class="displaymath">
+\begin{equation*}
+A \otimes_k A^\op \xrightarrow \sim \End_k(A) \simeq M_{\dim_k(A)} (k)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(a\otimes a') \mapsto (v \mapsto a v a')\text{.}
+\end{equation*}
+</div>So<div class="displaymath">
+\begin{equation*}
+\lb A \rb\inv = \lb A^\op \rb\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p>Galois cohomology:</p>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.28</span>. <span class="title">Noether-Skolem.</span>
+</h6>
+<p>Let \(A, B\) be central simple \(k\)-algebras and \(f,g\colon A  \to B\) a ]\(k\)-algebra morphism. Then there exists</p>
+<div class="displaymath">
+\begin{equation*}
+b \in B^\times
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+f(a) = bg(a) b\inv ,\,\forall a \in A\text{.}
+\end{equation*}
+</div></article><p>Let \(A\) be a central simple \(k\)-algebra with maximal subfield \(L/k\text{.}\)</p>
+<p>Let \(\sigma \in \absgal k\text{,}\) it induces a map</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon  A \to A\text{,}
+\end{equation*}
+</div>
+<p>comparing this to the identity Noether-Skolem gives an element</p>
+<div class="displaymath">
+\begin{equation*}
+e_\sigma \text{ s.t. } \sigma a = e_\sigma a e_\sigma\inv,\,\forall a \in L
+\end{equation*}
+</div>
+<p>defined up to multiplication by \(L^\times\text{.}\)</p>
+<p>Given another \(\tau \in \absgal k\) I have</p>
+<div class="displaymath">
+\begin{equation*}
+e_{\sigma\tau} a e_{\sigma\tau}\inv = \sigma(\tau a) = e_\sigma e_\tau a e_\tau\inv e_\sigma\inv
+\end{equation*}
+</div>
+<p>thus there exists</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(\sigma,\tau) \in L^\times
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+e_{\sigma\tau} = \phi(\sigma,\tau) e_\sigma e_\tau
+\end{equation*}
+</div>
+<p>this gives a map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{central simple algebras}/k \} \to H^2( \absgal k, \overline k ^\times)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.29</span>.</h6>
+<p>This descends to</p>
+<div class="displaymath">
+\begin{equation*}
+\Br(k) \simeq H^2( \absgal k, \overline k ^\times)\text{.}
+\end{equation*}
+</div></article><p>Some special \(k\text{.}\)</p>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.30</span>. <span class="title">Wedderburn.</span>
+</h6>
+<p>Every central simple \(k\)-algebra is isomorphic to \(M_n(D)\) for \(D\) a division \(k\)-algebra.</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.31</span>.</h6>
+<p>If \(k  = \overline k\) then any division \(k\)-algebra \(D\) is isomorphic to \(k\text{.}\) Thus \(\Br(k) = 0\text{.}\)</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.32</span>. <span class="title">Wedderburn.</span>
+</h6>
+<p>Every finite division ring is a field. So if \(k\) is a finite field then \(\Br(k) =  0\text{.}\)</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.33</span>. <span class="title">Frobenius.</span>
+</h6>
+<p>Every central division \(\RR\)-algebra is isomorphic to either \(\RR\) or \(\HH\text{.}\) Thus \(\Br(\RR) \simeq \ZZ/2\text{.}\)</p></article><p>Let \(k\) be a  non-archimidean local field with valuation</p>
+<div class="displaymath">
+\begin{equation*}
+v \colon k^\times \to \ZZ
+\end{equation*}
+</div>
+<p>for a central division algebra \(D\) there exists \(n \in \ZZ\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+v \colon D ^\times \to \frac 1n \ZZ\text{.}
+\end{equation*}
+</div>
+<p>Consider a maximal unramified subfield</p>
+<div class="displaymath">
+\begin{equation*}
+K  \subseteq L \subseteq D
+\end{equation*}
+</div>
+<p>with \(\sigma\in \Gal LK\) lifting frobenius.</p>
+<p>Noether-Skolem gives \(\alpha  \in D^\times\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma x = \alpha  x \alpha \inv,\,\forall x \in L
+\end{equation*}
+</div>
+<p>up to \(L^\times\text{.}\)</p>
+<p>If we take \(\alpha ' = c\alpha \) for \(c\in L^\times\) we cna compute</p>
+<div class="displaymath">
+\begin{equation*}
+v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ\text{.}
+\end{equation*}
+</div>
+<p>We get a map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{central division algebras}/k \} \to \QQ/\ZZ\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.34</span>.</h6>
+<p>This descends to an isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+\Br(k) \simeq \QQ/\ZZ\text{.}
+\end{equation*}
+</div></article><p>If \(F\) is a number field with  a place \(v\in  |F|\) get a map</p>
+<div class="displaymath">
+\begin{equation*}
+\inv_v \colon \Br(F) \to \Br(F_v) \simeq \begin{cases} 0 ,\amp F_v = \CC,\\ \ZZ/2,\amp F_v = \RR,\\ \QQ/\ZZ,\amp F_v\text{nonarch}.\end{cases}\text{.}
+\end{equation*}
+</div>
+<p>Global CFT gives an exact seq</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Br(F) \to \bigoplus_v \Br(F_v) \to \QQ/\ZZ \to 0\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="section-2.html#paragraphs-12">in-context</a></span>
+</body>
+</html>

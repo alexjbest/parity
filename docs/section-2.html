@@ -160,6 +160,7 @@ var js_version = 0.11;
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tgt}{Tgt}
 \DeclareMathOperator{\sprep}{sp}
@@ -710,7 +711,334 @@ D_i = \lb P_i, Q_i\rb
 G(x) =G_0(x) G_1(x) G_2(x)\text{.}
 \end{equation*}
 </div>
-<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article></section></section></div></main>
+<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article><aside class="aside-like" id="aside-14"><p id="p-262">Lecture ? 9/4/2018</p></aside><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
+<p id="p-263">Reference Milne's CFT.</p>
+<p id="p-264">Central simple algebras:</p>
+<p id="p-265">We will consider finite dimensional \(k\)-algebra for \(k\) a field.</p>
+<article class="definition-like" id="definition-20"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.21</span>.</h6>
+<p id="p-266">A \(k\)-algebra \(A\) is central if the center \(Z(A) = k\text{.}\) A \(k\)-algebra is simple if the only two sided ideals are \(A\) and \((0)\text{.}\)</p></article><article class="example-like" id="example-7"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.22</span>.</h6>
+<p id="p-267">The matrix algebra \(M_n(k)\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-8"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.23</span>.</h6>
+<p id="p-268">A quaternion algebra like \(\HH = \RR \{i,j,k\}\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-9"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.24</span>.</h6>
+<p id="p-269">A division algebra is simple.</p></article><article class="definition-like" id="definition-21"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.25</span>.</h6>
+<p id="p-270">Two central simple \(k\)-algebras \(A,B\) are similar, if there exists \(m,n \in \ZZ_{\gt 0}\) s.t. \(A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)\text{.}\) Denote this by \(A\sim B\text{.}\)</p></article><article class="definition-like" id="definition-22"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.26</span>.</h6>
+<p id="p-271">The Brauer group of a field \(k\) denoted \(\Br(k)\) is the set of similarity classes of central simple algebras \(\lb A \rb\) with operation</p>
+<div class="displaymath">
+\begin{equation*}
+\lb A \rb \lb B \rb = \lb A \otimes B \rb\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-15"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.27</span>.</h6>
+<ol id="p-272" class="decimal">
+<li id="li-68">The class \(\lb M_n(k)\rb\) is the identity for all \(n\text{.}\)</li>
+<li id="li-69">The operation is well defined.</li>
+<li id="li-70">Given \(A\) let \(A^\op\) be the algebra with order of multiplication reversed. Then<div class="displaymath">
+\begin{equation*}
+A \otimes_k A^\op \xrightarrow \sim \End_k(A) \simeq M_{\dim_k(A)} (k)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(a\otimes a') \mapsto (v \mapsto a v a')\text{.}
+\end{equation*}
+</div>So<div class="displaymath">
+\begin{equation*}
+\lb A \rb\inv = \lb A^\op \rb\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-273">Galois cohomology:</p>
+<article class="theorem-like" id="theorem-15"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.28</span>. <span class="title">Noether-Skolem.</span>
+</h6>
+<p id="p-274">Let \(A, B\) be central simple \(k\)-algebras and \(f,g\colon A  \to B\) a ]\(k\)-algebra morphism. Then there exists</p>
+<div class="displaymath">
+\begin{equation*}
+b \in B^\times
+\end{equation*}
+</div>
+<p>such that</p>
+<div class="displaymath">
+\begin{equation*}
+f(a) = bg(a) b\inv ,\,\forall a \in A\text{.}
+\end{equation*}
+</div></article><p id="p-275">Let \(A\) be a central simple \(k\)-algebra with maximal subfield \(L/k\text{.}\)</p>
+<p id="p-276">Let \(\sigma \in \absgal k\text{,}\) it induces a map</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \colon  A \to A\text{,}
+\end{equation*}
+</div>
+<p>comparing this to the identity Noether-Skolem gives an element</p>
+<div class="displaymath">
+\begin{equation*}
+e_\sigma \text{ s.t. } \sigma a = e_\sigma a e_\sigma\inv,\,\forall a \in L
+\end{equation*}
+</div>
+<p>defined up to multiplication by \(L^\times\text{.}\)</p>
+<p id="p-277">Given another \(\tau \in \absgal k\) I have</p>
+<div class="displaymath">
+\begin{equation*}
+e_{\sigma\tau} a e_{\sigma\tau}\inv = \sigma(\tau a) = e_\sigma e_\tau a e_\tau\inv e_\sigma\inv
+\end{equation*}
+</div>
+<p>thus there exists</p>
+<div class="displaymath">
+\begin{equation*}
+\phi(\sigma,\tau) \in L^\times
+\end{equation*}
+</div>
+<p>s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+e_{\sigma\tau} = \phi(\sigma,\tau) e_\sigma e_\tau
+\end{equation*}
+</div>
+<p>this gives a map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{central simple algebras}/k \} \to H^2( \absgal k, \overline k ^\times)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-16"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.29</span>.</h6>
+<p id="p-278">This descends to</p>
+<div class="displaymath">
+\begin{equation*}
+\Br(k) \simeq H^2( \absgal k, \overline k ^\times)\text{.}
+\end{equation*}
+</div></article><p id="p-279">Some special \(k\text{.}\)</p>
+<article class="theorem-like" id="theorem-17"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.30</span>. <span class="title">Wedderburn.</span>
+</h6>
+<p id="p-280">Every central simple \(k\)-algebra is isomorphic to \(M_n(D)\) for \(D\) a division \(k\)-algebra.</p></article><article class="theorem-like" id="proposition-6"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.31</span>.</h6>
+<p id="p-281">If \(k  = \overline k\) then any division \(k\)-algebra \(D\) is isomorphic to \(k\text{.}\) Thus \(\Br(k) = 0\text{.}\)</p></article><article class="theorem-like" id="theorem-18"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.32</span>. <span class="title">Wedderburn.</span>
+</h6>
+<p id="p-282">Every finite division ring is a field. So if \(k\) is a finite field then \(\Br(k) =  0\text{.}\)</p></article><article class="theorem-like" id="theorem-19"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.33</span>. <span class="title">Frobenius.</span>
+</h6>
+<p id="p-283">Every central division \(\RR\)-algebra is isomorphic to either \(\RR\) or \(\HH\text{.}\) Thus \(\Br(\RR) \simeq \ZZ/2\text{.}\)</p></article><p id="p-284">Let \(k\) be a  non-archimidean local field with valuation</p>
+<div class="displaymath">
+\begin{equation*}
+v \colon k^\times \to \ZZ
+\end{equation*}
+</div>
+<p>for a central division algebra \(D\) there exists \(n \in \ZZ\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+v \colon D ^\times \to \frac 1n \ZZ\text{.}
+\end{equation*}
+</div>
+<p id="p-285">Consider a maximal unramified subfield</p>
+<div class="displaymath">
+\begin{equation*}
+K  \subseteq L \subseteq D
+\end{equation*}
+</div>
+<p>with \(\sigma\in \Gal LK\) lifting frobenius.</p>
+<p id="p-286">Noether-Skolem gives \(\alpha  \in D^\times\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma x = \alpha  x \alpha \inv,\,\forall x \in L
+\end{equation*}
+</div>
+<p>up to \(L^\times\text{.}\)</p>
+<p id="p-287">If we take \(\alpha ' = c\alpha \) for \(c\in L^\times\) we cna compute</p>
+<div class="displaymath">
+\begin{equation*}
+v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ\text{.}
+\end{equation*}
+</div>
+<p id="p-288">We get a map</p>
+<div class="displaymath">
+\begin{equation*}
+\{\text{central division algebras}/k \} \to \QQ/\ZZ\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="theorem-20"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.34</span>.</h6>
+<p id="p-289">This descends to an isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+\Br(k) \simeq \QQ/\ZZ\text{.}
+\end{equation*}
+</div></article><p id="p-290">If \(F\) is a number field with  a place \(v\in  |F|\) get a map</p>
+<div class="displaymath">
+\begin{equation*}
+\inv_v \colon \Br(F) \to \Br(F_v) \simeq \begin{cases} 0 ,\amp F_v = \CC,\\ \ZZ/2,\amp F_v = \RR,\\ \QQ/\ZZ,\amp F_v\text{nonarch}.\end{cases}\text{.}
+\end{equation*}
+</div>
+<p id="p-291">Global CFT gives an exact seq</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Br(F) \to \bigoplus_v \Br(F_v) \to \QQ/\ZZ \to 0\text{.}
+\end{equation*}
+</div></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Root numbers of elliptic curves  (Ricky).</span></h5>
+<p id="p-292">Based on Rohrlich's article elliptic curves and the Weil-Deligne rep</p>
+<p id="p-293">\(K\) non-archimidean local field, \(\overline K\) is its separable closure.</p>
+<div class="displaymath">
+\begin{equation*}
+\phi = (x\mapsto x^q)\inv\in \absgal k,\,q = |k|
+\end{equation*}
+</div>
+<p>\(\Phi\) some lift of \(\phi\) in \(\absgal K\text{.}\)</p>
+<p id="p-294">\(W(\overline K / K) = \) Weil group, the preimage of \(\langle \phi\rangle\) in \(\absgal k\) under \(G_K \twoheadrightarrow G_k\text{.}\)</p>
+<p id="p-295">We consider \(\sigma \colon W( \overline K/K) \to \GL(v)\text{,}\) representations over \(V/\CC\) (always cts.)</p>
+<p id="p-296">Say \(\sigma\) is of Galois type if  it factors through a finite quotient.</p>
+<p id="p-297">Another source of examples is</p>
+<div class="displaymath">
+\begin{equation*}
+\omega \colon W \to \CC^\times
+\end{equation*}
+</div>
+<p>given by</p>
+<div class="displaymath">
+\begin{equation*}
+\omega(I) = \{1\}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+I =\ker(G_K \to G_k)
+\end{equation*}
+</div>
+<p>and \(\omega(\Phi) = q\inv\text{.}\)</p>
+<p id="p-298">Fact, all irreducible \(\sigma \cong \rho \otimes \omega^s\) for some \(s \in \CC\) and \(\rho\) of Galois type.</p>
+<article class="definition-like" id="definition-23"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.35</span>.</h6>
+<p id="p-299">The Weil-Deligne group is</p>
+<div class="displaymath">
+\begin{equation*}
+W'(\overline K / K) = W(\overline K/K) \ltimes \CC
+\end{equation*}
+</div>
+<p>where \(W\) acts on \(\CC\) via \(\omega\)</p>
+<div class="displaymath">
+\begin{equation*}
+g z g\inv = \omega z\text{?????????????????????????????????}
+\end{equation*}
+</div></article><p id="p-300">Upshot: Representations \(\sigma'\) of \(W'\) are the same as \((\sigma, N)\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma\colon W \to \GL(V)
+\end{equation*}
+</div>
+<p>a representation and \(N\) is a nilpotent linear operator on \(V\text{.}\) Satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma(g) N \sigma(g)\inv = \omega(g) N\text{.}
+\end{equation*}
+</div>
+<p id="p-301">One motivation for studying those is  a general construction of Grothendieck and Deligne which turn an \(l\)-adic representation of \(G_K\) into a representation of \(W'\) (given \(i\colon \QQ_l \hookrightarrow \CC\)).</p>
+<article class="example-like" id="example-10"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.36</span>.</h6>
+<div class="displaymath" id="p-302">
+\begin{equation*}
+\sprep(n) = \CC^n
+\end{equation*}
+</div>
+<p>with action of \(W'\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma(g) e_j = \omega(g)^j e_j,\,forall g \in W
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Ne_ j = e_{j+1},\, Ne_n = 0
+\end{equation*}
+</div>
+<p>check relation \(\sigma N \sigma\inv = \omega N\text{.}\)</p></article><p id="p-303">We want to define \(\epsilon \)-factors for representations of \(W'\text{.}\) We need two choices:</p>
+<div class="displaymath">
+\begin{equation*}
+\psi \colon K\to \CC^\times
+\end{equation*}
+</div>
+<p>an additive character of \(K\text{.}\) And</p>
+<div class="displaymath">
+\begin{equation*}
+\diff x
+\end{equation*}
+</div>
+<p>a Haar measure on \(K\text{.}\)</p>
+<p id="p-304">Then</p>
+<div class="displaymath">
+\begin{equation*}
+\epsilon (\sigma ', \psi , \diff x) = \epsilon ( \sigma , \psi ,\diff x) \delta (\sigma ')
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+\delta (\sigma ') = \det(-N | V^I / V_N^I)
+\end{equation*}
+</div>
+<p>and \(\epsilon (\sigma , \psi , \diff x)\) is defined by the following proposition.</p>
+<article class="theorem-like" id="proposition-7"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.37</span>. <span class="title">Deligne-Langlands.</span>
+</h6>
+<p id="p-305">There exists a unique function \(\epsilon (\sigma ,\psi \diff x)\) satisfying</p>
+<ol class="decimal">
+<li id="li-71">\(\epsilon (*, \psi , \diff x)\) is multiplicative in short exact sequences.</li>
+<li id="li-72">If \(L/K\) is finite then<div class="displaymath">
+\begin{equation*}
+\epsilon (\Ind_{L/K} \rho , \psi , \diff x) = \epsilon (\rho , \psi  \circ \trace_{L/K}, \diff x_L) \cdot \left( \epsilon (\Ind_{L/K} 1_L, \psi , \diff x) / \epsilon (1_L, \psi \circ \trace_{L/K}, \diff x_L)\right)^{\dim \rho }
+\end{equation*}
+</div>
+</li>
+<li id="li-73">For \(\chi \) a character<div class="displaymath">
+\begin{equation*}
+\epsilon (, \chi , \psi , \diff x)
+\end{equation*}
+</div>agrees with the ones defined in Tate's thesis. They're both given by an integral formula.</li>
+</ol></article><article class="definition-like" id="definition-24"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.38</span>.</h6>
+<p id="p-306">The root number of \(\sigma '\) is defined to be</p>
+<div class="displaymath">
+\begin{equation*}
+w(\sigma ', \psi ) = \frac{\epsilon (\sigma ', 'y, \diff x)}{|{\epsilon (\sigma ', 'y, \diff x)}|}\text{.}
+\end{equation*}
+</div></article><p id="p-307">For \(E/K\) an elliptic curve we have a representation on \(V_l^*\) (\(l \ne p\)).</p>
+<p id="p-308">Using the Grothendieck-Deligne construction, let \(\sigma _{E/K}\) be a representation of \(W'\) it has the following property</p>
+<ul class="disc">
+<li id="li-74">\(E\) pot. good reduction then<div class="displaymath">
+\begin{equation*}
+N_{E/K} = 0
+\end{equation*}
+</div>and \(\sigma_{E/K}\) is semisimple. \(E\) has good reduction iff \(\sigma _{E/K}\) is unramified.</li>
+<li id="li-75">\(E\) has potential multiplicative reduction implies that we can take \(\chi \) a character of \(W\) with \(\chi ^2 = 1\text{,}\) so that<div class="displaymath">
+\begin{equation*}
+E^\chi
+\end{equation*}
+</div>has split multiplicative reduction. Then<div class="displaymath">
+\begin{equation*}
+\sigma _{E/K}' \simeq \chi  \omega \inv \otimes \sprep(2)
+\end{equation*}
+</div>\(\chi \) is trivial / unramified and non-trivial / ramified according to \(E\) having split / non-split / additive reduction.</li>
+<li id="li-76">\(\sigma _{E/K}'\) is essentially symplectic. \(W(E/K) = W(\sigma _{E/K}')\) is independent of \(\psi \) and must be \(\pm 1\text{.}\)</li>
+</ul>
+<article class="theorem-like" id="proposition-8"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.39</span>.</h6>
+<ol id="p-309" class="decimal">
+<li id="li-77">\(E\) has good reduction implies \(W(E/K) = 1\text{.}\)</li>
+<li id="li-78">\(E\) potentially multiplicative reduction implies<div class="displaymath">
+\begin{equation*}
+W(E/K) = \begin{cases} -1 \amp \text{split}\\ 1 \amp \text{nonsplit}\end{cases}\text{.}
+\end{equation*}
+</div>If additive reduction take \(\xi \) quadratic character s.t.<div class="displaymath">
+\begin{equation*}
+E^\xi
+\end{equation*}
+</div>has split multiplicative reduction and \(W(E/K) = \xi (-1)\text{.}\)</li>
+</ol></article></article></section></section></div></main>
 </div>
 <!--Start: Google code--><script>
 var _gaq = _gaq || [];

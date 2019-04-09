@@ -1981,3 +1981,301 @@ section
                     me G(x) =G_0(x) G_1(x) G_2(x)
                     | . Let #[m \widehat C /K] be its Richelot dual curve and let #[m \phi] denote the associated Richelot isogeny on #[m J].
                     | Then #[m \phi\colon J \to \widehat J] where #[m \widehat J] is the Jacobian of #[m \widehat C] and moreover #[m \hat \phi \phi = \lb 2\rb].
+
+        aside: p Lecture ? 9/4/2018
+
+        paragraphs
+            title Brauer groups Galois cohomology and local invariants (Angus)
+
+            p
+                | Reference Milne's CFT.
+
+            p
+                | Central simple algebras:
+            p
+                | We will consider finite dimensional #[m k]-algebra for #[m k] a field.
+
+            definition
+                statement: p
+                    | A #[m k]-algebra #[m A] is central if the center #[m Z(A) = k].
+
+                    | A #[m k]-algebra is simple if the only two sided ideals are #[m A] and #[m (0)].
+
+            example
+                statement: p
+                    | The matrix algebra #[m M_n(k)] is central simple for #[m k].
+
+            example
+                statement: p
+                    | A quaternion algebra like #[m \HH = \RR \{i,j,k\}] is central simple for #[m k].
+
+            example
+                statement: p
+                    | A division algebra is simple.
+
+            definition
+                statement: p
+                    | Two central simple #[m k]-algebras #[m A,B] are similar, if there exists #[m m,n \in \ZZ_{\gt 0}] s.t. #[m A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)].
+                    | Denote this by #[m A\sim B].
+
+            definition
+                statement: p
+                    | The Brauer group of a field #[m k] denoted #[m \Br(k)] is the set of similarity classes of central simple algebras #[m \lb A \rb] with operation
+                    me \lb A \rb \lb B \rb = \lb A \otimes B \rb
+                    | .
+
+            remark
+                p
+                    ol
+                        li
+                            | The class #[m \lb M_n(k)\rb] is the identity for all #[m n].
+                        li
+                            | The operation is well defined.
+                        li
+                            | Given #[m A] let #[m A^\op] be the algebra with order of multiplication reversed.
+                            | Then
+                            me A \otimes_k A^\op \xrightarrow \sim \End_k(A) \simeq M_{\dim_k(A)} (k)
+                            me (a\otimes a') \mapsto (v \mapsto a v a')
+                            | .
+                            | So
+                            me \lb A \rb\inv = \lb A^\op \rb
+                            | .
+
+
+            p
+                | Galois cohomology:
+
+            theorem
+                title Noether-Skolem
+                statement: p
+                    | Let #[m A, B] be central simple #[m k]-algebras and #[m f,g\colon A  \to B] a ]#[m k]-algebra morphism.
+                    | Then there exists
+                    me b \in B^\times
+                    |such that
+                    me f(a) = bg(a) b\inv ,\,\forall a \in A
+                    | .
+
+            p
+                | Let #[m A] be a central simple #[m k]-algebra with maximal subfield #[m L/k].
+            p
+                | Let #[m \sigma \in \absgal k], it induces a map
+                me \sigma \colon  A \to A
+                |, comparing this to the identity Noether-Skolem gives an element
+                me e_\sigma \text{ s.t. } \sigma a = e_\sigma a e_\sigma\inv,\,\forall a \in L
+                | defined up to multiplication by #[m L^\times].
+            p
+                | Given another #[m \tau \in \absgal k] I have
+                me e_{\sigma\tau} a e_{\sigma\tau}\inv = \sigma(\tau a) = e_\sigma e_\tau a e_\tau\inv e_\sigma\inv
+                | thus there exists
+                me \phi(\sigma,\tau) \in L^\times
+                | s.t.
+                me e_{\sigma\tau} = \phi(\sigma,\tau) e_\sigma e_\tau
+                | this gives a map
+
+                me \{\text{central simple algebras}/k \} \to H^2( \absgal k, \overline k ^\times)
+                |.
+            theorem
+                statement: p
+                    | This descends to
+                    me \Br(k) \simeq H^2( \absgal k, \overline k ^\times)
+                    | .
+
+            p
+                | Some special #[m k].
+
+            theorem
+                title Wedderburn
+                statement: p
+                    | Every central simple #[m k]-algebra is isomorphic to #[m M_n(D)] for #[m D] a division #[m k]-algebra.
+
+            proposition
+                statement: p
+                    | If #[m k  = \overline k] then any division #[m k]-algebra #[m D] is isomorphic to #[m k].
+                    | Thus #[m \Br(k) = 0].
+
+
+            theorem
+                title Wedderburn
+                statement: p
+                    | Every finite division ring is a field.
+                    | So if #[m k] is a finite field then #[m \Br(k) =  0].
+
+            theorem
+                title Frobenius
+                statement: p
+                    | Every central division #[m \RR]-algebra is isomorphic to either #[m \RR] or #[m \HH].
+                    | Thus #[m \Br(\RR) \simeq \ZZ/2].
+
+
+            p
+                | Let #[m k] be a  non-archimidean local field with valuation
+                me v \colon k^\times \to \ZZ
+                | for a central division algebra #[m D] there exists #[m n \in \ZZ] s.t.
+                me v \colon D ^\times \to \frac 1n \ZZ
+                |.
+
+            p
+                | Consider a maximal unramified subfield
+                me K  \subseteq L \subseteq D
+                | with #[m \sigma\in \Gal LK] lifting frobenius.
+
+            p
+                | Noether-Skolem gives #[m \alpha  \in D^\times] s.t.
+                me \sigma x = \alpha  x \alpha \inv,\,\forall x \in L
+                | up to #[m L^\times].
+            p
+                | If we take #[m \alpha ' = c\alpha ] for #[m c\in L^\times] we cna compute
+                me v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ
+                | .
+            p
+                | We get a map
+                me \{\text{central division algebras}/k \} \to \QQ/\ZZ
+                | .
+            theorem
+                statement: p
+                    | This descends to an isomorphism
+                    me \Br(k) \simeq \QQ/\ZZ
+                    | .
+
+            p
+                | If #[m F] is a number field with  a place #[m v\in  |F|]
+                | get a map
+                me \inv_v \colon \Br(F) \to \Br(F_v) \simeq \begin{cases} 0 ,\amp F_v = \CC,\\ \ZZ/2,\amp F_v = \RR,\\ \QQ/\ZZ,\amp F_v\text{nonarch}.\end{cases}
+                |.
+
+            p
+                | Global CFT gives an exact seq
+                me 0 \to \Br(F) \to \bigoplus_v \Br(F_v) \to \QQ/\ZZ \to 0
+                | .
+
+        paragraphs
+            title Root numbers of elliptic curves  (Ricky)
+
+            p
+                | Based on Rohrlich's article elliptic curves and the Weil-Deligne rep
+            p
+                | #[m K] non-archimidean local field, #[m \overline K] is its separable closure.
+                me \phi = (x\mapsto x^q)\inv\in \absgal k,\,q = |k|
+                | #[m \Phi] some lift of #[m \phi] in #[m \absgal K].
+            p
+                | #[m W(\overline K / K) = ] Weil group, the preimage of #[m \langle \phi\rangle] in #[m \absgal k] under #[m G_K \twoheadrightarrow G_k].
+
+            p
+                | We consider #[m \sigma \colon W( \overline K/K) \to \GL(v)], representations over #[m V/\CC] (always cts.)
+
+            p
+                | Say #[m \sigma] is of Galois type if  it factors through a finite quotient.
+
+            p
+                | Another source of examples is
+                me \omega \colon W \to \CC^\times
+                | given by
+                me \omega(I) = \{1\}
+                | where
+                me I =\ker(G_K \to G_k)
+                | and #[m \omega(\Phi) = q\inv].
+
+            p
+                | Fact, all irreducible #[m \sigma \cong \rho \otimes \omega^s] for some #[m s \in \CC] and #[m \rho] of Galois type.
+
+            definition
+                statement: p
+                    | The Weil-Deligne group is
+                    me W'(\overline K / K) = W(\overline K/K) \ltimes \CC
+                    | where #[m W] acts on #[m \CC] via #[m \omega]
+                    me g z g\inv = \omega z
+                    | ?????????????????????????????????
+
+            p
+                | Upshot:
+                | Representations #[m \sigma'] of #[m W'] are the same as #[m (\sigma, N)] where
+                me \sigma\colon W \to \GL(V)
+                | a representation and #[m N] is a nilpotent linear operator on #[m V].
+                | Satisfying
+                me \sigma(g) N \sigma(g)\inv = \omega(g) N
+                | .
+            p
+                | One motivation for studying those is  a general construction of Grothendieck and Deligne which turn an #[m l]-adic representation of #[m G_K] into a representation of #[m W'] (given #[m i\colon \QQ_l \hookrightarrow \CC]).
+
+            example
+                statement: p
+                    me \sprep(n) = \CC^n
+                    | with action of #[m W'] given by
+                    me \sigma(g) e_j = \omega(g)^j e_j,\,forall g \in W
+                    me Ne_ j = e_{j+1},\, Ne_n = 0
+                    | check relation #[m \sigma N \sigma\inv = \omega N].
+
+            p
+                | We want to define #[m \epsilon ]-factors for representations of #[m W'].
+                | We need two choices:
+                me \psi \colon K\to \CC^\times
+                | an additive character of #[m K].
+                | And
+                me \diff x
+                | a Haar measure on #[m K].
+
+            p
+                | Then
+                me \epsilon (\sigma ', \psi , \diff x) = \epsilon ( \sigma , \psi ,\diff x) \delta (\sigma ')
+                | where
+                me \delta (\sigma ') = \det(-N | V^I / V_N^I)
+                | and #[m \epsilon (\sigma , \psi , \diff x)] is defined by the following proposition.
+
+            proposition
+                title Deligne-Langlands
+                statement: p
+                    | There exists a unique function #[m \epsilon (\sigma ,\psi \diff x)] satisfying
+                    ol
+                        li
+                            | #[m \epsilon (*, \psi , \diff x)] is multiplicative in short exact sequences.
+                        li
+                            | If #[m L/K] is finite then
+                            me \epsilon (\Ind_{L/K} \rho , \psi , \diff x) = \epsilon (\rho , \psi  \circ \trace_{L/K}, \diff x_L) \cdot \left( \epsilon (\Ind_{L/K} 1_L, \psi , \diff x) / \epsilon (1_L, \psi \circ \trace_{L/K}, \diff x_L)\right)^{\dim \rho }
+                        li
+                            | For #[m \chi ] a character
+                            me \epsilon (, \chi , \psi , \diff x)
+                            | agrees with the ones defined in Tate's thesis.
+                            | They're both given by an integral formula.
+
+            definition
+                statement: p
+                    | The root number of #[m \sigma '] is defined to be
+                    me w(\sigma ', \psi ) = \frac{\epsilon (\sigma ', 'y, \diff x)}{|{\epsilon (\sigma ', 'y, \diff x)}|}
+                    |.
+
+
+            p
+                | For #[m E/K] an elliptic curve we have a representation on #[m V_l^*] (#[m l \ne p]).
+
+            p
+                | Using the Grothendieck-Deligne construction, let #[m \sigma _{E/K}] be a representation of #[m W'] it has the following property
+                ul
+                    li
+                        | #[m E] pot. good reduction then
+                        me N_{E/K} = 0
+                        | and #[m \sigma_{E/K}] is semisimple.
+                        | #[m E] has good reduction iff #[m \sigma _{E/K}] is unramified.
+                    li
+                        | #[m E] has potential multiplicative reduction implies that we can take #[m \chi ] a character of #[m W] with #[m \chi ^2 = 1], so that
+                        me E^\chi
+                        | has split multiplicative reduction.
+                        | Then
+                        me \sigma _{E/K}' \simeq \chi  \omega \inv \otimes \sprep(2)
+                        | #[m \chi ] is trivial / unramified and non-trivial / ramified according to #[m E] having split / non-split / additive reduction.
+
+                    li
+                        | #[m \sigma _{E/K}'] is essentially symplectic.
+                        | #[m W(E/K) = W(\sigma _{E/K}')] is independent of #[m \psi ] and must be #[m \pm 1].
+
+            proposition
+                statement: p
+                    ol
+                        li
+                            | #[m E] has good reduction implies #[m W(E/K) = 1].
+                        li
+                            | #[m E] potentially multiplicative reduction implies
+                            me W(E/K) = \begin{cases} -1 \amp \text{split}\\ 1 \amp \text{nonsplit}\end{cases}
+                            | .
+                            | If additive reduction take #[m \xi ] quadratic character s.t.
+                            me E^\xi
+                            | has split multiplicative reduction and #[m W(E/K) = \xi (-1)].
