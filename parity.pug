@@ -1599,11 +1599,11 @@ section#subsec-ec-ranks
                 me -2a \in {K^\times}^2
                 | ,
             p
-                | So we should use this hilbert symbol instead, it doesnt change the real case.
+                | So we should use this Hilbert symbol instead, it doesn't change the real case.
             p
                 | If  #[m E] has non-split multiplicative reduction
                 me.
-                    \frac{c_E}{c_{E'}} = 
+                    \frac{c_E}{c_{E'}} =
                     \begin{cases}
                     1,\amp\text{ if } v(\Delta_E),v(\Delta_{E'}) \text{ even}\\
                     2,\amp\text{ if } v(\Delta_{E'}) \text{ odd}\\
@@ -1675,7 +1675,7 @@ section
         p
             | To satisfy 1., 2. and 3. we take #[m g = 2] because of the following:
         theorem
-            title González, Josep, Jordi Guardia, and Victor Rotger.Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004).
+            title González, Josep, Jordi Guardia, and Victor Rotger. Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004)
             // #[xref(ref="bib-gonzales-guardia-rotger")/]
             statement: p
                 | Let #[m A/K] be a principally polarized abelian surface defined over a number field. Then #[m A] is one of the following types
@@ -1795,7 +1795,7 @@ section
                 statement: p
                     | The picard group of #[m C] is defined to be
                     me \Pic(C) = \Div(C)/ \Princ(P)
-                    | Note that this inherits a notion of degree from #[m \Div(C)].
+                    | . Note that this inherits a notion of degree from #[m \Div(C)].
 
             theorem
                 statement: p
@@ -1906,14 +1906,18 @@ section
             | Richelot isogenies are defined for Jacobians of genus 2 curves, they split multiplication by 2.
             | Their codomain is the Jacobian of a curve, a model of which is explicitly given by the Richelot construction.
 
-        definition
+        definition#def-richelot-op
+            title The Richelot operator
             statement
                 p
-                    | Given two polynomials #[m P(x), Q(x)\in K\lb x\rb] of degree at most 2 we define the Richelot operator #[m \lb -, - \rb] by
+                    | Given two polynomials #[m P(x), Q(x)\in K\lb x\rb] of degree at most 2 we define the #[term Richelot operator] #[m \lb -, - \rb] by
                     me \lb P(x),Q(x) \rb =  P'(x) Q(x) - Q'(x) P(x)
                     | .
+        definition#def-richelot-poly
+            title Richelot polynomials
+            statement
                 p
-                    | We say that a polynomial #[m G(x) \in K \lb x \rb] of degree 5 or 6 is a Richelot polynomial over #[m K] if we can fix a factorisation
+                    | We say that a polynomial #[m G(x) \in K \lb x \rb] of degree 5 or 6 is a #[term Richelot polynomial] over #[m K] if we can fix a factorisation
                     me G(x) = G_0(x) G_1(x) G_2(x)
                     | where each #[m G_i] is of degree at  most 2, defined over #[m \overline K] and defined over #[m K] as a set.
                 p
@@ -1923,12 +1927,13 @@ section
                     me \Delta_G = \det((g_{ij})_{0\le i, j \le2})
                     | .
 
-        definition
+        definition#def-richelot-dual-poly
+            title Richelot dual polynomials
             statement: p
                 | To a Richelot polynomial #[m G(x)] with a fixed factorisation
                 me G(x) =G_0(x) G_1(x) G_2(x)
                 | such that #[m \Delta_G \ne 0].
-                | We associate its Richelot dual polynomial #[m F(x)] given by
+                | We associate its #[term Richelot dual polynomial] #[m F(x)] given by
                 me F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}(x)\rb
                 | where we take indices mod 3.
 
@@ -1937,16 +1942,15 @@ section
         p
             | #[m \Delta_G] may not be defined over #[m K] but #[m \Delta_G^2] is.
 
-        p
-            | Richelot and Richelot dual curves.
-        definition
+        definition#def-richelot-curve
+            title Richelot (dual) curves
             statement
                 p
-                    | We say that a hyperelliptic curve #[m C/K] of genus 2 is a Richelot curve over #[m K] if it is given by #[m y^2  = G(x)] together with the factorisation
+                    | We say that a hyperelliptic curve #[m C/K] of genus 2 is a #[term Richelot curve] over #[m K] if it is given by #[m y^2  = G(x)] together with the factorisation
                     me G(x) =G_0(x) G_1(x) G_2(x)
                     | as a Richelot polynomial over #[m K] such that #[m \Delta_G \ne 0].
                 p
-                    | To a Richelot curve #[m C/K] we associate its Richelot dual curve #[m \widehat C] given by
+                    | To a Richelot curve #[m C/K] we associate its #[term Richelot dual curve] #[m \widehat C] given by
                     me \widehat C \colon y^2    =F(x)
                     | where #[m F(x)] is the Richelot dual polynomial of #[m G(x)] with respect to the given factorisation.
 
@@ -1962,7 +1966,8 @@ section
         paragraphs
             title Richelot isogenies
 
-            definition
+            definition#def-richelot-isog
+                title Richelot isogenies
                 statement: p
                     | Let #[m C/ K] be  a Richelot curve with fixed factorisation
                     me G(x) =G_0(x) G_1(x) G_2(x)
@@ -1970,7 +1975,7 @@ section
                     | Let #[m J] be its Jacobian, consider the 2-torsion points of #[m J(\overline K)] defined by the quadratic factorisation of #[m G(x)].
                     me D_i = \lb P_i, Q_i\rb
                     | where #[m P_i = (\alpha_i, 0)], #[m Q_i = (\beta_i, 0)].
-                    | Then the isogeny over #[m K] for #[m J] whose kernel is #[m \{0, D_1, D_2, D_3\}] is called a Richelot isogeny.
+                    | Then the isogeny over #[m K] for #[m J] whose kernel is #[m \{0, D_1, D_2, D_3\}] is called a #[term Richelot isogeny].
 
             p
                 | We say that a Jacobian admits a Richelot isogeny over #[m K] if its underlying curve is a Richelot curve #[m /K].
@@ -2018,9 +2023,10 @@ section
                     | Two central simple #[m k]-algebras #[m A,B] are similar, if there exists #[m m,n \in \ZZ_{\gt 0}] s.t. #[m A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)].
                     | Denote this by #[m A\sim B].
 
-            definition
+            definition#def-brauer-gp-field
+                title Brauer groups
                 statement: p
-                    | The Brauer group of a field #[m k] denoted #[m \Br(k)] is the set of similarity classes of central simple algebras #[m \lb A \rb] with operation
+                    | The #[term Brauer group] of a field #[m k] denoted #[m \Br(k)] is the set of similarity classes of central simple algebras #[m \lb A \rb] with operation
                     me \lb A \rb \lb B \rb = \lb A \otimes B \rb
                     | .
 
@@ -2152,7 +2158,7 @@ section
             title Root numbers of elliptic curves  (Ricky)
 
             p
-                | Based on Rohrlich's article elliptic curves and the Weil-Deligne rep
+                | Based on Rohrlich's article elliptic curves and the Weil-Deligne group
             p
                 | #[m K] non-archimidean local field, #[m \overline K] is its separable closure.
                 me \phi = (x\mapsto x^q)\inv\in \absgal k,\,q = |k|
@@ -2178,13 +2184,14 @@ section
             p
                 | Fact, all irreducible #[m \sigma \cong \rho \otimes \omega^s] for some #[m s \in \CC] and #[m \rho] of Galois type.
 
-            definition
+            definition#def-weil-deligne-gp
+                title The Weil-Deligne group
                 statement: p
-                    | The Weil-Deligne group is
+                    | The #[term Weil-Deligne group] is
                     me W'(\overline K / K) = W(\overline K/K) \ltimes \CC
                     | where #[m W] acts on #[m \CC] via #[m \omega]
-                    me g z g\inv = \omega z
-                    | ?????????????????????????????????
+                    me g z g\inv = \omega(g) z,\,g\in W(\overline K/ K),z \in \CC
+                    | .
 
             p
                 | Upshot:
@@ -2201,7 +2208,7 @@ section
                 statement: p
                     me \sprep(n) = \CC^n
                     | with action of #[m W'] given by
-                    me \sigma(g) e_j = \omega(g)^j e_j,\,forall g \in W
+                    me \sigma(g) e_j = \omega(g)^j e_j,\,\forall g \in W
                     me Ne_ j = e_{j+1},\, Ne_n = 0
                     | check relation #[m \sigma N \sigma\inv = \omega N].
 
@@ -2237,9 +2244,10 @@ section
                             | agrees with the ones defined in Tate's thesis.
                             | They're both given by an integral formula.
 
-            definition
+            definition#def-root-num-wd
+                title Root numbers
                 statement: p
-                    | The root number of #[m \sigma '] is defined to be
+                    | The #[term root number] of #[m \sigma '] is defined to be
                     me w(\sigma ', \psi ) = \frac{\epsilon (\sigma ', 'y, \diff x)}{|{\epsilon (\sigma ', 'y, \diff x)}|}
                     |.
 

@@ -12,7 +12,7 @@
 </head>
 <body>
 <article class="paragraphs"><h5 class="heading"><span class="title">Root numbers of elliptic curves  (Ricky).</span></h5>
-<p>Based on Rohrlich's article elliptic curves and the Weil-Deligne rep</p>
+<p>Based on Rohrlich's article elliptic curves and the Weil-Deligne group</p>
 <p>\(K\) non-archimidean local field, \(\overline K\) is its separable closure.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -44,8 +44,9 @@ I =\ker(G_K \to G_k)
 <p>and \(\omega(\Phi) = q\inv\text{.}\)</p>
 <p>Fact, all irreducible \(\sigma \cong \rho \otimes \omega^s\) for some \(s \in \CC\) and \(\rho\) of Galois type.</p>
 <article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.35</span>.</h6>
-<p>The Weil-Deligne group is</p>
+<span class="type">Definition</span> <span class="codenumber">2.36</span>. <span class="title">The Weil-Deligne group.</span>
+</h6>
+<p>The <dfn class="terminology">Weil-Deligne group</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
 W'(\overline K / K) = W(\overline K/K) \ltimes \CC
@@ -54,7 +55,7 @@ W'(\overline K / K) = W(\overline K/K) \ltimes \CC
 <p>where \(W\) acts on \(\CC\) via \(\omega\)</p>
 <div class="displaymath">
 \begin{equation*}
-g z g\inv = \omega z\text{?????????????????????????????????}
+g z g\inv = \omega(g) z,\,g\in W(\overline K/ K),z \in \CC\text{.}
 \end{equation*}
 </div></article><p>Upshot: Representations \(\sigma'\) of \(W'\) are the same as \((\sigma, N)\) where</p>
 <div class="displaymath">
@@ -70,7 +71,7 @@ g z g\inv = \omega z\text{?????????????????????????????????}
 </div>
 <p>One motivation for studying those is  a general construction of Grothendieck and Deligne which turn an \(l\)-adic representation of \(G_K\) into a representation of \(W'\) (given \(i\colon \QQ_l \hookrightarrow \CC\)).</p>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.36</span>.</h6>
+<span class="type">Example</span> <span class="codenumber">2.37</span>.</h6>
 <div class="displaymath">
 \begin{equation*}
 \sprep(n) = \CC^n
@@ -79,7 +80,7 @@ g z g\inv = \omega z\text{?????????????????????????????????}
 <p>with action of \(W'\) given by</p>
 <div class="displaymath">
 \begin{equation*}
-\sigma(g) e_j = \omega(g)^j e_j,\,forall g \in W
+\sigma(g) e_j = \omega(g)^j e_j,\,\forall g \in W
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -114,7 +115,7 @@ Ne_ j = e_{j+1},\, Ne_n = 0
 </div>
 <p>and \(\epsilon (\sigma , \psi , \diff x)\) is defined by the following proposition.</p>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.37</span>. <span class="title">Deligne-Langlands.</span>
+<span class="type">Proposition</span> <span class="codenumber">2.38</span>. <span class="title">Deligne-Langlands.</span>
 </h6>
 <p>There exists a unique function \(\epsilon (\sigma ,\psi \diff x)\) satisfying</p>
 <ol class="decimal">
@@ -131,8 +132,9 @@ Ne_ j = e_{j+1},\, Ne_n = 0
 \end{equation*}
 </div>agrees with the ones defined in Tate's thesis. They're both given by an integral formula.</li>
 </ol></article><article class="definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">2.38</span>.</h6>
-<p>The root number of \(\sigma '\) is defined to be</p>
+<span class="type">Definition</span> <span class="codenumber">2.39</span>. <span class="title">Root numbers.</span>
+</h6>
+<p>The <dfn class="terminology">root number</dfn> of \(\sigma '\) is defined to be</p>
 <div class="displaymath">
 \begin{equation*}
 w(\sigma ', \psi ) = \frac{\epsilon (\sigma ', 'y, \diff x)}{|{\epsilon (\sigma ', 'y, \diff x)}|}\text{.}
@@ -157,7 +159,7 @@ E^\chi
 <li>\(\sigma _{E/K}'\) is essentially symplectic. \(W(E/K) = W(\sigma _{E/K}')\) is independent of \(\psi \) and must be \(\pm 1\text{.}\)</li>
 </ul>
 <article class="theorem-like"><h6 class="heading">
-<span class="type">Proposition</span> <span class="codenumber">2.39</span>.</h6>
+<span class="type">Proposition</span> <span class="codenumber">2.40</span>.</h6>
 <ol class="decimal">
 <li>\(E\) has good reduction implies \(W(E/K) = 1\text{.}\)</li>
 <li>\(E\) potentially multiplicative reduction implies<div class="displaymath">
