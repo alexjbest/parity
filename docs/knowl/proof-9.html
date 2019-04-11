@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="title">Proof of the theorem.</span></h6>
+<p>Trivial group \(\checkmark\text{.}\)</p>
+<p>Reduce to the case of a \(p\)-group, \(G\) a \(p\)-group. Fix \(x\) of maximal order in \(G\text{,}\) \(p^n\text{.}\) There exists \(y\) such that \(\Gamma (x,y)  = \frac 1{p^n}\text{.}\) If not then \(\Gamma (p^{n-1}x,y) = 0\) for all \(y \in G\) so this contradicts non-degeneracy. Any \(y\) has maximal order also since</p>
+<div class="displaymath">
+\begin{equation*}
+0 \ne p^{n-1} \Gamma (x,y)  = \Gamma (x, p^{n-1} y)\text{.}
+\end{equation*}
+</div>
+<p>Next we want to show \(\langle x \rangle  \cap \langle y \rangle = 0\text{.}\) If \(mx = ny\) for some \(0 \lt m, n \lt p^n\) then</p>
+<div class="displaymath">
+\begin{equation*}
+0 = m\Gamma (x,y) = \Gamma (x, mx) = n\Gamma (x,y) \ne 0\text{.}
+\end{equation*}
+</div>
+<p>Define</p>
+<div class="displaymath">
+\begin{equation*}
+H = \{ z : \Gamma (x,z) = \Gamma (y,z) = 0\}
+\end{equation*}
+</div>
+<p>claim:</p>
+<div class="displaymath">
+\begin{equation*}
+G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H\text{.}
+\end{equation*}
+</div>
+<p>Proof of claim: If \(g \in G\)</p>
+<div class="displaymath">
+\begin{equation*}
+\gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\Gamma (x,\gamma ) = \Gamma (x,g) - p^n \Gamma (y, g) \cancelto{0}{\Gamma (x,x)} - p^n \Gamma (x,g) \underbrace{\Gamma (x,y)}_{1/p^n} = 0
+\end{equation*}
+</div>
+<p>here we used alternating.</p>
+<p>Then \(\Gamma \) restricts to a non-degenerate alternating bilinear pairing on \(H\text{.}\)</p></article><span class="incontext"><a href="section-2.html#proof-9">in-context</a></span>
+</body>
+</html>

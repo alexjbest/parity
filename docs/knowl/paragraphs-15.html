@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Complete 2-descent (Oana).</span></h5>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = x(x-5)(x+5)
+\end{equation*}
+</div>
+<p><a class="external" href="http://www.lmfdb.org/EllipticCurve/Q/800/d/3" target="_blank"><code class="code-inline tex2jax_ignore">http://www.lmfdb.org/EllipticCurve/Q/800/d/3</code></a>, then</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta  = 10^6
+\end{equation*}
+</div>
+<p>so the bad primes are \(2,5\text{.}\)</p>
+<p>\(\#\tilde E(\FF_3) = 4\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+E_\tors(\QQ) \hookrightarrow \tilde E(\FF_3)
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+E_\tors(\QQ) [2]  = \{0, (0,0), (5,0), (-5,0)\}\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+E\lb 2 \rb \subseteq E(\QQ)\text{.}
+\end{equation*}
+</div>
+<p>\(S  = \{2,5, \infty \} \subseteq M_\QQ\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ(S, 2) = \{ b\in \QQ^\times / (\QQ^\times)^2 : \ord_p(b) \equiv  0 \pmod 2,\,\forall p\not\in S\}
+\end{equation*}
+</div>
+<p>a complete set of coset representatives is</p>
+<div class="displaymath">
+\begin{equation*}
+\{\pm 1, \pm 2, \pm 5, \pm 10\}
+\end{equation*}
+</div>
+<p>which has 8 elements. Consider</p>
+<div class="displaymath">
+\begin{equation*}
+E(\QQ)/2E(\QQ)  \to \QQ(S,2)\times \QQ(S,2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+e_0 = 0, e_1=5, e_2 =-5\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 \mapsto (1,1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(0,0) \mapsto (-1,-5)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(0,5) \mapsto (5,2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(0,-5) \mapsto (-5,10)
+\end{equation*}
+</div>
+<p>does the system</p>
+<div class="displaymath">
+\begin{equation*}
+b_1 z_1^2 - b_2 z_2^2 = 5
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+b_1 z_1^2 - b_1 b_2 z_3^2 = -5
+\end{equation*}
+</div>
+<p>have a solution for pairs \((b_1, b_2) \in \QQ(S,2)^2\)  and \(z_1, z_2, z_3 \in \QQ\text{?}\)</p>
+<p>If \(b_1 \lt 0, b_2 \gt 0\) or \(b_1 \gt 0 , b_2 \lt 0\) then we have no solution.</p>
+<figure class="figure-like"><table>
+<tr>
+<td class="l m b1 r1 l3 t3 lines">\(b_1\)</td>
+<td class="l m b1 r1 l0 t3 lines">\(b_2 \)</td>
+<td class="l m b1 r3 l0 t3 lines">reason/point?</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">1</td>
+<td class="l m b3 r1 l0 t0 lines">1</td>
+<td class="l m b3 r3 l0 t0 lines">point 0</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">1</td>
+<td class="l m b3 r1 l0 t0 lines">2</td>
+<td class="l m b3 r3 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">1</td>
+<td class="l m b3 r1 l0 t0 lines">5</td>
+<td class="l m b3 r3 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">5</td>
+<td class="l m b3 r1 l0 t0 lines">2</td>
+<td class="l m b3 r3 l0 t0 lines">point (0,5)</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">-1</td>
+<td class="l m b3 r1 l0 t0 lines">-1</td>
+<td class="l m b3 r3 l0 t0 lines">point (-4,6)</td>
+</tr>
+<tr>
+<td class="l m b3 r1 l3 t0 lines">-5</td>
+<td class="l m b3 r1 l0 t0 lines">-2</td>
+<td class="l m b3 r3 l0 t0 lines">point (0,5) + (-4,6)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span> <span class="codenumber">2.42.</span> Images</figcaption></figure><p>Reason if \(\legendre ap = -1\) and \(x^2 = ay^2 \pmod p\) then</p>
+<div class="displaymath">
+\begin{equation*}
+x \equiv  0 \equiv  y \pmod p
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+b_1(z_1^2 - b_2 z_3^2) = -5
+\end{equation*}
+</div>
+<p>If \(5\nmid b_1\) and \(\legendre{b_2} 5 = -1\) then</p>
+<div class="displaymath">
+\begin{equation*}
+5|z_3
+\end{equation*}
+</div>
+<p>we have \(z_3 \in 5\ZZ_3 \cap \QQ\)</p>
+<div class="displaymath">
+\begin{equation*}
+|z_3 |_5 \le \frac 15\text{.}
+\end{equation*}
+</div>
+<p>We reverse engineer \((-4,6) \in E(\QQ)\text{.}\)</p></article><span class="incontext"><a href="section-2.html#paragraphs-15">in-context</a></span>
+</body>
+</html>

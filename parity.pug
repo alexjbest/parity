@@ -2287,3 +2287,203 @@ section
                             | If additive reduction take #[m \xi ] quadratic character s.t.
                             me E^\xi
                             | has split multiplicative reduction and #[m W(E/K) = \xi (-1)].
+
+
+        paragraphs
+            title #[m \Sha] (Sachi)
+            aside: p Lecture ? 11/4/2018
+
+            p
+                | Suppose   #[m G] is  a finite abelian group with a non-degenerate alternating, bilinear paring
+                me \Gamma \colon G \times G  \to \QQ/\ZZ
+                | then there exists #[m H] s.t. #[m G \cong H\times H].
+            p
+                | Nondegeneracy is the property that: If #[m \Gamma (v,w) = 0] for all #[m w \in G] then #[m w=  0].
+            p
+                | Alternating: For all #[m v \in G], #[m \Gamma (v,v ) = 0].
+                | (this implies skew-symmetry).
+
+            p
+                | Analogous theorem:
+            p
+                | Symplectic space if #[m V] a vector space with non-degenerate alternating bilinear pairing, #[m \omega ] has a decomposition.
+                me V = W \oplus W^*
+                | where #[m W] is Lagrangian.
+
+            p
+                | Proof is via induction on the dimension of #[m V].
+                | Fix #[m v\in V]. #[m \exists W] s.t. #[m \omega (v,w) = 1], scalar nondegeneracy.
+            p
+                | Define #[m W = \{z\in V : \omega (z,w) = 0, \omega (v,z) = 0\}].
+            p
+                me \space(W,V) \cap W = 0
+                | so restrict #[m \omega ] to #[m W], induct.
+            proof
+                title Proof of the theorem
+                p
+                    | Trivial group #[m \checkmark].
+
+                p
+                    | Reduce to the case of a #[m p]-group, #[m G] a #[m p]-group.
+                    | Fix #[m x] of maximal order in #[m G], #[m p^n].
+                    | There exists #[m y] such that #[m \Gamma (x,y)  = \frac 1{p^n}].
+                    | If not then #[m \Gamma (p^{n-1}x,y) = 0] for all #[m y \in G] so this contradicts non-degeneracy.
+                    | Any #[m y] has maximal order also since
+                    me 0 \ne p^{n-1} \Gamma (x,y)  = \Gamma (x, p^{n-1} y)
+                    | .
+                p
+                    | Next we want to show #[m \langle x \rangle  \cap \langle y \rangle = 0].
+                    | If #[m mx = ny] for some #[m 0 \lt m, n \lt p^n] then
+                    me 0 = m\Gamma (x,y) = \Gamma (x, mx) = n\Gamma (x,y) \ne 0
+                    | .
+                p
+                    | Define
+                    me H = \{ z : \Gamma (x,z) = \Gamma (y,z) = 0\}
+                    | claim:
+                    me G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H
+                    | .
+                p
+                    | Proof of claim:
+                    | If #[m g \in G]
+                    me \gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
+                    | so
+                    me  \Gamma (x,\gamma ) = \Gamma (x,g) - p^n \Gamma (y, g) \cancelto{0}{\Gamma (x,x)} - p^n \Gamma (x,g) \underbrace{\Gamma (x,y)}_{1/p^n} = 0
+                    | here we used alternating.
+
+                p
+                    | Then #[m \Gamma ] restricts to a non-degenerate alternating bilinear pairing on #[m H].
+
+        remark
+            p
+                | For a PPAV we do not always have an alternating pairing, sometimes just skew-symmetric, or nothing!
+                | So Sha can be square, twice a square, or arbitrary.
+                | See Poonen-Stoll, Stein?
+
+        paragraphs
+            title Complete 2-descent (Oana)
+
+            p
+                | Let
+                me y^2 = x(x-5)(x+5)
+                | #[url(href="http://www.lmfdb.org/EllipticCurve/Q/800/d/3")/],
+                | then
+                me \Delta  = 10^6
+                | so the bad primes are #[m 2,5].
+
+            p
+                | #[m \#\tilde E(\FF_3) = 4].
+                me E_\tors(\QQ) \hookrightarrow \tilde E(\FF_3)
+                | so
+                me E_\tors(\QQ) [2]  = \{0, (0,0), (5,0), (-5,0)\}
+                | .
+                me E\lb 2 \rb \subseteq E(\QQ)
+                | .
+            p
+                | #[m S  = \{2,5, \infty \} \subseteq M_\QQ].
+                me \QQ(S, 2) = \{ b\in \QQ^\times / (\QQ^\times)^2 : \ord_p(b) \equiv  0 \pmod 2,\,\forall p\not\in S\}
+                | a complete set of coset representatives is
+                me \{\pm 1, \pm 2, \pm 5, \pm 10\}
+                | which has 8 elements.
+                | Consider
+                me E(\QQ)/2E(\QQ)  \to \QQ(S,2)\times \QQ(S,2)
+                me e_0 = 0, e_1=5, e_2 =-5
+                | .
+            p
+                me 0 \mapsto (1,1)
+                me (0,0) \mapsto (-1,-5)
+                me (0,5) \mapsto (5,2)
+                me (0,-5) \mapsto (-5,10)
+            p
+                | does the system
+                me b_1 z_1^2 - b_2 z_2^2 = 5
+                me b_1 z_1^2 - b_1 b_2 z_3^2 = -5
+                | have a solution for pairs #[m (b_1, b_2) \in \QQ(S,2)^2]  and #[m z_1, z_2, z_3 \in \QQ]?
+
+            p
+                | If #[m b_1 \lt 0, b_2 \gt 0] or #[m b_1 \gt 0 , b_2 \lt 0] then we have no solution.
+
+            table
+                caption Images
+                tabular(top="major",left="major",right="major",bottom="major")
+                    | #[col(right="minor")/] #[col(right="minor")/] #[col/]
+                    row(bottom="minor") #[cell: m b_1] #[cell: m b_2 ] #[cell reason/point?]
+                    row #[cell 1] #[cell 1] #[cell point 0]
+                    row #[cell 1] #[cell 2] #[cell ]
+                    row #[cell 1] #[cell 5] #[cell ]
+                    row #[cell 5] #[cell 2] #[cell point (0,5)]
+                    row #[cell -1] #[cell -1] #[cell point (-4,6)]
+                    row #[cell -5] #[cell -2] #[cell point (0,5) + (-4,6)]
+            p
+                | Reason if #[m \legendre ap = -1] and #[m x^2 = ay^2 \pmod p] then
+                me x \equiv  0 \equiv  y \pmod p
+                | then
+                me b_1(z_1^2 - b_2 z_3^2) = -5
+                | If #[m 5\nmid b_1] and #[m \legendre{b_2} 5 = -1] then
+                me 5|z_3
+                | we have #[m z_3 \in 5\ZZ_3 \cap \QQ]
+                me |z_3 |_5 \le \frac 15
+                | .
+
+
+            p
+                | We reverse engineer #[m (-4,6) \in E(\QQ)].
+
+        paragraphs
+            title Weil-Châtelet groups (Aash, Asra)
+
+            p
+                | I have an elliptic curve #[m E/K], then #[m C/K] a smooth curve is a PHS if
+                me \exists \mu  \colon E(\overline K) \times C(\overline K) \to C(\overline K)
+                me (P,p) \mapsto p+ P
+                | .
+
+                | Such that #[m \mu ] is defined over #[m K] and #[m (P+Q) + p = P+(Q+p)] and for all #[m p,q \in C(\overline K)] there exists a unique #[m P\in E(\overline K)] s.t. #[m \mu (P,p) = q].
+
+            p
+                | We say two PHS #[m C,C'] are equivalent if
+                me \phi /K \colon C \to C'
+                | which respects the action of #[m E].
+            p
+                | #[m \forall P \in E, p\in C]
+                me \phi (P+ p) = P+ \phi (p)
+                me \phi ( \mu _C (P,p)) = \mu _{C'} (P, \phi (P))
+                | .
+            p
+                | #[m \operatorname{WC}(E)] is set of the equivalence classes of PHS's.
+
+            p
+                me WC(E/K) \leftrightarrow H^1(G_{\overline K/K}, E)
+                | .
+
+            proposition
+                title Weil
+                statement: p
+                    | Let #[m H_1, H_2] be homogeneous spaces for an algebraic group  #[m G/K].
+                    | There exists  #[m H] a PHS over #[m K] and
+                    me f \colon H_1 times H_2 \to G
+                    me f(P+p, Q + q) = P + Q +f(p,q)
+                    |where #[m P, Q \in Q], #[m p \in H_1, q \in H_2] this #[m H] is unique up to PHS isomorphism.
+                    | If #[m \mathcal H_1, \mathcal H_2] are the classes of #[m H_1, H_2] we call #[m \mathcal H_1 + \mathcal H_2] the class of #[m H] (above).
+                    | This defines a group structure.
+                    ol
+                        li
+                            | Well defined binary operation
+                        li
+                            | Identity: call class of #[m G], #[m \mathcal H_0].
+
+                    me G \times H \to H
+                    me (P,p) \mapsto P+ p
+                    me \mathcal H_0+ \mathcal H = \mathcal H'
+                    | for any #[m \mathcal H].
+                    | Inverse: Say #[m H] is a PHS, consider  #[m H^-]
+                    me \mu  \colon H \times E \to H
+                    me p, P \mapsto p+P
+                    me \mu _- \colon  H^- \times E' \to H^-
+                    me p,P \to p + (-P)
+                    me \phi  \colon H \times H^- \to E
+                    me (a,b) \mapsto v(a,b)
+                    | #[m P = v(a,b) \in E] s.t. #[m P+ b = a].
+                    | Associativity: #[m H_1, H_2, H_3]
+                    me H_1, H_2 \to H_{12}
+
+
