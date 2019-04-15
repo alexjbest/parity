@@ -12,13 +12,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We say that a hyperelliptic curve \(C/K\) of genus 2 is a <dfn class="terminology">Richelot curve</dfn> over \(K\) if it is given by \(y^2  = G(x)\) together with the factorisation</p>
+<p>To a Richelot polynomial \(G(x)\) with a fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)
 \end{equation*}
 </div>
-<p>as a Richelot polynomial over \(K\) such that \(\Delta_G \ne 0\text{.}\)</p>
+<p>such that \(\Delta_G \ne 0\text{.}\) We associate its <dfn class="terminology">Richelot dual polynomial</dfn> \(F(x)\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}(x)\rb
+\end{equation*}
+</div>
+<p>where we take indices mod 3. Write \(F_i(x) = f_i(x-A_i)(x-B_i)\)</p>
 <span class="incontext"><a href="section-2.html#p-255">in-context</a></span>
 </body>
 </html>

@@ -12,16 +12,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">Shafarevich-Tate</dfn> group of \(E/K\) is the subgroup of</p>
+<p>Back to Selmer, we want to have the image of our weak Mordell-Weil land in something finite.</p>
 <div class="displaymath">
 \begin{equation*}
-WC(E/K)
-\end{equation*}
-</div>
-<p>defined by</p>
-<div class="displaymath">
-\begin{equation*}
-\Sha(E/K) = \ker\left\{WC(E/K) \to\prod_v WC(E/K_v)\right\}\text{.}
+\xymatrix{
+0 \ar[r] &amp; E(K)/ mE(K)\ar[d] \ar[r]^\delta &amp; H^1(G_K, E[m]) \ar[d]^{\Res} \ar[r] &amp; WC(E/K)[m] \ar[d]^{\Res}\ar[r]&amp;0 \\
+0 \ar[r] &amp; \prod_v E(K_v)/ nE(K_v) \ar[r]^\delta &amp; \prod_v H^1(G_{K_v}, E[n]) \ar[r] &amp; \prod_v WC (E/ K_v)[m]               \ar[r]&amp;0
+}
 \end{equation*}
 </div>
 <span class="incontext"><a href="subsec-ec-ranks.html#p-95">in-context</a></span>

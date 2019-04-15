@@ -12,21 +12,45 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Two homogeneous space \(C/K\) and \(C'/K\) for \(E/K\) are equivalent if there is an isomorphism</p>
+<p>Let \(E/K\) be an elliptic curve, a principal homogeneous space for \(E/K\) is a smooth curve \(C/K\) together with a simply transitive algebraic group action of \(E\) on \(C\) defined over \(K\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\phi \colon C \to C'
+\mu \colon C\times E \to C
 \end{equation*}
 </div>
-<p>defined over \(K\) and is compatible with the action of \(E\) on \(C\) and \(C'\text{.}\)</p>
+<p>morphism defined over \(K\) satisfying</p>
+<ol class="decimal">
+<li><div class="displaymath">
+\begin{equation*}
+\mu(P, 0) = P \,\forall P \in C
+\end{equation*}
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+\mu(\mu(p,P), Q) = \mu(p,P+Q) \,\forall P \in C
+\end{equation*}
+</div></li>
+<li>
 <div class="displaymath">
 \begin{equation*}
-\xymatrix{
-C \ar[r]^\theta \ar[d]_\phi &amp; E \ar[d] \\
-C' \ar[r] &amp; E'
-}
+\forall p,q \in C,\,\exists ! P\in E \text{ s.t. }
 \end{equation*}
 </div>
+<div class="displaymath">
+\begin{equation*}
+\mu(p,P) = q
+\end{equation*}
+</div>so we may define a subtraction map<div class="displaymath">
+\begin{equation*}
+\nu \colon C\times C \to E
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+p,q \mapsto P
+\end{equation*}
+</div>as above.</li>
+</ol>
 <span class="incontext"><a href="subsec-ec-ranks.html#p-79">in-context</a></span>
 </body>
 </html>

@@ -12,27 +12,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Moreover since \(E, E'\) are isogenous we have</p>
+<p>We show how to obtain the quotient of Tamagawa numbers, for a sufficiently large set of places \(S\) of \(K\)</p>
 <div class="displaymath">
 \begin{equation*}
-| \widetilde E_\ns (\overline k) |=| \widetilde E'_\ns (\overline k) |
+\frac{Q(\Psi^\vee)}{Q(\Psi)} \frac{| \Sha [\Psi^\vee]|}{| \Sha [\Psi]|} = \prod_{v\in S} \frac{|\ker \Psi_v|}{|\ker \Psi^\vee_v|}
 \end{equation*}
 </div>
-<p>hence since</p>
+<p>where  \(\Psi_v\) is the induced map on \(E(K_v) \to E' (K_v)\text{.}\) If \(v\nmid \infty\) and \(v\in S\) what is</p>
 <div class="displaymath">
 \begin{equation*}
-0 \to E_1(K_v) \to E_0 (K_v) \to  \widetilde E_\ns (\overline k) \to 0
-\end{equation*}
-</div>
-<p>similarly for \(E'\text{.}\) We have</p>
-<div class="displaymath">
-\begin{equation*}
-| E_0(K_v) / E_1(K_v) |  = | E'_0(K_v) / E'_1(K_v) |
+\frac{|\ker \Psi_v|}{|\coker \Psi_v|}?
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-\implies \left | \frac{E'(K_v) / E_1'(K_v)}{E(K_v) / E_1(K_v)} \right| = \left | \frac{E'(K_v) / E_0'(K_v)}{E(K_v) / E_0(K_v)} \right| = \frac{c_v}{c'_v}\text{.}
+\xymatrix{
+&amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+&amp;  0\ar[d]  &amp;   \ker \Psi_v  \ar[d] &amp; H_1\ar[d]  &amp;   \\
+0 \ar[r] &amp; E_1(K_v) \ar[r]\ar[d]  &amp;E(K_V) \ar[r]\ar[d]  &amp;E(K_v)/E_1(K_v) \ar[r]\ar[d] &amp; 0 \\
+0 \ar[r] &amp; E'_1(K_v) \ar[r]\ar[d] &amp; E'(K_V)\ar[d] \ar[r]&amp; E'(K_v)/E'_1(K_v) \ar[r]\ar[d] &amp;  0\\
+&amp;  0  &amp;   \coker \Psi_v  &amp; H_2  &amp;
+}
 \end{equation*}
 </div>
 <span class="incontext"><a href="subsec-ec-ranks.html#p-147">in-context</a></span>

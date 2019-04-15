@@ -12,12 +12,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Each non-zero element of \(J(\overline K) \lb 2 \rb\) may be uniquely represented by the following pairs of points on \(C(\overline K)\text{,}\) let \(x_1, \ldots, x_6\) be the roots of \(f(x)\) then</p>
+<p>We can find  a cubic polynomial \(y = p(x)\) through the four points. It also intersects at two additional points \(S,S'\) so that</p>
 <div class="displaymath">
 \begin{equation*}
-J(\overline 2 ) \lb  2 \rb  = \{ [T_i, T_k], i \ne k\},\,T_i = (x_i,0) \in C(\overline K)\text{.}
+[y - p(x)]  = P + P' + Q + Q' + S + S' - 3P_\infty^+ - 3P_\infty^-
 \end{equation*}
 </div>
+<div class="displaymath">
+\begin{equation*}
+(P + P'  - P_\infty^+ - P_\infty^-)+( Q + Q'  - P_\infty^+ - P_\infty^-) =-( S + S' - P_\infty^+ - P_\infty^-)
+\end{equation*}
+</div>
+<p>hence</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{\lb P , P'\rb}_{=P + P' - P_\infty^+ - P_\infty^-}  + \lb Q , Q' \rb = \lb R, R'\rb
+\end{equation*}
+</div>
+<p>where \(\lb R , R'\rb = -\lb S, S'\rb\text{.}\) Where negation is taking negative of all \(y\)-coordinates.</p>
 <span class="incontext"><a href="section-2.html#p-247">in-context</a></span>
 </body>
 </html>

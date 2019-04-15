@@ -8,6 +8,10 @@ macros.
     \array{#1}}
     {\endarray}
 
+    \def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+    \def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
     % allow     \floor*{\frac{x}{2}} \lt \frac{x}{2} \lt \ceil*{\frac{x}{2}}  e.g https://tex.stackexchange.com/questions/118173/how-to-write-ceil-and-floor-in-latex
     % TODO use these everywhere!
@@ -17,7 +21,7 @@ macros.
     \newcommand{\ideal}[1]{\mathfrak{#1}}
     \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
     \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-    \newcommand{\Lie}{\operatorname{Lie}}
+    \DeclareMathOperator{\Lie}{Lie}
 
     \newcommand{\diff}{\mathop{}\!\mathrm{d}}
     \newcommand{\cinf}{C^\infty}
@@ -75,7 +79,9 @@ macros.
     \newcommand{\cris}{\mathrm{cris}}
     % etale
     \newcommand{\et}{\mathrm{\acute{e}t}}
-    % etale
+    % rigid
+    \newcommand{\rig}{\mathrm{rig}}
+    % singular
     \newcommand{\sing}{\mathrm{sing}}
     % Petersson
     \newcommand{\Pet}{\mathrm{Pet}}
@@ -252,7 +258,6 @@ macros.
     \newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
     \newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
     \newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
-    % \DeclareMathOperator{\Gal}{Gal}
     % induction
     \DeclareMathOperator{\Ind}{Ind}
     % restriction
@@ -297,6 +302,7 @@ macros.
     \DeclareMathOperator{\PGL}{PGL}
     \DeclareMathOperator{\specialorthogonal}{SO}
     \DeclareMathOperator{\Sp}{Sp}
+    \DeclareMathOperator{\USp}{USp}
     \DeclareMathOperator{\orth}{O}
     \DeclareMathOperator{\unitary}{U}
     \DeclareMathOperator{\specialunitary}{SU}

@@ -12,29 +12,54 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Take \(G= G_K\)</p>
-<div class="displaymath">
+<ol class="decimal">
+<li>\(\psi\) is finite-to-one (gives Mordell-Weil)</li>
+<li>Let<div class="displaymath">
 \begin{equation*}
-B = E(\overline K), A= E[n], C = E(\overline K)
-\end{equation*}
-</div>
-<p>to get</p>
-<div class="displaymath">
-\begin{equation*}
-0 \to E[n] \to E(\overline K) \xrightarrow{\cdot n} E(\overline K) \to 0
-\end{equation*}
-</div>
-<p>which gives the long exact sequence</p>
-<div class="displaymath">
-\begin{equation*}
-0 \to E(K)[n] \to E(K) \xrightarrow{\cdot n} E(K) \xrightarrow{\delta} H^1(G_K, E[n]) \to H^1(G_K, E(\overline K)) \to
+\phi_P \colon G_K \to E[n]
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-\implies E(K)/nE(K) \hookrightarrow H^1(G_K, E[n])\text{.}
+\phi_P (gh) = \phi_P(g) + g \phi_P(h)
+\end{equation*}
+</div>is a skew (or crossed) homomorphism. If \((\frac 1n P ) '\) is another choice of \(\frac 1n P\) and \(\phi_P'\) is the corresponding skew homomorphism, then<div class="displaymath">
+\begin{equation*}
+\phi_P - \phi_P '
+\end{equation*}
+</div>is of the form<div class="displaymath">
+\begin{equation*}
+g\mapsto T \ominus gT
+\end{equation*}
+</div>where \(T \in  E\lb n\rb\text{.}\)</li>
+<li>\(\phi_P\) factors through<div class="displaymath">
+\begin{equation*}
+\Gal{K(\frac 1n P, E\lb n \rb)}{K}\text{.}
 \end{equation*}
 </div>
+</li>
+<li>
+<div class="displaymath">
+\begin{equation*}
+\phi\colon E(K) / nE(K) \to Z/B
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto \phi_P
+\end{equation*}
+</div>is an injective homomorphism. Where<div class="displaymath">
+\begin{equation*}
+Z = \{\text{skew homs } G_K \to E[n]\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+B = \{\text{skew homs } G_K \to E[n] \text{ of the form }g\mapsto T\ominus gT,\,T\in E\lb n\rb\}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="subsec-ec-ranks.html#p-56">in-context</a></span>
 </body>
 </html>

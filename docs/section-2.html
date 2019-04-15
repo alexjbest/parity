@@ -65,6 +65,10 @@ var js_version = 0.11;
 \array{#1}}
 {\endarray}
 
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -72,7 +76,7 @@ var js_version = 0.11;
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
 \newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
-\newcommand{\Lie}{\operatorname{Lie}}
+\DeclareMathOperator{\Lie}{Lie}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\cinf}{C^\infty}
@@ -117,6 +121,7 @@ var js_version = 0.11;
 \newcommand{\crys}{\mathrm{crys}}
 \newcommand{\cris}{\mathrm{cris}}
 \newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
 \newcommand{\sing}{\mathrm{sing}}
 \newcommand{\Pet}{\mathrm{Pet}}
 
@@ -253,6 +258,7 @@ var js_version = 0.11;
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\specialorthogonal}{SO}
 \DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
 \DeclareMathOperator{\orth}{O}
 \DeclareMathOperator{\unitary}{U}
 \DeclareMathOperator{\specialunitary}{SU}
@@ -300,10 +306,10 @@ var js_version = 0.11;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-2"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2</span> <span class="title">Abelian varieties</span>
 </h2>
-<section class="introduction" id="introduction-3"><aside class="aside-like" id="aside-12"><p id="p-204">Lecture ? 2/4/2018</p></aside><p id="p-205">What about generalising this method to abelian varieties?</p>
-<p id="p-206">For \(p\) odd Coates et. al. (ppav with \(p\)-cyclic isogenies and local constraints)</p>
-<p id="p-207">For \(p = 2\text{.}\)</p>
-<p id="p-208">Recall let \(X,Y/K\) be abelian varieties over a number field and suppose that \(\Psi\colon X\to Y\) is an isogeny, then \(\Psi^\vee \colon Y^\vee \to X^\vee\) its dual. Then</p>
+<section class="introduction" id="introduction-3"><aside class="aside-like" id="aside-12"><p id="p-206">Lecture ? 2/4/2018</p></aside><p id="p-207">What about generalising this method to abelian varieties?</p>
+<p id="p-208">For \(p\) odd Coates et. al. (ppav with \(p\)-cyclic isogenies and local constraints)</p>
+<p id="p-209">For \(p = 2\text{.}\)</p>
+<p id="p-210">Recall let \(X,Y/K\) be abelian varieties over a number field and suppose that \(\Psi\colon X\to Y\) is an isogeny, then \(\Psi^\vee \colon Y^\vee \to X^\vee\) its dual. Then</p>
 <div class="displaymath">
 \begin{equation}
 \frac{Q(\Psi^\vee)}{Q(\Psi)} = \frac {|Y(K)_\tors|}{|X(K)_\tors|}\frac {|Y^\vee(K)_\tors|}{|X^\vee(K)_\tors|} \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \prod_{p| \deg \Psi} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\label{eqn-parity-dagger}\tag{2.1}
@@ -316,14 +322,14 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 <p>note that in this case \(\deg \psi =  p^{\dim (X)}\text{.}\)</p>
-<p id="p-209">To be able to use the same method we need to compute the RHS of <a data-knowl="./knowl/eqn-parity-dagger.html" title="Equation 2.1">(2.1)</a>.</p>
-<p id="p-210">For \(E\) since \(E\simeq E^\vee\) and \(|\Sha_0(E)| = \square \text{,}\) this only meant computing</p>
+<p id="p-211">To be able to use the same method we need to compute the RHS of <a data-knowl="./knowl/eqn-parity-dagger.html" title="Equation 2.1">(2.1)</a>.</p>
+<p id="p-212">For \(E\) since \(E\simeq E^\vee\) and \(|\Sha_0(E)| = \square \text{,}\) this only meant computing</p>
 <div class="displaymath">
 \begin{equation*}
 \prod_v \frac{c(E/k)}{c(E'/k)} \frac{\Omega_E}{\Omega_{E'}}\text{.}
 \end{equation*}
 </div>
-<p id="p-211">First consider a ppav \(X/K\) s.t.</p>
+<p id="p-213">First consider a ppav \(X/K\) s.t.</p>
 <div class="displaymath">
 \begin{gather}
 \knowl{./knowl/eqn-parity-dagger.html}{\text{(2.1)}} \equiv \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y} \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |} \pmod{{K^\times}^\vee}\tag{2.2}
@@ -331,16 +337,16 @@ var js_version = 0.11;
 </div>
 <ol class="decimal">
 <li id="li-56">
-<p id="p-212">Can we compute</p>
+<p id="p-214">Can we compute</p>
 <div class="displaymath">
 \begin{equation}
 \frac{\prod_v c(X/K_v)}{\prod_v c(Y/K_v)} \frac{\Omega_X}{\Omega_Y}\text{?}\tag{2.3}
 \end{equation}
 </div>
-<p id="p-213">Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
+<p id="p-215">Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
 </li>
 <li id="li-57">
-<p id="p-214">Can we compute</p>
+<p id="p-216">Can we compute</p>
 <div class="displaymath">
 \begin{equation}
 \frac{|\Sha_0(X) \lb p^\infty\rb |}{|\Sha_0(Y) \lb p^\infty\rb |}\text{?}\tag{2.4}
@@ -349,7 +355,7 @@ var js_version = 0.11;
 <p>Leads us to Jacobians of hyperelliptic curves of genus \(g\)</p>
 </li>
 <li id="li-58">
-<p id="p-215">Need an isogeny \(\Psi\) of degree \(2^g\) s.t.</p>
+<p id="p-217">Need an isogeny \(\Psi\) of degree \(2^g\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
 \Psi \colon J  \to J'
@@ -358,11 +364,11 @@ var js_version = 0.11;
 <p>i.e. the codomain must be a Jacobian of a hyperelliptic curve otherwise we cannot compute 1. or 2.</p>
 </li>
 </ol>
-<p id="p-216">To satisfy 1., 2. and 3. we take \(g = 2\) because of the following:</p>
+<p id="p-218">To satisfy 1., 2. and 3. we take \(g = 2\) because of the following:</p>
 <article class="theorem-like" id="theorem-12"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.1</span>. <span class="title">González, Josep, Jordi Guardia, and Victor Rotger. Abelian surfaces of GL2-type as Jacobians of curves. arXiv preprint math/0409352 (2004).</span>
 </h6>
-<p id="p-217">Let \(A/K\) be a principally polarized abelian surface defined over a number field. Then \(A\) is one of the following types</p>
+<p id="p-219">Let \(A/K\) be a principally polarized abelian surface defined over a number field. Then \(A\) is one of the following types</p>
 <ul class="disc">
 <li id="li-59">
 <div class="displaymath">
@@ -384,15 +390,15 @@ A/K \simeq_K \Res_{F/K} C
 </div>where \(\Res_{F/K} C\) is the Weil restriction of an elliptic curve defined over  a quadratic extension \(F/K\text{.}\)</li>
 </ul></article><article class="remark-like" id="remark-10"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.2</span>.</h6>
-<p id="p-218">The parity of the rank of \(A/K\) in the last two cases can be computed from that of the underlying elliptic curves.</p></article><p id="p-219">We will concentrate on \(A\simeq_K J(C)\text{,}\)</p>
+<p id="p-220">The parity of the rank of \(A/K\) in the last two cases can be computed from that of the underlying elliptic curves.</p></article><p id="p-221">We will concentrate on \(A\simeq_K J(C)\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 C\colon y^2 = f(x)
 \end{equation*}
 </div>
 <p>for \(\deg (f ) = 6\text{.}\)</p>
-<p id="p-220">The generalisation of a 2-isogeny is called a Richelot isogeny.</p>
-<p id="p-221">Plan:</p>
+<p id="p-222">The generalisation of a 2-isogeny is called a Richelot isogeny.</p>
+<p id="p-223">Plan:</p>
 <ol class="decimal">
 <li id="li-62">Review of hyperelliptic curves and their Jacobians.</li>
 <li id="li-63">Richelot isogeny</li>
@@ -403,8 +409,8 @@ C\colon y^2 = f(x)
 </ol></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1</span> <span class="title">Review of hyperelliptic curves and Jacobians</span>
 </h3>
-<p id="p-222">See Stoll's notes.</p>
-<p id="p-223">By a hyperelliptic curve \(C\) over a number field \(K\) given my</p>
+<p id="p-224">See Stoll's notes.</p>
+<p id="p-225">By a hyperelliptic curve \(C\) over a number field \(K\) given my</p>
 <div class="displaymath">
 \begin{equation*}
 C/K \colon y^2 = f(x)
@@ -428,8 +434,8 @@ x = \frac 1t,\, y=  \frac{v}{t^{g+1}}\text{.}
 \end{equation*}
 </div>
 <p>We refer to as the points  at \(\infty\) (i.e. \(C \smallsetminus U_x\)) the points with \(t  = 0\) on \(U_t\text{.}\)</p>
-<p id="p-224">Explicitly denote by \(c\) the leading term of \(f(x)\text{.}\)</p>
-<p id="p-225">If \(f(x)\) is of degree \(2g+1\) then</p>
+<p id="p-226">Explicitly denote by \(c\) the leading term of \(f(x)\text{.}\)</p>
+<p id="p-227">If \(f(x)\) is of degree \(2g+1\) then</p>
 <div class="displaymath">
 \begin{equation*}
 U_x \colon y^2= c\prod_{i=1}^{2g+1} (x- r_i)
@@ -441,7 +447,7 @@ U_t \colon v^2= tc\prod_{i=1}^{2g+1} (tr_i- 1)
 \end{equation*}
 </div>
 <p>we denote \(P_\infty = (0,1)\) the only point at infinity with \(t=0\text{.}\)</p>
-<p id="p-226">Otherwise if \(f(x)\) is of degree \(2g+2\) then</p>
+<p id="p-228">Otherwise if \(f(x)\) is of degree \(2g+2\) then</p>
 <div class="displaymath">
 \begin{equation*}
 U_x \colon y^2= c\prod_{i=1}^{2g+2} (x- r_i)
@@ -454,7 +460,7 @@ U_t \colon v^2= c\prod_{i=1}^{2g+2} (tr_i- 1)
 </div>
 <p>we denote \(P_\infty^\pm = (0,\pm \sqrt{c})\) the two points on \(U_t\) with \(t  = 0\text{.}\)</p>
 <article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Divisors and the picard group.</span></h5>
-<p id="p-227">Let \(G_K\) be the absolute galois group of \(K\text{,}\) recall that \(G_K\) acts on</p>
+<p id="p-229">Let \(G_K\) be the absolute galois group of \(K\text{,}\) recall that \(G_K\) acts on</p>
 <div class="displaymath">
 \begin{equation*}
 C(K^\sep)
@@ -463,29 +469,29 @@ C(K^\sep)
 <p>via its action on coordinates.</p>
 <article class="definition-like" id="definition-11"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.3</span>.</h6>
-<p id="p-228">A divisor \(D\) on \(C\) is a formal sum</p>
+<p id="p-230">A divisor \(D\) on \(C\) is a formal sum</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{P\in C(K^\sep)} n_P P
 \end{equation*}
 </div>
 <p>where \(n_P \in \ZZ\) and \(n_P  = 0\) for all but finitely many \(P \in C(K^\sep)\text{.}\) The integer \(n_P\) is called the multiplicity of \(P\) in \(D\) and \(\deg(D) = \sum_{P} n_P\) is the degree of \(D\text{.}\)</p>
-<p id="p-229">Divisors on \(C\) are elements of the free abelian group on the set of points \(P\in C(K^\sep)\text{.}\) Denote by \(\Div(C)\) the group of divisors on \(C\text{.}\)</p></article><article class="definition-like" id="definition-12"><h6 class="heading">
+<p id="p-231">Divisors on \(C\) are elements of the free abelian group on the set of points \(P\in C(K^\sep)\text{.}\) Denote by \(\Div(C)\) the group of divisors on \(C\text{.}\)</p></article><article class="definition-like" id="definition-12"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.4</span>.</h6>
-<p id="p-230">A divisor</p>
+<p id="p-232">A divisor</p>
 <div class="displaymath">
 \begin{equation*}
 D = \sum_{P\in C(F)} n_P P
 \end{equation*}
 </div>
-<p>for some Galois extension \(F|K\text{.}\) Is \(K\)-rational or defined over \(K\) if</p>
+<p>for some Galois extension \(F|K\text{.}\) We say it is \(K\)-rational, or defined over \(K\) if</p>
 <div class="displaymath">
 \begin{equation*}
 D^\sigma = D \,\forall \sigma \in \Gal F K\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-6"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.5</span>.</h6>
-<div class="displaymath" id="p-231">
+<div class="displaymath" id="p-233">
 \begin{equation*}
 C \colon y^2 = f(x)
 \end{equation*}
@@ -513,7 +519,7 @@ D = P + \bar P
 </div>
 <p>is a \(K\)-rational divisor.</p></article><article class="definition-like" id="definition-13"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.6</span>.</h6>
-<p id="p-232">Let \(f\) be a non-zero rational function on \(C\text{.}\) Define</p>
+<p id="p-234">Let \(f\) be a non-zero rational function on \(C\text{.}\) Define</p>
 <div class="displaymath">
 \begin{equation*}
 \lb f \rb =  \sum_{P \in C} \ord_P (f) P
@@ -521,7 +527,7 @@ D = P + \bar P
 </div>
 <p>where the multiplicity of \(P \) in \(\lb f\rb\) is given by the order of vanishing of \(f \) at \(P\text{.}\) These divisors are called principal divisors, the group of such is denote \(\Princ(P)\text{.}\) Note that these are all of degree 0.</p></article><article class="definition-like" id="definition-14"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.7</span>.</h6>
-<p id="p-233">The picard group of \(C\) is defined to be</p>
+<p id="p-235">The picard group of \(C\) is defined to be</p>
 <div class="displaymath">
 \begin{equation*}
 \Pic(C) = \Div(C)/ \Princ(P)\text{.}
@@ -529,7 +535,7 @@ D = P + \bar P
 </div>
 <p>Note that this inherits a notion of degree from \(\Div(C)\text{.}\)</p></article><article class="theorem-like" id="theorem-13"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.8</span>.</h6>
-<p id="p-234">Let \(C\) be a smooth, projective, absolutely irreducible curve of genus \(g\) over some field \(K\text{.}\) Then there exists an abelian variety \(J\) of dimension \(g\) over \(K\) s.t. for each field</p>
+<p id="p-236">Let \(C\) be a smooth, projective, absolutely irreducible curve of genus \(g\) over some field \(K\text{.}\) Then there exists an abelian variety \(J\) of dimension \(g\) over \(K\) s.t. for each field</p>
 <div class="displaymath">
 \begin{equation*}
 K \subseteq L \subseteq K^\sep
@@ -541,24 +547,24 @@ J(L) =  \Pic_C^0(L)
 \end{equation*}
 </div></article><article class="definition-like" id="definition-15"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.9</span>.</h6>
-<p id="p-235">\(J\) is called the Jacobian variety of \(C\text{.}\)</p></article><article class="remark-like" id="remark-11"><h6 class="heading">
+<p id="p-237">\(J\) is called the Jacobian variety of \(C\text{.}\)</p></article><article class="remark-like" id="remark-11"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.10</span>.</h6>
-<p id="p-236">\(J\) is a projective variety (abelian), thus it can be embedded in some projective space \(\PP^N\) over \(K\text{.}\) One can show that</p>
+<p id="p-238">\(J\) is a projective variety (abelian), thus it can be embedded in some projective space \(\PP^N\) over \(K\text{.}\) One can show that</p>
 <div class="displaymath">
 \begin{equation*}
 N = 4^g  - 1
 \end{equation*}
 </div>
-<p>always works for hyperelliptic curves.</p></article><p id="p-237">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article><aside class="aside-like" id="aside-13"><p id="p-238">Lecture ? 4/4/2018</p></aside><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Jacobians of genus 2 curves.</span></h5>
-<p id="p-239">Let \(C\) be a hyperelliptic curve of genus 2 defined over \(K\text{.}\)</p>
+<p>always works for hyperelliptic curves.</p></article><p id="p-239">This is too large to work with an explicit model for \(J\) instead we will work with the curve \(C\text{.}\)</p></article><aside class="aside-like" id="aside-13"><p id="p-240">Lecture ? 4/4/2018</p></aside><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Jacobians of genus 2 curves.</span></h5>
+<p id="p-241">Let \(C\) be a hyperelliptic curve of genus 2 defined over \(K\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 C\colon y^2 = f(x)
 \end{equation*}
 </div>
 <p>with \(f(x) \in K\lb x \rb\) of degree 6.</p>
-<p id="p-240">Points on \(C(\overline K)\) and \(J(\overline K)\text{:}\)</p>
-<p id="p-241">A point \(D\) on \(J(\overline K)\) is given by  a divisor on \(C\) of the form</p>
+<p id="p-242">Points on \(C(\overline K)\) and \(J(\overline K)\text{:}\)</p>
+<p id="p-243">A point \(D\) on \(J(\overline K)\) is given by  a divisor on \(C\) of the form</p>
 <div class="displaymath">
 \begin{equation*}
 D = P + Q - P_{\infty}^+ - P_\infty^{-}
@@ -567,16 +573,16 @@ D = P + Q - P_{\infty}^+ - P_\infty^{-}
 <p>for some \(P,Q \in C(\overline K)\text{.}\) For \(D\) to be defined over \(K\) either \(P,Q \in C(K)\) or \(P = Q^\sigma\) for \(\sigma \in \Gal F K\) where \(\lb F : K \rb = 2\text{.}\)</p>
 <article class="remark-like" id="remark-12"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.11</span>.</h6>
-<p id="p-242">If \(P = (x,y)\) and \(P' = (x,-y)\)  then</p>
+<p id="p-244">If \(P = (x,y)\) and \(P' = (x,-y)\)  then</p>
 <div class="displaymath">
 \begin{equation*}
 D  = P + Q - P_\infty^+ - P_\infty^-
 \end{equation*}
 </div>
-<p>is zero in \(J(\overline K)\text{.}\)</p></article><p id="p-243">Addition:</p>
-<p id="p-244">Choose 4 points \(P,P',Q,Q'\in C(\overline K)\) (in general position to make it easier).</p>
+<p>is zero in \(J(\overline K)\text{.}\)</p></article><p id="p-245">Addition:</p>
+<p id="p-246">Choose 4 points \(P,P',Q,Q'\in C(\overline K)\) (in general position to make it easier).</p>
 <figure class="figure-like" id="figure-3"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.12.</span> </figcaption></figure><p id="p-245">We can find  a cubic polynomial \(y = p(x)\) through the four points. It also intersects at two additional points \(S,S'\) so that</p>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.12.</span> </figcaption></figure><p id="p-247">We can find  a cubic polynomial \(y = p(x)\) through the four points. It also intersects at two additional points \(S,S'\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 [y - p(x)]  = P + P' + Q + Q' + S + S' - 3P_\infty^+ - 3P_\infty^-
@@ -594,17 +600,17 @@ D  = P + Q - P_\infty^+ - P_\infty^-
 \end{equation*}
 </div>
 <p>where \(\lb R , R'\rb = -\lb S, S'\rb\text{.}\) Where negation is taking negative of all \(y\)-coordinates.</p>
-<p id="p-246">So what is 2-torsion?</p>
+<p id="p-248">So what is 2-torsion?</p>
 <article class="theorem-like" id="lemma-5"><h6 class="heading">
 <span class="type">Lemma</span> <span class="codenumber">2.13</span>.</h6>
-<p id="p-247">Each non-zero element of \(J(\overline K) \lb 2 \rb\) may be uniquely represented by the following pairs of points on \(C(\overline K)\text{,}\) let \(x_1, \ldots, x_6\) be the roots of \(f(x)\) then</p>
+<p id="p-249">Each non-zero element of \(J(\overline K) \lb 2 \rb\) may be uniquely represented by the following pairs of points on \(C(\overline K)\text{,}\) let \(x_1, \ldots, x_6\) be the roots of \(f(x)\) then</p>
 <div class="displaymath">
 \begin{equation*}
 J(\overline 2 ) \lb  2 \rb  = \{ [T_i, T_k], i \ne k\},\,T_i = (x_i,0) \in C(\overline K)\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-13"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.14</span>.</h6>
-<p id="p-248">For the Richelot isogeny \(\phi\text{:}\)</p>
+<p id="p-250">For the Richelot isogeny \(\phi\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -616,11 +622,11 @@ C \ar@{^{(}-&gt;}[u] \ar[r]_{\Gamma} &amp; C' \ar@{^{(}-&gt;}[u] &amp;
 <p>where \(\phi^\vee \circ \phi = \lb 2 \rb\) and \(\Gamma\) is a correspondence.</p></article></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2</span> <span class="title">Richelot isogenies and the Richelot construction</span>
 </h3>
-<p id="p-249">Richelot isogenies are defined for Jacobians of genus 2 curves, they split multiplication by 2. Their codomain is the Jacobian of a curve, a model of which is explicitly given by the Richelot construction.</p>
+<p id="p-251">Richelot isogenies are defined for Jacobians of genus 2 curves, they split multiplication by 2. Their codomain is the Jacobian of a curve, a model of which is explicitly given by the Richelot construction.</p>
 <article class="definition-like" id="def-richelot-op"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.15</span>. <span class="title">The Richelot operator.</span>
 </h6>
-<p id="p-250">Given two polynomials \(P(x), Q(x)\in K\lb x\rb\) of degree at most 2 we define the <dfn class="terminology">Richelot operator</dfn> \(\lb -, - \rb\) by</p>
+<p id="p-252">Given two polynomials \(P(x), Q(x)\in K\lb x\rb\) of degree at most 2 we define the <dfn class="terminology">Richelot operator</dfn> \(\lb -, - \rb\) by</p>
 <div class="displaymath">
 \begin{equation*}
 \lb P(x),Q(x) \rb =  P'(x) Q(x) - Q'(x) P(x)\text{.}
@@ -628,14 +634,14 @@ C \ar@{^{(}-&gt;}[u] \ar[r]_{\Gamma} &amp; C' \ar@{^{(}-&gt;}[u] &amp;
 </div></article><article class="definition-like" id="def-richelot-poly"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.16</span>. <span class="title">Richelot polynomials.</span>
 </h6>
-<p id="p-251">We say that a polynomial \(G(x) \in K \lb x \rb\) of degree 5 or 6 is a <dfn class="terminology">Richelot polynomial</dfn> over \(K\) if we can fix a factorisation</p>
+<p id="p-253">We say that a polynomial \(G(x) \in K \lb x \rb\) of degree 5 or 6 is a <dfn class="terminology">Richelot polynomial</dfn> over \(K\) if we can fix a factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) = G_0(x) G_1(x) G_2(x)
 \end{equation*}
 </div>
 <p>where each \(G_i\) is of degree at  most 2, defined over \(\overline K\) and defined over \(K\) as a set.</p>
-<p id="p-252">Write</p>
+<p id="p-254">Write</p>
 <div class="displaymath">
 \begin{equation*}
 G_i(x) = g_{i2} x^2+ g_{i1} x +g_{i0}  = g_i(x-\alpha_i)(x-\beta_i)
@@ -649,7 +655,7 @@ G_i(x) = g_{i2} x^2+ g_{i1} x +g_{i0}  = g_i(x-\alpha_i)(x-\beta_i)
 </div></article><article class="definition-like" id="def-richelot-dual-poly"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.17</span>. <span class="title">Richelot dual polynomials.</span>
 </h6>
-<p id="p-253">To a Richelot polynomial \(G(x)\) with a fixed factorisation</p>
+<p id="p-255">To a Richelot polynomial \(G(x)\) with a fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)
@@ -661,18 +667,18 @@ G(x) =G_0(x) G_1(x) G_2(x)
 F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}(x)\rb
 \end{equation*}
 </div>
-<p>where we take indices mod 3. Write \(F_i(x) = f_i(x-A_i)(x-B_i)\)</p></article><p id="p-254">\(\Delta_G\) may not be defined over \(K\) but \(\Delta_G^2\) is.</p>
+<p>where we take indices mod 3. Write \(F_i(x) = f_i(x-A_i)(x-B_i)\)</p></article><p id="p-256">\(\Delta_G\) may not be defined over \(K\) but \(\Delta_G^2\) is.</p>
 <article class="definition-like" id="def-richelot-curve"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.18</span>. <span class="title">Richelot (dual) curves.</span>
 </h6>
-<p id="p-255">We say that a hyperelliptic curve \(C/K\) of genus 2 is a <dfn class="terminology">Richelot curve</dfn> over \(K\) if it is given by \(y^2  = G(x)\) together with the factorisation</p>
+<p id="p-257">We say that a hyperelliptic curve \(C/K\) of genus 2 is a <dfn class="terminology">Richelot curve</dfn> over \(K\) if it is given by \(y^2  = G(x)\) together with the factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)
 \end{equation*}
 </div>
 <p>as a Richelot polynomial over \(K\) such that \(\Delta_G \ne 0\text{.}\)</p>
-<p id="p-256">To a Richelot curve \(C/K\) we associate its <dfn class="terminology">Richelot dual curve</dfn> \(\widehat C\) given by</p>
+<p id="p-258">To a Richelot curve \(C/K\) we associate its <dfn class="terminology">Richelot dual curve</dfn> \(\widehat C\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 \widehat C \colon y^2    =F(x)
@@ -680,7 +686,7 @@ G(x) =G_0(x) G_1(x) G_2(x)
 </div>
 <p>where \(F(x)\) is the Richelot dual polynomial of \(G(x)\) with respect to the given factorisation.</p></article><article class="remark-like" id="remark-14"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.19</span>.</h6>
-<p id="p-257">Let \(G(x) \in K \lb x \rb\) be a polynomial of degree 5 or 6. Denote by \(K_G\) its splitting field. Then  the conditions for \(G(x) \) to be a Richelot polynomial can be rephrased as</p>
+<p id="p-259">Let \(G(x) \in K \lb x \rb\) be a polynomial of degree 5 or 6. Denote by \(K_G\) its splitting field. Then  the conditions for \(G(x) \) to be a Richelot polynomial can be rephrased as</p>
 <div class="displaymath">
 \begin{equation*}
 \Gal{K_G}{K} \subseteq C_2^3 \rtimes S_3 \subseteq S_6
@@ -694,7 +700,7 @@ G(x) =G_0(x) G_1(x) G_2(x)
 <article class="definition-like" id="def-richelot-isog"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.20</span>. <span class="title">Richelot isogenies.</span>
 </h6>
-<p id="p-258">Let \(C/ K\) be  a Richelot curve with fixed factorisation</p>
+<p id="p-260">Let \(C/ K\) be  a Richelot curve with fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)\text{.}
@@ -706,40 +712,40 @@ G(x) =G_0(x) G_1(x) G_2(x)\text{.}
 D_i = \lb P_i, Q_i\rb
 \end{equation*}
 </div>
-<p>where \(P_i = (\alpha_i, 0)\text{,}\) \(Q_i = (\beta_i, 0)\text{.}\) Then the isogeny over \(K\) for \(J\) whose kernel is \(\{0, D_1, D_2, D_3\}\) is called a <dfn class="terminology">Richelot isogeny</dfn>.</p></article><p id="p-259">We say that a Jacobian admits a Richelot isogeny over \(K\) if its underlying curve is a Richelot curve \(/K\text{.}\)</p>
+<p>where \(P_i = (\alpha_i, 0)\text{,}\) \(Q_i = (\beta_i, 0)\text{.}\) Then the isogeny over \(K\) for \(J\) whose kernel is \(\{0, D_1, D_2, D_3\}\) is called a <dfn class="terminology">Richelot isogeny</dfn>.</p></article><p id="p-261">We say that a Jacobian admits a Richelot isogeny over \(K\) if its underlying curve is a Richelot curve \(/K\text{.}\)</p>
 <article class="theorem-like" id="theorem-14"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.21</span>.</h6>
-<p id="p-260">Let \(C/K\) be a Richelot curve with fixed factorisation</p>
+<p id="p-262">Let \(C/K\) be a Richelot curve with fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)\text{.}
 \end{equation*}
 </div>
-<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article><aside class="aside-like" id="aside-14"><p id="p-261">Lecture ? 9/4/2018</p></aside><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
-<p id="p-262">Reference Milne's CFT.</p>
-<p id="p-263">Central simple algebras:</p>
-<p id="p-264">We will consider finite dimensional \(k\)-algebra for \(k\) a field.</p>
+<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article><aside class="aside-like" id="aside-14"><p id="p-263">Lecture ? 9/4/2018</p></aside><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
+<p id="p-264">Reference Milne's CFT.</p>
+<p id="p-265">Central simple algebras:</p>
+<p id="p-266">We will consider finite dimensional \(k\)-algebra for \(k\) a field.</p>
 <article class="definition-like" id="definition-21"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.22</span>.</h6>
-<p id="p-265">A \(k\)-algebra \(A\) is central if the center \(Z(A) = k\text{.}\) A \(k\)-algebra is simple if the only two sided ideals are \(A\) and \((0)\text{.}\)</p></article><article class="example-like" id="example-7"><h6 class="heading">
+<p id="p-267">A \(k\)-algebra \(A\) is central if the center \(Z(A) = k\text{.}\) A \(k\)-algebra is simple if the only two sided ideals are \(A\) and \((0)\text{.}\)</p></article><article class="example-like" id="example-7"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.23</span>.</h6>
-<p id="p-266">The matrix algebra \(M_n(k)\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-8"><h6 class="heading">
+<p id="p-268">The matrix algebra \(M_n(k)\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-8"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.24</span>.</h6>
-<p id="p-267">A quaternion algebra like \(\HH = \RR \{i,j,k\}\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-9"><h6 class="heading">
+<p id="p-269">A quaternion algebra like \(\HH = \RR \{i,j,k\}\) is central simple for \(k\text{.}\)</p></article><article class="example-like" id="example-9"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.25</span>.</h6>
-<p id="p-268">A division algebra is simple.</p></article><article class="definition-like" id="definition-22"><h6 class="heading">
+<p id="p-270">A division algebra is simple.</p></article><article class="definition-like" id="definition-22"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.26</span>.</h6>
-<p id="p-269">Two central simple \(k\)-algebras \(A,B\) are similar, if there exists \(m,n \in \ZZ_{\gt 0}\) s.t. \(A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)\text{.}\) Denote this by \(A\sim B\text{.}\)</p></article><article class="definition-like" id="def-brauer-gp-field"><h6 class="heading">
+<p id="p-271">Two central simple \(k\)-algebras \(A,B\) are similar, if there exists \(m,n \in \ZZ_{\gt 0}\) s.t. \(A \otimes_k M_m(k) \simeq B \otimes_k M_n(k)\text{.}\) Denote this by \(A\sim B\text{.}\)</p></article><article class="definition-like" id="def-brauer-gp-field"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.27</span>. <span class="title">Brauer groups.</span>
 </h6>
-<p id="p-270">The <dfn class="terminology">Brauer group</dfn> of a field \(k\) denoted \(\Br(k)\) is the set of similarity classes of central simple algebras \(\lb A \rb\) with operation</p>
+<p id="p-272">The <dfn class="terminology">Brauer group</dfn> of a field \(k\) denoted \(\Br(k)\) is the set of similarity classes of central simple algebras \(\lb A \rb\) with operation</p>
 <div class="displaymath">
 \begin{equation*}
 \lb A \rb \lb B \rb = \lb A \otimes B \rb\text{.}
 \end{equation*}
 </div></article><article class="remark-like" id="remark-15"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.28</span>.</h6>
-<ol id="p-271" class="decimal">
+<ol id="p-273" class="decimal">
 <li id="li-68">The class \(\lb M_n(k)\rb\) is the identity for all \(n\text{.}\)</li>
 <li id="li-69">The operation is well defined.</li>
 <li id="li-70">Given \(A\) let \(A^\op\) be the algebra with order of multiplication reversed. Then<div class="displaymath">
@@ -757,11 +763,11 @@ A \otimes_k A^\op \xrightarrow \sim \End_k(A) \simeq M_{\dim_k(A)} (k)
 \end{equation*}
 </div>
 </li>
-</ol></article><p id="p-272">Galois cohomology:</p>
+</ol></article><p id="p-274">Galois cohomology:</p>
 <article class="theorem-like" id="theorem-15"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.29</span>. <span class="title">Noether-Skolem.</span>
 </h6>
-<p id="p-273">Let \(A, B\) be central simple \(k\)-algebras and \(f,g\colon A  \to B\) a ]\(k\)-algebra morphism. Then there exists</p>
+<p id="p-275">Let \(A, B\) be central simple \(k\)-algebras and \(f,g\colon A  \to B\) a \(k\)-algebra morphism. Then there exists</p>
 <div class="displaymath">
 \begin{equation*}
 b \in B^\times
@@ -772,8 +778,8 @@ b \in B^\times
 \begin{equation*}
 f(a) = bg(a) b\inv ,\,\forall a \in A\text{.}
 \end{equation*}
-</div></article><p id="p-274">Let \(A\) be a central simple \(k\)-algebra with maximal subfield \(L/k\text{.}\)</p>
-<p id="p-275">Let \(\sigma \in \absgal k\text{,}\) it induces a map</p>
+</div></article><p id="p-276">Let \(A\) be a central simple \(k\)-algebra with maximal subfield \(L/k\text{.}\)</p>
+<p id="p-277">Let \(\sigma \in \absgal k\text{,}\) it induces a map</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma \colon  A \to A\text{,}
@@ -786,7 +792,7 @@ e_\sigma \text{ s.t. } \sigma a = e_\sigma a e_\sigma\inv,\,\forall a \in L
 \end{equation*}
 </div>
 <p>defined up to multiplication by \(L^\times\text{.}\)</p>
-<p id="p-276">Given another \(\tau \in \absgal k\) I have</p>
+<p id="p-278">Given another \(\tau \in \absgal k\) I have</p>
 <div class="displaymath">
 \begin{equation*}
 e_{\sigma\tau} a e_{\sigma\tau}\inv = \sigma(\tau a) = e_\sigma e_\tau a e_\tau\inv e_\sigma\inv
@@ -812,24 +818,24 @@ e_{\sigma\tau} = \phi(\sigma,\tau) e_\sigma e_\tau
 </div>
 <article class="theorem-like" id="theorem-16"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.30</span>.</h6>
-<p id="p-277">This descends to</p>
+<p id="p-279">This descends to</p>
 <div class="displaymath">
 \begin{equation*}
 \Br(k) \simeq H^2( \absgal k, \overline k ^\times)\text{.}
 \end{equation*}
-</div></article><p id="p-278">Some special \(k\text{.}\)</p>
+</div></article><p id="p-280">Some special \(k\text{.}\)</p>
 <article class="theorem-like" id="theorem-17"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.31</span>. <span class="title">Wedderburn.</span>
 </h6>
-<p id="p-279">Every central simple \(k\)-algebra is isomorphic to \(M_n(D)\) for \(D\) a division \(k\)-algebra.</p></article><article class="theorem-like" id="proposition-6"><h6 class="heading">
+<p id="p-281">Every central simple \(k\)-algebra is isomorphic to \(M_n(D)\) for \(D\) a division \(k\)-algebra.</p></article><article class="theorem-like" id="proposition-6"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.32</span>.</h6>
-<p id="p-280">If \(k  = \overline k\) then any division \(k\)-algebra \(D\) is isomorphic to \(k\text{.}\) Thus \(\Br(k) = 0\text{.}\)</p></article><article class="theorem-like" id="theorem-18"><h6 class="heading">
+<p id="p-282">If \(k  = \overline k\) then any division \(k\)-algebra \(D\) is isomorphic to \(k\text{.}\) Thus \(\Br(k) = 0\text{.}\)</p></article><article class="theorem-like" id="theorem-18"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.33</span>. <span class="title">Wedderburn.</span>
 </h6>
-<p id="p-281">Every finite division ring is a field. So if \(k\) is a finite field then \(\Br(k) =  0\text{.}\)</p></article><article class="theorem-like" id="theorem-19"><h6 class="heading">
+<p id="p-283">Every finite division ring is a field. So if \(k\) is a finite field then \(\Br(k) =  0\text{.}\)</p></article><article class="theorem-like" id="theorem-19"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.34</span>. <span class="title">Frobenius.</span>
 </h6>
-<p id="p-282">Every central division \(\RR\)-algebra is isomorphic to either \(\RR\) or \(\HH\text{.}\) Thus \(\Br(\RR) \simeq \ZZ/2\text{.}\)</p></article><p id="p-283">Let \(k\) be a  non-archimidean local field with valuation</p>
+<p id="p-284">Every central division \(\RR\)-algebra is isomorphic to either \(\RR\) or \(\HH\text{.}\) Thus \(\Br(\RR) \simeq \ZZ/2\text{.}\)</p></article><p id="p-285">Let \(k\) be a  non-archimidean local field with valuation</p>
 <div class="displaymath">
 \begin{equation*}
 v \colon k^\times \to \ZZ
@@ -841,27 +847,27 @@ v \colon k^\times \to \ZZ
 v \colon D ^\times \to \frac 1n \ZZ\text{.}
 \end{equation*}
 </div>
-<p id="p-284">Consider a maximal unramified subfield</p>
+<p id="p-286">Consider a maximal unramified subfield</p>
 <div class="displaymath">
 \begin{equation*}
 K  \subseteq L \subseteq D
 \end{equation*}
 </div>
 <p>with \(\sigma\in \Gal LK\) lifting frobenius.</p>
-<p id="p-285">Noether-Skolem gives \(\alpha  \in D^\times\) s.t.</p>
+<p id="p-287">Noether-Skolem gives \(\alpha  \in D^\times\) s.t.</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma x = \alpha  x \alpha \inv,\,\forall x \in L
 \end{equation*}
 </div>
 <p>up to \(L^\times\text{.}\)</p>
-<p id="p-286">If we take \(\alpha ' = c\alpha \) for \(c\in L^\times\) we cna compute</p>
+<p id="p-288">If we take \(\alpha ' = c\alpha \) for \(c\in L^\times\) we can compute</p>
 <div class="displaymath">
 \begin{equation*}
 v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ\text{.}
 \end{equation*}
 </div>
-<p id="p-287">We get a map</p>
+<p id="p-289">We get a map</p>
 <div class="displaymath">
 \begin{equation*}
 \{\text{central division algebras}/k \} \to \QQ/\ZZ\text{.}
@@ -869,35 +875,35 @@ v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ\text{.}
 </div>
 <article class="theorem-like" id="theorem-20"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.35</span>.</h6>
-<p id="p-288">This descends to an isomorphism</p>
+<p id="p-290">This descends to an isomorphism</p>
 <div class="displaymath">
 \begin{equation*}
 \Br(k) \simeq \QQ/\ZZ\text{.}
 \end{equation*}
-</div></article><p id="p-289">If \(F\) is a number field with  a place \(v\in  |F|\) get a map</p>
+</div></article><p id="p-291">If \(F\) is a number field with  a place \(v\in  |F|\) get a map</p>
 <div class="displaymath">
 \begin{equation*}
-\inv_v \colon \Br(F) \to \Br(F_v) \simeq \begin{cases} 0 ,\amp F_v = \CC,\\ \ZZ/2,\amp F_v = \RR,\\ \QQ/\ZZ,\amp F_v\text{nonarch}.\end{cases}\text{.}
+\mathrm{inv}_v \colon \Br(F) \to \Br(F_v) \simeq \begin{cases} 0 ,\amp F_v = \CC,\\ \ZZ/2,\amp F_v = \RR,\\ \QQ/\ZZ,\amp F_v\text{ nonarch}.\end{cases}\text{.}
 \end{equation*}
 </div>
-<p id="p-290">Global CFT gives an exact seq</p>
+<p id="p-292">Global CFT gives an exact seq</p>
 <div class="displaymath">
 \begin{equation*}
 0 \to \Br(F) \to \bigoplus_v \Br(F_v) \to \QQ/\ZZ \to 0\text{.}
 \end{equation*}
 </div></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Root numbers of elliptic curves  (Ricky).</span></h5>
-<p id="p-291">Based on Rohrlich's article elliptic curves and the Weil-Deligne group</p>
-<p id="p-292">\(K\) non-archimidean local field, \(\overline K\) is its separable closure.</p>
+<p id="p-293">Based on Rohrlich's article elliptic curves and the Weil-Deligne group</p>
+<p id="p-294">\(K\) non-archimidean local field, \(\overline K\) is its separable closure.</p>
 <div class="displaymath">
 \begin{equation*}
 \phi = (x\mapsto x^q)\inv\in \absgal k,\,q = |k|
 \end{equation*}
 </div>
 <p>\(\Phi\) some lift of \(\phi\) in \(\absgal K\text{.}\)</p>
-<p id="p-293">\(W(\overline K / K) = \) Weil group, the preimage of \(\langle \phi\rangle\) in \(\absgal k\) under \(G_K \twoheadrightarrow G_k\text{.}\)</p>
-<p id="p-294">We consider \(\sigma \colon W( \overline K/K) \to \GL(v)\text{,}\) representations over \(V/\CC\) (always cts.)</p>
-<p id="p-295">Say \(\sigma\) is of Galois type if  it factors through a finite quotient.</p>
-<p id="p-296">Another source of examples is</p>
+<p id="p-295">\(W(\overline K / K) = \) Weil group, the preimage of \(\langle \phi\rangle\) in \(\absgal k\) under \(G_K \twoheadrightarrow G_k\text{.}\)</p>
+<p id="p-296">We consider \(\sigma \colon W( \overline K/K) \to \GL(V)\text{,}\) representations over \(V/\CC\) (always cts.)</p>
+<p id="p-297">Say \(\sigma\) is of Galois type if  it factors through a finite quotient.</p>
+<p id="p-298">Another source of examples is</p>
 <div class="displaymath">
 \begin{equation*}
 \omega \colon W \to \CC^\times
@@ -916,11 +922,11 @@ I =\ker(G_K \to G_k)
 \end{equation*}
 </div>
 <p>and \(\omega(\Phi) = q\inv\text{.}\)</p>
-<p id="p-297">Fact, all irreducible \(\sigma \cong \rho \otimes \omega^s\) for some \(s \in \CC\) and \(\rho\) of Galois type.</p>
+<p id="p-299">Fact, all irreducible \(\sigma \cong \rho \otimes \omega^s\) for some \(s \in \CC\) and \(\rho\) of Galois type.</p>
 <article class="definition-like" id="def-weil-deligne-gp"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.36</span>. <span class="title">The Weil-Deligne group.</span>
 </h6>
-<p id="p-298">The <dfn class="terminology">Weil-Deligne group</dfn> is</p>
+<p id="p-300">The <dfn class="terminology">Weil-Deligne group</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
 W'(\overline K / K) = W(\overline K/K) \ltimes \CC
@@ -931,7 +937,7 @@ W'(\overline K / K) = W(\overline K/K) \ltimes \CC
 \begin{equation*}
 g z g\inv = \omega(g) z,\,g\in W(\overline K/ K),z \in \CC\text{.}
 \end{equation*}
-</div></article><p id="p-299">Upshot: Representations \(\sigma'\) of \(W'\) are the same as \((\sigma, N)\) where</p>
+</div></article><p id="p-301">Upshot: Representations \(\sigma'\) of \(W'\) are the same as \((\sigma, N)\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma\colon W \to \GL(V)
@@ -943,10 +949,10 @@ g z g\inv = \omega(g) z,\,g\in W(\overline K/ K),z \in \CC\text{.}
 \sigma(g) N \sigma(g)\inv = \omega(g) N\text{.}
 \end{equation*}
 </div>
-<p id="p-300">One motivation for studying those is  a general construction of Grothendieck and Deligne which turn an \(l\)-adic representation of \(G_K\) into a representation of \(W'\) (given \(i\colon \QQ_l \hookrightarrow \CC\)).</p>
+<p id="p-302">One motivation for studying those is  a general construction of Grothendieck and Deligne which turn an \(l\)-adic representation of \(G_K\) into a representation of \(W'\) (given \(i\colon \QQ_l \hookrightarrow \CC\)).</p>
 <article class="example-like" id="example-10"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.37</span>.</h6>
-<div class="displaymath" id="p-301">
+<div class="displaymath" id="p-303">
 \begin{equation*}
 \sprep(n) = \CC^n
 \end{equation*}
@@ -962,7 +968,7 @@ g z g\inv = \omega(g) z,\,g\in W(\overline K/ K),z \in \CC\text{.}
 Ne_ j = e_{j+1},\, Ne_n = 0
 \end{equation*}
 </div>
-<p>check relation \(\sigma N \sigma\inv = \omega N\text{.}\)</p></article><p id="p-302">We want to define \(\epsilon \)-factors for representations of \(W'\text{.}\) We need two choices:</p>
+<p>check relation \(\sigma N \sigma\inv = \omega N\text{.}\)</p></article><p id="p-304">We want to define \(\epsilon \)-factors for representations of \(W'\text{.}\) We need two choices:</p>
 <div class="displaymath">
 \begin{equation*}
 \psi \colon K\to \CC^\times
@@ -975,7 +981,7 @@ Ne_ j = e_{j+1},\, Ne_n = 0
 \end{equation*}
 </div>
 <p>a Haar measure on \(K\text{.}\)</p>
-<p id="p-303">Then</p>
+<p id="p-305">Then</p>
 <div class="displaymath">
 \begin{equation*}
 \epsilon (\sigma ', \psi , \diff x) = \epsilon ( \sigma , \psi ,\diff x) \delta (\sigma ')
@@ -991,7 +997,7 @@ Ne_ j = e_{j+1},\, Ne_n = 0
 <article class="theorem-like" id="proposition-7"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.38</span>. <span class="title">Deligne-Langlands.</span>
 </h6>
-<p id="p-304">There exists a unique function \(\epsilon (\sigma ,\psi \diff x)\) satisfying</p>
+<p id="p-306">There exists a unique function \(\epsilon (\sigma ,\psi \diff x)\) satisfying</p>
 <ol class="decimal">
 <li id="li-71">\(\epsilon (*, \psi , \diff x)\) is multiplicative in short exact sequences.</li>
 <li id="li-72">If \(L/K\) is finite then<div class="displaymath">
@@ -1008,13 +1014,13 @@ Ne_ j = e_{j+1},\, Ne_n = 0
 </ol></article><article class="definition-like" id="def-root-num-wd"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.39</span>. <span class="title">Root numbers.</span>
 </h6>
-<p id="p-305">The <dfn class="terminology">root number</dfn> of \(\sigma '\) is defined to be</p>
+<p id="p-307">The <dfn class="terminology">root number</dfn> of \(\sigma '\) is defined to be</p>
 <div class="displaymath">
 \begin{equation*}
 w(\sigma ', \psi ) = \frac{\epsilon (\sigma ', 'y, \diff x)}{|{\epsilon (\sigma ', 'y, \diff x)}|}\text{.}
 \end{equation*}
-</div></article><p id="p-306">For \(E/K\) an elliptic curve we have a representation on \(V_l^*\) (\(l \ne p\)).</p>
-<p id="p-307">Using the Grothendieck-Deligne construction, let \(\sigma _{E/K}\) be a representation of \(W'\) it has the following property</p>
+</div></article><p id="p-308">For \(E/K\) an elliptic curve we have a representation on \(V_l^*\) (\(l \ne p\)).</p>
+<p id="p-309">Using the Grothendieck-Deligne construction, let \(\sigma _{E/K}\) be a representation of \(W'\) it has the following property</p>
 <ul class="disc">
 <li id="li-74">\(E\) pot. good reduction then<div class="displaymath">
 \begin{equation*}
@@ -1034,7 +1040,7 @@ E^\chi
 </ul>
 <article class="theorem-like" id="proposition-8"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.40</span>.</h6>
-<ol id="p-308" class="decimal">
+<ol id="p-310" class="decimal">
 <li id="li-77">\(E\) has good reduction implies \(W(E/K) = 1\text{.}\)</li>
 <li id="li-78">\(E\) potentially multiplicative reduction implies<div class="displaymath">
 \begin{equation*}
@@ -1046,45 +1052,45 @@ E^\xi
 \end{equation*}
 </div>has split multiplicative reduction and \(W(E/K) = \xi (-1)\text{.}\)</li>
 </ol></article></article><article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">\(\Sha\) (Sachi).</span></h5>
-<aside class="aside-like" id="aside-15"><p id="p-309">Lecture ? 11/4/2018</p></aside><p id="p-310">Suppose   \(G\) is  a finite abelian group with a non-degenerate alternating, bilinear paring</p>
+<aside class="aside-like" id="aside-15"><p id="p-311">Lecture ? 11/4/2018</p></aside><p id="p-312">Suppose   \(G\) is  a finite abelian group with a non-degenerate alternating, bilinear paring</p>
 <div class="displaymath">
 \begin{equation*}
 \Gamma \colon G \times G  \to \QQ/\ZZ
 \end{equation*}
 </div>
 <p>then there exists \(H\) s.t. \(G \cong H\times H\text{.}\)</p>
-<p id="p-311">Nondegeneracy is the property that: If \(\Gamma (v,w) = 0\) for all \(w \in G\) then \(w=  0\text{.}\)</p>
-<p id="p-312">Alternating: For all \(v \in G\text{,}\) \(\Gamma (v,v ) = 0\text{.}\) (this implies skew-symmetry).</p>
-<p id="p-313">Analogous theorem:</p>
-<p id="p-314">Symplectic space if \(V\) a vector space with non-degenerate alternating bilinear pairing, \(\omega \) has a decomposition.</p>
+<p id="p-313">Nondegeneracy is the property that: If \(\Gamma (v,w) = 0\) for all \(w \in G\) then \(w=  0\text{.}\)</p>
+<p id="p-314">Alternating: For all \(v \in G\text{,}\) \(\Gamma (v,v ) = 0\text{.}\) (this implies skew-symmetry).</p>
+<p id="p-315">Analogous theorem:</p>
+<p id="p-316">Symplectic space if \(V\) a vector space with non-degenerate alternating bilinear pairing, \(\omega \) has a decomposition.</p>
 <div class="displaymath">
 \begin{equation*}
 V = W \oplus W^*
 \end{equation*}
 </div>
 <p>where \(W\) is Lagrangian.</p>
-<p id="p-315">Proof is via induction on the dimension of \(V\text{.}\) Fix \(v\in V\text{.}\) \(\exists W\) s.t. \(\omega (v,w) = 1\text{,}\) scalar nondegeneracy.</p>
-<p id="p-316">Define \(W = \{z\in V : \omega (z,w) = 0, \omega (v,z) = 0\}\text{.}\)</p>
-<div class="displaymath" id="p-317">
+<p id="p-317">Proof is via induction on the dimension of \(V\text{.}\) Fix \(v\in V\text{.}\) \(\exists W\) s.t. \(\omega (v,w) = 1\text{,}\) scalar nondegeneracy.</p>
+<p id="p-318">Define \(W = \{z\in V : \omega (z,w) = 0, \omega (v,z) = 0\}\text{.}\)</p>
+<div class="displaymath" id="p-319">
 \begin{equation*}
 \space(W,V) \cap W = 0
 \end{equation*}
 </div>
 <p>so restrict \(\omega \) to \(W\text{,}\) induct.</p>
-<article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref" data-refid="hk-proof-9"><h6 class="heading"><span class="title">Proof of the theorem.</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-318">Trivial group \(\checkmark\text{.}\)</p>
-<p id="p-319">Reduce to the case of a \(p\)-group, \(G\) a \(p\)-group. Fix \(x\) of maximal order in \(G\text{,}\) \(p^n\text{.}\) There exists \(y\) such that \(\Gamma (x,y)  = \frac 1{p^n}\text{.}\) If not then \(\Gamma (p^{n-1}x,y) = 0\) for all \(y \in G\) so this contradicts non-degeneracy. Any \(y\) has maximal order also since</p>
+<article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref" data-refid="hk-proof-10"><h6 class="heading"><span class="title">Proof of the theorem.</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-320">Trivial group \(\checkmark\text{.}\)</p>
+<p id="p-321">Reduce to the case of a \(p\)-group, \(G\) a \(p\)-group. Fix \(x\) of maximal order in \(G\text{,}\) \(p^n\text{.}\) There exists \(y\) such that \(\Gamma (x,y)  = \frac 1{p^n}\text{.}\) If not then \(\Gamma (p^{n-1}x,y) = 0\) for all \(y \in G\) so this contradicts non-degeneracy. Any \(y\) has maximal order also since</p>
 <div class="displaymath">
 \begin{equation*}
 0 \ne p^{n-1} \Gamma (x,y)  = \Gamma (x, p^{n-1} y)\text{.}
 \end{equation*}
 </div>
-<p id="p-320">Next we want to show \(\langle x \rangle  \cap \langle y \rangle = 0\text{.}\) If \(mx = ny\) for some \(0 \lt m, n \lt p^n\) then</p>
+<p id="p-322">Next we want to show \(\langle x \rangle  \cap \langle y \rangle = 0\text{.}\) If \(mx = ny\) for some \(0 \lt m, n \lt p^n\) then</p>
 <div class="displaymath">
 \begin{equation*}
 0 = m\Gamma (x,y) = \Gamma (x, mx) = n\Gamma (x,y) \ne 0\text{.}
 \end{equation*}
 </div>
-<p id="p-321">Define</p>
+<p id="p-323">Define</p>
 <div class="displaymath">
 \begin{equation*}
 H = \{ z : \Gamma (x,z) = \Gamma (y,z) = 0\}
@@ -1096,7 +1102,7 @@ H = \{ z : \Gamma (x,z) = \Gamma (y,z) = 0\}
 G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H\text{.}
 \end{equation*}
 </div>
-<p id="p-322">Proof of claim: If \(g \in G\)</p>
+<p id="p-324">Proof of claim: If \(g \in G\)</p>
 <div class="displaymath">
 \begin{equation*}
 \gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
@@ -1109,10 +1115,10 @@ G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H\text{.}
 \end{equation*}
 </div>
 <p>here we used alternating.</p>
-<p id="p-323">Then \(\Gamma \) restricts to a non-degenerate alternating bilinear pairing on \(H\text{.}\)</p></article></div></article><article class="remark-like" id="remark-16"><h6 class="heading">
+<p id="p-325">Then \(\Gamma \) restricts to a non-degenerate alternating bilinear pairing on \(H\text{.}\)</p></article></div></article><article class="remark-like" id="remark-16"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.41</span>.</h6>
-<p id="p-324">For a PPAV we do not always have an alternating pairing, sometimes just skew-symmetric, or nothing! So Sha can be square, twice a square, or arbitrary. See Poonen-Stoll, Stein?</p></article><article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Complete 2-descent (Oana).</span></h5>
-<p id="p-325">Let</p>
+<p id="p-326">For a PPAV we do not always have an alternating pairing, sometimes just skew-symmetric, or nothing! So Sha can be square, twice a square, or arbitrary. See Poonen-Stoll, Stein?</p></article><article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Complete 2-descent (Oana).</span></h5>
+<p id="p-327">Let</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = x(x-5)(x+5)
@@ -1125,7 +1131,7 @@ y^2 = x(x-5)(x+5)
 \end{equation*}
 </div>
 <p>so the bad primes are \(2,5\text{.}\)</p>
-<p id="p-326">\(\#\tilde E(\FF_3) = 4\text{.}\)</p>
+<p id="p-328">\(\#\tilde E(\FF_3) = 4\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 E_\tors(\QQ) \hookrightarrow \tilde E(\FF_3)
@@ -1142,7 +1148,7 @@ E_\tors(\QQ) [2]  = \{0, (0,0), (5,0), (-5,0)\}\text{.}
 E\lb 2 \rb \subseteq E(\QQ)\text{.}
 \end{equation*}
 </div>
-<p id="p-327">\(S  = \{2,5, \infty \} \subseteq M_\QQ\text{.}\)</p>
+<p id="p-329">\(S  = \{2,5, \infty \} \subseteq M_\QQ\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \QQ(S, 2) = \{ b\in \QQ^\times / (\QQ^\times)^2 : \ord_p(b) \equiv  0 \pmod 2,\,\forall p\not\in S\}
@@ -1165,7 +1171,7 @@ E(\QQ)/2E(\QQ)  \to \QQ(S,2)\times \QQ(S,2)
 e_0 = 0, e_1=5, e_2 =-5\text{.}
 \end{equation*}
 </div>
-<div class="displaymath" id="p-328">
+<div class="displaymath" id="p-330">
 \begin{equation*}
 0 \mapsto (1,1)
 \end{equation*}
@@ -1185,7 +1191,7 @@ e_0 = 0, e_1=5, e_2 =-5\text{.}
 (0,-5) \mapsto (-5,10)
 \end{equation*}
 </div>
-<p id="p-329">does the system</p>
+<p id="p-331">does the system</p>
 <div class="displaymath">
 \begin{equation*}
 b_1 z_1^2 - b_2 z_2^2 = 5
@@ -1197,7 +1203,7 @@ b_1 z_1^2 - b_1 b_2 z_3^2 = -5
 \end{equation*}
 </div>
 <p>have a solution for pairs \((b_1, b_2) \in \QQ(S,2)^2\)  and \(z_1, z_2, z_3 \in \QQ\text{?}\)</p>
-<p id="p-330">If \(b_1 \lt 0, b_2 \gt 0\) or \(b_1 \gt 0 , b_2 \lt 0\) then we have no solution.</p>
+<p id="p-332">If \(b_1 \lt 0, b_2 \gt 0\) or \(b_1 \gt 0 , b_2 \lt 0\) then we have no solution.</p>
 <figure class="figure-like" id="table-2"><table>
 <tr>
 <td class="l m b1 r1 l3 t3 lines">\(b_1\)</td>
@@ -1235,7 +1241,7 @@ b_1 z_1^2 - b_1 b_2 z_3^2 = -5
 <td class="l m b3 r3 l0 t0 lines">point (0,5) + (-4,6)</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span> <span class="codenumber">2.42.</span> Images</figcaption></figure><p id="p-331">Reason if \(\legendre ap = -1\) and \(x^2 = ay^2 \pmod p\) then</p>
+<figcaption><span class="type">Table</span> <span class="codenumber">2.42.</span> Images</figcaption></figure><p id="p-333">Reason if \(\legendre ap = -1\) and \(x^2 = ay^2 \pmod p\) then</p>
 <div class="displaymath">
 \begin{equation*}
 x \equiv  0 \equiv  y \pmod p
@@ -1259,8 +1265,8 @@ b_1(z_1^2 - b_2 z_3^2) = -5
 |z_3 |_5 \le \frac 15\text{.}
 \end{equation*}
 </div>
-<p id="p-332">We reverse engineer \((-4,6) \in E(\QQ)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Weil-Châtelet groups (Aash, Asra).</span></h5>
-<p id="p-333">I have an elliptic curve \(E/K\text{,}\) then \(C/K\) a smooth curve is a PHS if</p>
+<p id="p-334">We reverse engineer \((-4,6) \in E(\QQ)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Weil-Châtelet groups (Aash, Asra).</span></h5>
+<p id="p-335">I have an elliptic curve \(E/K\text{,}\) then \(C/K\) a smooth curve is a PHS if</p>
 <div class="displaymath">
 \begin{equation*}
 \exists \mu  \colon E(\overline K) \times C(\overline K) \to C(\overline K)
@@ -1272,14 +1278,14 @@ b_1(z_1^2 - b_2 z_3^2) = -5
 \end{equation*}
 </div>
 <p>Such that \(\mu \) is defined over \(K\) and \((P+Q) + p = P+(Q+p)\) and for all \(p,q \in C(\overline K)\) there exists a unique \(P\in E(\overline K)\) s.t. \(\mu (P,p) = q\text{.}\)</p>
-<p id="p-334">We say two PHS \(C,C'\) are equivalent if</p>
+<p id="p-336">We say two PHS \(C,C'\) are equivalent if</p>
 <div class="displaymath">
 \begin{equation*}
 \phi /K \colon C \to C'
 \end{equation*}
 </div>
 <p>which respects the action of \(E\text{.}\)</p>
-<p id="p-335">\(\forall P \in E, p\in C\)</p>
+<p id="p-337">\(\forall P \in E, p\in C\)</p>
 <div class="displaymath">
 \begin{equation*}
 \phi (P+ p) = P+ \phi (p)
@@ -1290,8 +1296,8 @@ b_1(z_1^2 - b_2 z_3^2) = -5
 \phi ( \mu _C (P,p)) = \mu _{C'} (P, \phi (P))\text{.}
 \end{equation*}
 </div>
-<p id="p-336">\(\operatorname{WC}(E)\) is set of the equivalence classes of PHS's.</p>
-<div class="displaymath" id="p-337">
+<p id="p-338">\(\operatorname{WC}(E)\) is set of the equivalence classes of PHS's.</p>
+<div class="displaymath" id="p-339">
 \begin{equation*}
 WC(E/K) \leftrightarrow H^1(G_{\overline K/K}, E)\text{.}
 \end{equation*}
@@ -1299,10 +1305,10 @@ WC(E/K) \leftrightarrow H^1(G_{\overline K/K}, E)\text{.}
 <article class="theorem-like" id="proposition-9"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.43</span>. <span class="title">Weil.</span>
 </h6>
-<p id="p-338">Let \(H_1, H_2\) be homogeneous spaces for an algebraic group  \(G/K\text{.}\) There exists  \(H\) a PHS over \(K\) and</p>
+<p id="p-340">Let \(H_1, H_2\) be homogeneous spaces for an algebraic group  \(G/K\text{.}\) There exists  \(H\) a PHS over \(K\) and</p>
 <div class="displaymath">
 \begin{equation*}
-f \colon H_1 times H_2 \to G
+f \colon H_1 \times H_2 \to G
 \end{equation*}
 </div>
 <div class="displaymath">

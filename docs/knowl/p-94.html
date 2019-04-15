@@ -12,18 +12,98 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The \(m\)-Selmer group of \(E/K\) is the subgroup of</p>
+<p>\(E/K\) and \(K (\sqrt d)/K\) a quadratic extension. Let \(T \in E(K)\) be a non-trivial point of order 2. Then \(\xi\colon G_K \to E\)</p>
 <div class="displaymath">
 \begin{equation*}
-H^1(G_K, E[m])
+\sigma \mapsto
+\begin{cases}
+0 \amp\text{ if } (\sqrt d)^\sigma = \sqrt d,\\
+T \amp\text{ if } (\sqrt d)^\sigma = -\sqrt d.
+\end{cases}\text{.}
 \end{equation*}
 </div>
-<p>defined by</p>
+<p>We construct the PHS corresponding to \(\{\xi \} \in H^1(G_K, E(\overline K))\text{.}\) Since \(T \in E(K)\) can choose a Weierstraß equation for \(E/K\)</p>
 <div class="displaymath">
 \begin{equation*}
-\Sel^m(E/K) = \ker \left\{H^1(G_K, E[m]) \to \prod_v WC(E/K_v) \right\}\text{.}
+E\colon y^2 = x^3 + ax^2 + bx \text{ with } T = (0,0)
 \end{equation*}
 </div>
+<p>then the translation by \(T\) map is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\tau_T(P) = (x,y) + (0,0) = \left(\frac bx, -\frac{by}{x^2}\right)
+\end{equation*}
+</div>
+<p>for</p>
+<div class="displaymath">
+\begin{equation*}
+P = (x,y)\text{.}
+\end{equation*}
+</div>
+<p>Thus if \(\sigma \in G_K\) is non-trivial, \(\sigma\) acts on \(\overline K(E)_\xi\text{,}\) which is isomorphic to \(\overline K(E)\) but \(\absgal K\) action is twisted by \(\xi\text{,}\) i.e. \(x^\id \mapsto (x^\id)^\sigma\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(\sqrt d )^\sigma = -\sqrt d
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+x^\sigma = \frac bx ,\, y^\sigma = -\frac{by}{x^2}
+\end{equation*}
+</div>
+<p>need to find the subfield of  \(K(\sqrt d)(x,y)_\xi\) fixed by \(\sigma\text{.}\) Note:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\sqrt d x}{y},\,\sqrt d \left(x  -\frac bx\right)
+\end{equation*}
+</div>
+<p>are invariant, take</p>
+<div class="displaymath">
+\begin{equation*}
+z = \frac{\sqrt d x }{y},\,w = \sqrt d\left( x - \frac bx\right)\left(\frac xy\right)^2
+\end{equation*}
+</div>
+<p>and find relations between \(z\) and \(w\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+C \colon dw^2 = d^2 - 2a dz^2 + (a^2 - 4b) z^4\text{.}
+\end{equation*}
+</div>
+<p>Claim: \(C/K\) is the PHS of \(E/K\) corresponding to \(\left\{\xi\right\}\text{.}\) There is a natural map</p>
+<div class="displaymath">
+\begin{equation*}
+\phi \colon E \to C
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto (z,w)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(x,y) \mapsto \left( \frac{ \sqrt d y}{x^2 + ax + b}, \frac{\sqrt d (x^2 - b)}{x^2 + ax + b}\right)
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+\phi (0,0) = (0,-\sqrt d)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\phi (0) = (0,\sqrt d)
+\end{equation*}
+</div>
+<ul class="disc">
+<li>Prove that \(\phi \) is an isomorphism so \(C\) is a twist.</li>
+<li>\(C\) is the PHS corresponding to \(\{\xi\}\text{.}\) Take \(p \in C \) and compute<div class="displaymath">
+\begin{equation*}
+\sigma\mapsto p^\sigma - p = \phi\inv(p^\sigma) - \phi\inv (p)
+\end{equation*}
+</div>for example let \(p = (0,\sqrt d) \in C\text{,}\) if \(\sigma = \id\) then \(p^\sigma - p = 0 - 0 = 0\text{.}\) If \(\sigma = -\id\) then \(p^\sigma - p = T - 0 = T\text{.}\)</li>
+</ul>
 <span class="incontext"><a href="subsec-ec-ranks.html#p-94">in-context</a></span>
 </body>
 </html>

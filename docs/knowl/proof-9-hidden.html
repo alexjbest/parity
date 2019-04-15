@@ -10,43 +10,73 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Trivial group \(\checkmark\text{.}\)</p>
-<p>Reduce to the case of a \(p\)-group, \(G\) a \(p\)-group. Fix \(x\) of maximal order in \(G\text{,}\) \(p^n\text{.}\) There exists \(y\) such that \(\Gamma (x,y)  = \frac 1{p^n}\text{.}\) If not then \(\Gamma (p^{n-1}x,y) = 0\) for all \(y \in G\) so this contradicts non-degeneracy. Any \(y\) has maximal order also since</p>
+<body><article class="hiddenproof"><p>We show how to obtain the quotient of Tamagawa numbers, for a sufficiently large set of places \(S\) of \(K\)</p>
 <div class="displaymath">
 \begin{equation*}
-0 \ne p^{n-1} \Gamma (x,y)  = \Gamma (x, p^{n-1} y)\text{.}
+\frac{Q(\Psi^\vee)}{Q(\Psi)} \frac{| \Sha [\Psi^\vee]|}{| \Sha [\Psi]|} = \prod_{v\in S} \frac{|\ker \Psi_v|}{|\ker \Psi^\vee_v|}
 \end{equation*}
 </div>
-<p>Next we want to show \(\langle x \rangle  \cap \langle y \rangle = 0\text{.}\) If \(mx = ny\) for some \(0 \lt m, n \lt p^n\) then</p>
+<p>where  \(\Psi_v\) is the induced map on \(E(K_v) \to E' (K_v)\text{.}\) If \(v\nmid \infty\) and \(v\in S\) what is</p>
 <div class="displaymath">
 \begin{equation*}
-0 = m\Gamma (x,y) = \Gamma (x, mx) = n\Gamma (x,y) \ne 0\text{.}
+\frac{|\ker \Psi_v|}{|\coker \Psi_v|}?
 \end{equation*}
 </div>
-<p>Define</p>
 <div class="displaymath">
 \begin{equation*}
-H = \{ z : \Gamma (x,z) = \Gamma (y,z) = 0\}
+\xymatrix{
+&amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
+&amp;  0\ar[d]  &amp;   \ker \Psi_v  \ar[d] &amp; H_1\ar[d]  &amp;   \\
+0 \ar[r] &amp; E_1(K_v) \ar[r]\ar[d]  &amp;E(K_V) \ar[r]\ar[d]  &amp;E(K_v)/E_1(K_v) \ar[r]\ar[d] &amp; 0 \\
+0 \ar[r] &amp; E'_1(K_v) \ar[r]\ar[d] &amp; E'(K_V)\ar[d] \ar[r]&amp; E'(K_v)/E'_1(K_v) \ar[r]\ar[d] &amp;  0\\
+&amp;  0  &amp;   \coker \Psi_v  &amp; H_2  &amp;
+}
 \end{equation*}
 </div>
-<p>claim:</p>
+<p>Snake lemma gives</p>
 <div class="displaymath">
 \begin{equation*}
-G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H\text{.}
+0 \to \ker \Psi_v \to H_1 \to 0 \to \coker \Psi_v \to H_2 \to 0
 \end{equation*}
 </div>
-<p>Proof of claim: If \(g \in G\)</p>
 <div class="displaymath">
 \begin{equation*}
-\gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
+\implies |\ker \Psi_v  | = |H_1|
 \end{equation*}
 </div>
-<p>so</p>
+<p>and</p>
 <div class="displaymath">
 \begin{equation*}
-\Gamma (x,\gamma ) = \Gamma (x,g) - p^n \Gamma (y, g) \cancelto{0}{\Gamma (x,x)} - p^n \Gamma (x,g) \underbrace{\Gamma (x,y)}_{1/p^n} = 0
+|\coker \Psi_v| = |H_2|\text{.}
 \end{equation*}
 </div>
-<p>here we used alternating.</p>
-<p>Then \(\Gamma \) restricts to a non-degenerate alternating bilinear pairing on \(H\text{.}\)</p></article></body>
+<p>Also</p>
+<div class="displaymath">
+\begin{equation*}
+\left | \frac{E(K_v)/E_1(K_v)}{H_1}\right| =  \left | \frac{E'(K_v)/E'_1(K_v)}{H_2}\right|\text{.}
+\end{equation*}
+</div>
+<p>Moreover since \(E, E'\) are isogenous we have</p>
+<div class="displaymath">
+\begin{equation*}
+| \widetilde E_\ns (\overline k) |=| \widetilde E'_\ns (\overline k) |
+\end{equation*}
+</div>
+<p>hence since</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to E_1(K_v) \to E_0 (K_v) \to  \widetilde E_\ns (\overline k) \to 0
+\end{equation*}
+</div>
+<p>similarly for \(E'\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+| E_0(K_v) / E_1(K_v) |  = | E'_0(K_v) / E'_1(K_v) |
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \left | \frac{E'(K_v) / E_1'(K_v)}{E(K_v) / E_1(K_v)} \right| = \left | \frac{E'(K_v) / E_0'(K_v)}{E(K_v) / E_0(K_v)} \right| = \frac{c_v}{c'_v}\text{.}
+\end{equation*}
+</div></article></body>
 </html>
