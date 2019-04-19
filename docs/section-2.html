@@ -1105,7 +1105,7 @@ G \cong ( \langle x\rangle \oplus \langle y \rangle ) \oplus H\text{.}
 <p id="p-324">Proof of claim: If \(g \in G\)</p>
 <div class="displaymath">
 \begin{equation*}
-\gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
+\gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n\Gamma (x, g) y
 \end{equation*}
 </div>
 <p>so</p>
@@ -1372,19 +1372,140 @@ p,P \to p + (-P)
 \begin{equation*}
 H_1, H_2 \to H_{12}
 \end{equation*}
-</div></article></article></section></section></div></main>
+</div></article><aside class="aside-like" id="aside-16"><p id="p-341">Lecture ? 18/4/2018</p></aside><div class="displaymath" id="p-342">
+\begin{equation*}
+C \colon y^2 = f(x) = p_1(x)p_2(x) p_3(x) \to C' \colon y^2 = \frac 1\Delta  g_1(x)g_2(x)g_3(x)
+\end{equation*}
 </div>
-<!--Start: Google code--><script>
+<div class="displaymath">
+\begin{equation*}
+J(C) \xrightarrow{\text{Richelot isogeny}} J'(C')
+\end{equation*}
+</div>
+<p id="p-343">We showed</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_2(J)} = (-1)^{\ord_2\left(\prod_v \frac {c_v(J)}{c(J')} \frac{\Omega _J}{\Omega _{J'}}      \right)}
+\end{equation*}
+</div>
+<p id="p-344">Missed ????????</p>
+<p id="p-345">Take \(a \in \Sha(A/K)\) then \(a\) can be represented by a locally trivial PHS \(X\) over \(K\text{.}\) Let \(K^\sep(X)\)  be the function field of \(X\otimes_K K^\sep\text{.}\) Have an exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to (K^\sep)^\times \to (K^\sep(X))^\times \to K^\sep(X)^\times/(K^\sep)^\times \to 0
+\end{equation*}
+</div>
+<p>which yields</p>
+<div class="displaymath">
+\begin{equation*}
+\Br(K)  = H^2(G_K, (K^\sep)^\times) \to H^2(G_K, K^\sep(X)^\times) \twoheadrightarrow H^2(G_K, K^\sep(X)^\times/(K^\sep)^\times) \to 0
+\end{equation*}
+</div>
+<p>the last 0 is as \(H^3(G_K, (K^\sep)^\times) = 0\) as \(X\) is locally trivial (c.f. Mlne Arithmetic duality theory rmk. 6.11) we have</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \prod_v\Br(K_v) \to \prod_v H^2(G_{K_v}, K^\sep(X)^\times) \to H^2(G_{K_v}, K^\sep(X)^\times/(K^\sep)^\times) \to \cdots
+\end{equation*}
+</div>
+<p id="p-346">On the other hand from the exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to K^\sep(X)^\times/(K^\sep)^\times \to \Div^0(X\otimes_K K^\sep) \to \Pic^0(X\otimes_K K^\sep) \to 0
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_K, \Div^0(X\otimes_K K^\sep)) \to H^1(G_K, \Pic^0(X\otimes_K K^\sep)) \to H^2(G_k, K^\sep(X)^\times/(K^\sep)^\times) \to \cdots
+\end{equation*}
+</div>
+<p>now over \(K^\sep\text{,}\) \(A\otimes_K K^\sep \simeq X\otimes_K K^\sep\) hence</p>
+<div class="displaymath">
+\begin{equation*}
+\Pic^0(X\otimes K^\sep) \simeq \Pic^0(A\otimes K^\sep)
+\end{equation*}
+</div>
+<p>hence one gets a map</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_K, \Pic^0(A\otimes K^\sep)) \to H^2(G_K, (K^\sep(X))^\times/(K^\sep)^\times)
+\end{equation*}
+</div>
+<article class="theorem-like" id="fact-1"><h6 class="heading">
+<span class="type">Fact</span> <span class="codenumber">2.44</span>.</h6>
+<p id="p-347">For Jacobians of curves if the principal polarization on \(J\) is given by a rational divisor then \(\pair \cdot \cdot\) is alternating, hence \(|\Sha_0(A/K)| =  \square\) otherwise \(|\Sha_0(A/K)|  = 2 \square\text{.}\)</p></article><p id="p-348">Noted by Poonen and Stoll.</p>
+<article class="theorem-like" id="theorem-21"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.45</span>.</h6>
+<p id="p-349">\(C\) is deficient at an odd number of place iff</p>
+<div class="displaymath">
+\begin{equation*}
+|\Sha_0(J)| =  2\square\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="def-deficient-place"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.46</span>. <span class="title">Deficient places.</span>
+</h6>
+<p id="p-350">We say that \(C\) is <dfn class="terminology">deficient</dfn> at a place \(v\) if \(C\) doesn't have a \(K_v\) rational divisor of degree \(g-1\text{.}\)</p></article><p id="p-351">Hence for genus \(g\) curves this says that \(C\) has no \(K_v\) rational divisor of degree \(1\text{.}\) Equivalently \(C\) has no \(K_v\)-rational point over any odd degree extension of \(K_v\text{.}\)</p>
+<p id="p-352">E.g. if \(K_v = \RR\) we have \(C\) deficient iff \(C(\RR) \ne \emptyset\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = cq_1(x) q_2(x) q_3(x),\,c\gt 0\text{ and }q_i\text{ irred over }\RR
+\end{equation*}
+</div>
+<figure class="figure-like" id="figure-4"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.47.</span> </figcaption></figure><p id="p-353">Here \(c \gt 0\) and \(C(\RR) \ne \emptyset\) and \(C\) is not deficient over \(\RR\text{.}\)</p>
+<p id="p-354">Alternatively  \(c \lt 0\) and \(C(\RR) = \emptyset\) and \(C\) is deficient over \(\RR\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Infinite places.</span></h5>
+<article class="definition-like" id="definition-27"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.48</span>.</h6>
+<p id="p-355">Let \(J/K\) be a jacobian admitting a Richelot isogeny \(\phi \) over \(K\) for a place of \(K\) such that \(v |  \infty \text{,}\) we denote \(\phi _v\) the map induced by \(\phi \) on \(J(K_v)\) and define</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi  \colon J(K_v)^0 \to J(K_v)^0
+\end{equation*}
+</div>
+<p>the restriction of \(\phi _v\) to the identity component.</p></article><article class="theorem-like" id="lemma-6"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.49</span>.</h6>
+<div class="displaymath" id="p-356">
+\begin{equation*}
+\frac{\Omega _J}{\Omega _{J'}} = \prod_{v| \infty } \frac { n(J'(K_v))}{|\ker (\varphi) | n(J(K_v))}
+\end{equation*}
+</div>
+<p>where \(n (J(K_v))\) denotes the number of connected components of \(J(K_v)\text{.}\)</p></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-357">Same as the elliptic curve case.</p></article></div>
+<p id="p-358">Case \(K_v = \CC\) here \(n(J(\CC)) = 1 = n(J'(\CC))\) and \(|\ker \varphi | = 4\)</p>
+<article class="theorem-like" id="proposition-10"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.50</span>.</h6>
+<div class="displaymath" id="p-359">
+\begin{equation*}
+n(J(\RR)) =
+\begin{cases}
+2^{n(C(\RR)) - 1} \amp\text{ if }n(C(\RR)) \gt 0\text, \\
+1 \amp\text{ if }n(C(\RR)) = 0\text.
+\end{cases}
+\end{equation*}
+</div></article><article class="theorem-like" id="proposition-11"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.51</span>.</h6>
+<p id="p-360">A divisor  \(D_i = \lb P_i, Q_i \rb \in \ker (\phi )\) is in \(\ker \varphi \) iff the points \(P_i, Q_i\) satisfy either</p>
+<ol class="decimal">
+<li id="li-81">\(P_i  =  \overline Q_i\text{,}\) or</li>
+<li id="li-82">\(P_i\) and \(Q_i\) lie on  the same connected component of \(C(\RR)\text{.}\)</li>
+</ol></article><figure class="figure-like" id="figure-5"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-5.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.52.</span> </figcaption></figure><figure class="figure-like" id="figure-6"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-6.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.53.</span> </figcaption></figure><p id="p-361">\(D_1=  \lb (r_1, 0), (r_2)\rb\) with \(r_1,r_2\) the smallest roots. Then \(D_1\in \ker \varphi\text{.}\)</p>
+<p id="p-362">\(D_2=  \lb  (r_1, 0), (r_3) \rb \) with \(r_3\) the next smallest root. Then \(D_2\not\in \ker \varphi\text{.}\)</p></article></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-48250536-1']);
 _gaq.push(['_trackPageview']);
-
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-</script><!--End: Google code--><div class="login-link"><span id="loginlogout" class="login">login</span></div>
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.11/login.js"></script>
 </body>
 </html>

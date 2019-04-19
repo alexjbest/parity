@@ -1333,6 +1333,7 @@ section#subsec-ec-ranks
                           set cntrparam levels discrete 0.003;
                           unset surface;
                           set view map;
+                          set samples 700;
                           set isosamples 500;
                           splot y^2 - x^3 + x;
                         };
@@ -1450,6 +1451,7 @@ section#subsec-ec-ranks
                           set cntrparam levels discrete 0.003;
                           unset surface;
                           set view map;
+                          set samples 700;
                           set isosamples 500;
                           splot y^2 + y - x^3 + x^2;
                         };
@@ -1868,6 +1870,7 @@ section
                           set cntrparam levels discrete 0.003;
                           unset surface;
                           set view map;
+                          set samples 700;
                           set isosamples 700;
                           splot y^2 - (x-1)*(x-2)*(x-3)*(x+1)*(x+2)*(x+3);
                           splot y - (x^3  - 3*x + 7)/5;
@@ -2351,7 +2354,7 @@ section
                 p
                     | Proof of claim:
                     | If #[m g \in G]
-                    me \gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n(\Gamma (x, g) y
+                    me \gamma  \coloneqq g - p^n \Gamma (y,g) x - p^n\Gamma (x, g) y
                     | so
                     me  \Gamma (x,\gamma ) = \Gamma (x,g) - p^n \Gamma (y, g) \cancelto{0}{\Gamma (x,x)} - p^n \Gamma (x,g) \underbrace{\Gamma (x,y)}_{1/p^n} = 0
                     | here we used alternating.
@@ -2493,3 +2496,178 @@ section
                     me H_1, H_2 \to H_{12}
 
 
+            aside: p Lecture ? 18/4/2018
+
+            p
+                me C \colon y^2 = f(x) = p_1(x)p_2(x) p_3(x) \to C' \colon y^2 = \frac 1\Delta  g_1(x)g_2(x)g_3(x)
+                me J(C) \xrightarrow{\text{Richelot isogeny}} J'(C')
+
+            p
+                | We showed
+                me (-1)^{\rk_2(J)} = (-1)^{\ord_2\left(\prod_v \frac {c_v(J)}{c(J')} \frac{\Omega _J}{\Omega _{J'}}      \right)}
+
+            p
+                | Missed ????????
+                // TODO
+
+            p
+                | Take #[m a \in \Sha(A/K)] then #[m a] can be represented by a locally trivial PHS #[m X] over #[m K].
+                | Let #[m K^\sep(X)]  be the function field of #[m X\otimes_K K^\sep].
+                | Have an exact sequence
+                me 0 \to (K^\sep)^\times \to (K^\sep(X))^\times \to K^\sep(X)^\times/(K^\sep)^\times \to 0
+                | which yields
+                me \Br(K)  = H^2(G_K, (K^\sep)^\times) \to H^2(G_K, K^\sep(X)^\times) \twoheadrightarrow H^2(G_K, K^\sep(X)^\times/(K^\sep)^\times) \to 0
+                | the last 0 is as #[m H^3(G_K, (K^\sep)^\times) = 0]
+                | as #[m X] is locally trivial (c.f. Mlne Arithmetic duality theory rmk. 6.11)
+                | we have
+                me 0 \to \prod_v\Br(K_v) \to \prod_v H^2(G_{K_v}, K^\sep(X)^\times) \to H^2(G_{K_v}, K^\sep(X)^\times/(K^\sep)^\times) \to \cdots
+
+            p
+                | On the other hand from the exact sequence
+                me 0 \to K^\sep(X)^\times/(K^\sep)^\times \to \Div^0(X\otimes_K K^\sep) \to \Pic^0(X\otimes_K K^\sep) \to 0
+                | we have
+                me H^1(G_K, \Div^0(X\otimes_K K^\sep)) \to H^1(G_K, \Pic^0(X\otimes_K K^\sep)) \to H^2(G_k, K^\sep(X)^\times/(K^\sep)^\times) \to \cdots
+                | now over #[m K^\sep], #[m A\otimes_K K^\sep \simeq X\otimes_K K^\sep]
+                | hence
+                me \Pic^0(X\otimes K^\sep) \simeq \Pic^0(A\otimes K^\sep)
+                | hence one gets a map
+                me H^1(G_K, \Pic^0(A\otimes K^\sep)) \to H^2(G_K, (K^\sep(X))^\times/(K^\sep)^\times)
+
+            fact
+                statement: p
+                    | For Jacobians of curves if the principal polarization on #[m J] is given by a rational divisor then #[m \pair \cdot \cdot] is alternating, hence #[m |\Sha_0(A/K)| =  \square] otherwise #[m |\Sha_0(A/K)|  = 2 \square].
+            p
+                | Noted by Poonen and Stoll.
+
+            theorem
+                statement: p
+                    | #[m C] is deficient at an odd number of place iff
+                    me |\Sha_0(J)| =  2\square
+                    |.
+
+            definition#def-deficient-place
+                title Deficient places
+                statement: p
+                    | We say that #[m C] is #[term deficient] at a place #[m v] if #[m C] doesn't have a #[m K_v] rational divisor of degree #[m g-1].
+            p
+                | Hence for genus #[m g] curves this says that #[m C] has no #[m K_v] rational divisor of degree #[m 1].
+                | Equivalently #[m C] has no #[m K_v]-rational point over any odd degree extension of #[m K_v].
+
+            p
+                | E.g. if #[m K_v = \RR] we have #[m C] deficient iff #[m C(\RR) \ne \emptyset].
+                me y^2 = cq_1(x) q_2(x) q_3(x),\,c\gt 0\text{ and }q_i\text{ irred over }\RR
+            figure
+                caption/
+                image: latex-image.
+                    \begin{tikzpicture}
+                      \begin{axis}
+                        \addplot +[no markers,
+                          raw gnuplot,
+                          thick,
+                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          ] gnuplot {
+                          set contour base;
+                          set cntrparam levels discrete 0.003;
+                          unset surface;
+                          set view map;
+                          set samples 700;
+                          set isosamples 700;
+                          splot y^2 - (x^2 + 1)*(x^2 + 3)*(x^2 + 5);
+                        };
+                      \end{axis}
+                    \end{tikzpicture}
+
+            p
+                | Here #[m c \gt 0] and #[m C(\RR) \ne \emptyset] and #[m C] is not deficient over #[m \RR].
+            p
+                | Alternatively  #[m c \lt 0] and #[m C(\RR) = \emptyset] and #[m C] is deficient over #[m \RR].
+
+            paragraphs
+                title Infinite places
+
+                definition
+                    statement: p
+                        | Let #[m J/K] be a jacobian admitting a Richelot isogeny #[m \phi ] over #[m K] for a place of #[m K] such that #[m v |  \infty ], we denote #[m \phi _v] the map induced by #[m \phi ] on #[m J(K_v)] and define
+                        me \varphi  \colon J(K_v)^0 \to J(K_v)^0
+                        | the restriction of #[m \phi _v] to the identity component.
+
+                lemma
+                    statement: p
+                        me \frac{\Omega _J}{\Omega _{J'}} = \prod_{v| \infty } \frac { n(J'(K_v))}{|\ker (\varphi) | n(J(K_v))}
+                        | where #[m n (J(K_v))] denotes the number of connected components of #[m J(K_v)].
+
+                    proof
+                        p
+                            | Same as the elliptic curve case.
+
+
+                p
+                    | Case #[m K_v = \CC] here #[m n(J(\CC)) = 1 = n(J'(\CC))] and #[m |\ker \varphi | = 4]
+
+                proposition
+                    statement: p
+                        me.
+                            n(J(\RR)) =
+                            \begin{cases}
+                            2^{n(C(\RR)) - 1} \amp\text{ if }n(C(\RR)) \gt 0\text, \\
+                            1 \amp\text{ if }n(C(\RR)) = 0\text.
+                            \end{cases}
+                proposition
+                    statement: p
+                        | A divisor  #[m D_i = \lb P_i, Q_i \rb \in \ker (\phi )] is in #[m \ker \varphi ] iff the points #[m P_i, Q_i] satisfy either
+                        ol
+                            li
+                                | #[m P_i  =  \overline Q_i], or
+                            li
+                                | #[m P_i] and #[m Q_i] lie on  the same connected component of #[m C(\RR)].
+
+
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                          \begin{axis}
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                          \begin{axis}
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 + (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+
+                p
+                    | #[m D_1=  \lb (r_1, 0), (r_2)\rb] with #[m r_1,r_2] the smallest roots.
+                    | Then #[m D_1\in \ker \varphi].
+
+                p
+                    | #[m D_2=  \lb  (r_1, 0), (r_3) \rb ] with #[m r_3] the next smallest root.
+                    | Then #[m D_2\not\in \ker \varphi].
