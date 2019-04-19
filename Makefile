@@ -1,6 +1,6 @@
 .PHONY:	clean clean-html all check deploy debug
 
-XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no # -v
+XSLTPROC = xsltproc --timing --stringparam debug.datedfiles no --stringparam html.google-classic UA-48250536-1 # -v
 
 docs:	docs/parity.pdf parity-pretty.xml parity.xsl filter.xsl
 	mkdir -p docs
