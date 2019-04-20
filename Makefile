@@ -8,16 +8,13 @@ docs:	docs/parity.pdf parity-pretty.xml parity.xsl filter.xsl
 	$(XSLTPROC) ../parity.xsl ../parity-pretty.xml
 
 parity.tex:	parity-pretty.xml parity-latex.xsl filter.xsl
-	$(XSLTPROC) parity-latex.xsl parity-pretty.xml
-
-parity.md:	parity-pretty.xml filter.xsl
-	$(XSLTPROC) ../mathbook/xsl/mathbook-markdown-common.xsl parity-wrapper.xml > parity.md
+	$(XSLTPROC) -o parity.tex parity-latex.xsl parity-pretty.xml
 
 docs/parity.pdf:	parity.tex
 	mkdir -p docs
 	cd docs && latexmk -pdf -shell-escape -pdflatex="pdflatex -shell-escape -interaction=nonstopmode"  ../parity.tex
 
-docs/images:	docs parity-wrapper.xml
+docs/images/:	docs parity-wrapper.xml
 	mkdir -p docs/images
 	../mathbook/script/mbx -vv -c latex-image -f svg -d ~/parity/docs/images ~/parity/parity-wrapper.xml
 

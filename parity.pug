@@ -1098,7 +1098,7 @@ section#subsec-ec-ranks
                 me 0 \to B(K)/ \Psi(A(K)) \xrightarrow \delta H^1(G_K, A[\Psi]) \to H^1(G_K, A)[\Psi] \to 0
                 me 0 \to \prod_v B(K_v)/ \Psi(A(K_v)) \xrightarrow \delta H^1(G_{K_v}, A[\Psi]) \to \prod_v H^1(G_K, A)[\Psi] \to 0
                 | we then define
-                me \Sel^{(\Psi)} (A/K) = \ker \left\{ H^1(G_K, A[\Psi] \to \prod_v H^1(G_{K_v}, A) \right\}
+                me \Sel^{(\Psi)} (A/K) = \ker \left\{ H^1(G_K, A[\Psi]) \to \prod_v H^1(G_{K_v}, A) \right\}
                 me \Sha(A/K)= \ker\left\{ H^1(G_K, A) \to \prod_v H^1(G_{K_v}, A)\right\}
                 | so
                 me 0 \to \underbrace{B(K)/ \Psi(A(K))}_{\coker(\Psi \colon A(K) \xrightarrow \Psi B(K))} \to  \Sel^{(\Psi)} (A/K) \to \Sha(A/K) \to 0
@@ -1323,7 +1323,7 @@ section#subsec-ec-ranks
                 caption/
                 image: latex-image.
                     \begin{tikzpicture}
-                      \begin{axis}
+                      \begin{axis}[hide axis]
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
@@ -1401,21 +1401,21 @@ section#subsec-ec-ranks
                 me.
                         \xymatrix{
                                  &amp;     &amp;   0 \ar[d]            &amp;      &amp;   \\
-                                &amp; \ker \psi_v^0  0\ar[d]  &amp;   \ker \psi_v  \ar[d] &amp; \ker \psi_/\ar[d]  &amp;   \\
+                                &amp; \ker \psi_v^0  \ar[d]  &amp;   \ker \psi_v  \ar[d] &amp; \ker \psi_/\ar[d]  &amp;   \\
 
                             0 \ar[r] &amp; E^0(\RR) \ar[r]\ar[d]  &amp;E(\RR) \ar[r]\ar[d]  &amp;E(\RR)/E^0(\RR) \ar[r]\ar[d] &amp; 0 \\
                             0 \ar[r] &amp; E'^0(\RR) \ar[r]\ar[d] &amp; E'(\RR)\ar[d] \ar[r]&amp; E'(\RR)/E'^0(\RR) \ar[r]\ar[d] &amp;  0\\
-                                  &amp;  \coker \psi_v^0  &amp;   \coker \Psi_v  &amp; \coker \psi_/  &amp;
+                                  &amp;  \coker \psi_v^0  &amp;   \coker \psi_v  &amp; \coker \psi_/  &amp;
                             }
 
             p
                 | by snakey
-                me \frac{ | \ker \psi_v^0 || \ker \psi_/ || \ker \psi|}{|\ker \psi_v || \coker \psi_v^0|| \coker \psi_/| } = 1
-                me \implies \left| \frac{\coker \psi_v}{\ker \psi_v}\right| = \frac{| \coker \psi^)_v|| \coker \psi_/|}{|\ker \psi_v^0|| \ker\psi_/|}
+                me \frac{ | \ker \psi_v^0 || \ker \psi_/ || \coker \psi_v|}{|\ker \psi_v || \coker \psi_v^0|| \coker \psi_/| } = 1
+                me \implies \left| \frac{\coker \psi_v}{\ker \psi_v}\right| = \frac{| \coker \psi^0_v|| \coker \psi_/|}{|\ker \psi_v^0|| \ker\psi_/|}
                 | let #[m n(E), n(E')] be the number of real connected components #[m n = E(\RR) / E^0(\RR)]
             p
                 | By the third column
-                me \frac{n(E')}{n(E)} \frac{|\ker \psi_/|}{\coker \psi_/|}  =1
+                me \frac{n(E')}{n(E)} \frac{|\ker \psi_/|}{|\coker \psi_/|}  =1
 
                 | now #[m | \coker \psi_v^0| = 1] as the map on identity component is surjective.
                 | hence
@@ -1437,11 +1437,11 @@ section#subsec-ec-ranks
                 me E' \colon y^2 = x(x^2-2 ax+ \delta) = xq_2(x),\,\delta = a^2 - 4b
                 | #[m \disc(q_1(x)) = \delta]
                 | #[m \disc(q_2(x)) = 16b]
-            figure
+            //figure TODO this one is pointless rn
                 caption/
                 image: latex-image.
                     \begin{tikzpicture}
-                      \begin{axis}
+                      \begin{axis}[hide axis]
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
@@ -1860,7 +1860,7 @@ section
                 caption/
                 image: latex-image.
                     \begin{tikzpicture}
-                      \begin{axis}
+                      \begin{axis}[hide axis]
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
@@ -2560,7 +2560,7 @@ section
                 caption/
                 image: latex-image.
                     \begin{tikzpicture}
-                      \begin{axis}
+                      \begin{axis}[hide axis]
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
@@ -2626,7 +2626,7 @@ section
                     caption/
                     image: latex-image.
                         \begin{tikzpicture}
-                          \begin{axis}
+                          \begin{axis}[hide axis]
                             \addplot +[no markers,
                               raw gnuplot,
                               thick,
@@ -2647,7 +2647,7 @@ section
                     caption/
                     image: latex-image.
                         \begin{tikzpicture}
-                          \begin{axis}
+                            \begin{axis}[hide axis]
                             \addplot +[no markers,
                               raw gnuplot,
                               thick,
@@ -2656,6 +2656,9 @@ section
                               set contour base;
                               set cntrparam levels discrete 0.002;
                               unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
                               set view map;
                               set samples 900;
                               set isosamples 900;

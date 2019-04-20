@@ -397,13 +397,14 @@ C\colon y^2 = f(x)
 \end{equation*}
 </div>
 <p>for \(\deg (f ) = 6\text{.}\)</p>
-<p id="p-222">The generalisation of a 2-isogeny is called a Richelot isogeny.</p>
+<p id="p-222">The generalisation of a 2-isogeny is called a <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a>.</p>
 <p id="p-223">Plan:</p>
 <ol class="decimal">
 <li id="li-62">Review of hyperelliptic curves and their Jacobians.</li>
 <li id="li-63">Richelot isogeny</li>
 <li id="li-64">Compute contribution of the real places</li>
-<li id="li-65">Compute Tamagawa numbers/local root numbers</li>
+<li id="li-65">Compute Tamagawa numbers/local <a data-knowl="./knowl/def-root-num-wd.html" title="Definition 2.39: Root numbers">root numbers</a>
+</li>
 <li id="li-66">Compute \(|\Sha_0(J) \lb 2^\infty \rb|\) up to squares</li>
 <li id="li-67">Find and prove the right error term</li>
 </ol></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
@@ -581,7 +582,7 @@ D  = P + Q - P_\infty^+ - P_\infty^-
 </div>
 <p>is zero in \(J(\overline K)\text{.}\)</p></article><p id="p-245">Addition:</p>
 <p id="p-246">Choose 4 points \(P,P',Q,Q'\in C(\overline K)\) (in general position to make it easier).</p>
-<figure class="figure-like" id="figure-3"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure-like" id="figure-2"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-2.svg" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span> <span class="codenumber">2.12.</span> </figcaption></figure><p id="p-247">We can find  a cubic polynomial \(y = p(x)\) through the four points. It also intersects at two additional points \(S,S'\) so that</p>
 <div class="displaymath">
 \begin{equation*}
@@ -610,7 +611,7 @@ J(\overline 2 ) \lb  2 \rb  = \{ [T_i, T_k], i \ne k\},\,T_i = (x_i,0) \in C(\ov
 \end{equation*}
 </div></article><article class="remark-like" id="remark-13"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.14</span>.</h6>
-<p id="p-250">For the Richelot isogeny \(\phi\text{:}\)</p>
+<p id="p-250">For the <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a> \(\phi\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
@@ -655,7 +656,7 @@ G_i(x) = g_{i2} x^2+ g_{i1} x +g_{i0}  = g_i(x-\alpha_i)(x-\beta_i)
 </div></article><article class="definition-like" id="def-richelot-dual-poly"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.17</span>. <span class="title">Richelot dual polynomials.</span>
 </h6>
-<p id="p-255">To a Richelot polynomial \(G(x)\) with a fixed factorisation</p>
+<p id="p-255">To a <a data-knowl="./knowl/def-richelot-poly.html" title="Definition 2.16: Richelot polynomials">Richelot polynomial</a> \(G(x)\) with a fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)
@@ -677,16 +678,16 @@ F(x) = \prod_{i=1}^3 F_i(x),\,F_i(x) =\frac{1}{\Delta_G} \lb G_{i+1}(x), G_{i+2}
 G(x) =G_0(x) G_1(x) G_2(x)
 \end{equation*}
 </div>
-<p>as a Richelot polynomial over \(K\) such that \(\Delta_G \ne 0\text{.}\)</p>
-<p id="p-258">To a Richelot curve \(C/K\) we associate its <dfn class="terminology">Richelot dual curve</dfn> \(\widehat C\) given by</p>
+<p>as a <a data-knowl="./knowl/def-richelot-poly.html" title="Definition 2.16: Richelot polynomials">Richelot polynomial</a> over \(K\) such that \(\Delta_G \ne 0\text{.}\)</p>
+<p id="p-258">To a <a data-knowl="./knowl/def-richelot-curve.html" title="Definition 2.18: Richelot (dual) curves">Richelot curve</a> \(C/K\) we associate its <dfn class="terminology">Richelot dual curve</dfn> \(\widehat C\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 \widehat C \colon y^2    =F(x)
 \end{equation*}
 </div>
-<p>where \(F(x)\) is the Richelot dual polynomial of \(G(x)\) with respect to the given factorisation.</p></article><article class="remark-like" id="remark-14"><h6 class="heading">
+<p>where \(F(x)\) is the <a data-knowl="./knowl/def-richelot-dual-poly.html" title="Definition 2.17: Richelot dual polynomials">Richelot dual polynomial</a> of \(G(x)\) with respect to the given factorisation.</p></article><article class="remark-like" id="remark-14"><h6 class="heading">
 <span class="type">Remark</span> <span class="codenumber">2.19</span>.</h6>
-<p id="p-259">Let \(G(x) \in K \lb x \rb\) be a polynomial of degree 5 or 6. Denote by \(K_G\) its splitting field. Then  the conditions for \(G(x) \) to be a Richelot polynomial can be rephrased as</p>
+<p id="p-259">Let \(G(x) \in K \lb x \rb\) be a polynomial of degree 5 or 6. Denote by \(K_G\) its splitting field. Then  the conditions for \(G(x) \) to be a <a data-knowl="./knowl/def-richelot-poly.html" title="Definition 2.16: Richelot polynomials">Richelot polynomial</a> can be rephrased as</p>
 <div class="displaymath">
 \begin{equation*}
 \Gal{K_G}{K} \subseteq C_2^3 \rtimes S_3 \subseteq S_6
@@ -700,7 +701,7 @@ G(x) =G_0(x) G_1(x) G_2(x)
 <article class="definition-like" id="def-richelot-isog"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.20</span>. <span class="title">Richelot isogenies.</span>
 </h6>
-<p id="p-260">Let \(C/ K\) be  a Richelot curve with fixed factorisation</p>
+<p id="p-260">Let \(C/ K\) be  a <a data-knowl="./knowl/def-richelot-curve.html" title="Definition 2.18: Richelot (dual) curves">Richelot curve</a> with fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)\text{.}
@@ -712,16 +713,16 @@ G(x) =G_0(x) G_1(x) G_2(x)\text{.}
 D_i = \lb P_i, Q_i\rb
 \end{equation*}
 </div>
-<p>where \(P_i = (\alpha_i, 0)\text{,}\) \(Q_i = (\beta_i, 0)\text{.}\) Then the isogeny over \(K\) for \(J\) whose kernel is \(\{0, D_1, D_2, D_3\}\) is called a <dfn class="terminology">Richelot isogeny</dfn>.</p></article><p id="p-261">We say that a Jacobian admits a Richelot isogeny over \(K\) if its underlying curve is a Richelot curve \(/K\text{.}\)</p>
+<p>where \(P_i = (\alpha_i, 0)\text{,}\) \(Q_i = (\beta_i, 0)\text{.}\) Then the isogeny over \(K\) for \(J\) whose kernel is \(\{0, D_1, D_2, D_3\}\) is called a <dfn class="terminology">Richelot isogeny</dfn>.</p></article><p id="p-261">We say that a Jacobian admits a <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a> over \(K\) if its underlying curve is a <a data-knowl="./knowl/def-richelot-curve.html" title="Definition 2.18: Richelot (dual) curves">Richelot curve</a> \(/K\text{.}\)</p>
 <article class="theorem-like" id="theorem-14"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.21</span>.</h6>
-<p id="p-262">Let \(C/K\) be a Richelot curve with fixed factorisation</p>
+<p id="p-262">Let \(C/K\) be a <a data-knowl="./knowl/def-richelot-curve.html" title="Definition 2.18: Richelot (dual) curves">Richelot curve</a> with fixed factorisation</p>
 <div class="displaymath">
 \begin{equation*}
 G(x) =G_0(x) G_1(x) G_2(x)\text{.}
 \end{equation*}
 </div>
-<p>Let \(\widehat C /K\) be its Richelot dual curve and let \(\phi\) denote the associated Richelot isogeny on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article><aside class="aside-like" id="aside-14"><p id="p-263">Lecture ? 9/4/2018</p></aside><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
+<p>Let \(\widehat C /K\) be its <a data-knowl="./knowl/def-richelot-curve.html" title="Definition 2.18: Richelot (dual) curves">Richelot dual curve</a> and let \(\phi\) denote the associated <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a> on \(J\text{.}\) Then \(\phi\colon J \to \widehat J\) where \(\widehat J\) is the Jacobian of \(\widehat C\) and moreover \(\hat \phi \phi = \lb 2\rb\text{.}\)</p></article></article><aside class="aside-like" id="aside-14"><p id="p-263">Lecture ? 9/4/2018</p></aside><article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Brauer groups Galois cohomology and local invariants (Angus).</span></h5>
 <p id="p-264">Reference Milne's CFT.</p>
 <p id="p-265">Central simple algebras:</p>
 <p id="p-266">We will consider finite dimensional \(k\)-algebra for \(k\) a field.</p>
@@ -892,7 +893,7 @@ v(\alpha ') = v (c) + v(\alpha ) \equiv v(\alpha ) \pmod \ZZ\text{.}
 0 \to \Br(F) \to \bigoplus_v \Br(F_v) \to \QQ/\ZZ \to 0\text{.}
 \end{equation*}
 </div></article><article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Root numbers of elliptic curves  (Ricky).</span></h5>
-<p id="p-293">Based on Rohrlich's article elliptic curves and the Weil-Deligne group</p>
+<p id="p-293">Based on Rohrlich's article elliptic curves and the <a data-knowl="./knowl/def-weil-deligne-gp.html" title="Definition 2.36: The Weil-Deligne group">Weil-Deligne group</a></p>
 <p id="p-294">\(K\) non-archimidean local field, \(\overline K\) is its separable closure.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1436,7 +1437,7 @@ H^1(G_K, \Pic^0(A\otimes K^\sep)) \to H^2(G_K, (K^\sep(X))^\times/(K^\sep)^\time
 <p id="p-347">For Jacobians of curves if the principal polarization on \(J\) is given by a rational divisor then \(\pair \cdot \cdot\) is alternating, hence \(|\Sha_0(A/K)| =  \square\) otherwise \(|\Sha_0(A/K)|  = 2 \square\text{.}\)</p></article><p id="p-348">Noted by Poonen and Stoll.</p>
 <article class="theorem-like" id="theorem-21"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.45</span>.</h6>
-<p id="p-349">\(C\) is deficient at an odd number of place iff</p>
+<p id="p-349">\(C\) is <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> at an odd number of place iff</p>
 <div class="displaymath">
 \begin{equation*}
 |\Sha_0(J)| =  2\square\text{.}
@@ -1445,19 +1446,19 @@ H^1(G_K, \Pic^0(A\otimes K^\sep)) \to H^2(G_K, (K^\sep(X))^\times/(K^\sep)^\time
 <span class="type">Definition</span> <span class="codenumber">2.46</span>. <span class="title">Deficient places.</span>
 </h6>
 <p id="p-350">We say that \(C\) is <dfn class="terminology">deficient</dfn> at a place \(v\) if \(C\) doesn't have a \(K_v\) rational divisor of degree \(g-1\text{.}\)</p></article><p id="p-351">Hence for genus \(g\) curves this says that \(C\) has no \(K_v\) rational divisor of degree \(1\text{.}\) Equivalently \(C\) has no \(K_v\)-rational point over any odd degree extension of \(K_v\text{.}\)</p>
-<p id="p-352">E.g. if \(K_v = \RR\) we have \(C\) deficient iff \(C(\RR) \ne \emptyset\text{.}\)</p>
+<p id="p-352">E.g. if \(K_v = \RR\) we have \(C\) <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> iff \(C(\RR) \ne \emptyset\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = cq_1(x) q_2(x) q_3(x),\,c\gt 0\text{ and }q_i\text{ irred over }\RR
 \end{equation*}
 </div>
-<figure class="figure-like" id="figure-4"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.47.</span> </figcaption></figure><p id="p-353">Here \(c \gt 0\) and \(C(\RR) \ne \emptyset\) and \(C\) is not deficient over \(\RR\text{.}\)</p>
-<p id="p-354">Alternatively  \(c \lt 0\) and \(C(\RR) = \emptyset\) and \(C\) is deficient over \(\RR\text{.}\)</p>
+<figure class="figure-like" id="figure-3"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.47.</span> </figcaption></figure><p id="p-353">Here \(c \gt 0\) and \(C(\RR) \ne \emptyset\) and \(C\) is not <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> over \(\RR\text{.}\)</p>
+<p id="p-354">Alternatively  \(c \lt 0\) and \(C(\RR) = \emptyset\) and \(C\) is <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> over \(\RR\text{.}\)</p>
 <article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Infinite places.</span></h5>
 <article class="definition-like" id="definition-27"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.48</span>.</h6>
-<p id="p-355">Let \(J/K\) be a jacobian admitting a Richelot isogeny \(\phi \) over \(K\) for a place of \(K\) such that \(v |  \infty \text{,}\) we denote \(\phi _v\) the map induced by \(\phi \) on \(J(K_v)\) and define</p>
+<p id="p-355">Let \(J/K\) be a jacobian admitting a <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a> \(\phi \) over \(K\) for a place of \(K\) such that \(v |  \infty \text{,}\) we denote \(\phi _v\) the map induced by \(\phi \) on \(J(K_v)\) and define</p>
 <div class="displaymath">
 \begin{equation*}
 \varphi  \colon J(K_v)^0 \to J(K_v)^0
@@ -1488,8 +1489,8 @@ n(J(\RR)) =
 <ol class="decimal">
 <li id="li-81">\(P_i  =  \overline Q_i\text{,}\) or</li>
 <li id="li-82">\(P_i\) and \(Q_i\) lie on  the same connected component of \(C(\RR)\text{.}\)</li>
-</ol></article><figure class="figure-like" id="figure-5"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-5.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.52.</span> </figcaption></figure><figure class="figure-like" id="figure-6"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-6.svg" style="width: 100%; height: auto;" alt=""></div>
+</ol></article><figure class="figure-like" id="figure-4"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.52.</span> </figcaption></figure><figure class="figure-like" id="figure-5"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-5.svg" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span> <span class="codenumber">2.53.</span> </figcaption></figure><p id="p-361">\(D_1=  \lb (r_1, 0), (r_2)\rb\) with \(r_1,r_2\) the smallest roots. Then \(D_1\in \ker \varphi\text{.}\)</p>
 <p id="p-362">\(D_2=  \lb  (r_1, 0), (r_3) \rb \) with \(r_3\) the next smallest root. Then \(D_2\not\in \ker \varphi\text{.}\)</p></article></article></section></section></div></main>
 </div>
