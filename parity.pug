@@ -2582,95 +2582,191 @@ section
             p
                 | Alternatively  #[m c \lt 0] and #[m C(\RR) = \emptyset] and #[m C] is deficient over #[m \RR].
 
-            paragraphs
-                title Infinite places
+        paragraphs
+            title Infinite places
 
-                definition
-                    statement: p
-                        | Let #[m J/K] be a jacobian admitting a Richelot isogeny #[m \phi ] over #[m K] for a place of #[m K] such that #[m v |  \infty ], we denote #[m \phi _v] the map induced by #[m \phi ] on #[m J(K_v)] and define
-                        me \varphi  \colon J(K_v)^0 \to J(K_v)^0
-                        | the restriction of #[m \phi _v] to the identity component.
+            definition
+                statement: p
+                    | Let #[m J/K] be a jacobian admitting a Richelot isogeny #[m \phi ] over #[m K] for a place of #[m K] such that #[m v |  \infty ], we denote #[m \phi _v] the map induced by #[m \phi ] on #[m J(K_v)] and define
+                    me \varphi  \colon J(K_v)^0 \to J(K_v)^0
+                    | the restriction of #[m \phi _v] to the identity component.
 
-                lemma
-                    statement: p
-                        me \frac{\Omega _J}{\Omega _{J'}} = \prod_{v| \infty } \frac { n(J'(K_v))}{|\ker (\varphi) | n(J(K_v))}
-                        | where #[m n (J(K_v))] denotes the number of connected components of #[m J(K_v)].
+            lemma
+                statement: p
+                    me \frac{\Omega _J}{\Omega _{J'}} = \prod_{v| \infty } \frac { n(J'(K_v))}{|\ker (\varphi) | n(J(K_v))}
+                    | where #[m n (J(K_v))] denotes the number of connected components of #[m J(K_v)].
 
-                    proof
-                        p
-                            | Same as the elliptic curve case.
+                proof
+                    p
+                        | Same as the elliptic curve case.
 
 
+            p
+                | Case #[m K_v = \CC] here #[m n(J(\CC)) = 1 = n(J'(\CC))] and #[m |\ker \varphi | = 4]
+
+            proposition
+                statement: p
+                    me.
+                        n(J(\RR)) =
+                        \begin{cases}
+                        2^{n(C(\RR)) - 1} \amp\text{ if }n(C(\RR)) \gt 0\text, \\
+                        1 \amp\text{ if }n(C(\RR)) = 0\text.
+                        \end{cases}
+            proposition
+                statement: p
+                    | A divisor  #[m D_i = \lb P_i, Q_i \rb \in \ker (\phi )] is in #[m \ker \varphi ] iff the points #[m P_i, Q_i] satisfy either
+                    ol
+                        li
+                            | #[m P_i  =  \overline Q_i], or
+                        li
+                            | #[m P_i] and #[m Q_i] lie on  the same connected component of #[m C(\RR)].
+
+
+            figure
+                caption/
+                image: latex-image.
+                    \begin{tikzpicture}
+                      \begin{axis}[hide axis]
+                        \addplot +[no markers,
+                          raw gnuplot,
+                          thick,
+                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          ] gnuplot {
+                          set contour base;
+                          set cntrparam levels discrete 0.002;
+                          unset surface;
+                          set view map;
+                          set samples 900;
+                          set isosamples 900;
+                          splot y^2 - (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
+                        };
+                      \end{axis}
+                    \end{tikzpicture}
+
+            figure
+                caption/
+                image: latex-image.
+                    \begin{tikzpicture}
+                        \begin{axis}[hide axis]
+                        \addplot +[no markers,
+                          raw gnuplot,
+                          thick,
+                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          ] gnuplot {
+                          set contour base;
+                          set cntrparam levels discrete 0.002;
+                          unset surface;
+                          unset border;
+                          unset xtics;
+                          unset ytics;
+                          set view map;
+                          set samples 900;
+                          set isosamples 900;
+                          splot y^2 + (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
+                        };
+                      \end{axis}
+                    \end{tikzpicture}
+
+            p
+                | #[m D_1=  \lb (r_1, 0), (r_2,0)\rb] with #[m r_1,r_2] the smallest roots.
+                | Then #[m D_1\in \ker \varphi].
+
+            p
+                | #[m D_2=  \lb  (r_1, 0), (r_3,0) \rb ] with #[m r_3] the next smallest root.
+                | Then #[m D_2\not\in \ker \varphi].
+
+        aside: p Lecture ? 23/4/2018
+
+        p
+            | Missed
+        proposition
+            statement: p
+
+                | The number of real roots of #[m F(x)] (hence #[m n( J(K_v))]) is given as follows (addition modulo 3):
+                ol
+                    li
+                        | If #[m \delta _i\in \RR ] and #[m \delta _{i+1} , \delta _{i+2} \not\in \RR], i.e. #[m \delta _{i+1} = \overline \delta _{i+2}] then
+                        me \delta _i' \in \RR,\,\delta _{i+1}', \delta _{i+2}' \not \in \RR
+                        | with
+                        me \delta _{i+1}' = \overline \delta _{i+2}'
+                        | .
+                    li
+                        | If #[m \delta _i, \delta _{i+1}\in \RR ] then #[m \delta _{i+2}'\in \RR], and #[m \delta _{i+2}' \lt 0] iff #[m k_{i, i+1} \lt 0].
+            proof
                 p
-                    | Case #[m K_v = \CC] here #[m n(J(\CC)) = 1 = n(J'(\CC))] and #[m |\ker \varphi | = 4]
+                    | Clear since
+                    me \delta _i' = \frac {4}{\Delta _G^2} (\alpha _{i+1} - \alpha _{i+2})(\alpha _{i+1} - \beta  _{i+2})(\beta  _{i+1} - \alpha _{i+2})(\beta  _{i+1} -\beta_{i+2})
+                    | for #[m i = 1,2,3].
 
-                proposition
-                    statement: p
-                        me.
-                            n(J(\RR)) =
-                            \begin{cases}
-                            2^{n(C(\RR)) - 1} \amp\text{ if }n(C(\RR)) \gt 0\text, \\
-                            1 \amp\text{ if }n(C(\RR)) = 0\text.
-                            \end{cases}
-                proposition
-                    statement: p
-                        | A divisor  #[m D_i = \lb P_i, Q_i \rb \in \ker (\phi )] is in #[m \ker \varphi ] iff the points #[m P_i, Q_i] satisfy either
-                        ol
-                            li
-                                | #[m P_i  =  \overline Q_i], or
-                            li
-                                | #[m P_i] and #[m Q_i] lie on  the same connected component of #[m C(\RR)].
+        remark
+            p
+                | #[m m_G'] follows from the signs of #[m \delta _1', \delta _2', \delta _3'] and the leading term of #[m F(x)].
+
+        example
+            statement: p
+                | Let #[m G_1(x) = x^2 - 16, G_2(x) + x^2 + x + \frac{17}4, G_3 = x^2 - 2x  + 9].
+                | We have #[m \delta _1=64, \delta _2 = -16, \delta _3 = -32].
+                | #[m C] has one real connected component hence #[m n(J(\RR)) = 1] and #[m m_v = 1].
+
+        p
+            | Now
+            me D_1 = \lb (\alpha _1,0), (\beta _1, 0)\rb \in \ker \phi
+            me D_2 = \lb (\alpha _2,0), (\overline \alpha_2, 0)\rb
+            me D_3 = \lb (\alpha _3,0), (\overline \alpha_3, 0)\rb \in \ker \phi
+            | so #[m |\ker \phi | = 4].
+        p
+            | Also #[m \delta _{1}' ,\delta _{2}', \delta _{3}'\in \RR] all #[m k_{i,j} \gt 0] so #[m \delta _{1}' ,\delta _{2}', \delta _{3}'\gt 0] so that #[m C'] has #[m 3] connected components and #[m n(J'(\RR)) = 4] and #[m m_v' = 1].
 
 
-                figure
-                    caption/
-                    image: latex-image.
-                        \begin{tikzpicture}
-                          \begin{axis}[hide axis]
-                            \addplot +[no markers,
-                              raw gnuplot,
-                              thick,
-                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
-                              ] gnuplot {
-                              set contour base;
-                              set cntrparam levels discrete 0.002;
-                              unset surface;
-                              set view map;
-                              set samples 900;
-                              set isosamples 900;
-                              splot y^2 - (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
-                            };
-                          \end{axis}
-                        \end{tikzpicture}
+        paragraphs
+            title Tamagawa numbers (#[m v \nmid \infty ])
+            p
+                | We need to compute #[m \frac{c_v(J)}{c_v(J')}] (we won't at #[m v | 2]).
+            p
+                | Recall that for an abelian variety #[m A/K] over a number field
+                me c_v(A) = |A(K_v)/A_0(K_v)|
 
-                figure
-                    caption/
-                    image: latex-image.
-                        \begin{tikzpicture}
-                            \begin{axis}[hide axis]
-                            \addplot +[no markers,
-                              raw gnuplot,
-                              thick,
-                              empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
-                              ] gnuplot {
-                              set contour base;
-                              set cntrparam levels discrete 0.002;
-                              unset surface;
-                              unset border;
-                              unset xtics;
-                              unset ytics;
-                              set view map;
-                              set samples 900;
-                              set isosamples 900;
-                              splot y^2 + (x^2 - 1)*(x^2 - 3)*(x^2 - 5);
-                            };
-                          \end{axis}
-                        \end{tikzpicture}
+            lemma
+                statement: p
+                    | Let #[m S] be a finite set of primes of #[m K] containing archimidean places and bad reduction places.
+                    | For each place #[m v\not\in S], denote #[m \widetilde A_v] the abelian variety over the residue field #[m \FF_{q_v}] where #[m q_v = N_{{K_v}/\QQ_v} (v)].
+                    | Set #[m d = \dim A = \dim \widetilde A_{v}].
+                    | Let #[m \omega  \ne 0 ] be a choice of exterior differential form of degree #[m d] on #[m A] defined over #[m K] and for #[m v\nmid \infty ].
+                    | Consider #[m |\omega |_v \mu _v^d] which determines a Haar measure on #[m A(K_v)].
+                    | Then
+                    me \int_{A(K_v)} | \omega |_v \mu _v^d = \left | \frac{\omega }{\omega _0} \right | c_v | \widetilde A_v(\FF_{q_v})| q^{-d}
+                    | where #[m \omega _0] is  a choice of #[m v]-regular #[m d]-form with #[m (\widetilde \omega _0)_v \ne 0] and if #[m A] had bad reduction at #[m v] then #[m \widetilde A_v (\FF_{q_v})|] is the  number of #[m \FF_{q_v}] points on the special fibre #[m \widetilde A_v] of Neron's minimal model.
 
-                p
-                    | #[m D_1=  \lb (r_1, 0), (r_2)\rb] with #[m r_1,r_2] the smallest roots.
-                    | Then #[m D_1\in \ker \varphi].
+                proof
+                    title Sketch of proof
+                    p
+                        me \int_{A(K_v)} | \omega |_v \mu _v^d = \left | \frac{\omega }{\omega _0} \right |  \int_{A(K_v)} | \omega_0 |_v \mu _v^d
+                        me                                     = \left | \frac{\omega }{\omega _0} \right | \left| A(K_v)/A_0(K_v)\right| \int_{A_0(K_v)} | \omega_0 |_v \mu _v^d
+                        me                                     = \left | \frac{\omega }{\omega _0} \right | c_v \left| A_0(K_v)/A_1(K_v)\right| \int_{A_1(K_v)} | \omega_0 |_v \mu _v^d
+                        me                                     = \left | \frac{\omega }{\omega _0} \right | c_v \left| \widetilde A_v(\FF_{q_v})\right| q_v^{-d}
+                        |.
 
-                p
-                    | #[m D_2=  \lb  (r_1, 0), (r_3) \rb ] with #[m r_3] the next smallest root.
-                    | Then #[m D_2\not\in \ker \varphi].
+            p
+                | How to compute #[m c_v]? Need to compute #[m |\widetilde A_v(\FF_{q_v})|].
+            example
+                statement: p
+                    | Consider an elliptic curve #[m E].
+
+                    | Recall that by Hensels lemma, #[m E_0(K_v) \twoheadrightarrow \widetilde E_{ns}(\FF_{q_v})]
+                    | let
+                    me f(x,y) = y^2 + a_1 xy + a_3y - x^3 - a_2 x^2 - a_4 x - a_6 = 0
+                    | be the minimal Weierstraß equation for #[m E].
+                    | Let #[m \tilde f(x,y) ] be the reduced polynomial mod #[m \pi _v].
+                    | and #[m \tilde P(\tilde \alpha , \tilde \beta ) \in \widetilde E_{ns}(\FF_{q_v})] a point.
+                    | Since #[m P] is non-singular either
+                    me \partder[\tilde f]{x}(\tilde P) \ne 0 \text{ or } \partder[\tilde f]{y}(\tilde P) \ne 0
+                    | say the latter, then choose any #[m x_0 \in \ints_{K_v}] with #[m x_0 \equiv \tilde \alpha \pmod{\pi _v}] then #[m f(x_0, y) = 0] has #[m \tilde f(x_0, \tilde \beta ) = 0] as #[m \beta ] is a simple root.
+                    | By Hensel's lemma there exists #[m y_0 \in \ints_{K_v}] such that #[m \tilde y_0 = 0] and #[m f(x_0,y_0) = 0].
+                    | So #[m P=(x_0, y_0) \in E_0(K)] reduces to #[m \widetilde P].
+            p
+                | For non-singular points get points over #[m \ints_{K_v}].
+
+            example
+                statement: p
+                    me E \colon y^2 = (x+1)(x-p^2)(x+p^2), \,p\gt 3
+                    me \widetilde E \colon \widetilde y^2 = (\widetilde x+1)\widetilde x^2

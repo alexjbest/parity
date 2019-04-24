@@ -60,6 +60,7 @@ var js_version = 0.11;
 </head>
 <body class="mathbook-article has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{pgfplots}
+
 \newenvironment{smallermatrix}[1]
 {\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
 \array{#1}}
@@ -67,6 +68,7 @@ var js_version = 0.11;
 
 \def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
 \def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
 
 
 
@@ -1491,8 +1493,116 @@ n(J(\RR)) =
 <li id="li-82">\(P_i\) and \(Q_i\) lie on  the same connected component of \(C(\RR)\text{.}\)</li>
 </ol></article><figure class="figure-like" id="figure-4"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span> <span class="codenumber">2.52.</span> </figcaption></figure><figure class="figure-like" id="figure-5"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-5.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span> <span class="codenumber">2.53.</span> </figcaption></figure><p id="p-361">\(D_1=  \lb (r_1, 0), (r_2)\rb\) with \(r_1,r_2\) the smallest roots. Then \(D_1\in \ker \varphi\text{.}\)</p>
-<p id="p-362">\(D_2=  \lb  (r_1, 0), (r_3) \rb \) with \(r_3\) the next smallest root. Then \(D_2\not\in \ker \varphi\text{.}\)</p></article></article></section></section></div></main>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.53.</span> </figcaption></figure><p id="p-361">\(D_1=  \lb (r_1, 0), (r_2,0)\rb\) with \(r_1,r_2\) the smallest roots. Then \(D_1\in \ker \varphi\text{.}\)</p>
+<p id="p-362">\(D_2=  \lb  (r_1, 0), (r_3,0) \rb \) with \(r_3\) the next smallest root. Then \(D_2\not\in \ker \varphi\text{.}\)</p></article><aside class="aside-like" id="aside-17"><p id="p-363">Lecture ? 23/4/2018</p></aside><p id="p-364">Missed</p>
+<article class="theorem-like" id="proposition-12"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.54</span>.</h6>
+<p id="p-365">The number of real roots of \(F(x)\) (hence \(n( J(K_v))\)) is given as follows (addition modulo 3):</p>
+<ol class="decimal">
+<li id="li-83">If \(\delta _i\in \RR \) and \(\delta _{i+1} , \delta _{i+2} \not\in \RR\text{,}\) i.e. \(\delta _{i+1} = \overline \delta _{i+2}\) then<div class="displaymath">
+\begin{equation*}
+\delta _i' \in \RR,\,\delta _{i+1}', \delta _{i+2}' \not \in \RR
+\end{equation*}
+</div>with<div class="displaymath">
+\begin{equation*}
+\delta _{i+1}' = \overline \delta _{i+2}'\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-84">If \(\delta _i, \delta _{i+1}\in \RR \) then \(\delta _{i+2}'\in \RR\text{,}\) and \(\delta _{i+2}' \lt 0\) iff \(k_{i, i+1} \lt 0\text{.}\)</li>
+</ol></article><article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-12" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-366">Clear since</p>
+<div class="displaymath">
+\begin{equation*}
+\delta _i' = \frac {4}{\Delta _G^2} (\alpha _{i+1} - \alpha _{i+2})(\alpha _{i+1} - \beta  _{i+2})(\beta  _{i+1} - \alpha _{i+2})(\beta  _{i+1} -\beta_{i+2})
+\end{equation*}
+</div>
+<p>for \(i = 1,2,3\text{.}\)</p></article></div>
+<article class="remark-like" id="remark-17"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.55</span>.</h6>
+<p id="p-367">\(m_G'\) follows from the signs of \(\delta _1', \delta _2', \delta _3'\) and the leading term of \(F(x)\text{.}\)</p></article><article class="example-like" id="example-11"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.56</span>.</h6>
+<p id="p-368">Let \(G_1(x) = x^2 - 16, G_2(x) + x^2 + x + \frac{17}4, G_3 = x^2 - 2x  + 9\text{.}\) We have \(\delta _1=64, \delta _2 = -16, \delta _3 = -32\text{.}\) \(C\) has one real connected component hence \(n(J(\RR)) = 1\) and \(m_v = 1\text{.}\)</p></article><p id="p-369">Now</p>
+<div class="displaymath">
+\begin{equation*}
+D_1 = \lb (\alpha _1,0), (\beta _1, 0)\rb \in \ker \phi
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+D_2 = \lb (\alpha _2,0), (\overline \alpha_2, 0)\rb
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+D_3 = \lb (\alpha _3,0), (\overline \alpha_3, 0)\rb \in \ker \phi
+\end{equation*}
+</div>
+<p>so \(|\ker \phi | = 4\text{.}\)</p>
+<p id="p-370">Also \(\delta _{1}' ,\delta _{2}', \delta _{3}'\in \RR\) all \(k_{i,j} \gt 0\) so \(\delta _{1}' ,\delta _{2}', \delta _{3}'\gt 0\) so that \(C'\) has \(3\) connected components and \(n(J'(\RR)) = 4\) and \(m_v' = 1\text{.}\)</p>
+<article class="paragraphs" id="paragraphs-18"><h5 class="heading"><span class="title">Tamagawa numbers (\(v \nmid \infty \)).</span></h5>
+<p id="p-371">We need to compute \(\frac{c_v(J)}{c_v(J')}\) (we won't at \(v | 2\)).</p>
+<p id="p-372">Recall that for an abelian variety \(A/K\) over a number field</p>
+<div class="displaymath">
+\begin{equation*}
+c_v(A) = |A(K_v)/A_0(K_v)|
+\end{equation*}
+</div>
+<article class="theorem-like" id="lemma-7"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.57</span>.</h6>
+<p id="p-373">Let \(S\) be a finite set of primes of \(K\) containing archimidean places and bad reduction places. For each place \(v\not\in S\text{,}\) denote \(\widetilde A_v\) the abelian variety over the residue field \(\FF_{q_v}\) where \(q_v = N_{{K_v}/\QQ_v} (v)\text{.}\) Set \(d = \dim A = \dim \widetilde A_{v}\text{.}\) Let \(\omega  \ne 0 \) be a choice of exterior differential form of degree \(d\) on \(A\) defined over \(K\) and for \(v\nmid \infty \text{.}\) Consider \(|\omega |_v \mu _v^d\) which determines a Haar measure on \(A(K_v)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{A(K_v)} | \omega |_v \mu _v^d = \left | \frac{\omega }{\omega _0} \right | c_v | \widetilde A_v(\FF_{q_v})| q^{-d}
+\end{equation*}
+</div>
+<p>where \(\omega _0\) is  a choice of \(v\)-regular \(d\)-form with \((\widetilde \omega _0)_v \ne 0\) and if \(A\) had bad reduction at \(v\) then \(\widetilde A_v (\FF_{q_v})|\) is the  number of \(\FF_{q_v}\) points on the special fibre \(\widetilde A_v\) of Neron's minimal model.</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref" data-refid="hk-proof-13"><h6 class="heading"><span class="title">Sketch of proof.</span></h6></a></article><div id="hk-proof-13" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><div class="displaymath" id="p-374">
+\begin{equation*}
+\int_{A(K_v)} | \omega |_v \mu _v^d = \left | \frac{\omega }{\omega _0} \right |  \int_{A(K_v)} | \omega_0 |_v \mu _v^d
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left | \frac{\omega }{\omega _0} \right | \left| A(K_v)/A_0(K_v)\right| \int_{A_0(K_v)} | \omega_0 |_v \mu _v^d
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left | \frac{\omega }{\omega _0} \right | c_v \left| A_0(K_v)/A_1(K_v)\right| \int_{A_1(K_v)} | \omega_0 |_v \mu _v^d
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left | \frac{\omega }{\omega _0} \right | c_v \left| \widetilde A_v(\FF_{q_v})\right| q_v^{-d}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-375">How to compute \(c_v\text{?}\) Need to compute \(|\widetilde A_v(\FF_{q_v})|\text{.}\)</p>
+<article class="example-like" id="example-12"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.58</span>.</h6>
+<p id="p-376">Consider an elliptic curve \(E\text{.}\) Recall that by Hensels lemma, \(E_0(K_v) \twoheadrightarrow \widetilde E_{ns}(\FF_{q_v})\) let</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,y) = y^2 + a_1 xy + a_3y - x^3 - a_2 x^2 - a_4 x - a_6 = 0
+\end{equation*}
+</div>
+<p>be the minimal Weierstraß equation for \(E\text{.}\) Let \(\tilde f(x,y) \) be the reduced polynomial mod \(\pi _v\text{.}\) and \(\tilde P(\tilde \alpha , \tilde \beta ) \in \widetilde E_{ns}(\FF_{q_v})\) a point. Since \(P\) is non-singular either</p>
+<div class="displaymath">
+\begin{equation*}
+\partder[\tilde f]{x}(\tilde P) \ne 0 \text{ or } \partder[\tilde f]{y}(\tilde P) \ne 0
+\end{equation*}
+</div>
+<p>say the latter, then choose any \(x_0 \in \ints_{K_v}\) with \(x_0 \equiv \tilde \alpha \pmod{\pi _v}\) then \(f(x_0, y) = 0\) has \(\tilde f(x_0, \tilde \beta ) = 0\) as \(\beta \) is a simple root. By Hensel's lemma there exists \(y_0 \in \ints_{K_v}\) such that \(\tilde y_0 = 0\) and \(f(x_0,y_0) = 0\text{.}\) So \(P=(x_0, y_0) \in E_0(K)\) reduces to \(\widetilde P\text{.}\)</p></article><p id="p-377">For non-singular points get points over \(\ints_{K_v}\text{.}\)</p>
+<article class="example-like" id="example-13"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.59</span>.</h6>
+<div class="displaymath" id="p-378">
+\begin{equation*}
+E \colon y^2 = (x+1)(x-p^2)(x+p^2), \,p\gt 3
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\widetilde E \colon \widetilde y^2 = (\widetilde x+1)\widetilde x^2
+\end{equation*}
+</div></article></article></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
