@@ -1456,8 +1456,7 @@ y^2 = cq_1(x) q_2(x) q_3(x),\,c\gt 0\text{ and }q_i\text{ irred over }\RR
 </div>
 <figure class="figure-like" id="figure-3"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span> <span class="codenumber">2.47.</span> </figcaption></figure><p id="p-353">Here \(c \gt 0\) and \(C(\RR) \ne \emptyset\) and \(C\) is not <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> over \(\RR\text{.}\)</p>
-<p id="p-354">Alternatively  \(c \lt 0\) and \(C(\RR) = \emptyset\) and \(C\) is <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> over \(\RR\text{.}\)</p>
-<article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Infinite places.</span></h5>
+<p id="p-354">Alternatively  \(c \lt 0\) and \(C(\RR) = \emptyset\) and \(C\) is <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">deficient</a> over \(\RR\text{.}\)</p></article><article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Infinite places.</span></h5>
 <article class="definition-like" id="definition-27"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.48</span>.</h6>
 <p id="p-355">Let \(J/K\) be a jacobian admitting a <a data-knowl="./knowl/def-richelot-isog.html" title="Definition 2.20: Richelot isogenies">Richelot isogeny</a> \(\phi \) over \(K\) for a place of \(K\) such that \(v |  \infty \text{,}\) we denote \(\phi _v\) the map induced by \(\phi \) on \(J(K_v)\) and define</p>
@@ -1602,7 +1601,90 @@ E \colon y^2 = (x+1)(x-p^2)(x+p^2), \,p\gt 3
 \begin{equation*}
 \widetilde E \colon \widetilde y^2 = (\widetilde x+1)\widetilde x^2
 \end{equation*}
-</div></article></article></article></section></section></div></main>
+</div></article></article><aside class="aside-like" id="aside-18"><p id="p-379">Lecture ? 25/4/2018</p></aside><p id="p-380">Missed more sorry</p>
+<article class="remark-like" id="remark-18"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.60</span>.</h6>
+<p id="p-381">We are interested in “good” models, i.e. we require that</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal E (\ZZ)_p = E(\QQ_ p)\text{.}
+\end{equation*}
+</div>
+<p id="p-382">Our model \(\mathcal E /\ZZ\colon  y^2=(x+1)(x-p^2)(x+p^2)\) is proper since \(\mathcal E \subseteq \PP^2_{\ZZ_p}\) so that \(\mathcal E (\ZZ_p) = E(\QQ_p)\) but it is singular since its special fibre is.</p>
+<p id="p-383">We need to manipulate \(\mathcal E/\ZZ_p \colon  y^2 = (x+1)(x-p^2)(x+p^2)\) s.t.</p>
+<ol class="decimal">
+<li id="li-85">\(\mathcal E\) is a model of \(\ZZ_p\text{.}\)</li>
+<li id="li-86">The generic fibre is \(E/\QQ_p\)</li>
+<li id="li-87">Only non-singular points of its special fibre can be lifted to points over \(\QQ_p\) on \(E\)</li>
+</ol>
+<p id="p-384">To satisfy 1 and 2, we can do change of variables of the form</p>
+<div class="displaymath">
+\begin{equation*}
+x=  x_1p,\,y=y_1p,\,x=x_1y,\, p=p_1y,\,y= y_1x, p=p_1x\text{.}
+\end{equation*}
+</div>
+<p id="p-385">We will use only \(y=y_1p\) for now.</p>
+<div class="displaymath" id="p-386">
+\begin{equation*}
+\mathcal C_1 \colon y^2  = (x+p^2)(x-p^2) (x + 1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\widetilde{\mathcal C}_1\colon \tilde y^2  = \tilde x^2 (\tilde x + 1) \simeq \PP^1
+\end{equation*}
+</div>
+<figure class="figure-like" id="figure-6"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-6.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.61.</span> </figcaption></figure><div class="displaymath" id="p-387">
+\begin{equation*}
+\mathcal C_{2,3} \colon y_1^2  = (x_1+p)(x_1-p) (px_1 + 1),\,x=x_1p,\,y=y_1p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\widetilde{ \mathcal C}_{2,3} \colon \tilde y_1^2  = \tilde x_1^2 \simeq \PP^1 \cup \PP^1 \eqqcolon \Gamma _2 \cup \Gamma _3
+\end{equation*}
+</div>
+<div class="displaymath" id="p-388">
+\begin{equation*}
+\mathcal C_{4} \colon y_2^2  = (x_2+1)(x_2-1) (p^2x_2 + 1),\,x_1=x_2p,\,y_1=y_2p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\widetilde {\mathcal C}_{4} \colon \tilde y_2^2  = (\tilde x_2 - 1)(\tilde x_2  + 1)
+\end{equation*}
+</div>
+<p id="p-389">The collection of these charts (together with their counterpart at infinity) give a regular model \(\mathcal E\) of \(E/\QQ_p\text{.}\)</p>
+<p id="p-390">So we have four components, all \(\PP^1\) meeting in a square. (There are still singularities on \(\mathcal E\) at interesection points in the special fibre, but they are regular singularities, i.e. the local ring at these points is regular, i.e. we have \(\ideal m_P/ \ideal m_P^2\) dimension 2.</p>
+<article class="example-like" id="example-14"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.62</span>.</h6>
+<p id="p-391">Let \(a\in \ZZ_p\text{,}\) \(E \colon y^2 = x^3 + a\text{.}\) \(E\) might be singular at \(P = (0,0)\text{,}\) if \(a\equiv  0\pmod p\) then we degenerate to a cusp. The maximal ideal \(\ideal m_P\) of the local ring is generated by \(x,y,p\text{.}\) If \(a\not \equiv 0 \pmod {p^2}\) then \(v(a) = 1\) and \(p \in a\ZZ_p\text{.}\) But \(a = y^2 - x^3\) so, \(p \in (y^2 - x^3)\ZZ_p \subseteq \ideal m_P^2\text{.}\) So \(x,y\) generate \(\ideal m_P/\ideal m_P^2\) and \(P\) is regular. If \(a \equiv 0 \pmod{p^2}\) then \(\ideal m_P/\ideal m_P^2\) cannot be generated by fewer than 3-elements so \(P\) is not regular.</p></article><article class="theorem-like" id="proposition-13"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.63</span>.</h6>
+<p id="p-392">Let \(\mathcal C /\ZZ_p\) be an arithmetic surface and \(C/\QQ_p\) be the generic fibre of \(\mathcal C\text{.}\)</p>
+<ol class="decimal">
+<li id="li-88">If \(\mathcal C\) is proper then \(C(\QQ_p) = \mathcal C(\ZZ_p)\text{.}\)</li>
+<li id="li-89">If \(\mathcal C\) is regular and proper then<div class="displaymath">
+\begin{equation*}
+C(\QQ_p) = \mathcal C(\ZZ_p)  =\mathcal C^0(\ZZ_p)
+\end{equation*}
+</div>
+</li>
+</ol>
+<p>where \(\mathcal C^0 \subseteq \mathcal C = \mathcal C \smallsetminus\) singular points.</p></article><article class="remark-like" id="remark-19"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.64</span>.</h6>
+<p id="p-393">The smooth part of a proper regular arithmetic surface is large enough to contain all of the rational points on the generic fibre.</p></article><article class="definition-like" id="definition-28"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.65</span>.</h6>
+<p id="p-394">The <dfn class="terminology">Neron model</dfn> of \(E/K\) is an arithmetic surface \(\mathcal E/K\) whose generic fibre is the given elliptic curvs. It is such that every point of \(E\) gives a point of \(\mathcal E\) and such that the group law on \(E\) extends to make \(\mathcal E\) into a group (as a scheme over \(R\)).</p></article><article class="remark-like" id="remark-20"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.66</span>.</h6>
+<p id="p-395">Neron models are smooth \(R\)-schemes i.e. for every point \(p\in \Spec (R)\) the fibre is a non-singular variety. However it might have several components and may not be complete. So in general \(\mathcal E\) will not be proper over \(R\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal E/\ZZ_p \colon  y^2 = (x-1)(x-2)(x-3),\,p\gt 3
+\end{equation*}
+</div></article><article class="theorem-like" id="theorem-22"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.67</span>.</h6>
+<p id="p-396">Let \(E/K\) be an elliptic curve, \(\mathcal C/R\) a proper minimal regular model for \(E/K\) and let \(\mathcal E/R\) be the largest subscheme pf \(\mathcal C/R\) which is smooth over \(R\text{.}\) Then \(\mathcal E/R\) is a <a data-knowl="./knowl/def-deficient-place.html" title="Definition 2.46: Deficient places">Neron model</a> for \(E/K\text{.}\)</p></article></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
