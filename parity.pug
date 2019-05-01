@@ -2752,7 +2752,7 @@ section
                 statement: p
                     | Consider an elliptic curve #[m E].
 
-                    | Recall that by Hensels lemma, #[m E_0(K_v) \twoheadrightarrow \widetilde E_{ns}(\FF_{q_v})]
+                    | Recall that by Hensel's lemma, #[m E_0(K_v) \twoheadrightarrow \widetilde E_{ns}(\FF_{q_v})]
                     | let
                     me f(x,y) = y^2 + a_1 xy + a_3y - x^3 - a_2 x^2 - a_4 x - a_6 = 0
                     | be the minimal Weierstraß equation for #[m E].
@@ -2840,7 +2840,7 @@ section
 
         p
             | So we have four components, all #[m \PP^1] meeting in a square.
-            | (There are still singularities on #[m \mathcal E] at interesection points in the special fibre, but they are regular singularities, i.e. the local ring at these points is regular, i.e. we have #[m \ideal m_P/ \ideal m_P^2] dimension 2.
+            | (There are still singularities on #[m \mathcal E] at intersection points in the special fibre, but they are regular singularities, i.e. the local ring at these points is regular, i.e. we have #[m \ideal m_P/ \ideal m_P^2] dimension 2).
 
         example
             statement: p
@@ -2868,9 +2868,10 @@ section
             p
                 | The smooth part of a proper regular arithmetic surface is large enough to contain all of the rational points on the generic fibre.
 
-        definition
+        definition#def-neron-model
+            title Neron models
             statement: p
-                | The #[term Neron model] of #[m E/K] is an arithmetic surface #[m \mathcal E/K] whose generic fibre is the given elliptic curvs.
+                | The #[term Neron model] of #[m E/K] is an arithmetic surface #[m \mathcal E/K] whose generic fibre is the given elliptic curve.
                 | It is such that every point of #[m E] gives a point of #[m \mathcal E] and such that the group law on #[m E] extends to make #[m \mathcal E] into a group (as a scheme over #[m R]).
 
         remark
@@ -2882,3 +2883,154 @@ section
             statement: p
                 | Let #[m E/K] be an elliptic curve, #[m \mathcal C/R] a proper minimal regular model for #[m E/K] and let #[m \mathcal E/R] be the largest subscheme pf #[m \mathcal C/R] which is smooth over #[m R].
                 | Then #[m \mathcal E/R] is a Neron model for #[m E/K].
+
+        aside: p Lecture ? 30/4/2018
+
+        p
+            | Recall we need to compute #[m |E(\QQ_p)/E_0(\QQ_p)|] and we considered the example
+            me E/\QQ_p\colon  y^2 = x(x-p^2)(x+p^2)
+            |.
+
+        p
+            me \overline{ \mathcal C}_{1} \colon \tilde y^2  = \tilde x + 1 \eqqcolon \Gamma _2 \cup \Gamma _1
+            me \overline{ \mathcal C}_{2,3} \colon \tilde y_1^2  = \tilde x_1^2 \simeq \PP^1 \cup \PP^1 \eqqcolon \Gamma _2 \cup \Gamma _3
+        p
+            me \overline {\mathcal C}_{4} \colon \tilde y_2^2  = (\tilde x_2 - 1)(\tilde x_2  + 1)
+
+        p
+            | Write #[m \mathcal E^0] for #[m \mathcal E \smallsetminus \{\text{singularities in special fibre}\}] then
+            me \mathcal E(\ZZ_p) = \mathcal E^0(\ZZ_p) = E(\QQ_p)
+            | .
+        p
+            | We saw that the Neron model of #[m E/\QQ_p] can be obtained from #[m \mathcal E/\ZZ_p] be removing the singularities in the special fibres.
+
+        proposition
+            statement: p
+                me E(\QQ_p) / E_0(\QQ_p) \simeq \mathcal E(\ZZ_p)/\mathcal E^0(\ZZ_p) \hookrightarrow \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline \FF_p)\right)^{\absgal {\FF_p}}
+                | #[m \mathcal E] is the Neron model of #[m E/\QQ_p], and  #[m \mathcal E^0/\ZZ_p] denotes the identity component of #[m \mathcal E/\ZZ_p].
+                | #[m \overline{\mathcal E} /\FF_p] denotes the special fibre of #[m \mathcal E].
+                | #[m \overline{\mathcal E}^0/\FF_p] is the identity component of #[m \overline{\mathcal E}/\FF_p].
+
+        p
+            | In our case the Tamagawa number is
+            me c_p = \left| \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline {\FF_p})\right)^{\absgal {\FF_p}}\right| = 4
+
+        p
+            | To actually calculate this use Tate's algorithm.
+
+    subsection
+        title Jacobians of hyperelliptic curves
+
+        p
+            | Let #[m A/\QQ_p] be such a Jacobian.
+            | #[m A] admits a Neron model #[m \mathcal A/\ZZ_p].
+            | The open subscheme whose special fibre is the connected component of the identity #[m \widetilde {\mathcal A}^0].
+
+        p
+            | As for an elliptic curve write #[m A_0(\QQ_p)] for the points reducing to #[m \widetilde {\mathcal A}^0(\FF_p)], then
+            me A(\QQ_p)/A_0(\QQ_p)
+            | is finite and
+            me  c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\overline \FF_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right)^{\absgal {\FF_p}}\right| = 4
+            | .
+        p
+            | How to compute #[m c_p]?
+        theorem
+            statement
+                p
+                    | Let #[m C/\QQ_p] be a smooth proper, geometrically connected curve, let #[m \mathcal C/\ZZ_p] be the minimal regular model for #[m C], #[m J/\QQ_p] its jacobian, #[m \mathcal A/\ZZ_p] the Neron model for #[m J].
+                p
+                    | If #[m \mathcal J/\QQ_p] is semistable (ordinary double roots as singularities) then
+                    me \widetilde{\mathcal A}^0/ {\FF}_p = \Pic^0(\overline {\mathcal C})
+                    | as a consequence
+                    me \left| \widetilde {\mathcal A}(\overline {\FF}_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right| = |\det M | \times \text{correction term}
+                    | .
+                    | Where #[m M] is any minor of the incidence matrix #[m N_{ij}] of
+                    me \overline{\mathcal C}/ \overline{\FF}_p
+                    | .
+                    | #[m N_{ij}] is the size of the intersection of #[m \Gamma _i, \Gamma _j] for the irreducible components #[m \Gamma ] of #[m \overline{ \mathcal C}/\overline{\FF_p}].
+
+        example
+            statement: p
+                me.
+                    N_{ij} = \begin{pmatrix}
+                    -2 \amp 1 \amp 0 \amp 1 \\
+                    1 \amp -2 \amp 1 \amp 0 \\
+                    0 \amp 1 \amp -2 \amp 1 \\
+                    1 \amp 0 \amp 1 \amp -2 \\
+                    \end{pmatrix}
+                me.
+                    M = \begin{pmatrix}
+                    -2 \amp 1 \amp 0  \\
+                    1 \amp -2 \amp 1  \\
+                    0 \amp 1 \amp -2  \\
+                    \end{pmatrix}
+                me \det(M) = -4
+                | . In order to compute #[m c_p] for #[m J] need to construct special fibre of minimal regular model for #[m C].
+
+        p
+            | Namikawa-Ueno classification of types of semistable reductions of genus 2 curves.
+
+        ol
+            li
+                | Good reduction: #[m g = 2]
+            li
+                | One node.
+            li
+                | Two nodes.
+            li
+                | Three nodes.
+            li
+                | One cusp (triple root).
+            li
+                | Two cusps (triple root).
+
+        paragraphs
+            title Cassels-Tate pairing (Maria)
+
+            claim
+                statement: p
+                    | #[m K] number field and #[m A/K] a.v. admits a principal polarization #[m \phi _D] given by a rational divisor.
+                    | Then the Cassels-Tate pairing
+                    me \pair \cdot \cdot_{\phi _D} \colon \Sha(A) \times \Sha(A) \to \QQ/\ZZ
+                    | is alternating.
+                proof
+                    p
+                        me \phi _D \colon A\to A^\vee \simeq \Pic^0(A)
+                        | by sending #[m a\in A(K^\sep)], #[m \phi _D(a) = \lb D_a-  D\rb], where #[m D_a= D+a] is the translate of #[m D] by #[m a].
+
+                    p
+                        | Assume #[m D] is a rational divisor, what we'll prove is that #[m \pair a{\phi _D(a)} = 0] for all #[m a \in A].
+                        | Where
+                        me \pair \cdot \cdot \colon \Sha(A) \times \Sha(A^\vee) \to \QQ/\ZZ
+                    p
+                        | Fix #[m a \in \Sha(A,K) \subseteq H^1(G_K, A)] and let #[m X] be the corresponding PHS of #[m A].
+                        | Then for any #[m P \in X(K^\sep)], #[m a] is represented by the cocycle
+                        me \alpha (\sigma )\colon G_K \to A
+                        me \sigma  \mapsto \sigma  (P) - P
+                        |.
+                    p
+                        | Denote #[m a' = \phi _D(a)].
+                        | Then  #[m a'] is represented by
+                        me \alpha '(\sigma ) \colon G_K \to A^\vee = \Pic^0(A)
+                        me \sigma \mapsto [D_{\alpha (\sigma )} - D]
+                        | this lifts to
+                        me \beta \colon  G_K\to \Div^0(A)
+                        me \sigma \mapsto D_{\alpha (\sigma )} - D
+                        | , which is a cocycle:
+                        me \beta (\sigma \tau ) = \beta (\sigma ) + \sigma \beta (\tau )
+                        me \beta (\sigma \tau ) = D_{\alpha (\sigma \tau ) } - D = D_{\alpha (\sigma ) + \sigma \alpha (\tau )} - D = D_{\alpha (\sigma )} - D = D_{\alpha (\sigma )} - D + D_{\sigma \alpha (\tau )} - D
+                        me =  D_{\alpha (\sigma )} - D + \sigma (D_{\alpha (\tau )} - D) = \beta (\sigma  ) + \sigma (\beta (\tau ))
+                        | using #[m K]-rationality of #[m D].
+
+                    p
+                        | Using
+                        me A\otimes K^\sep \xrightarrow\sim X\otimes K^\sep
+                        me Q\mapsto P + Q
+                        | we can regard
+                        me \alpha '\colon G_K \to \Pic^0(X)
+                        me \beta  '\colon G_K \to \Div^0(X)
+                        | now use
+                        me H^1(G_K, \Div^0(X\otimes K^\sep)) \to H^1(G_K, \Pic^0(X\otimes K^\sep)) \to H^2(G_K, K^\sep(X)^\times/K^{\sep, \times})
+                        me b = (\beta ) \mapsfrom a' = (\alpha ') \mapsto 0
+                    p
+                        | Big diagram to conclude.

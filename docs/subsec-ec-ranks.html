@@ -301,6 +301,7 @@ var js_version = 0.11;
 <a href="section-2.html" data-scroll="section-2"><span class="codenumber">2</span> <span class="title">Abelian varieties</span></a><ul>
 <li><a href="section-2.html#subsection-4" data-scroll="subsection-4">Review of hyperelliptic curves and Jacobians</a></li>
 <li><a href="section-2.html#subsection-5" data-scroll="subsection-5">Richelot isogenies and the Richelot construction</a></li>
+<li><a href="section-2.html#subsection-6" data-scroll="subsection-6">Jacobians of hyperelliptic curves</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/parity/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -323,7 +324,7 @@ E(K) \simeq E(K)_{\text{tors}} \oplus \ZZ^r\text{.}
 <ol class="decimal">
 <li id="li-23">Understand the proof of Mordell-Weil</li>
 <li id="li-24">See where it is non-effective.</li>
-<li id="li-25">From the proof, extract a strategy to sometimes compute the rank (define Selmer groups, <a data-knowl="./knowl/def-sha.html" title="Definition 1.32: The Shafarevich-Tate group">Shafarevich-Tate</a> group).</li>
+<li id="li-25">From the proof, extract a strategy to sometimes compute the rank (define Selmer groups, Shafarevich-Tate group).</li>
 </ol>
 <article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="title">Outline proof of Mordell-Weil.</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-16">Part 1: Prove that</p>
 <div class="displaymath">
@@ -577,7 +578,7 @@ P,\sigma \mapsto Q^\sigma - Q
 <p>where \(Q\) is a choice of point in \(E(\overline K)\) such that \(mQ = P\text{.}\)</p></article><article class="theorem-like" id="proposition-1"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.7</span>.</h6>
 <p id="p-35">\(\kappa\) is well defined, bilinear, the kernel in the first argument is \(m E(K)\) and in the second argument is \(G_{\overline K/L}\) where \(L = K(\lb m \rb \inv E(K))\) is the compositum of all fields \(\kappa(x(Q), y(Q))\) as \(Q\) ranges over all the points of \(E(\overline K)\) s.t. \(m Q \in E(K)\text{.}\)</p>
-<p id="p-36">Hence the <a data-knowl="./knowl/def-kummer-pair.html" title="Definition 1.6: The Kummer pairing">Kummer pairing</a> induces a perfect bilinear pairing</p>
+<p id="p-36">Hence the Kummer pairing induces a perfect bilinear pairing</p>
 <div class="displaymath">
 \begin{equation*}
 E(K)/ m E(K) \times G_{L/K} \to E\lb m \rb
@@ -1245,11 +1246,11 @@ PHS \leftrightarrow H^1(G_K, E(\overline K))
 <article class="definition-like" id="def-twist-curve"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.20</span>. <span class="title">Twists of curves.</span>
 </h6>
-<p id="p-67">A <dfn class="terminology">twist</dfn> of \(C/K\) is a smooth curve \(C'/K\) that is isomorphic to \(C\) over \(\overline K\text{.}\)</p></article><p id="p-68">If \(C_1, C_2\) are <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twists</a> of \(C/K\) and \(C_1\simeq_K C_2\) then we say that \(C_1\) and \(C_2\) are equivalent modulo \(K\)-isomorphism.</p>
-<p id="p-69">We denote \(\operatorname{Twist}(C/K)\) - the set of <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twists</a> of \(C/K\) modulo \(K\)-isomorphism.</p>
+<p id="p-67">A <dfn class="terminology">twist</dfn> of \(C/K\) is a smooth curve \(C'/K\) that is isomorphic to \(C\) over \(\overline K\text{.}\)</p></article><p id="p-68">If \(C_1, C_2\) are twists of \(C/K\) and \(C_1\simeq_K C_2\) then we say that \(C_1\) and \(C_2\) are equivalent modulo \(K\)-isomorphism.</p>
+<p id="p-69">We denote \(\operatorname{Twist}(C/K)\) - the set of twists of \(C/K\) modulo \(K\)-isomorphism.</p>
 <article class="theorem-like" id="theorem-5"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.21</span>.</h6>
-<p id="p-70">The <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twists</a> of \(C/K\) up to \(K\)-isomorphism are in 1-1 correspondence with elements of</p>
+<p id="p-70">The twists of \(C/K\) up to \(K\)-isomorphism are in 1-1 correspondence with elements of</p>
 <div class="displaymath">
 \begin{equation*}
 H^1(G_K, \operatorname{Isom}(C))
@@ -1260,7 +1261,7 @@ H^1(G_K, \operatorname{Isom}(C))
 \begin{equation*}
 \operatorname{Isom}(C) = \{\overline K\text{-isomorphisms } C\to C\}\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-71">Let \(C'/K\) be a <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twist</a> of \(C/K\) then there exists an isomorphism \(/\overline K\)</p>
+</div></article><article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-71">Let \(C'/K\) be a twist of \(C/K\) then there exists an isomorphism \(/\overline K\)</p>
 <div class="displaymath">
 \begin{equation*}
 \phi\colon C' \to C
@@ -1346,7 +1347,7 @@ K(\sqrt d)
 \sigma \mapsto [\chi (\sigma)]\text{.}
 \end{equation*}
 </div>
-<p>Let  \(C/K\) be the corresponding <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twist</a> of \(E/K\text{,}\) we find an equation for \(C/K\text{.}\) Choose</p>
+<p>Let  \(C/K\) be the corresponding twist of \(E/K\text{,}\) we find an equation for \(C/K\text{.}\) Choose</p>
 <div class="displaymath">
 \begin{equation*}
 y^2 = f(x) \text{ for } E/K
@@ -1442,7 +1443,7 @@ P \mapsto \underbrace{p_0 + P}_{\mu(p_0, P)}\text{.}
 \end{equation*}
 </div>
 <ol class="decimal">
-<li id="li-47">\(\theta\) is an isomorphism over \(K(p_0)\text{.}\) In particular  \(C/K\) is a <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twist</a> of \(E/K\text{.}\)</li>
+<li id="li-47">\(\theta\) is an isomorphism over \(K(p_0)\text{.}\) In particular  \(C/K\) is a twist of \(E/K\text{.}\)</li>
 <li id="li-48">\(\forall p,q \in C\)<div class="displaymath">
 \begin{equation*}
 q- p = \theta\inv(q) - \theta \inv (p)\text{.}
@@ -1658,7 +1659,7 @@ C \colon dw^2 = d^2 - 2a dz^2 + (a^2 - 4b) z^4\text{.}
 \end{equation*}
 </div>
 <ul class="disc">
-<li id="li-50">Prove that \(\phi \) is an isomorphism so \(C\) is a <a data-knowl="./knowl/def-twist-curve.html" title="Definition 1.20: Twists of curves">twist</a>.</li>
+<li id="li-50">Prove that \(\phi \) is an isomorphism so \(C\) is a twist.</li>
 <li id="li-51">\(C\) is the PHS corresponding to \(\{\xi\}\text{.}\) Take \(p \in C \) and compute<div class="displaymath">
 \begin{equation*}
 \sigma\mapsto p^\sigma - p = \phi\inv(p^\sigma) - \phi\inv (p)
@@ -1826,14 +1827,14 @@ L^*(E,s) =  w L^*(E, 2-s)
 <p>a conjecture based on conjecture is bad so we go one step further.</p>
 <article class="theorem-like" id="theorem-8"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.36</span>.</h6>
-<p id="p-112">The sign in the functional equation of \(L(E,s)\) is equal to the global <a data-knowl="./knowl/def-root-num-wd.html" title="Definition 2.39: Root numbers">root number</a> of \(E\text{.}\)</p>
+<p id="p-112">The sign in the functional equation of \(L(E,s)\) is equal to the global root number of \(E\text{.}\)</p>
 <p id="p-113">This is defined by</p>
 <div class="displaymath">
 \begin{equation*}
 w_\infty \prod_p w_p\text{,}
 \end{equation*}
 </div>
-<p>the local <a data-knowl="./knowl/def-root-num-wd.html" title="Definition 2.39: Root numbers">root numbers</a> defined in terms of the local galois representations. Non-trivial to understand, but manageable.</p></article><article class="theorem-like" id="conjecture-1"><h6 class="heading">
+<p>the local root numbers defined in terms of the local galois representations. Non-trivial to understand, but manageable.</p></article><article class="theorem-like" id="conjecture-1"><h6 class="heading">
 <span class="type">Conjecture</span> <span class="codenumber">1.37</span>. <span class="title">Parity conjecture.</span>
 </h6>
 <div class="displaymath" id="p-114">
@@ -2067,7 +2068,7 @@ p^{\rk_p(E/K)} \equiv \frac{Q(\Psi^\vee)}{Q(\Psi)} \equiv \frac{\prod_v c_p}{\pr
 \begin{equation*}
 p^{\rk_p(E/K)} \equiv \frac{Q(\Psi)}{Q(\Psi^\vee)} \equiv \frac{\prod_v c_p}{\prod_v c'_v} \frac{\Omega_E}{\Omega_{E'}} \pmod {{K^\times}^2}
 \end{equation*}
-</div></article><p id="p-139">We will show this in 3 parts, first the left, then the right, then the equality with the global <a data-knowl="./knowl/def-root-num-wd.html" title="Definition 2.39: Root numbers">root number</a>.</p>
+</div></article><p id="p-139">We will show this in 3 parts, first the left, then the right, then the equality with the global root number.</p>
 <article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Step 1.</span></h5>
 <article class="theorem-like" id="proposition-5"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">1.47</span>.</h6>
@@ -2362,7 +2363,7 @@ T \mapsto aT + \cdots
 <p>and \(w_v\) at \(v | \infty\text{.}\)</p>
 <p id="p-161">We only sketch these steps for \(v\nmid p\) and \(E \) is semistable at \(v\text{.}\)</p>
 <p id="p-162">The proofs of \(p\)-parity for \(p\) odd and \(p= 2\) are different.</p></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">\(p\) odd.</span></h5>
-<p id="p-163">The \(p\)-parity conjecture is proven for principally polarized abelian varieties with  a \(p\)-cyclic isogeny with \(p \ge 2g +2 \) or \(p \ge 2\) and semistable reduction and some local constraints at \(v|p\text{.}\) see <a data-knowl="./knowl/def-root-num-wd.html" title="Definition 2.39: Root numbers">Root numbers</a> selmer groups and non-commutative Iwasawa theory, Coates, Fukaya, Kato, Sujatha</p>
+<p id="p-163">The \(p\)-parity conjecture is proven for principally polarized abelian varieties with  a \(p\)-cyclic isogeny with \(p \ge 2g +2 \) or \(p \ge 2\) and semistable reduction and some local constraints at \(v|p\text{.}\) see Root numbers selmer groups and non-commutative Iwasawa theory, Coates, Fukaya, Kato, Sujatha</p>
 <p id="p-164">Sketch, for an elliptic curve with a \(p\)-isogeny \(\psi\) we look at \(v|\infty\) where \(w_v = -1\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><div class="displaymath">
+\begin{equation*}
+\phi _D \colon A\to A^\vee \simeq \Pic^0(A)
+\end{equation*}
+</div>
+<p>by sending \(a\in A(K^\sep)\text{,}\) \(\phi _D(a) = \lb D_a-  D\rb\text{,}\) where \(D_a= D+a\) is the translate of \(D\) by \(a\text{.}\)</p>
+<p>Assume \(D\) is a rational divisor, what we'll prove is that \(\pair a{\phi _D(a)} = 0\) for all \(a \in A\text{.}\) Where</p>
+<div class="displaymath">
+\begin{equation*}
+\pair \cdot \cdot \colon \Sha(A) \times \Sha(A^\vee) \to \QQ/\ZZ
+\end{equation*}
+</div>
+<p>Fix \(a \in \Sha(A,K) \subseteq H^1(G_K, A)\) and let \(X\) be the corresponding PHS of \(A\text{.}\) Then for any \(P \in X(K^\sep)\text{,}\) \(a\) is represented by the cocycle</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha (\sigma )\colon G_K \to A
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma  \mapsto \sigma  (P) - P\text{.}
+\end{equation*}
+</div>
+<p>Denote \(a' = \phi _D(a)\text{.}\) Then  \(a'\) is represented by</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha '(\sigma ) \colon G_K \to A^\vee = \Pic^0(A)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma \mapsto [D_{\alpha (\sigma )} - D]
+\end{equation*}
+</div>
+<p>this lifts to</p>
+<div class="displaymath">
+\begin{equation*}
+\beta \colon  G_K\to \Div^0(A)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\sigma \mapsto D_{\alpha (\sigma )} - D\text{,}
+\end{equation*}
+</div>
+<p>which is a cocycle:</p>
+<div class="displaymath">
+\begin{equation*}
+\beta (\sigma \tau ) = \beta (\sigma ) + \sigma \beta (\tau )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta (\sigma \tau ) = D_{\alpha (\sigma \tau ) } - D = D_{\alpha (\sigma ) + \sigma \alpha (\tau )} - D = D_{\alpha (\sigma )} - D = D_{\alpha (\sigma )} - D + D_{\sigma \alpha (\tau )} - D
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  D_{\alpha (\sigma )} - D + \sigma (D_{\alpha (\tau )} - D) = \beta (\sigma  ) + \sigma (\beta (\tau ))
+\end{equation*}
+</div>
+<p>using \(K\)-rationality of \(D\text{.}\)</p>
+<p>Using</p>
+<div class="displaymath">
+\begin{equation*}
+A\otimes K^\sep \xrightarrow\sim X\otimes K^\sep
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Q\mapsto P + Q
+\end{equation*}
+</div>
+<p>we can regard</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha '\colon G_K \to \Pic^0(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\beta  '\colon G_K \to \Div^0(X)
+\end{equation*}
+</div>
+<p>now use</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_K, \Div^0(X\otimes K^\sep)) \to H^1(G_K, \Pic^0(X\otimes K^\sep)) \to H^2(G_K, K^\sep(X)^\times/K^{\sep, \times})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+b = (\beta ) \mapsfrom a' = (\alpha ') \mapsto 0
+\end{equation*}
+</div>
+<p>Big diagram to conclude.</p></article></body>
+</html>
