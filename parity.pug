@@ -1327,7 +1327,8 @@ section#subsec-ec-ranks
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g13realroot,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.003;
@@ -1445,7 +1446,8 @@ section#subsec-ec-ranks
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g1nonsymm,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.003;
@@ -1864,7 +1866,8 @@ section
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g2addition,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.003;
@@ -2564,7 +2567,8 @@ section
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g2notdef,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.003;
@@ -2630,7 +2634,8 @@ section
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g2realcomp1,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.002;
@@ -2651,7 +2656,8 @@ section
                         \addplot +[no markers,
                           raw gnuplot,
                           thick,
-                          empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                          id = g2realcomp2,
                           ] gnuplot {
                           set contour base;
                           set cntrparam levels discrete 0.002;
@@ -2813,7 +2819,8 @@ section
                     \addplot +[no markers,
                       raw gnuplot,
                       thick,
-                      empty line = jump % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                      empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                      id = g1node,
                       ] gnuplot {
                       set contour base;
                       set cntrparam levels discrete 0.002;
@@ -2906,14 +2913,14 @@ section
 
         proposition
             statement: p
-                me E(\QQ_p) / E_0(\QQ_p) \simeq \mathcal E(\ZZ_p)/\mathcal E^0(\ZZ_p) \hookrightarrow \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline \FF_p)\right)^{\absgal {\FF_p}}
+                me E(\QQ_p) / E_0(\QQ_p) \simeq \mathcal E(\ZZ_p)/\mathcal E^0(\ZZ_p) \hookrightarrow \left(\overline {\mathcal E}(\overline \FF_p)\middle/ \overline{\mathcal E}^0(\overline \FF_p)\right)^{\absgal {\FF_p}}
                 | #[m \mathcal E] is the Neron model of #[m E/\QQ_p], and  #[m \mathcal E^0/\ZZ_p] denotes the identity component of #[m \mathcal E/\ZZ_p].
                 | #[m \overline{\mathcal E} /\FF_p] denotes the special fibre of #[m \mathcal E].
                 | #[m \overline{\mathcal E}^0/\FF_p] is the identity component of #[m \overline{\mathcal E}/\FF_p].
 
         p
             | In our case the Tamagawa number is
-            me c_p = \left| \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline {\FF_p})\right)^{\absgal {\FF_p}}\right| = 4
+            me c_p = \left| \left(\overline {\mathcal E}(\overline \FF_p)\middle/ \overline{\mathcal E}^0(\overline {\FF_p})\right)^{\absgal {\FF_p}}\right| = 4
 
         p
             | To actually calculate this use Tate's algorithm.
@@ -2930,7 +2937,7 @@ section
             | As for an elliptic curve write #[m A_0(\QQ_p)] for the points reducing to #[m \widetilde {\mathcal A}^0(\FF_p)], then
             me A(\QQ_p)/A_0(\QQ_p)
             | is finite and
-            me  c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\overline \FF_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right)^{\absgal {\FF_p}}\right| = 4
+            me  c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\overline \FF_p)\middle/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right)^{\absgal {\FF_p}}\right| = 4
             | .
         p
             | How to compute #[m c_p]?
@@ -2942,7 +2949,7 @@ section
                     | If #[m \mathcal J/\QQ_p] is semistable (ordinary double roots as singularities) then
                     me \widetilde{\mathcal A}^0/ {\FF}_p = \Pic^0(\overline {\mathcal C})
                     | as a consequence
-                    me \left| \widetilde {\mathcal A}(\overline {\FF}_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right| = |\det M | \times \text{correction term}
+                    me \left| \widetilde {\mathcal A}(\overline {\FF}_p)\middle/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right| = |\det M | \times \text{correction term}
                     | .
                     | Where #[m M] is any minor of the incidence matrix #[m N_{ij}] of
                     me \overline{\mathcal C}/ \overline{\FF}_p
@@ -3034,3 +3041,222 @@ section
                         me b = (\beta ) \mapsfrom a' = (\alpha ') \mapsto 0
                     p
                         | Big diagram to conclude.
+
+
+
+    subsection
+        title Semistable models of hyperelliptic curves of genus 2
+
+        aside: p Lecture ? 1/5/2018
+
+        p
+            | Recall: Can compute Tamagawa numbers of semistable Jacobians of genus 2 curves from the special fibre of their minimal regular models (i.e. there exists a formula for them.
+        definition
+            statement: p
+                | A model is semistable if its special fibre is geometrically reduced and has only ordinary double points as singularities.
+                | When such a model exists over #[m K] we say that the curve is semistable over #[m K].
+                | Or has semistable reduction #[m /K].
+
+
+        example
+            statement
+                p
+                    | #[m p \ge 7] and
+                    me C\colon y^2  = (x-p^2)(x+p^2)(x-1)(x-2)(x-3)(x-4)
+                    | a node
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                            \begin{axis}[hide axis]
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              id = g2node,
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - x^2*(x - 1)*(x-2)*(x-3)*(x-4);
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+                p
+                    | Have 1 genus 1 component meeting 3 genus 0 in a square on the special fibre of minimal regular model
+
+        example
+            statement
+                p
+                    | #[m p \ge 7] and
+                    me C\colon y^2  = (x-p^2)(x+p^2)(x-1- p^2)(x-1+p^2)(x-3)(x-4)
+                    | two nodes.
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                            \begin{axis}[hide axis]
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              id = g2twonode,
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - x^2*(x - 1)^2*(x-3)*(x-4);
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+                p
+                    | Have 7 genus 0 components meeting in a pair of squares with one common line.
+
+
+        example
+            statement
+                p
+                    | #[m p \ge 7] and
+                    me C\colon y^2  = (x-p^2)(x+p^2)(x-1- p^2)(x-1+p^2)(x-2+p^2)(x-2-p^2)
+                    | two nodes.
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                            \begin{axis}[hide axis]
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              id = g2threenode,
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - x^2*(x - 1)^2*(x-3)^2;
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+                p
+                    | Have 8 genus 0 components, two non-intersecting lines joined by 3 chains of two #[m \PP^1]s.
+
+        example
+            statement
+                p
+                    | #[m p \ge 7] and
+                    me C\colon y^2  = (x-p^2)(x-2p^2)(x-3p^2)(x-4)(x-5)(x-6)
+                    | a cusp.
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                            \begin{axis}[hide axis]
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              id = g2cusp,
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - x^3*(x - 1)*(x-2)*(x-3);
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+                p
+                    | Have 2 genus 1 components meeting.
+
+        example
+            statement
+                p
+                    | #[m p \ge 7] and
+                    me C\colon y^2  = (x-p^2)(x-2p^2)(x-3p^2)(x-1-4p^2)(x-1-5p^2)(x-1-6p^2)
+                    | two cusps.
+                figure
+                    caption/
+                    image: latex-image.
+                        \begin{tikzpicture}
+                            \begin{axis}[hide axis]
+                            \addplot +[no markers,
+                              raw gnuplot,
+                              thick,
+                              empty line = jump, % not strictly necessary, as this is the default behaviour in the development version of PGFPlots
+                              id = g2twocusp,
+                              ] gnuplot {
+                              set contour base;
+                              set cntrparam levels discrete 0.002;
+                              unset surface;
+                              unset border;
+                              unset xtics;
+                              unset ytics;
+                              set view map;
+                              set samples 900;
+                              set isosamples 900;
+                              splot y^2 - x^3*(x - 1)^3;
+                            };
+                          \end{axis}
+                        \end{tikzpicture}
+                p
+                    | Have 2 genus 1 components  joined by a #[m \PP^1].
+
+        paragraphs
+            title Places of #[m K] above #[m 2]
+            p
+                | Here it is very difficult to compute a minimal regular model for #[m C], hence can't compute the Tamagawa numbers.
+
+            p
+                | One way around  is to use the definition of the local contribution
+                me (-1)^{\ord_2 \left| \frac{\coker \phi_v}{\ker \phi_v}\right|}
+                |.
+            proposition
+                statement: p
+                    | Consider the family
+                    me \mathcal F\colon y^2 = (x^2 - (4t_1)^2)(x^2 + t_2 x + t_3)(x^2 + t_4 x + t_5)
+                    | such that #[m t_i \in \ints_K], #[m t_2 \equiv  1 \pmod 2], #[m t_3 - \frac 14 \equiv 0 \pmod 2], #[m t_4 \equiv  - 2 \pmod 8], #[m t_5 \equiv 1 \pmod 8].
+                    | Then #[m C \in \mathcal F] has totally split toric reduction, and assuming that #[m G_2(x),G_3(x)] are both irreducible over #[m K_v] then
+                    me (-1)^{\ord_2 \left| \frac{\coker \phi_v}{\ker \phi_v}\right|}   =1
+                    | .
+
+            p
+                | So combining #[m v | \infty ], #[m v\nmid 2\infty ], #[m v | 2] if #[m C \in \mathcal F] over #[m K_v] for #[m v| 2] and semistable at #[m v \nmid 2\infty ] with #[m C] a Richelot curve then we can compute the parity of the #[m \rk_2(J)].
+
+            example
+                statement: p
+                    me C \colon  y^2 =(x^2 - 16)(x^2 + x + \frac{17}{4} ) (x^2 -2x  + 9)
+                    me C/\RR \implies (-1)^{\ord_2|n(J) m_\RR / n(J')/ m'_\RR |\ker \phi |  | }= (-1)^{\ord_2(1\cdot 1 / 4 \cdot 4  \cdot 1)} = 1
+                    | have #[m C/\QQ_p] for #[m p = 3,5,11,13, 17, 97, 1201] and #[m p = 131] is good reduction for #[m C] but not for #[m C'].
+                    | For #[m  p =3,17] have #[m c_p=2, m_p=1].
+                    | For #[m  p =5, 11, 13, 97, 1201] have similar with non-split nodes.
+                    | #[m p =131] have #[m c_p = 1,m_p = 1], #[m c'_p = 1, m'_p =2]. Two e.c.s swapped.
+                    me (-1)^{\ord_2\left( \frac {c_p}{c'_p} \frac{m_p}{m'_p}\right)} =  -1
+                    | for #[m   p = 2]
+                    me (-1)^{\ord_2\left( \frac {\coker(\phi _2)}{\ker \phi _2}\right)} =  1
+                    | hence
+                    me (-1)^{\rk_2(J)} = \prod_v (-1)^{\ord_2\left( \frac {\coker(\phi _v)}{\ker \phi _v}\right)} =  1
+                    | so #[m J] has even #[m \rk_2(J)].
+

@@ -302,6 +302,7 @@ var js_version = 0.11;
 <li><a href="section-2.html#subsection-4" data-scroll="subsection-4">Review of hyperelliptic curves and Jacobians</a></li>
 <li><a href="section-2.html#subsection-5" data-scroll="subsection-5">Richelot isogenies and the Richelot construction</a></li>
 <li><a href="section-2.html#subsection-6" data-scroll="subsection-6">Jacobians of hyperelliptic curves</a></li>
+<li><a href="section-2.html#subsection-7" data-scroll="subsection-7">Semistable models of hyperelliptic curves of genus 2</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/parity/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -1716,13 +1717,13 @@ E/\QQ_p\colon  y^2 = x(x-p^2)(x+p^2)\text{.}
 <span class="type">Proposition</span> <span class="codenumber">2.68</span>.</h6>
 <div class="displaymath" id="p-403">
 \begin{equation*}
-E(\QQ_p) / E_0(\QQ_p) \simeq \mathcal E(\ZZ_p)/\mathcal E^0(\ZZ_p) \hookrightarrow \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline \FF_p)\right)^{\absgal {\FF_p}}
+E(\QQ_p) / E_0(\QQ_p) \simeq \mathcal E(\ZZ_p)/\mathcal E^0(\ZZ_p) \hookrightarrow \left(\overline {\mathcal E}(\overline \FF_p)\middle/ \overline{\mathcal E}^0(\overline \FF_p)\right)^{\absgal {\FF_p}}
 \end{equation*}
 </div>
 <p>\(\mathcal E\) is the Neron model of \(E/\QQ_p\text{,}\) and  \(\mathcal E^0/\ZZ_p\) denotes the identity component of \(\mathcal E/\ZZ_p\text{.}\) \(\overline{\mathcal E} /\FF_p\) denotes the special fibre of \(\mathcal E\text{.}\) \(\overline{\mathcal E}^0/\FF_p\) is the identity component of \(\overline{\mathcal E}/\FF_p\text{.}\)</p></article><p id="p-404">In our case the Tamagawa number is</p>
 <div class="displaymath">
 \begin{equation*}
-c_p = \left| \left(\overline {\mathcal E}(\overline \FF_p)/ \overline{\mathcal E}^0(\overline {\FF_p})\right)^{\absgal {\FF_p}}\right| = 4
+c_p = \left| \left(\overline {\mathcal E}(\overline \FF_p)\middle/ \overline{\mathcal E}^0(\overline {\FF_p})\right)^{\absgal {\FF_p}}\right| = 4
 \end{equation*}
 </div>
 <p id="p-405">To actually calculate this use Tate's algorithm.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
@@ -1738,7 +1739,7 @@ A(\QQ_p)/A_0(\QQ_p)
 <p>is finite and</p>
 <div class="displaymath">
 \begin{equation*}
-c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\overline \FF_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right)^{\absgal {\FF_p}}\right| = 4\text{.}
+c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\overline \FF_p)\middle/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right)^{\absgal {\FF_p}}\right| = 4\text{.}
 \end{equation*}
 </div>
 <p id="p-408">How to compute \(c_p\text{?}\)</p>
@@ -1754,7 +1755,7 @@ c_p(A/\QQ_p) = |A(\QQ_p)/A_0(\QQ_p)| = \left| \left(\widetilde {\mathcal A}(\ove
 <p>as a consequence</p>
 <div class="displaymath">
 \begin{equation*}
-\left| \widetilde {\mathcal A}(\overline {\FF}_p)/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right| = |\det M | \times \text{correction term}\text{.}
+\left| \widetilde {\mathcal A}(\overline {\FF}_p)\middle/ \widetilde{\mathcal A}^0(\overline {\FF}_p)\right| = |\det M | \times \text{correction term}\text{.}
 \end{equation*}
 </div>
 <p>Where \(M\) is any minor of the incidence matrix \(N_{ij}\) of</p>
@@ -1902,7 +1903,115 @@ H^1(G_K, \Div^0(X\otimes K^\sep)) \to H^1(G_K, \Pic^0(X\otimes K^\sep)) \to H^2(
 b = (\beta ) \mapsfrom a' = (\alpha ') \mapsto 0
 \end{equation*}
 </div>
-<p id="p-419">Big diagram to conclude.</p></article></div></article></section></section></div></main>
+<p id="p-419">Big diagram to conclude.</p></article></div></article></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4</span> <span class="title">Semistable models of hyperelliptic curves of genus 2</span>
+</h3>
+<aside class="aside-like" id="aside-20"><p id="p-420">Lecture ? 1/5/2018</p></aside><p id="p-421">Recall: Can compute Tamagawa numbers of semistable Jacobians of genus 2 curves from the special fibre of their minimal regular models (i.e. there exists a formula for them.</p>
+<article class="definition-like" id="definition-29"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.72</span>.</h6>
+<p id="p-422">A model is semistable if its special fibre is geometrically reduced and has only ordinary double points as singularities. When such a model exists over \(K\) we say that the curve is semistable over \(K\text{.}\) Or has semistable reduction \(/K\text{.}\)</p></article><article class="example-like" id="example-16"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.73</span>.</h6>
+<p id="p-423">\(p \ge 7\) and</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2  = (x-p^2)(x+p^2)(x-1)(x-2)(x-3)(x-4)
+\end{equation*}
+</div>
+<p>a node</p>
+<figure class="figure-like" id="figure-7"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-7.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.74.</span> </figcaption></figure><p id="p-424">Have 1 genus 1 component meeting 3 genus 0 in a square on the special fibre of minimal regular model</p></article><article class="example-like" id="example-17"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.75</span>.</h6>
+<p id="p-425">\(p \ge 7\) and</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2  = (x-p^2)(x+p^2)(x-1- p^2)(x-1+p^2)(x-3)(x-4)
+\end{equation*}
+</div>
+<p>two nodes.</p>
+<figure class="figure-like" id="figure-8"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-8.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.76.</span> </figcaption></figure><p id="p-426">Have 7 genus 0 components meeting in a pair of squares with one common line.</p></article><article class="example-like" id="example-18"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.77</span>.</h6>
+<p id="p-427">\(p \ge 7\) and</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2  = (x-p^2)(x+p^2)(x-1- p^2)(x-1+p^2)(x-2+p^2)(x-2-p^2)
+\end{equation*}
+</div>
+<p>two nodes.</p>
+<figure class="figure-like" id="figure-9"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-9.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.78.</span> </figcaption></figure><p id="p-428">Have 8 genus 0 components, two non-intersecting lines joined by 3 chains of two \(\PP^1\)s.</p></article><article class="example-like" id="example-19"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.79</span>.</h6>
+<p id="p-429">\(p \ge 7\) and</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2  = (x-p^2)(x-2p^2)(x-3p^2)(x-4)(x-5)(x-6)
+\end{equation*}
+</div>
+<p>a cusp.</p>
+<figure class="figure-like" id="figure-10"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-10.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.80.</span> </figcaption></figure><p id="p-430">Have 2 genus 1 components meeting.</p></article><article class="example-like" id="example-20"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.81</span>.</h6>
+<p id="p-431">\(p \ge 7\) and</p>
+<div class="displaymath">
+\begin{equation*}
+C\colon y^2  = (x-p^2)(x-2p^2)(x-3p^2)(x-1-4p^2)(x-1-5p^2)(x-1-6p^2)
+\end{equation*}
+</div>
+<p>two cusps.</p>
+<figure class="figure-like" id="figure-11"><div style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-11.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span> <span class="codenumber">2.82.</span> </figcaption></figure><p id="p-432">Have 2 genus 1 components  joined by a \(\PP^1\text{.}\)</p></article><article class="paragraphs" id="paragraphs-20"><h5 class="heading"><span class="title">Places of \(K\) above \(2\).</span></h5>
+<p id="p-433">Here it is very difficult to compute a minimal regular model for \(C\text{,}\) hence can't compute the Tamagawa numbers.</p>
+<p id="p-434">One way around  is to use the definition of the local contribution</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac{\coker \phi_v}{\ker \phi_v}\right|}\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="proposition-15"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.83</span>.</h6>
+<p id="p-435">Consider the family</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal F\colon y^2 = (x^2 - (4t_1)^2)(x^2 + t_2 x + t_3)(x^2 + t_4 x + t_5)
+\end{equation*}
+</div>
+<p>such that \(t_i \in \ints_K\text{,}\) \(t_2 \equiv  1 \pmod 2\text{,}\) \(t_3 - \frac 14 \equiv 0 \pmod 2\text{,}\) \(t_4 \equiv  - 2 \pmod 8\text{,}\) \(t_5 \equiv 1 \pmod 8\text{.}\) Then \(C \in \mathcal F\) has totally split toric reduction, and assuming that \(G_2(x),G_3(x)\) are both irreducible over \(K_v\) then</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2 \left| \frac{\coker \phi_v}{\ker \phi_v}\right|}   =1\text{.}
+\end{equation*}
+</div></article><p id="p-436">So combining \(v | \infty \text{,}\) \(v\nmid 2\infty \text{,}\) \(v | 2\) if \(C \in \mathcal F\) over \(K_v\) for \(v| 2\) and semistable at \(v \nmid 2\infty \) with \(C\) a Richelot curve then we can compute the parity of the \(\rk_2(J)\text{.}\)</p>
+<article class="example-like" id="example-21"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.84</span>.</h6>
+<div class="displaymath" id="p-437">
+\begin{equation*}
+C \colon  y^2 =(x^2 - 16)(x^2 + x + \frac{17}{4} ) (x^2 -2x  + 9)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+C/\RR \implies (-1)^{\ord_2|n(J) m_\RR / n(J')/ m'_\RR |\ker \phi |  | }= (-1)^{\ord_2(1\cdot 1 / 4 \cdot 4  \cdot 1)} = 1
+\end{equation*}
+</div>
+<p>have \(C/\QQ_p\) for \(p = 3,5,11,13, 17, 97, 1201\) and \(p = 131\) is good reduction for \(C\) but not for \(C'\text{.}\) For \(p =3,17\) have \(c_p=2, m_p=1\text{.}\) For \(p =5, 11, 13, 97, 1201\) have similar with non-split nodes. \(p =131\) have \(c_p = 1,m_p = 1\text{,}\) \(c'_p = 1, m'_p =2\text{.}\) Two e.c.s swapped.</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2\left( \frac {c_p}{c'_p} \frac{m_p}{m'_p}\right)} =  -1
+\end{equation*}
+</div>
+<p>for \(p = 2\)</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\ord_2\left( \frac {\coker(\phi _2)}{\ker \phi _2}\right)} =  1
+\end{equation*}
+</div>
+<p>hence</p>
+<div class="displaymath">
+\begin{equation*}
+(-1)^{\rk_2(J)} = \prod_v (-1)^{\ord_2\left( \frac {\coker(\phi _v)}{\ker \phi _v}\right)} =  1
+\end{equation*}
+</div>
+<p>so \(J\) has even \(\rk_2(J)\text{.}\)</p></article></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
